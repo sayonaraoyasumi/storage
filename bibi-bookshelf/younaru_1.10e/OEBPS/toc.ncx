@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
+    xmlns="http://www.daisy.org/z3986/2005/ncx/"
+    version="2005-1"
+    xml:lang="ja">
+    <head>
+        <meta name="dtb:uid" content="urn:uuid:2a92295f-ed55-4718-a366-06731b7915f3"/>
+        <meta name="dtb:depth" content="1"/>
+        <meta name="dtb:totalPageCount" content="0"/>
+        <meta name="dtb:maxPageNumber" content="0"/>
+    </head>
+    <docTitle>
+        <text>勇!! なるかな</text>
+    </docTitle>
+    <navMap>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_1" playOrder="1">
+<navLabel>
+<text>序</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_1" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_2" playOrder="2">
+<navLabel>
+<text>第一章　青銅の檻</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_2" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_3" playOrder="3">
+<navLabel>
+<text>第二章　金の雨</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_3" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_4" playOrder="4">
+<navLabel>
+<text>第三章　流刑の島</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_4" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_5" playOrder="5">
+<navLabel>
+<text>第四章　旅立ち</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_5" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_6" playOrder="6">
+<navLabel>
+<text>第五章　アイギスの盾</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_6" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_7" playOrder="7">
+<navLabel>
+<text>第六章　翼の靴</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_7" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_8" playOrder="8">
+<navLabel>
+<text>第七章　古い記憶</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_8" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_9" playOrder="9">
+<navLabel>
+<text>第八章　見えない妖精たち</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_9" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_10" playOrder="10">
+<navLabel>
+<text>第九章　炎の生徒会とメデューサの首</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_10" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_11" playOrder="11">
+<navLabel>
+<text>第十章　白球のアンドロメダ</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_11" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_12" playOrder="12">
+<navLabel>
+<text>第十一章　オリュンポスの神々</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_12" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_13" playOrder="13">
+<navLabel>
+<text>第十二章　僕たちは大人になる</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_13" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_14" playOrder="14">
+<navLabel>
+<text>あとがき</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_14" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_15" playOrder="15">
+<navLabel>
+<text>奥付</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_15" />
+</navPoint>
+</navMap>
+
+</ncx>
