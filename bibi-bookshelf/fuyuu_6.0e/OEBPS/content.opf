@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="identifier0" version="3.0" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dc:identifier id="identifier0">urn:uuid:9d4851ae-c5ac-433d-856d-e90052f80fd8</dc:identifier>
+<dc:identifier id="identifier0">urn:uuid:d489a8f0-bbdf-4f67-bd28-9e985b2764ef</dc:identifier>
 <meta refines="#identifier0" property="identifier-type" scheme="xsd:string">uuid</meta>
 <dc:title id="title0">浮遊大陸でもういちど</dc:title>
 <meta refines="#title0" property="display-seq">1</meta>
@@ -10,7 +10,7 @@
 <dc:format>application/epub+zip</dc:format>
 <dc:language>ja</dc:language>
 <meta property="ibooks:specified-fonts">true</meta>
-<meta property="dcterms:modified">2024-06-12T09:42:41Z</meta>
+<meta property="dcterms:modified">2024-06-12T09:48:28Z</meta>
 <meta name="cover" content="_cover.jpg" />
 </metadata>
 <manifest>
@@ -23,8 +23,9 @@
 <item media-type="application/xhtml+xml" href="titlepage.xhtml" id="_titlepage.xhtml" />
 <item media-type="application/xhtml+xml" href="nav.xhtml" id="_nav.xhtml" properties="nav" />
 <item media-type="image/jpeg" href="hyoushi.jpg" id="_hyoushi.jpg" />
-<item media-type="image/png" href="usalogo_white_500.png" id="_usalogo_white_500.png" />
 <item media-type="application/xhtml+xml" href="bodymatter_0_0.xhtml" id="_bodymatter_0_0.xhtml" />
+<item media-type="image/png" href="usalogo_white_500.png" id="_usalogo_white_500.png" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_1.xhtml" id="_bodymatter_0_1.xhtml" />
 <item media-type="application/x-dtbncx+xml" href="toc.ncx" id="_toc.ncx" />
 </manifest>
 <spine page-progression-direction="rtl" toc="_toc.ncx">
@@ -32,6 +33,7 @@
 <itemref idref="_titlepage.xhtml" />
 <itemref idref="_nav.xhtml" />
 <itemref idref="_bodymatter_0_0.xhtml" />
+<itemref idref="_bodymatter_0_1.xhtml" />
 </spine>
 <guide>
 <reference type="other.reader-start-page" title="表紙" href="cover.xhtml" />
