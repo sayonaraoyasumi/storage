@@ -4,7 +4,7 @@
     version="2005-1"
     xml:lang="ja">
     <head>
-        <meta name="dtb:uid" content="urn:uuid:4567940c-4309-45fb-9596-a297a03bb906"/>
+        <meta name="dtb:uid" content="urn:uuid:c9d54d47-8cf0-47fe-b858-0c86a6e4f50e"/>
         <meta name="dtb:depth" content="1"/>
         <meta name="dtb:totalPageCount" content="0"/>
         <meta name="dtb:maxPageNumber" content="0"/>
@@ -73,107 +73,107 @@
 </navLabel>
 <content src="bodymatter_0_8.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_8.xhtml__toc_index_2" playOrder="11">
+<navPoint id="bodymatter_0_9.xhtml__toc_index_1" playOrder="11">
 <navLabel>
 <text>第二部・河童に魂を売った男</text>
 </navLabel>
-<content src="bodymatter_0_8.xhtml#toc_index_2" />
+<content src="bodymatter_0_9.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_8.xhtml__toc_index_3" playOrder="12">
+<navPoint id="bodymatter_0_9.xhtml__toc_index_2" playOrder="12">
 <navLabel>
 <text>十・失われた古代史</text>
 </navLabel>
-<content src="bodymatter_0_8.xhtml#toc_index_3" />
+<content src="bodymatter_0_9.xhtml#toc_index_2" />
 </navPoint>
-<navPoint id="bodymatter_0_9.xhtml__toc_index_1" playOrder="13">
+<navPoint id="bodymatter_0_10.xhtml__toc_index_1" playOrder="13">
 <navLabel>
 <text>十一・祇園山古墳</text>
 </navLabel>
-<content src="bodymatter_0_9.xhtml#toc_index_1" />
+<content src="bodymatter_0_10.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_10.xhtml__toc_index_1" playOrder="14">
+<navPoint id="bodymatter_0_11.xhtml__toc_index_1" playOrder="14">
 <navLabel>
 <text>十二・ワールドシフト</text>
 </navLabel>
-<content src="bodymatter_0_10.xhtml#toc_index_1" />
+<content src="bodymatter_0_11.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_11.xhtml__toc_index_1" playOrder="15">
+<navPoint id="bodymatter_0_12.xhtml__toc_index_1" playOrder="15">
 <navLabel>
 <text>十三・メロンソーダ</text>
 </navLabel>
-<content src="bodymatter_0_11.xhtml#toc_index_1" />
+<content src="bodymatter_0_12.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_12.xhtml__toc_index_1" playOrder="16">
+<navPoint id="bodymatter_0_13.xhtml__toc_index_1" playOrder="16">
 <navLabel>
 <text>十四・遠い世界に</text>
 </navLabel>
-<content src="bodymatter_0_12.xhtml#toc_index_1" />
+<content src="bodymatter_0_13.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_13.xhtml__toc_index_1" playOrder="17">
+<navPoint id="bodymatter_0_14.xhtml__toc_index_1" playOrder="17">
 <navLabel>
 <text>十五・賢者・ローゼンクランツ</text>
 </navLabel>
-<content src="bodymatter_0_13.xhtml#toc_index_1" />
+<content src="bodymatter_0_14.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_14.xhtml__toc_index_1" playOrder="18">
+<navPoint id="bodymatter_0_15.xhtml__toc_index_1" playOrder="18">
 <navLabel>
 <text>十六・ファタ・モルガーナ</text>
 </navLabel>
-<content src="bodymatter_0_14.xhtml#toc_index_1" />
+<content src="bodymatter_0_15.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_15.xhtml__toc_index_1" playOrder="19">
+<navPoint id="bodymatter_0_16.xhtml__toc_index_1" playOrder="19">
 <navLabel>
 <text>十七・水槽検体</text>
 </navLabel>
-<content src="bodymatter_0_15.xhtml#toc_index_1" />
+<content src="bodymatter_0_16.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_16.xhtml__toc_index_1" playOrder="20">
+<navPoint id="bodymatter_0_17.xhtml__toc_index_1" playOrder="20">
 <navLabel>
 <text>十八・大魔王降臨</text>
 </navLabel>
-<content src="bodymatter_0_16.xhtml#toc_index_1" />
+<content src="bodymatter_0_17.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_17.xhtml__toc_index_1" playOrder="21">
+<navPoint id="bodymatter_0_18.xhtml__toc_index_1" playOrder="21">
 <navLabel>
 <text>十九・側近ディストメア</text>
 </navLabel>
-<content src="bodymatter_0_17.xhtml#toc_index_1" />
+<content src="bodymatter_0_18.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_18.xhtml__toc_index_1" playOrder="22">
+<navPoint id="bodymatter_0_19.xhtml__toc_index_1" playOrder="22">
 <navLabel>
 <text>二十・大魔王城決戦</text>
 </navLabel>
-<content src="bodymatter_0_18.xhtml#toc_index_1" />
+<content src="bodymatter_0_19.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_18.xhtml__toc_index_2" playOrder="23">
+<navPoint id="bodymatter_0_20.xhtml__toc_index_1" playOrder="23">
 <navLabel>
 <text>第三部・オクターブユニゾン</text>
 </navLabel>
-<content src="bodymatter_0_18.xhtml#toc_index_2" />
+<content src="bodymatter_0_20.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_18.xhtml__toc_index_3" playOrder="24">
+<navPoint id="bodymatter_0_20.xhtml__toc_index_2" playOrder="24">
 <navLabel>
 <text>二十一・憧れの古澤くんに捧げる冒険</text>
 </navLabel>
-<content src="bodymatter_0_18.xhtml#toc_index_3" />
+<content src="bodymatter_0_20.xhtml#toc_index_2" />
 </navPoint>
-<navPoint id="bodymatter_0_18.xhtml__toc_index_4" playOrder="25">
+<navPoint id="bodymatter_0_21.xhtml__toc_index_1" playOrder="25">
 <navLabel>
 <text>カーテンコール</text>
 </navLabel>
-<content src="bodymatter_0_18.xhtml#toc_index_4" />
+<content src="bodymatter_0_21.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_18.xhtml__toc_index_5" playOrder="26">
+<navPoint id="bodymatter_0_22.xhtml__toc_index_1" playOrder="26">
 <navLabel>
 <text>あとがき</text>
 </navLabel>
-<content src="bodymatter_0_18.xhtml#toc_index_5" />
+<content src="bodymatter_0_22.xhtml#toc_index_1" />
 </navPoint>
-<navPoint id="bodymatter_0_18.xhtml__toc_index_6" playOrder="27">
+<navPoint id="bodymatter_0_23.xhtml__toc_index_1" playOrder="27">
 <navLabel>
 <text>奥付</text>
 </navLabel>
-<content src="bodymatter_0_18.xhtml#toc_index_6" />
+<content src="bodymatter_0_23.xhtml#toc_index_1" />
 </navPoint>
 </navMap>
 

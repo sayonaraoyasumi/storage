@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="identifier0" version="3.0" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dc:identifier id="identifier0">urn:uuid:4567940c-4309-45fb-9596-a297a03bb906</dc:identifier>
+<dc:identifier id="identifier0">urn:uuid:c9d54d47-8cf0-47fe-b858-0c86a6e4f50e</dc:identifier>
 <meta refines="#identifier0" property="identifier-type" scheme="xsd:string">uuid</meta>
 <dc:title id="title0">憧れの竹下さんに捧げる冒険</dc:title>
 <meta refines="#title0" property="display-seq">1</meta>
@@ -10,7 +10,7 @@
 <dc:format>application/epub+zip</dc:format>
 <dc:language>ja</dc:language>
 <meta property="ibooks:specified-fonts">true</meta>
-<meta property="dcterms:modified">2024-06-12T21:21:55Z</meta>
+<meta property="dcterms:modified">2024-06-12T21:38:14Z</meta>
 <meta name="cover" content="_cover.jpg" />
 </metadata>
 <manifest>
@@ -41,8 +41,13 @@
 <item media-type="application/xhtml+xml" href="bodymatter_0_15.xhtml" id="_bodymatter_0_15.xhtml" />
 <item media-type="application/xhtml+xml" href="bodymatter_0_16.xhtml" id="_bodymatter_0_16.xhtml" />
 <item media-type="application/xhtml+xml" href="bodymatter_0_17.xhtml" id="_bodymatter_0_17.xhtml" />
-<item media-type="image/png" href="usalogo_white_500.png" id="_usalogo_white_500.png" />
 <item media-type="application/xhtml+xml" href="bodymatter_0_18.xhtml" id="_bodymatter_0_18.xhtml" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_19.xhtml" id="_bodymatter_0_19.xhtml" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_20.xhtml" id="_bodymatter_0_20.xhtml" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_21.xhtml" id="_bodymatter_0_21.xhtml" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_22.xhtml" id="_bodymatter_0_22.xhtml" />
+<item media-type="image/png" href="usalogo_white_500.png" id="_usalogo_white_500.png" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_23.xhtml" id="_bodymatter_0_23.xhtml" />
 <item media-type="application/x-dtbncx+xml" href="toc.ncx" id="_toc.ncx" />
 </manifest>
 <spine page-progression-direction="rtl" toc="_toc.ncx">
@@ -68,6 +73,11 @@
 <itemref idref="_bodymatter_0_16.xhtml" />
 <itemref idref="_bodymatter_0_17.xhtml" />
 <itemref idref="_bodymatter_0_18.xhtml" />
+<itemref idref="_bodymatter_0_19.xhtml" />
+<itemref idref="_bodymatter_0_20.xhtml" />
+<itemref idref="_bodymatter_0_21.xhtml" />
+<itemref idref="_bodymatter_0_22.xhtml" />
+<itemref idref="_bodymatter_0_23.xhtml" />
 </spine>
 <guide>
 <reference type="other.reader-start-page" title="表紙" href="cover.xhtml" />
