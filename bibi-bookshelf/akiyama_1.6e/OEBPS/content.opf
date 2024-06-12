@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="identifier0" version="3.0" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dc:identifier id="identifier0">urn:uuid:4c45bea5-00bd-4053-b1a4-62958b126c79</dc:identifier>
+<dc:identifier id="identifier0">urn:uuid:a55bec5e-c0b4-4110-861b-f7c562126511</dc:identifier>
 <meta refines="#identifier0" property="identifier-type" scheme="xsd:string">uuid</meta>
 <dc:title id="title0">憧れの秋山さんに捧げる冒険</dc:title>
 <meta refines="#title0" property="display-seq">1</meta>
@@ -10,7 +10,7 @@
 <dc:format>application/epub+zip</dc:format>
 <dc:language>ja</dc:language>
 <meta property="ibooks:specified-fonts">true</meta>
-<meta property="dcterms:modified">2024-06-12T23:00:07Z</meta>
+<meta property="dcterms:modified">2024-06-12T23:11:43Z</meta>
 <meta name="cover" content="_cover.jpg" />
 </metadata>
 <manifest>
@@ -43,8 +43,9 @@
 <item media-type="application/xhtml+xml" href="bodymatter_0_17.xhtml" id="_bodymatter_0_17.xhtml" />
 <item media-type="application/xhtml+xml" href="bodymatter_0_18.xhtml" id="_bodymatter_0_18.xhtml" />
 <item media-type="application/xhtml+xml" href="bodymatter_0_19.xhtml" id="_bodymatter_0_19.xhtml" />
-<item media-type="image/png" href="usalogo_white_500.png" id="_usalogo_white_500.png" />
 <item media-type="application/xhtml+xml" href="bodymatter_0_20.xhtml" id="_bodymatter_0_20.xhtml" />
+<item media-type="image/png" href="usalogo_white_500.png" id="_usalogo_white_500.png" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_21.xhtml" id="_bodymatter_0_21.xhtml" />
 <item media-type="application/x-dtbncx+xml" href="toc.ncx" id="_toc.ncx" />
 </manifest>
 <spine page-progression-direction="rtl" toc="_toc.ncx">
@@ -72,6 +73,7 @@
 <itemref idref="_bodymatter_0_18.xhtml" />
 <itemref idref="_bodymatter_0_19.xhtml" />
 <itemref idref="_bodymatter_0_20.xhtml" />
+<itemref idref="_bodymatter_0_21.xhtml" />
 </spine>
 <guide>
 <reference type="other.reader-start-page" title="表紙" href="cover.xhtml" />
