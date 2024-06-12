@@ -4,7 +4,7 @@
     version="2005-1"
     xml:lang="ja">
     <head>
-        <meta name="dtb:uid" content="urn:uuid:3e2e75f4-f7ff-4a9c-b8d9-9fbf6b17321b"/>
+        <meta name="dtb:uid" content="urn:uuid:3301f089-50ec-4a30-bb9a-2ae97544e83a"/>
         <meta name="dtb:depth" content="1"/>
         <meta name="dtb:totalPageCount" content="0"/>
         <meta name="dtb:maxPageNumber" content="0"/>
@@ -678,6 +678,12 @@
 <text>ＷＥＢ版あとがき</text>
 </navLabel>
 <content src="bodymatter_0_0.xhtml#toc_index_111" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_112" playOrder="112">
+<navLabel>
+<text>奥付</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_112" />
 </navPoint>
 </navMap>
 

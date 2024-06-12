@@ -62,8 +62,16 @@ div.innerbox{
   font-size: 0.9em;
 	padding: 0;
 }
-
-
+.infotable{
+   max-width: 100%;
+   width: 30em;
+  font-size: 0.9em;
+  -epub-writing-mode: horizontal-tb;
+}
+.infotable .logo{
+   width: 15em;
+   height: 15em;
+}
 p, div {
   text-align: justify;
   margin: 0 0.8em 0 0;
