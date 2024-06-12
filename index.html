@@ -11,12 +11,17 @@
 <!-- ogp -->
 		<meta property="og:locale" content="ja_JP">
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="https://sayonaraoyasumi.github.io/storage/image/nyadioLog_009.png">
+		<meta property="og:image" content="https://sayonaraoyasumi.github.io/storage/image/headboard.jpg">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
 		<meta property="og:title" content="さよならおやすみ EPUB 倉庫">
 		<meta property="og:description" content="さよならおやすみノベルズの電子書籍置き場です。無料で読めて、DOWNLOADもフリー。" />
 		<meta property="og:url" content="https://sayonaraoyasumi.github.io/storage/">
 		<meta property="og:site_name" content="さよならおやすみ EPUB 倉庫">
 		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="さよならおやすみ EPUB 倉庫">
+		<meta name="twitter:description" content="さよならおやすみノベルズの電子書籍置き場です。無料で読めて、DOWNLOADもフリー。">
+		<meta name="twitter:image" content="https://sayonaraoyasumi.github.io/storage/image/headboard.jpg">
 <!-- /ogp -->
 
 		<style type="text/css" id="custom-background-css">
@@ -44,7 +49,8 @@ div{
 	background-size: cover;
 	width: 100%;
 	padding: 1em;
-	color: #e8e8e8;
+	color: #f8f8f8;
+	text-shadow: 0 0 4px black;
 	text-align: center;
 }
 .content{
@@ -108,6 +114,9 @@ a{
 	opacity: 0;
 	transition: opacity 0.5s;
 }
+.info::before{
+	content: "Bibi(EPUBリーダー)で開きます";
+}
 .info:hover{
 	opacity: 0.7;
 }
@@ -126,7 +135,7 @@ a{
 		<div class="content">
 			<div class="box">
 				<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=usagi_2.1e" target="_blanc">
-				<div class="info">Bibi(EPUBリーダー)で開きます</div>
+				<div class="info"></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/cover/cover_usagi.jpg" class="cover">
 				</a>
 				<div class="download"><a href="https://sayonaraoyasumi.github.io/storage/books/usagi_2.1e.epub">DOWNLOAD</a></div>
