@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" unique-identifier="identifier0" version="3.0" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dc:identifier id="identifier0">urn:uuid:3301f089-50ec-4a30-bb9a-2ae97544e83a</dc:identifier>
+<dc:identifier id="identifier0">urn:uuid:6cf4120d-ce94-48e4-a594-cd3c83af954b</dc:identifier>
 <meta refines="#identifier0" property="identifier-type" scheme="xsd:string">uuid</meta>
 <dc:title id="title0">うさぎがとつぜん私になってこまった100のこと</dc:title>
 <meta refines="#title0" property="display-seq">1</meta>
@@ -10,7 +10,7 @@
 <dc:format>application/epub+zip</dc:format>
 <dc:language>ja</dc:language>
 <meta property="ibooks:specified-fonts">true</meta>
-<meta property="dcterms:modified">2024-06-12T11:43:59Z</meta>
+<meta property="dcterms:modified">2024-06-12T11:55:50Z</meta>
 <meta name="cover" content="_cover.jpg" />
 </metadata>
 <manifest>
