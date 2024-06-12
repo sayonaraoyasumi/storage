@@ -6,15 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name='robots' content='max-image-preview:large' />
 
-		<title>sonovels 別館</title>
+		<title>さよならおやすみ EPUB 倉庫</title>
 
 <!-- ogp -->
 		<meta property="og:locale" content="ja_JP">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="https://sayonaraoyasumi.github.io/storage/image/nyadioLog_009.png">
-		<meta property="og:title" content="sonovels 別館 |">
+		<meta property="og:title" content="さよならおやすみ EPUB 倉庫">
+		<meta property="og:description" content="さよならおやすみノベルズの電子書籍置き場です。無料で読めて、DOWNLOADもフリー。" />
 		<meta property="og:url" content="https://sayonaraoyasumi.github.io/storage/">
-		<meta property="og:site_name" content="sonovels 別館">
+		<meta property="og:site_name" content="さよならおやすみ EPUB 倉庫">
 		<meta name="twitter:card" content="summary_large_image">
 <!-- /ogp -->
 
@@ -55,6 +56,7 @@ div{
 	padding: 1em;
 }
 .box {
+	position:relative;
 	width: 300px;
 	min-width: 300px;
 	height: 520px;
@@ -75,12 +77,39 @@ div{
 	justify-content: center;
 	align-items: center;
 }
+.cover{
+	width: 300px;
+	height: 480px;
+}
 .footer{
 	background-color: #202020;
 	color: #e8e8e8;
 	width: 100%;
 	padding: 1em;
 	text-align: center;
+}
+a{
+	display: inline-block; 
+	line-height: 1;
+	text-decoration: none;
+	font-weight: bold;
+	size: 0.9em;
+	color: #404040;
+}
+.info{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000020;
+	color: white;
+	width: 300px;
+	height: 480px;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.info:hover{
+	opacity: 0.7;
 }
 		</style>
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/cropped-usalogo_pink_1000-32x32.png" sizes="32x32" />
@@ -89,14 +118,17 @@ div{
 		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/cropped-usalogo_pink_1000-270x270.png" />
 	</head>
 	<body class="home">
+
 		<div class="titlepannel">
 			<img src="https://sayonaraoyasumi.github.io/storage/image/sonovels_emoji.png">
 			<h1>さよならおやすみ EPUB 倉庫</h1>
 		</div>
 		<div class="content">
 			<div class="box">
-				<iframe class="bibi-frame" frameborder="0" scrolling="auto" allowfullscreen="true"
-				src="https://sayonaraoyasumi.github.io/storage/bibi/?book=usagi_2.1e&start-embedded-in-new-window=yes"></iframe>
+				<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=usagi_2.1e" target="_blanc">
+				<div class="info">Bibi(EPUBリーダー)で開きます</div>
+				<img src="https://sayonaraoyasumi.github.io/storage/cover/cover_usagi.jpg" class="cover">
+				</a>
 				<div class="download"><a href="https://sayonaraoyasumi.github.io/storage/books/usagi_2.1e.epub">DOWNLOAD</a></div>
 			</div>
 			<div class="box">coming soon</div>
