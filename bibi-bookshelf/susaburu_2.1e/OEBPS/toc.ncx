@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
+    xmlns="http://www.daisy.org/z3986/2005/ncx/"
+    version="2005-1"
+    xml:lang="ja">
+    <head>
+        <meta name="dtb:uid" content="urn:uuid:fc45ce6c-46b4-4c2f-b47e-e4c23383d035"/>
+        <meta name="dtb:depth" content="1"/>
+        <meta name="dtb:totalPageCount" content="0"/>
+        <meta name="dtb:maxPageNumber" content="0"/>
+    </head>
+    <docTitle>
+        <text>すさぶる王子バカ王子カニ</text>
+    </docTitle>
+    <navMap>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_1" playOrder="1">
+<navLabel>
+<text>すさぶる王子・バカ王子・カニ</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_1" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_2" playOrder="2">
+<navLabel>
+<text>１　ご挨拶編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_2" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_3" playOrder="3">
+<navLabel>
+<text>２　王宮編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_3" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_4" playOrder="4">
+<navLabel>
+<text>３　冒険編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_4" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_5" playOrder="5">
+<navLabel>
+<text>４　避暑地編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_5" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_6" playOrder="6">
+<navLabel>
+<text>５　学園編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_6" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_7" playOrder="7">
+<navLabel>
+<text>６　未来編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_7" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_8" playOrder="8">
+<navLabel>
+<text>７　時間の狭間編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_8" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_9" playOrder="9">
+<navLabel>
+<text>８　ドラヴィダ王国編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_9" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_10" playOrder="10">
+<navLabel>
+<text>９　大航海編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_10" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_11" playOrder="11">
+<navLabel>
+<text>10　宇宙編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_11" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_12" playOrder="12">
+<navLabel>
+<text>11　演劇部編</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_12" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_13" playOrder="13">
+<navLabel>
+<text>カーテンコール</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_13" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_14" playOrder="14">
+<navLabel>
+<text>12　プロセニアム・アーチ</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_14" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_15" playOrder="15">
+<navLabel>
+<text>おまけ</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_15" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_16" playOrder="16">
+<navLabel>
+<text>あとがき</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_16" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_17" playOrder="17">
+<navLabel>
+<text>奥付</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_17" />
+</navPoint>
+</navMap>
+
+</ncx>
