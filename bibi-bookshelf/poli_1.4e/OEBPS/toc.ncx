@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
+    xmlns="http://www.daisy.org/z3986/2005/ncx/"
+    version="2005-1"
+    xml:lang="ja">
+    <head>
+        <meta name="dtb:uid" content="urn:uuid:7b7b8548-2b1e-4d3e-8919-340e8609cf29"/>
+        <meta name="dtb:depth" content="1"/>
+        <meta name="dtb:totalPageCount" content="0"/>
+        <meta name="dtb:maxPageNumber" content="0"/>
+    </head>
+    <docTitle>
+        <text>ポリコレ少女舞依</text>
+    </docTitle>
+    <navMap>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_1" playOrder="1">
+<navLabel>
+<text>ポリコレ少女舞依</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_1" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_2" playOrder="2">
+<navLabel>
+<text>第１話　誕生！　スーパーヒーロー！</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_2" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_3" playOrder="3">
+<navLabel>
+<text>第２話　集え！　フェミニスト！</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_3" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_4" playOrder="4">
+<navLabel>
+<text>第３話　アキレウスの鎧</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_4" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_5" playOrder="5">
+<navLabel>
+<text>第４話　どうして僕では</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_5" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_6" playOrder="6">
+<navLabel>
+<text>第５話　初めての体験</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_6" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_7" playOrder="7">
+<navLabel>
+<text>第６話　少女の夢</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_7" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_8" playOrder="8">
+<navLabel>
+<text>第７話　多摩川防衛ライン</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_8" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_9" playOrder="9">
+<navLabel>
+<text>第８話　ひらけ！　パンドラの箱！</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_9" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_10" playOrder="10">
+<navLabel>
+<text>第９話　降臨・童貞神</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_10" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_11" playOrder="11">
+<navLabel>
+<text>エピローグ</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_11" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_12" playOrder="12">
+<navLabel>
+<text>あとがき</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_12" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_13" playOrder="13">
+<navLabel>
+<text>奥付</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_13" />
+</navPoint>
+</navMap>
+
+</ncx>
