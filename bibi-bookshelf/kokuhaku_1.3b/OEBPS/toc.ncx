@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
+    xmlns="http://www.daisy.org/z3986/2005/ncx/"
+    version="2005-1"
+    xml:lang="ja">
+    <head>
+        <meta name="dtb:uid" content="urn:uuid:48d45a12-39e0-42fe-9f2f-fe11c3f1018e"/>
+        <meta name="dtb:depth" content="1"/>
+        <meta name="dtb:totalPageCount" content="0"/>
+        <meta name="dtb:maxPageNumber" content="0"/>
+    </head>
+    <docTitle>
+        <text>告白と戸惑いのロンド</text>
+    </docTitle>
+    <navMap>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_1" playOrder="1">
+<navLabel>
+<text>１　ドキドキ・下駄箱事件</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_1" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_2" playOrder="2">
+<navLabel>
+<text>２　ドキドキ・宇宙戦争</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_2" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_3" playOrder="3">
+<navLabel>
+<text>３　ドキドキ・タイムマシーン</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_3" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_4" playOrder="4">
+<navLabel>
+<text>４　ドキドキ・シリアス展開</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_4" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_5" playOrder="5">
+<navLabel>
+<text>５　ドキドキ・終末生活</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_5" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_6" playOrder="6">
+<navLabel>
+<text>６　ドキドキ・修学旅行</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_6" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_7" playOrder="7">
+<navLabel>
+<text>７　ドキドキ・学園祭</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_7" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_8" playOrder="8">
+<navLabel>
+<text>８　ドキドキ・東幡豆革命軍</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_8" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_9" playOrder="9">
+<navLabel>
+<text>９　ドキドキ・月面基地</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_9" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_10" playOrder="10">
+<navLabel>
+<text>10　ドキドキ・日本創生記</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_10" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_11" playOrder="11">
+<navLabel>
+<text>エピローグ　ドキドキ・続・下駄箱事件</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_11" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_12" playOrder="12">
+<navLabel>
+<text>あとがき</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_12" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_13" playOrder="13">
+<navLabel>
+<text>奥付</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_13" />
+</navPoint>
+</navMap>
+
+</ncx>
