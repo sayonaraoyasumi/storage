@@ -4,7 +4,7 @@
     version="2005-1"
     xml:lang="ja">
     <head>
-        <meta name="dtb:uid" content="urn:uuid:fc45ce6c-46b4-4c2f-b47e-e4c23383d035"/>
+        <meta name="dtb:uid" content="urn:uuid:13b01c8b-c3e8-4f07-8b39-f997b4c2e173"/>
         <meta name="dtb:depth" content="1"/>
         <meta name="dtb:totalPageCount" content="0"/>
         <meta name="dtb:maxPageNumber" content="0"/>
@@ -99,13 +99,13 @@
 </navPoint>
 <navPoint id="bodymatter_0_0.xhtml__toc_index_15" playOrder="15">
 <navLabel>
-<text>おまけ</text>
+<text>あとがき</text>
 </navLabel>
 <content src="bodymatter_0_0.xhtml#toc_index_15" />
 </navPoint>
 <navPoint id="bodymatter_0_0.xhtml__toc_index_16" playOrder="16">
 <navLabel>
-<text>あとがき</text>
+<text>おまけ</text>
 </navLabel>
 <content src="bodymatter_0_0.xhtml#toc_index_16" />
 </navPoint>
