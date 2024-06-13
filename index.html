@@ -94,13 +94,19 @@ div{
 	padding: 1em;
 	text-align: center;
 }
-a{
+.download a{
 	display: inline-block; 
 	line-height: 1;
 	text-decoration: none;
 	font-weight: bold;
 	size: 0.9em;
 	color: #404040;
+}
+.locallink{
+	text-decoration: none;
+	font-weight: bold;
+	size: 0.9em;
+	color: #f8f8f8;
 }
 .info{
 	position: absolute;
@@ -129,6 +135,11 @@ a{
 }
 .titleimage{
 	max-width: 100%;
+}
+.credit{
+	color: #888;
+	margin: 1em;
+	size: 0.8em;
 }
 		</style>
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/cropped-usalogo_pink_1000-32x32.png" sizes="32x32" />
@@ -276,14 +287,11 @@ a{
 				<div class="download"><a href="https://sayonaraoyasumi.github.io/storage/books/himiko_1.4e.epub">DOWNLOAD</a></div>
 			</div>
 		</div>
-		</div>
-		<div class="textbox">
-				<ul class="textbody">
-					<li><a href="about.html">このページについて</a></li>
-				</ul>
-		</div>
 		<div class="footer">
-			© 2012 さよならおやすみ株式会社/井上信行
+			<a href="about.html" class="locallink">このページについて</a>
+			<div class="credit">
+				© 2012 さよならおやすみ株式会社/井上信行
+			</div>
 		</div>
 	</body>
 </html>
