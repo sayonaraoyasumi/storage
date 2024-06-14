@@ -109,7 +109,7 @@ div{
 .description{
 	position: absolute;
 	display: flex;
-  flex-direction: column;
+	flex-direction: column;
 	background-color: #fff;
 	border: solid 1px #888;
 	justify-content: center;
@@ -125,6 +125,10 @@ div{
 	left: 10px;
 	opacity: 0.9;
 	font-size: 86%;
+	transition:linear opacity 0.5s;
+}
+.description:hover{
+	opacity: 0.1;
 }
 .textbox{
 	max-width:1000px;
