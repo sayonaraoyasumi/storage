@@ -32,8 +32,8 @@ body {
 	background-repeat: repeat;
 	background-attachment: fixed;
 	display: flex;
-  flex-direction: column;
-  justify-content: center;
+	flex-direction: column;
+	justify-content: center;
 	margin: 0;
 	padding: 0;
 }
@@ -106,6 +106,15 @@ div{
 	size: 0.9em;
 	color: #f8f8f8;
 }
+.touchbox{
+	position: absolute;
+	width: 300px;
+	height: 480px;
+	transition:linear opacity 0.3s;
+}
+.touchbox:hover{
+	opacity: 0.1;
+}
 .description{
 	position: absolute;
 	display: flex;
@@ -125,11 +134,8 @@ div{
 	left: 10px;
 	opacity: 0.9;
 	font-size: 86%;
-	transition:linear opacity 0.5s;
 }
-.description:hover{
-	opacity: 0.1;
-}
+
 .textbox{
 	max-width:1000px;
 	margin:2em auto;
@@ -158,7 +164,7 @@ div{
 		</div>
 		<div class="content">
 			<div class="box">
-				<div class="description">短編、ほんわり日常系<br />ファンタジー、マジックリアリズム<br />軽いギャグ＋シリアス
+				<div class="touchbox"><div class="description">短編、ほんわり日常系<br />ファンタジー、マジックリアリズム<br />軽いギャグ＋シリアス</div>
 				</div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/usagi_2.1e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
@@ -168,7 +174,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">長編、詩情系<br />ハードSF<br />リアル世界、シリアス</div>
+				<div class="touchbox"><div class="description">長編、詩情系<br />ハードSF<br />リアル世界、シリアス</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/fuyuu_6.0e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=fuyuu_6.0e" target="_blank">OPEN</a>
@@ -177,7 +183,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">長編、詩情系、英語版<br />ハードSF、AI翻訳<br />リアル世界、シリアス</div>
+				<div class="touchbox"><div class="description">長編、詩情系、英語版<br />ハードSF、AI翻訳<br />リアル世界、シリアス</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/fuyuu_6.0Ee/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=fuyuu_6.0Ee" target="_blank">OPEN</a>
@@ -186,7 +192,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">長編、生活系<br />高校生活、マジックリアリズム<br />自伝的、リアル世界、筑後方言</div>
+				<div class="touchbox"><div class="description">長編、生活系<br />高校生活、マジックリアリズム<br />自伝的、リアル世界、筑後方言</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/younaru_1.10e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=younaru_1.10e" target="_blank">OPEN</a>
@@ -195,7 +201,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">長編、婉曲な官能系<br />ハードSF、象徴主義<br />リアル世界～宇宙、シリアス</div>
+				<div class="touchbox"><div class="description">長編、婉曲な官能系<br />ハードSF、象徴主義<br />リアル世界～宇宙、シリアス</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/utyuu_1.68e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=utyuu_1.68e" target="_blank">OPEN</a>
@@ -204,7 +210,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">掌編集、会話劇<br />日常会話からナンセンスまで<br />なんでもあり、ギャグ</div>
+				<div class="touchbox"><div class="description">掌編集、会話劇<br />日常会話からナンセンスまで<br />なんでもあり、ギャグ</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/chatstories_1.0e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=chatstories_1.0e" target="_blank">OPEN</a>
@@ -213,7 +219,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">中編、青春系<br />学園SF、シュールレアリスム<br />なんでもあり、ギャグ＋シリアス</div>
+				<div class="touchbox"><div class="description">中編、青春系<br />学園SF、シュールレアリスム<br />なんでもあり、ギャグ＋シリアス</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/takeshita_1.3e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=takeshita_1.3e" target="_blank">OPEN</a>
@@ -222,7 +228,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">中編、青春系<br />学園SF、象徴主義<br />なんでもあり、ギャグ＋シリアス</div>
+				<div class="touchbox"><div class="description">中編、青春系<br />学園SF、象徴主義<br />なんでもあり、ギャグ＋シリアス</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/akiyama_1.6e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=akiyama_1.6e" target="_blank">OPEN</a>
@@ -231,7 +237,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">短～中編、会話劇<br />はちゃめちゃコメディ<br />なんでもあり、ギャグ、第四の壁</div>
+				<div class="touchbox"><div class="description">短～中編、会話劇<br />はちゃめちゃコメディ<br />なんでもあり、ギャグ、第四の壁</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/susaburu_2.1e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=susaburu_2.1e" target="_blank">OPEN</a>
@@ -240,7 +246,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">長編、オタク系エロ<br />剣と魔法系ファンタジー<br />ギャグ、シリアス</div>
+				<div class="touchbox"><div class="description">長編、オタク系エロ<br />剣と魔法系ファンタジー<br />ギャグ、シリアス</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/alice_1_2.0Ae/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=alice_1_2.0Ae" target="_blank">OPEN</a>
@@ -249,7 +255,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">長編、純文学系、社会派<br />人生回想（初老男性）<br />自伝的、シリアス、九州方言</div>
+				<div class="touchbox"><div class="description">長編、純文学系、社会派<br />人生回想（初老男性）<br />自伝的、シリアス、九州方言</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/animater_1.6ae/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=animater_1.6ae" target="_blank">OPEN</a>
@@ -258,7 +264,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">中編、実用書<br />エッセイ＋サンプル掌編<br />砕けた文体</div>
+				<div class="touchbox"><div class="description">中編、実用書<br />エッセイ＋サンプル掌編<br />砕けた文体</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/game_1.0ke/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=game_1.0ke" target="_blank">OPEN</a>
@@ -267,7 +273,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">中編、青春系<br />学園SF、アニメ的展開<br />なんでもあり、ギャグ、シスターフッド</div>
+				<div class="touchbox"><div class="description">中編、青春系<br />学園SF、アニメ的展開<br />なんでもあり、ギャグ、シスターフッド</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/kokuhaku_1.3b/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=kokuhaku_1.3b" target="_blank">OPEN</a>
@@ -276,7 +282,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">短編、文学系<br />学園もの、マジックリアリズム<br />シリアス、独自文体</div>
+				<div class="touchbox"><div class="description">短編、文学系<br />学園もの、マジックリアリズム<br />シリアス、独自文体</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/dainana_1.1he/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=dainana_1.1he" target="_blank">OPEN</a>
@@ -285,7 +291,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">長編、純文学系、社会派<br />人生回想（20代女性）<br />シリアス、北九州・近畿方言</div>
+				<div class="touchbox"><div class="description">長編、純文学系、社会派<br />人生回想（20代女性）<br />シリアス、北九州・近畿方言</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/yumi_1.3/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=yumi_1.3" target="_blank">OPEN</a>
@@ -294,7 +300,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">短編、異世界転生系<br />剣と魔法系ファンタジー<br />シリアス基調＋たまにギャグ</div>
+				<div class="touchbox"><div class="description">短編、異世界転生系<br />剣と魔法系ファンタジー<br />シリアス基調＋たまにギャグ</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/rakko_1.1fe/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=rakko_1.1fe" target="_blank">OPEN</a>
@@ -303,7 +309,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">中編、青春系<br />学園SF、アニメ的展開<br />なんでもあり、ギャグ</div>
+				<div class="touchbox"><div class="description">中編、青春系<br />学園SF、アニメ的展開<br />なんでもあり、ギャグ</div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/poli_1.4e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=poli_1.4e" target="_blank">OPEN</a>
@@ -312,7 +318,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">短編、青春系<br />学園もの、ジュブナイル<br />リアル社会、古代史蘊蓄多用、筑後方言<br /></div>
+				<div class="touchbox"><div class="description">短編、青春系<br />学園もの、ジュブナイル<br />リアル社会、古代史蘊蓄多用、筑後方言<br /></div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/yamatai_1.1de/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=yamatai_1.1de" target="_blank">OPEN</a>
@@ -321,7 +327,7 @@ div{
 				</div>
 			</div>
 			<div class="box">
-				<div class="description">短編、青春系<br />学園もの、ジュブナイル<br />リアル社会、古代史蘊蓄多め、筑後方言<br /></div>
+				<div class="touchbox"><div class="description">短編、青春系<br />学園もの、ジュブナイル<br />リアル社会、古代史蘊蓄多め、筑後方言<br /></div></div>
 				<img src="https://sayonaraoyasumi.github.io/storage/bibi-bookshelf/himiko_1.4e/OEBPS/cover.jpg" class="cover">
 				<div class="download">
 					<a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=himiko_1.4e" target="_blank">OPEN</a>
