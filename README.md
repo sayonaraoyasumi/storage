@@ -14,5 +14,6 @@ Kindleでは有料で提供していますが、こちらでは無料で公開�
 出典を明記しての引用、改変なしでの再配布は認めます。
 
 #リンク
+0. [このページ](https://sayonaraoyasumi.github.io/storage/)
 1. [さよならおやすみノベルズ](https://sonovels.com/)
 2. [Kindle（著者ページ）](https://www.amazon.co.jp/~/e/B0B5XPVX7B)
