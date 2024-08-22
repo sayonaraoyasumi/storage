@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns:ncx="http://www.daisy.org/z3986/2005/ncx/"
+    xmlns="http://www.daisy.org/z3986/2005/ncx/"
+    version="2005-1"
+    xml:lang="ja">
+    <head>
+        <meta name="dtb:uid" content="urn:uuid:ecd3e769-a2e2-474b-81a2-f72e78e1e80d"/>
+        <meta name="dtb:depth" content="1"/>
+        <meta name="dtb:totalPageCount" content="0"/>
+        <meta name="dtb:maxPageNumber" content="0"/>
+    </head>
+    <docTitle>
+        <text>聖なる鳥</text>
+    </docTitle>
+    <navMap>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_1" playOrder="1">
+<navLabel>
+<text>第一章　デニスの弟子</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_1" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_2" playOrder="2">
+<navLabel>
+<text>第二章　魔法のラズベリー</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_2" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_3" playOrder="3">
+<navLabel>
+<text>第三章　シンセシス</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_3" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_4" playOrder="4">
+<navLabel>
+<text>第四章　悪党の意地</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_4" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_5" playOrder="5">
+<navLabel>
+<text>第五章　辺境警備</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_5" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_6" playOrder="6">
+<navLabel>
+<text>第六章　ビジョン・クエスト</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_6" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_7" playOrder="7">
+<navLabel>
+<text>第七章　地球、二〇二二年</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_7" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_8" playOrder="8">
+<navLabel>
+<text>第八章　進むべき道</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_8" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_9" playOrder="9">
+<navLabel>
+<text>第九章　幻想の向こう</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_9" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_10" playOrder="10">
+<navLabel>
+<text>第十章　新しい旅</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_10" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_11" playOrder="11">
+<navLabel>
+<text>第十一章　卒業文集の続き</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_11" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_12" playOrder="12">
+<navLabel>
+<text>あとがき</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_12" />
+</navPoint>
+<navPoint id="bodymatter_0_0.xhtml__toc_index_13" playOrder="13">
+<navLabel>
+<text>奥付</text>
+</navLabel>
+<content src="bodymatter_0_0.xhtml#toc_index_13" />
+</navPoint>
+</navMap>
+
+</ncx>
