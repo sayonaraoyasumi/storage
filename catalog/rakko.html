@@ -139,9 +139,11 @@ body {
 	size: 0.9em;
 	color: #f8f8f8;
 }
-.kindle{
-	width: 20px;
-	height: 20px;
+.kindlelink{
+	width: 50%;
+}
+.kindlebook{
+	max-width: 100%;
 }
 .titleimage{
 	width: 800px;
@@ -191,6 +193,7 @@ body {
 .caution{
 	width: 100%;
 	padding: 0 5%;
+	text-align: center;
 }
 .catname{
 	background-color: #fefefe;
@@ -207,6 +210,13 @@ body {
 }
 .cardicon img{
 	width:100%;
+}
+.sepalator{
+	text-align: center;
+	background-color: #fefefe;
+	border: solid 1px #c0c0c0;
+	margin: 1em 0;
+	padding: 0.5em;
 }
 </style>
 
@@ -235,15 +245,16 @@ body {
 					<div class="datakey">特徴</div><div class="datavalue">ファンタジー世界にラッコとして転生した主人公の話。展開は残酷でハード。</div>
 					<div class="datakey">注意事項</div><div class="datavalue">残酷な場面や、性的接触を想像させる場面が多数登場します。</div>
 				</div>
-				<h3 class="subheader">menu</h3>
+				<h3 class="subheader">購入 or DOWNLOAD</h3>
+				<a href="https://www.amazon.co.jp/dp/B0C9WZHS9R" class="kindlelink">
+					<img src="https://sayonaraoyasumi.github.io/storage/icon/square_rakko.jpg" class="kindlebook"><br/>Kindle版
+				</a>
 				<ul class="subcontent">
-					<li><a href="https://www.amazon.co.jp/dp/B0C9WZHS9R">
-						<img src="https://sayonaraoyasumi.github.io/storage/image/kindle.png" class="kindle">Kindle版
-					</a></li>
 					<li><a href="https://sayonaraoyasumi.github.io/storage/books/rakko_1.1fe.epub">電子書籍（EPUB）版</a></li>
 					<li><a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=rakko_1.1fe" target="_blank">preview版</a></li>
 				</ul>
-				<div class="caution">preview版は環境によっては文字を大きくすると表示が壊れやすいようです。</div>
+				<div class="caution">preview版は環境によっては文字を大きくすると表示が壊れやすいようです。</div data="rakko_1.1fe">
+				<div class="sepalator"><a href="../index.html"><img src="../image/novels_logo_black.png" class="titleline" /></a></div>
 			</div>
 			<div id="menubox">
 				<h3 class="subheader">LIBRARY</h3>
