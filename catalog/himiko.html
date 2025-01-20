@@ -157,6 +157,10 @@ body {
 	width: 800px;
 	max-width: 80%;
 }
+.titlebox{
+	font-size: 140%;
+	font-weight: bolder;
+}
 .credit{
 	color: #888;
 	margin: 1em;
@@ -167,6 +171,55 @@ a:link, a:visited, a:hover, a:active{
 }
 .credit a:link, .credit a:visited, .credit a:hover, .credit a:active{
 	color: #ccf;
+}
+.inlineicon{
+	width: 1.2em;
+}
+.catballoon, .centeringbox {
+	max-width: 600px;
+	margin: 1em auto;
+}
+.catballoon {
+	border: 4px solid #aab;
+	padding: 1.5em;
+	background-color: white;
+	border-radius: 24px;
+	width: 90%;
+	max-width: 640px;
+	margin: auto;
+	position: relative;
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(33, 33, 33, 0.3);
+}
+.wrapForCatballoon {
+	margin: 2em 0 1em 0;
+	display: flex;
+}
+.wrapForCat{
+	display: flex;
+	margin: 1em;
+	justify-content: center;
+}
+.catballoon:before {
+	content: '';
+	border: 4px solid #aab;
+	background-color: white;
+	border-width: 4px;
+	position: absolute;
+	border-style: none none solid solid;
+	border-radius: 0 18px 0 0;
+	transform: rotate(-45deg) skew(-20deg, -20deg);
+	box-sizing: content-box !important;
+	width: 18px;
+	height: 18px;
+	left: 50%;
+	margin: 0px 0px 0px -10px;
+	bottom: -15px;
+	z-index: 2;
+	box-shadow: 0 4px 6px rgba(33, 33, 33, 0.3);
+}
+.catgraph{
+	width: 200px;
 }
 .databox{
 	display: flex;
@@ -244,7 +297,12 @@ a:link, a:visited, a:hover, a:active{
 				<h3 class="subheader">タイトル</h3>
 				<div class="titlebox subcontent">ボクがヒミコだったころの話</div>
 				<h3 class="subheader">紹介</h3>
-				<div class="textbox subcontent">2023年 11月 5日、Kindleで『ボクがヒミコだったころの話』をリリースしました。価格は、100円です。</div>
+		<div class="wrapForCatballoon">
+			<div class="catballoon">
+				2023年 11月 5日、Kindleで『ボクがヒミコだったころの話』をリリースしました。価格は、100円です。
+			</div>
+		</div>
+		<div class="wrapForCat"><img src="../image/nekoVer05/suzu/suzu07.png" class="catgraph"/></div>
 				<h3 class="subheader">あらすじ</h3>
 				<div class="textbox subcontent">舞台は福岡県八女市、物語は、中学生３人の友達同士で、地元で邪馬台国を探すというものです。先にリリースした『ボクたちが邪馬台国を探したときの話』の別バージョンで、ヒロインからの視点になっています。前作を読まなくても、それなりに理解できる内容になっていますので、本作だけ読まれても大丈夫です。前作は邪馬台国ウンチクとドラマとが７：３くらいで、ウンチク寄りでしたが、本作では３：７でドラマ寄りです。</div>
 				<h3 class="subheader">DATA</h3>
@@ -257,6 +315,8 @@ a:link, a:visited, a:hover, a:active{
 					<div class="datakey">長さ</div><div class="datavalue">単行本換算90ページで、１時間で読み終えることができます</div>
 					<div class="datakey">特徴</div><div class="datavalue">登場人物に男女の指定がなく、どちらでも読める。邪馬台国に関する蘊蓄が３分の１を占める。筑後弁が多用されている。</div>
 					<div class="datakey">注意事項</div><div class="datavalue">メインの登場人物の性別を特定していません。</div>
+					<div class="datakey">Kindle 価格</div><div class="datavalue">100円</div>
+					<div class="datakey">リリース日</div><div class="datavalue">2023年 11月 5日</div>
 				</div>
 				<h3 class="subheader">購入 or DOWNLOAD</h3>
 				<a href="https://www.amazon.co.jp/dp/B0CMPG4ZXD" class="kindlelink">
