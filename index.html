@@ -21,8 +21,41 @@
 		<meta name="twitter:description" content="さよならおやすみノベルズの電子書籍置き場です。無料で読めて、DOWNLOADもフリー。">
 		<meta name="twitter:image" content="https://sayonaraoyasumi.github.io/storage/image/headboard.jpg">
 <!-- /ogp -->
+		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_32.png" sizes="32x32" />
+		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
+		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
+		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_270.png" />
 
 		<style type="text/css" id="custom-background-css">
+div{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+/* モバイル（360px～480px） */
+@media (max-width: 480px) {
+  .wrap {
+    width: 100%;
+    padding: 10px;
+  }
+}
+/* タブレット（481px～768px） */
+@media (min-width: 481px) and (max-width: 768px) {
+  .wrap {
+    max-width: 720px;
+  }
+}
+/* デスクトップ（769px以上） */
+@media (min-width: 769px) {
+  .wrap {
+    max-width: 1440px;
+  }
+}
+.wrap {
+    margin: 0 auto;
+/*	background-color: rgba(20,255,255,0.5);
+	border: solid 1px cyan;*/
+}
 body {
 	box-sizing: border-box;
 	background-image: url("https://sayonaraoyasumi.github.io/storage/image/dot_gray.png");
@@ -36,14 +69,9 @@ body {
 	margin: 0;
 	padding: 0;
 }
-div{
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
 .titlepannel{
 	background-image: url("https://sayonaraoyasumi.github.io/storage/image/wall.jpg");
-	background-position: center;
+	background-position: center bottom;
 	background-size: cover;
 	width: 100%;
 	padding: 1em;
@@ -61,9 +89,8 @@ div{
 }
 .box {
 	position:relative;
-	width: 300px;
-	min-width: 300px;
-	height: 480px;
+	width: 250px;
+	min-width: 250px;
 	background-color: white;
 	border: solid 1px #e0e0e0;
 	display: flex;
@@ -71,20 +98,8 @@ div{
 	align-items: center;
 	flex-wrap: wrap;
 }
-.bibi-frame{
-	width: 300px;
-	height: 480px;
-}
-.download{
-	height: 40px;
-/*	display: flex; */
-	display: none;
-	justify-content: center;
-	align-items: center;
-}
 .cover{
-	width: 300px;
-	height: 480px;
+	width: 100%;
 }
 .footer{
 	background-color: #202020;
@@ -93,49 +108,11 @@ div{
 	padding: 1em;
 	text-align: center;
 }
-.download a{
-	display: inline-block; 
-	line-height: 1;
-	font-weight: bold;
-	size: 0.9em;
-	color: #404040;
-}
 .locallink{
 	text-decoration: none;
 	font-weight: bold;
 	size: 0.9em;
 	color: #f8f8f8;
-}
-.description{
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	background-color: #fff;
-	border: solid 1px #888;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	border-radius: 12px;
-	box-shadow: 0 6px 6px rgba(0,0,0,0.5);
-	color: #000;
-	padding: 1em;
-	width: 280px;
-	height: 90px;
-	top: 360px;
-	left: 10px;
-	opacity: 0.9;
-	font-size: 86%;
-}
-.kindle{
-	width: 20px;
-	height: 20px;
-}
-.textbox{
-	max-width:1000px;
-	margin:2em auto;
-}
-.textbody{
-	margin:2em;
 }
 .titleimage{
 	max-width: 100%;
@@ -146,101 +123,78 @@ div{
 	size: 0.8em;
 }
 		</style>
-		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_32.png" sizes="32x32" />
-		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
-		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
-		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_270.png" />
 	</head>
 	<body class="home">
-
+	<div class="wrap">
 		<div class="titlepannel">
 			<img src="image/titletext.png" class="titleimage">
 		</div>
-		<div class="content">
+		<div id="mainbox" class="content">
 			<div class="box">
-				<div class="touchbox"><div class="description">短編、ほんわり日常系<br />ファンタジー、マジックリアリズム<br />軽いギャグ＋シリアス</div>
-				</div>
-				<a href="catalog/usagi.html"><img src="cover/cover_usagi.jpg" class="cover"></a>
+				<a href="catalog/usagi.html"><img src="icon/square_usagi.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">長編、詩情系<br />ハードSF、哲学<br />リアル世界、シリアス</div></div>
-				<a href="catalog/fuyuu.html"><img src="cover/cover_fuyuu.jpg" class="cover"></a>
+				<a href="catalog/fuyuu.html"><img src="icon/square_fuyuu.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">長編、詩情系、英語版<br />ハードSF、哲学、AI翻訳<br />リアル世界、シリアス</div></div>
-				<a href="catalog/fuyuuE.html"><img src="cover/cover_fuyuuE.jpg" class="cover"></a>
+				<a href="catalog/fuyuuE.html"><img src="icon/square_fuyuuE.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">長編、生活系<br />高校生活、マジックリアリズム<br />自伝的、リアル世界、筑後方言</div></div>
-				<a href="catalog/younaru.html"><img src="cover/cover_younaru.jpg" class="cover"></a>
+				<a href="catalog/younaru.html"><img src="icon/square_younaru.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">長編、婉曲な官能系<br />ハードSF、哲学、象徴主義<br />リアル世界～宇宙、シリアス</div></div>
-				<a href="catalog/utyuu.html"><img src="cover/cover_utyuu.jpg" class="cover"></a>
+				<a href="catalog/utyuu.html"><img src="icon/square_utyuu.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">掌編集、会話劇<br />日常会話からナンセンスまで<br />なんでもあり、ギャグ</div></div>
-				<a href="catalog/chatstories.html"><img src="cover/cover_chatstories.jpg" class="cover"></a>
+				<a href="catalog/chatstories.html"><img src="icon/square_chatstories.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">中編、青春系<br />冒険・学園SF、シュールレアリスム<br />なんでもあり、ギャグ＋シリアス</div></div>
-				<a href="catalog/takeshita.html"><img src="cover/cover_takeshita.jpg" class="cover"></a>
+				<a href="catalog/takeshita.html"><img src="icon/square_takeshita.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">中編、青春系<br />バンド・学園SF、象徴主義<br />なんでもあり、ギャグ＋シリアス</div></div>
-				<a href="catalog/akiyama.html"><img src="cover/cover_akiyama.jpg" class="cover"></a>
+				<a href="catalog/akiyama.html"><img src="icon/square_akiyama.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">短～中編、会話劇<br />はちゃめちゃコメディ<br />なんでもあり、ギャグ、第四の壁</div></div>
-				<a href="catalog/susaburu.html"><img src="cover/cover_susaburu.jpg" class="cover"></a>
+				<a href="catalog/susaburu.html"><img src="icon/square_susaburu.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">長編、オタク系エロ<br />剣と魔法系ファンタジー<br />ギャグ、シリアス</div></div>
-				<a href="catalog/alice.html"><img src="cover/cover_alice.jpg" class="cover"></a>
+				<a href="catalog/alice.html"><img src="icon/square_alice.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">長編、純文学系、社会派<br />三人称人生回想（初老男性）<br />自伝的、シリアス、九州方言</div></div>
-				<a href="catalog/animater.html"><img src="cover/cover_animater.jpg" class="cover"></a>
+				<a href="catalog/animater.html"><img src="icon/square_animater.jpg" class="cover"></a>
 			</div>
 			<!--div class="box">
-				<div class="touchbox"><div class="description">中編、実用書<br />エッセイ＋サンプル掌編<br />砕けた文体</div></div>
-				<a href="catalog/.html"><img src="cover/cover_.jpg" class="cover"></a>
+				<a href="catalog/.html"><img src="icon/square_.jpg" class="cover"></a>
 			</div-->
 			<div class="box">
-				<div class="touchbox"><div class="description">中編、青春系<br />学園SF、アニメ的展開<br />なんでもあり、ギャグ、シスターフッド</div></div>
-				<a href="catalog/kokuhaku.html"><img src="cover/cover_kokuhaku.jpg" class="cover"></a>
+				<a href="catalog/kokuhaku.html"><img src="icon/square_kokuhaku.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">短編、文学系<br />学園もの、マジックリアリズム<br />シリアス、独自文体</div></div>
-				<a href="catalog/dainana.html"><img src="cover/cover_dainana.jpg" class="cover"></a>
+				<a href="catalog/dainana.html"><img src="icon/square_dainana.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">長編、純文学系、社会派<br />一人称人生回想（20代女性）<br />シリアス、北九州・近畿方言、独自文体</div></div>
-				<a href="catalog/yumi.html"><img src="cover/cover_yumi.jpg" class="cover"></a>
+				<a href="catalog/yumi.html"><img src="icon/square_yumi.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">短編、異世界転生系<br />剣と魔法系ファンタジー<br />シリアス基調＋たまにギャグ</div></div>
-				<a href="catalog/rakko.html"><img src="cover/cover_rakko.jpg" class="cover"></a>
+				<a href="catalog/rakko.html"><img src="icon/square_rakko.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">中編、青春系<br />学園SF、アニメ的展開<br />なんでもあり、ギャグ</div></div>
-				<a href="catalog/poli.html"><img src="cover/cover_poli.jpg" class="cover"></a>
+				<a href="catalog/poli.html"><img src="icon/square_poli.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">短編、青春系、古代史ロマン<br />学園もの、ジュブナイル<br />リアル社会、筑後方言、ジェンダーレス<br /></div></div>
-				<a href="catalog/yamatai.html"><img src="cover/cover_yamatai.jpg" class="cover"></a>
+				<a href="catalog/yamatai.html"><img src="icon/square_yamatai.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">短編、青春系、古代史ロマン<br />学園もの、ジュブナイル<br />リアル社会、筑後方言、ジェンダーレス<br /></div></div>
-				<a href="catalog/himiko.html"><img src="cover/cover_himiko.jpg" class="cover"></a>
+				<a href="catalog/himiko.html"><img src="icon/square_himiko.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">中長編、SFファンタジー<br />宇宙、サイケデリック、人称切り替え<br />リアル、シリアス、戦争、文明崩壊<br /></div></div>
-				<a href="catalog/sacredbird.html"><img src="cover/cover_sacredbird.jpg" class="cover"></a>
+				<a href="catalog/sacredbird.html"><img src="icon/square_sacredbird.jpg" class="cover"></a>
 			</div>
 			<div class="box">
-				<div class="touchbox"><div class="description">中長編、エッセイ<br />アニメ、漫画、ゲーム<br />特異文体、半生回顧<br /></div></div>
-				<a href="catalog/ninohito.html"><img src="cover/cover_ninohito.jpg" class="cover"></a>
+				<a href="catalog/ninohito.html"><img src="icon/square_ninohito.jpg" class="cover"></a>
+			</div>
+			<div class="box">
+				<a href="catalog/luciole.html"><img src="icon/square_luciole.jpg" class="cover"></a>
 			</div>
 		</div>
 		<div class="footer">
@@ -250,5 +204,6 @@ div{
 			</div>
 			<a rel="me" href="https://mstdn.jp/@sayonaraoyasumi" style="display:none;">Mastodon</a>
 		</div>
+	</div>
 	</body>
 </html>
