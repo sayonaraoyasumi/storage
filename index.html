@@ -80,12 +80,20 @@ body {
 	text-align: center;
 }
 .content{
-	display: inline-flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 20px; /* Optional: Adds space between the boxes */
+/*	background-color: rgba(20,255,20,0.5);
+	border: solid 1px green;*/
+/*	gap: 20px;  Optional: Adds space between the boxes */
 	padding: 1em;
+	max-width: 1400px;
+	margin: auto;
+	width: 100%;
+}
+.boxcontainer{
+	gap: 20px; /* Optional: Adds space between the boxes */
 }
 .box {
 	position:relative;
@@ -137,7 +145,7 @@ a:link, a:visited, a:hover, a:active{
 		<div class="titlepannel">
 			<img src="image/titletext.png" class="titleimage">
 		</div>
-		<div id="mainbox" class="content">
+		<div id="mainbox" class="content boxcontainer">
 			<div class="box">
 				<a href="catalog/usagi.html"><img src="icon/square_usagi.jpg" class="cover"></a>
 			</div>
