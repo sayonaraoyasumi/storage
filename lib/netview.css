@@ -1,0 +1,288 @@
+#aboard .novel{
+	writing-mode: vertical-rl;
+	font-family: serif;
+	line-height: 1.8em;
+	padding: 48px 1em 0.5em 1em;
+	width: 100%;
+	font-size:115%;
+	overflow-y: hidden;
+	overflow-x: auto;
+  background-color: rgba(255,255,255,0.95);
+  cursor: pointer;
+  max-height: 1200px;
+  height: calc(100% - 44px);
+	white-space: break-spaces;
+  box-sizing:border-box;
+}
+@media only screen and (max-width: 430px) {
+  /* スタイルを適用したい要素のCSSスタイルを記述する */
+  #aboard .novel {
+    padding: 48px 0.5em 0.5em 0.5em;
+  }
+  #aboard .yoko .novel {
+    padding: 48px 0.5em 0.5em 0.5em;
+  }
+}
+#aboard .novel .tcy {
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+#aboard .novel rt{
+  font-size: 60%;
+}
+#aboard .novel.hide{
+	display:none;
+}
+
+#aboard .novel.big, #aboard .novel.big td{
+  font-size:120%;
+}
+#aboard .novel.mid, #aboard .novel.mid td{
+  font-size:110%;}
+#aboard .novel.mini, #aboard .novel.mini td{
+  font-size:100%;
+}
+
+#aboard .yoko .novel{
+  writing-mode: horizontal-tb;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+#aboard .novel .back, #aboard .novel .forward{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: calc(50% - 50px) 15px;
+  width:30px;
+  height:100px;
+  border: solid 1px #eee;
+  background-color: #fff;
+}
+#aboard .yoko .novel .back{
+  width:100px;
+  height:30px;
+  margin: 30px calc(50% - 50px) 0;
+}
+#aboard .yoko .novel .forward{
+  width:100px;
+  height:30px;
+  margin: 30px calc(50% - 50px);
+}
+#aboard .novel .back::after{  content:"👉";}
+#aboard .novel .forward::after{  content:"👈";}
+#aboard .yoko .novel .back::after{  content:"👆";}
+#aboard .yoko .novel .forward::after{  content:"👇";}
+
+/*  Kindle へのリンク */
+#aboard .footAd{
+  padding:30px;
+  margin:20px;
+  text-align:right;
+  border-right:dotted 12px #eee;
+}
+#aboard .yoko .footAd{
+  text-align:center;
+  border-right:dotted 0px #eee;
+  border-top:dotted 12px #eee;
+}
+
+/*  ヘッドの章タイトル部分 */
+#aboard .myTitle{
+  border: solid 0px rgb(147, 207, 145);
+  margin: 4px 4px;
+  padding: 5px;
+  line-height: 18px;
+  box-sizing:border-box;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+#aboard .chapterBox{
+	display:none;
+	position:absolute;
+	margin: 36px 0 0 0;
+	padding: 0;
+	width: 100%;
+	max-height: calc(100% - 80px);
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+#aboard .chapterJump{
+	margin: 0;
+	border: solid 1px gray;
+	border-top: none 1px gray;
+	background-color: rgb(160,160,180);
+	list-style: none;
+  cursor: pointer;
+	box-sizing:border-box;
+	padding: 10px 1em;
+	color: #fff;
+}
+#aboard .chapterJump:hover{
+	background-color: rgb(200,200,220);
+}
+#aboard .partTitle{
+	border: solid 1px gray;
+	border-top: none 1px gray;
+	background-color: rgb(140,140,150);
+	list-style: none;
+	box-sizing: border-box;
+	padding: 10px 1em;
+	color: #fff;
+}
+
+#aboard .section, #aboard .lyrics{
+  margin: 6em 1em 1em 1em !important;
+}
+#aboard .yoko .section, #aboard .yoko .lyrics{
+  margin: 1em 1em 1em 6em !important;
+}
+#aboard{
+  position:relative;
+  background-color: #ccccdd;
+  border: solid 2px #ccccee; 
+  width: 100%;
+  box-sizing: border-box;
+  height: 600px;
+  overflow: clip;
+}
+#bboard{
+  position:absolute;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+  z-index: 1000;
+}
+#aboard .topBar{
+  position: absolute;
+  background-color: rgb(180,180,200);
+  height:36px;
+  width:100%;
+  top: 0;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+#aboard .centerBox{
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+#aboard .bottomBar{
+  position: absolute;
+  background-color: rgb(180,180,200);
+  height:44px;
+  width: 100%;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+#aboard h2{
+  font-size: 120%;
+  font-weight: bolder;
+  padding: 1em 0 0 0.5em;
+}
+#aboard h3{
+  font-size: 110%;
+  font-weight: bolder;
+  padding: 1em 0 0 0.5em;
+}
+#aboard h4, #aboard h5 {
+  font-size: 105%;
+  font-weight: bolder;
+  padding: 1em 0 0 0.5em;
+}
+#aboard .yoko h2, #aboard .yoko h3, #aboard .yoko h4, #aboard .yoko h5{
+  padding: 0 0 0 0.5em;
+}
+.fontSwitch{
+  width: 55px;
+  padding: 5px;
+  margin: 2px 2px 12px 2px;
+  line-height: 18px;
+  border-radius: 4px;
+  border: solid 1px #ccc;
+  background-color: #FCFaF8;
+  text-align: center;
+  font-weight: normal;
+  color: #aaa;
+  cursor: pointer;
+}
+.fontSwitch.bigfont{
+	font-size: 120%;
+}
+.fontSwitch.midfont{
+	font-size: 110%;
+}
+.fontSwitch.minifont{
+	font-size: 100%;
+}
+.fontSwitch.pick{
+	background-color:#FFb;
+  font-weight: bolder;
+	color: #668;
+}
+#aboard .myIndex, #aboard .tateyoko, #aboard .zoomButton{
+	width: 55px;
+  padding: 5px;
+  margin: 2px 2px 12px 2px;
+  line-height: 18px;
+  border-radius: 4px;
+  border: solid 1px rgb(119, 167, 118);
+  background-color: #a7cf9c;
+  text-align: center;
+  font-weight: normal;
+  color: #444;
+  cursor: pointer;
+}
+#aboard  .myIndex, #aboard .zoomButton{
+	position:absolute;
+	right:6px;
+}
+#aboard .tateyoko{
+	position:absolute;
+	left:6px;
+}
+#aboard table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 !important;
+  width:auto;
+  height: 100%;
+  pointer-events: none;
+  font-size:inherit;
+}
+#aboard tr{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#aboard .th{
+  vertical-align:top;
+  height: 20%;
+  text-align:right;
+  padding-bottom:0.5em;
+}
+#aboard .yoko .th{
+  width: 33%;
+}
+#aboard td{
+/*  vertical-align:middle;
+  height: 84%;*/
+  margin: 0 !important;
+}
+#aboard .na{
+  padding-top: 1em;
+}
+#aboard .novel img{
+  max-height: 80%;
+}
