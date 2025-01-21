@@ -7,12 +7,12 @@
 	font-size:115%;
 	overflow-y: hidden;
 	overflow-x: auto;
-  background-color: rgba(255,255,255,0.95);
-  cursor: pointer;
-  max-height: 1200px;
-  height: calc(100% - 44px);
+	background-color: rgba(255,255,255,0.95);
+	cursor: pointer;
+/*  max-height: 1200px;*/
+	height: calc(100% - 44px);
 	white-space: break-spaces;
-  box-sizing:border-box;
+	box-sizing:border-box;
 }
 @media only screen and (max-width: 430px) {
   /* スタイルを適用したい要素のCSSスタイルを記述する */
@@ -35,6 +35,9 @@
 	display:none;
 }
 
+#aboard .novel.bigger, #aboard .novel.bigger td{
+  font-size:140%;
+}
 #aboard .novel.big, #aboard .novel.big td{
   font-size:120%;
 }
@@ -42,6 +45,9 @@
   font-size:110%;}
 #aboard .novel.mini, #aboard .novel.mini td{
   font-size:100%;
+}
+#aboard .novel.minimum, #aboard .novel.minimum td{
+  font-size:90%;
 }
 
 #aboard .yoko .novel{
@@ -204,9 +210,9 @@
   padding: 0 0 0 0.5em;
 }
 .fontSwitch{
-  width: 55px;
+  width: 40px;
   padding: 5px;
-  margin: 2px 2px 12px 2px;
+  margin: 12px 2px 12px 2px;
   line-height: 18px;
   border-radius: 4px;
   border: solid 1px #ccc;
@@ -215,6 +221,9 @@
   font-weight: normal;
   color: #aaa;
   cursor: pointer;
+}
+.fontSwitch.biggerfont{
+	font-size: 140%;
 }
 .fontSwitch.bigfont{
 	font-size: 120%;
@@ -225,6 +234,9 @@
 .fontSwitch.minifont{
 	font-size: 100%;
 }
+.fontSwitch.minimumfont{
+	font-size: 90%;
+}
 .fontSwitch.pick{
 	background-color:#FFb;
   font-weight: bolder;
@@ -232,16 +244,16 @@
 }
 #aboard .myIndex, #aboard .tateyoko, #aboard .zoomButton{
 	width: 55px;
-  padding: 5px;
-  margin: 2px 2px 12px 2px;
-  line-height: 18px;
-  border-radius: 4px;
-  border: solid 1px rgb(119, 167, 118);
-  background-color: #a7cf9c;
-  text-align: center;
-  font-weight: normal;
-  color: #444;
-  cursor: pointer;
+	padding: 5px;
+	margin: 12px 2px 12px 2px;
+	line-height: 18px;
+	border-radius: 4px;
+	border: solid 1px rgb(119, 167, 118);
+	background-color: #a7cf9c;
+	text-align: center;
+	font-weight: normal;
+	color: #444;
+	cursor: pointer;
 }
 #aboard  .myIndex, #aboard .zoomButton{
 	position:absolute;
