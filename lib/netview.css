@@ -286,3 +286,14 @@
 #aboard .novel img{
   max-height: 80%;
 }
+.outerbox{
+	white-space: normal;
+}
+.outerbox table{
+	margin: 0.5em;
+	font-size: 90%;
+}
+.outerbox div{
+	margin: 0.5em;
+	white-space: normal;
+}
