@@ -344,6 +344,12 @@ a:link, a:visited, a:hover, a:active{
 		// Iframe の読み込みが完了した後にリサイズを実行
 		const iframe = document.getElementById('autoResizeIframe');
 		iframe.addEventListener('load', resizeIframe);
+jQuery(function(){
+		jQuery(window).resize(function() {
+			//リサイズされたときの処理
+			iframe.addEventListener('load', resizeIframe);
+		});
+}
 	</script>
 
 			</div>
