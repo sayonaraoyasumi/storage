@@ -286,10 +286,6 @@ a:link, a:visited, a:hover, a:active{
 	border: none;
 }
 </style>
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
-
 	</head>
 	<body class="younaru display_1">
 	<div class="wrap">
@@ -349,12 +345,7 @@ console.log("resize " + iframe.style.height);
 		// Iframe の読み込みが完了した後にリサイズを実行
 		const iframe = document.getElementById('autoResizeIframe');
 		iframe.addEventListener('load', resizeIframe);
-jQuery(function(){
-		jQuery(window).resize(function() {
-			//リサイズされたときの処理
-			iframe.addEventListener('load', resizeIframe);
-		});
-});
+        window.addEventListener('resize', resizeIframe);
 	</script>
 
 			</div>
