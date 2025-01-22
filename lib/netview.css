@@ -150,7 +150,8 @@
   border: solid 2px #ccccee; 
   width: 100%;
   box-sizing: border-box;
-  height: 600px;
+  height: 800px;
+  margin-top: 1em;
   overflow: clip;
 }
 #bboard{
