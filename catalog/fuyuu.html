@@ -27,262 +27,7 @@
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
 		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_270.png" />
-
-		<style type="text/css" id="custom-background-css">
-div{
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-/* モバイル（360px～480px） */
-@media (max-width: 480px) {
-  .wrap {
-    width: 100%;
-    padding: 10px;
-  }
-}
-/* タブレット（481px～768px） */
-@media (min-width: 481px) and (max-width: 768px) {
-  .wrap {
-    max-width: 720px;
-  }
-}
-/* デスクトップ（769px以上） */
-@media (min-width: 769px) {
-  .wrap {
-    max-width: 1440px;
-  }
-}
-.wrap {
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: solid 1px #eee;
-}
-body {
-	box-sizing: border-box;
-	background-image: url("https://sayonaraoyasumi.github.io/storage/image/dot_gray.png");
-	background-position: left top;
-	background-size: auto;
-	background-repeat: repeat;
-	background-attachment: fixed;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0;
-	padding: 0;
-}
-.titlepannel{
-	background-image: url("https://sayonaraoyasumi.github.io/storage/image/wall.jpg");
-	background-position: center bottom;
-	background-size: cover;
-	width: 100%;
-	padding: 1em 0 0 0;
-	color: #f8f8f8;
-	text-shadow: 0 0 4px black;
-	text-align: center;
-}
-.content{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-/*	background-color: rgba(20,255,20,0.5);
-	border: solid 1px green;*/
-/*	gap: 20px;  Optional: Adds space between the boxes */
-	padding: 1em;
-	max-width: 1400px;
-	margin: auto;
-	width: 100%;
-}
-.footer{
-	background-color: #202020;
-	color: #e8e8e8;
-	width: 100%;
-	padding: 1em;
-	text-align: center;
-}
-
-#contentbox {
-/*	width: 66%;*/
-	min-width: 300px;
-	flex-basis: 66%;
-	flex-grow: 1;
-	align-self: flex-start;
-/*	background-color: rgba(255,20,20,0.5);
-	border: solid 1px red;*/
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	padding: 2%;
-}
-#menubox {
-/*	width: 34%;*/
-	display: flex;
-	gap: 10px;
-	min-width: 300px;
-	flex-basis: 34%;
-	flex-grow: 1;
-	align-self: flex-start;
-/*	background-color: rgba(20,20,255,0.5);
-	border: solid 1px blue;*/
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	padding: 2%;
-}
-.locallink{
-	text-decoration: none;
-	font-weight: bold;
-	size: 0.9em;
-}
-.kindlelink{
-	width: 100%;
-	text-align: center;
-}
-.kindlebook{
-	max-width: 50%;
-}
-.bookcover{
-	width: 400px;
-	max-width: 80%;
-	box-shadow: 0px 20px 20px rgba(0,0,0,0.5);
-}
-.bookbox{
-	padding-bottom: 1em;
-}
-.titleline{
-	max-width: 80%;
-}
-.titlebox{
-	font-size: 140%;
-	font-weight: bolder;
-}
-.credit{
-	color: #888;
-	margin: 1em;
-	size: 0.8em;
-}
-a:link, a:visited, a:hover, a:active{
-	color: #448;
-}
-.credit a:link, .credit a:visited, .credit a:hover, .credit a:active{
-	color: #ccf;
-}
-.inlineicon{
-	width: 1.2em;
-}
-.catballoon, .centeringbox {
-	max-width: 600px;
-	margin: 1em auto;
-}
-.catballoon {
-	border: 4px solid #aab;
-	padding: 1.5em;
-	background-color: white;
-	border-radius: 24px;
-	width: 90%;
-	max-width: 640px;
-	margin: auto;
-	position: relative;
-	text-align: center;
-	box-shadow: 0 4px 6px rgba(33, 33, 33, 0.3);
-}
-.wrapForCatballoon {
-	margin: 2em 0 1em 0;
-	display: flex;
-}
-.wrapForCat{
-	display: flex;
-	margin: 1em;
-	justify-content: center;
-}
-.catballoon:before {
-	content: '';
-	border: 4px solid #aab;
-	background-color: white;
-	border-width: 4px;
-	position: absolute;
-	border-style: none none solid solid;
-	border-radius: 0 18px 0 0;
-	transform: rotate(-45deg) skew(-20deg, -20deg);
-	box-sizing: content-box !important;
-	width: 18px;
-	height: 18px;
-	left: 50%;
-	margin: 0px 0px 0px -10px;
-	bottom: -15px;
-	z-index: 2;
-	box-shadow: -4px 4px 6px rgba(33, 33, 33, 0.3);
-}
-.catgraph{
-	width: 200px;
-}
-.databox{
-	display: flex;
-	flex-wrap: wrap;
-}
-.datakey{
-	margin: 0.1em 0;
-	background-color: rgba(220,220,220,0.7);
-	width: 29%;
-	padding: 0.2em 3%;
-/*	border:solid 1px violet; */
-}
-.datavalue{
-	margin: 0.1em 0.5%;
-	background-color: rgba(220,220,220,0.7);
-	width: 70%;
-	padding: 0.2em 3%;
-/*	border:solid 1px yellow; */
-}
-.subheader{
-	background-color: #202020;
-	text-align: center;
-	color: #f0f0f0;
-	width: 100%;
-}
-#menubox .subheader{
-	margin-bottom: 0;
-}
-.subcontent{
-/*	min-width: 50%;*/
-	padding: 2%;
-}
-.caution{
-	width: 100%;
-	padding: 0 5%;
-	text-align: center;
-	color: #808080;
-	font-size: 90%;
-}
-.catname{
-	background-color: #fefefe;
-	border: solid 1px #c0c0c0;
-	text-align: center;
-	color: #606060;
-	width: 100%;
-}
-.bookcard{
-	max-width: 200px;
-}
-.cardname{
-	display: none;
-}
-.cardicon img{
-	width:100%;
-}
-.sepalator{
-	text-align: center;
-	background-color: #fefefe;
-	border: solid 1px #c0c0c0;
-	margin: 1em 0;
-	padding: 0.5em;
-}
-</style>
-
-
+		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.009' type='text/css' media='all' />
 	</head>
 	<body class="fuyuu display_1">
 	<div class="wrap">
@@ -295,12 +40,12 @@ a:link, a:visited, a:hover, a:active{
 				<h3 class="subheader">タイトル</h3>
 				<div class="titlebox subcontent">浮遊大陸でもういちど</div>
 				<h3 class="subheader">紹介</h3>
-		<div class="wrapForCatballoon">
-			<div class="catballoon">
-				『浮遊大陸でもういちど』は、ある日突然、太平洋上に現れた浮遊大陸で繰り広げられる、孤独な冒険と恋の物語です
-			</div>
-		</div>
-		<div class="wrapForCat"><img src="../image/nekoVer05/cha/cha05.png" class="catgraph"/></div>
+				<div class="wrapForCatballoon">
+					<div class="catballoon">
+						『浮遊大陸でもういちど』は、ある日突然、太平洋上に現れた浮遊大陸で繰り広げられる、孤独な冒険と恋の物語です
+					</div>
+				</div>
+				<div class="wrapForCat"><img src="../image/nekoVer05/cha/cha05.png" class="catgraph"/></div>
 				<h3 class="subheader">あらすじ</h3>
 				<div class="textbox subcontent">4年ほどむかし、恋人を自死で失ったジャーナリストの照井健は、南太平洋上に突如として現れた浮遊大陸に単身乗り込みます。健はその地で、異星文明ハイアノールと触れ、彼を保護した異星人の女性フレア・カレルと恋に落ちていきます。浮遊大陸の出現で地球は未曾有の危機にみまわれるなか、健とフレアのすれ違ってばかりの恋が進展していきます</div>
 				<h3 class="subheader">DATA</h3>
@@ -324,144 +69,24 @@ a:link, a:visited, a:hover, a:active{
 					<li><a href="https://sayonaraoyasumi.github.io/storage/books/fuyuu_6.0e.epub">電子書籍版をダウンロードする</a></li>
 					<li><a href="https://sayonaraoyasumi.github.io/storage/bibi/?book=fuyuu_6.0e" target="_blank">bibi(電子書籍リーダー)で表示する</a></li>
 				</ul>
-				<div class="caution">bibiでの表示は文字を大きくすると表示が壊れることがあります。</div data="fuyuu_6.0e">
+				<div class="caution" data="fuyuu_6.0e">bibiでの表示は文字を大きくすると表示が壊れることがあります。</div>
 				<div class="sepalator"><a href="../index.html"><img src="../image/novels_logo_black.png" class="titleline" /></a></div>
 			</div>
 			<div id="menubox">
-				<h3 class="subheader">LIBRARY</h3>
-				<h4 class='catname'>日常</h4>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/usagi.html'>
-						<div class='cardname'>うさぎがとつぜん私になってこまった100のこと</div>
-						<div class='cardicon'><img src='../icon/square_usagi.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/younaru.html'>
-						<div class='cardname'>勇!! なるかな</div>
-						<div class='cardicon'><img src='../icon/square_younaru.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/animater.html'>
-						<div class='cardname'>アニメーターの老後</div>
-						<div class='cardicon'><img src='../icon/square_animater.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/dainana.html'>
-						<div class='cardname'>第七文学</div>
-						<div class='cardicon'><img src='../icon/square_dainana.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/yumi.html'>
-						<div class='cardname'>ひきこもりのユミがアニメーターになるまで</div>
-						<div class='cardicon'><img src='../icon/square_yumi.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/yamatai.html'>
-						<div class='cardname'>ボクたちが邪馬台国を探したときの話</div>
-						<div class='cardicon'><img src='../icon/square_yamatai.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/himiko.html'>
-						<div class='cardname'>ボクがヒミコだったころの話</div>
-						<div class='cardicon'><img src='../icon/square_himiko.jpg' /></div>
-					</a>
-				</div>
-				<h4 class='catname'>ＳＦ</h4>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/fuyuu.html'>
-						<div class='cardname'>浮遊大陸でもういちど</div>
-						<div class='cardicon'><img src='../icon/square_fuyuu.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/utyuu.html'>
-						<div class='cardname'>昭和58年の宇宙移民</div>
-						<div class='cardicon'><img src='../icon/square_utyuu.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/fuyuuE.html'>
-						<div class='cardname'>Once more on the Floating Continent</div>
-						<div class='cardicon'><img src='../icon/square_fuyuuE.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/luciole.html'>
-						<div class='cardname'>La Luciole</div>
-						<div class='cardicon'><img src='../icon/square_luciole.jpg' /></div>
-					</a>
-				</div>
-				<h4 class='catname'>学園</h4>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/takeshita.html'>
-						<div class='cardname'>憧れの竹下さんに捧げる冒険</div>
-						<div class='cardicon'><img src='../icon/square_takeshita.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/akiyama.html'>
-						<div class='cardname'>憧れの秋山さんに捧げる冒険</div>
-						<div class='cardicon'><img src='../icon/square_akiyama.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/kokuhaku.html'>
-						<div class='cardname'>告白と戸惑いのロンド</div>
-						<div class='cardicon'><img src='../icon/square_kokuhaku.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/poli.html'>
-						<div class='cardname'>ポリコレ少女<ruby><rb>舞依</rb><rp>（</rp><rt>まい</rt><rp>）</rp></ruby></div>
-						<div class='cardicon'><img src='../icon/square_poli.jpg' /></div>
-					</a>
-				</div>
-				<h4 class='catname'>ファンタジー</h4>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/susaburu.html'>
-						<div class='cardname'>すさぶる王子バカ王子カニ</div>
-						<div class='cardicon'><img src='../icon/square_susaburu.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/alice.html'>
-						<div class='cardname'>魔法のアバンチュール</div>
-						<div class='cardicon'><img src='../icon/square_alice.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/rakko.html'>
-						<div class='cardname'>ラッコ剣士</div>
-						<div class='cardicon'><img src='../icon/square_rakko.jpg' /></div>
-					</a>
-				</div>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/sacredbird.html'>
-						<div class='cardname'>聖なる鳥</div>
-						<div class='cardicon'><img src='../icon/square_sacredbird.jpg' /></div>
-					</a>
-				</div>
-				<h4 class='catname'>オムニバス</h4>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/chatstories.html'>
-						<div class='cardname'>チャットストーリーズ</div>
-						<div class='cardicon'><img src='../icon/square_chatstories.jpg' /></div>
-					</a>
-				</div>
-				<h4 class='catname'>エッセイ</h4>
-				<div class='bookcard'>
-					<a href='https://sayonaraoyasumi.github.io/storage/catalog/ninohito.html'>
-						<div class='cardname'>絲失せ行こう弐のひとを探しに</div>
-						<div class='cardicon'><img src='../icon/square_ninohito.jpg' /></div>
-					</a>
-				</div>
-
+				<iframe src="https://sayonaraoyasumi.github.io/storage/catalog/menucolumn.html?ver=1.09" class="menucolumn" id="autoResizeIframe"></iframe>
+<script>
+	// Iframeの高さを内容に合わせる
+	function resizeIframe() {
+		const iframe = document.getElementById('autoResizeIframe');
+		if (iframe && iframe.contentWindow && iframe.contentDocument) {
+			iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
+		}
+	}
+	// Iframe の読み込みが完了した後にリサイズを実行
+	const iframe = document.getElementById('autoResizeIframe');
+	iframe.addEventListener('load', resizeIframe);
+	window.addEventListener('resize', resizeIframe);
+</script>
 			</div>
 		</div>
 		<div class="footer">
