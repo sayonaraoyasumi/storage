@@ -7,7 +7,7 @@
 		<meta name="description" content="WEB版『勇!! なるかな』">
 		<meta name="keywords" content="小説, novel, kindle">
 		<meta name="author" content="井上信行">
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<title>WEB版『勇!! なるかな』</title>
 <!-- ogp -->
 		<meta property="og:locale" content="ja_JP">
 		<meta property="og:type" content="website">
@@ -27,205 +27,15 @@
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
 		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_270.png" />
-
-		<style type="text/css" id="custom-background-css">
-div{
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-/* モバイル（360px～480px） */
-@media (max-width: 480px) {
-  .wrap {
-	width: 100%;
-	padding: 10px;
-  }
-}
-/* タブレット（481px～768px） */
-@media (min-width: 481px) and (max-width: 768px) {
-  .wrap {
-	max-width: 720px;
-  }
-}
-/* デスクトップ（769px以上） */
-@media (min-width: 769px) {
-  .wrap {
-	max-width: 1440px;
-  }
-}
-.wrap {
-	margin: 0 auto;
-	background-color: rgba(255, 255, 255, 0.6);
-	border: solid 1px #eee;
-}
-body {
-	box-sizing: border-box;
-	background-image: url("https://sayonaraoyasumi.github.io/storage/image/dot_gray.png");
-	background-position: left top;
-	background-size: auto;
-	background-repeat: repeat;
-	background-attachment: fixed;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0;
-	padding: 0;
-}
-.titlepannel{
-	background-image: url("https://sayonaraoyasumi.github.io/storage/image/wall.jpg");
-	background-position: center bottom;
-	background-size: cover;
-	width: 100%;
-	padding: 1em 0 0 0;
-	color: #f8f8f8;
-	text-shadow: 0 0 4px black;
-	text-align: center;
-}
-.content{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-/*	background-color: rgba(20,255,20,0.5);
-	border: solid 1px green;*/
-/*	gap: 20px;  Optional: Adds space between the boxes */
-	padding: 1em;
-	max-width: 1400px;
-	margin: auto;
-	width: 100%;
-}
-.boxcontainer{
-	gap: 20px; /* Optional: Adds space between the boxes */
-}
-.box {
-	position:relative;
-	width: 250px;
-	min-width: 250px;
-	background-color: white;
-	border: solid 1px #e0e0e0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-}
-.cover{
-	width: 100%;
-}
-.footer{
-	background-color: #202020;
-	color: #e8e8e8;
-	width: 100%;
-	padding: 1em;
-	text-align: center;
-}
-.locallink{
-	text-decoration: none;
-	font-weight: bold;
-	size: 0.9em;
-}
-.titleimage{
-	max-width: 100%;
-}
-.titleline{
-	max-width: 80%;
-}
-.credit{
-	color: #888;
-	margin: 1em;
-	size: 0.8em;
-}
-a:link, a:visited, a:hover, a:active{
-	color: #448;
-}
-.credit a:link, .credit a:visited, .credit a:hover, .credit a:active{
-	color: #ccf;
-}
-.inlineicon{
-	width: 1.2em;
-}
-.catballoon, .centeringbox {
-	max-width: 600px;
-	margin: 1em auto;
-}
-.catballoon {
-	border: 4px solid #aab;
-	padding: 1.5em;
-	background-color: white;
-	border-radius: 24px;
-	width: 90%;
-	max-width: 640px;
-	margin: auto;
-	position: relative;
-	text-align: center;
-	box-shadow: 0 4px 6px rgba(33, 33, 33, 0.3);
-}
-.wrapForCatballoon {
-	margin: 2em 0 1em 0;
-	display: flex;
-}
-.wrapForCat{
-	display: flex;
-	margin: 1em;
-	justify-content: center;
-}
-.catballoon:before {
-	content: '';
-	border: 4px solid #aab;
-	background-color: white;
-	border-width: 4px;
-	position: absolute;
-	border-style: none none solid solid;
-	border-radius: 0 18px 0 0;
-	transform: rotate(-45deg) skew(-20deg, -20deg);
-	box-sizing: content-box !important;
-	width: 18px;
-	height: 18px;
-	left: 50%;
-	margin: 0px 0px 0px -10px;
-	bottom: -15px;
-	z-index: 2;
-	box-shadow: -4px 4px 6px rgba(33, 33, 33, 0.3);
-}
-.catgraph{
-	width: 200px;
-}
-.bookcover{
-	width: 400px;
-	max-width: 80%;
-	box-shadow: 0px 20px 20px rgba(0,0,0,0.5);
-}
-.bookbox{
-	padding-bottom: 1em;
-}
-		</style>
-
+		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.009' type='text/css' media='all' />
 <!-- ここからVIEWER用の追加項目 -->
-<style>
-.viewerbox{
-	max-width: 100%;
-	padding: 0;
-	margin: 1em 0;
-}
-.buykindle{
-	width: 100%;
-	padding: 2em;
-	text-align: center;
-}
-.kindlelink{
-}
-.kindlebook{
-	max-width: 300px;
-	box-shadow: 0px 20px 20px rgba(0,0,0,0.5);
-}
-</style>
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.cookie.js?ver=1.1.5" id="jquery_cookie_script-js"></script>
-<link rel='stylesheet' id='nyadio_commentary_netview_style-css' href='https://sayonaraoyasumi.github.io/storage/lib/netview.css?ver=1.004' type='text/css' media='all' />
-<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/netview.js?ver=1.004" id="nyadio_commentary_netview_script-js"></script>
+		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.cookie.js?ver=1.1.5" id="jquery_cookie_script-js"></script>
+		<link rel='stylesheet' id='nyadio_commentary_netview_style-css' href='https://sayonaraoyasumi.github.io/storage/lib/netview.css?ver=1.009' type='text/css' media='all' />
+		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/netview.js?ver=1.009" id="nyadio_commentary_netview_script-js"></script>
 <!-- 　　　　ここまで　　　　　 -->
-
 	</head>
 	<body class="home">
 	<div class="wrap">
@@ -234,7 +44,7 @@ a:link, a:visited, a:hover, a:active{
 			<div class="bookbox"><a href="../catalog/younaru.html"><img src="../cover/cover_younaru.jpg" class="bookcover"></a></div>
 		</div>
 		<div id="mainbox" class="content viewerbox">
-
+			<div id="contentbox">
 <!--　ここからが電子書籍の内容　-->
 
 <div id="aboard">
@@ -3923,12 +3733,28 @@ a:link, a:visited, a:hover, a:active{
 	</div>
 </div>
 <!-- 　　　　ここまで　　　　　 -->
-		
 			<div class="buykindle">
 				<h3>ご購入はこちらで！</h3>
 				<a href="https://www.amazon.co.jp/dp/B09D2Y1DND" class="kindlelink">
 					<img src="https://sayonaraoyasumi.github.io/storage/icon/square_younaru.jpg" class="kindlebook"><br/>Kindleのページへ
 				</a>
+			</div>
+			</div>
+			<div id="menubox">
+				<iframe src="https://sayonaraoyasumi.github.io/storage/catalog/menucolumn.html?ver=1.09" class="menucolumn" id="autoResizeIframe"></iframe>
+<script>
+	// Iframeの高さを内容に合わせる
+	function resizeIframe() {
+		const iframe = document.getElementById('autoResizeIframe');
+		if (iframe && iframe.contentWindow && iframe.contentDocument) {
+			iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
+		}
+	}
+	// Iframe の読み込みが完了した後にリサイズを実行
+	const iframe = document.getElementById('autoResizeIframe');
+	iframe.addEventListener('load', resizeIframe);
+	window.addEventListener('resize', resizeIframe);
+</script>
 			</div>
 		</div>
 		<div class="footer">
