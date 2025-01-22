@@ -53,6 +53,21 @@ body.columnbody{
 	text-shadow: 0 0 4px black;
 	text-align: center;
 }
+.boxcontainer{
+	gap: 20px; /* Optional: Adds space between the boxes */
+}
+.box {
+	position:relative;
+	width: 250px;
+	min-width: 250px;
+	background-color: white;
+	border: solid 1px #ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 4px;
+}
 .content{
 	display: flex;
 	justify-content: center;
@@ -63,12 +78,23 @@ body.columnbody{
 	margin: auto;
 	width: 100%;
 }
+.textbox{
+	max-width:1000px;
+	padding:0.5em;
+	margin:2em auto;
+}
+.textbody{
+	margin:1.5em;
+}
 .footer{
 	background-color: #202020;
 	color: #e8e8e8;
 	width: 100%;
 	padding: 1em;
 	text-align: center;
+}
+.cover{
+	width: 100%;
 }
 #contentbox {
 	min-width: 300px;
@@ -116,6 +142,9 @@ body.columnbody{
 }
 .bookbox{
 	padding-bottom: 1em;
+}
+.titleimage{
+	max-width: 100%;
 }
 .titleline{
 	max-width: 80%;
@@ -278,4 +307,7 @@ a:link, a:visited, a:hover, a:active{
 .notebox img{
 	width: 90%;
 	max-width: 700px;
+}
+.linktohome{
+	width: 50%;
 }
