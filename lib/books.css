@@ -94,6 +94,9 @@ body.columnbody{
 	flex-wrap: wrap;
 	padding: 2%;
 }
+.columnbody #menubox{
+	padding: 0;
+}
 .locallink{
 	text-decoration: none;
 	font-weight: bold;
