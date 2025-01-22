@@ -18,6 +18,24 @@
 	border: none;
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+#menubox {
+/*	width: 34%;*/
+	display: flex;
+	gap: 10px;
+	min-width: 300px;
+	flex-basis: 34%;
+	flex-grow: 1;
+	align-self: flex-start;
+/*	background-color: rgba(20,20,255,0.5);
+	border: solid 1px blue;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 2%;
 }
 .subheader{
 	background-color: #202020;
@@ -47,6 +65,7 @@
 </style>
 	</head>
 	<body class="columnbody">
+		<div id="menubox">
 			<h3 class="subheader bottomzero">LIBRARY</h3>
 			<h4 class='catname'>日常</h4>
 			<div class='bookcard'>
@@ -180,5 +199,6 @@
 					<div class='cardicon'><img src='../icon/square_ninohito.jpg' /></div>
 				</a>
 			</div>
+		</div>
 	</body>
 </html>
