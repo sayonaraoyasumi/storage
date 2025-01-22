@@ -334,16 +334,12 @@ a:link, a:visited, a:hover, a:active{
 				<iframe src="menucolumn.html?ver=1.01" class="menucolumn" id="autoResizeIframe"></iframe>
 
 	<script>
-		// Iframeの高さを内容に合わせる関数
+		// Iframeの高さを内容に合わせる
 		function resizeIframe() {
 			const iframe = document.getElementById('autoResizeIframe');
-console.log("debug " + iframe );
-console.log("debug " + iframe.contentWindow );
-console.log("debug " + iframe.contentDocument );
 			if (iframe && iframe.contentWindow && iframe.contentDocument) {
 				iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
 			}
-console.log("debug " + iframe.style.height );
 		}
 		// Iframe の読み込みが完了した後にリサイズを実行
 		const iframe = document.getElementById('autoResizeIframe');
