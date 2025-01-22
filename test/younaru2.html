@@ -343,6 +343,7 @@ a:link, a:visited, a:hover, a:active{
 			const iframe = document.getElementById('autoResizeIframe');
 			if (iframe && iframe.contentWindow && iframe.contentDocument) {
 				iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
+console.log("resize " + iframe.style.height);
 			}
 		}
 		// Iframe の読み込みが完了した後にリサイズを実行
