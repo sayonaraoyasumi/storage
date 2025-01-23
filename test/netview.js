@@ -6,7 +6,12 @@ jQuery(function(){
 	let chapterNumber = 1;
 	let scrollPersent = 0;
 
-	let mode = "tate";
+	let mode;
+	if ( jQuery("#bboard").hasClass("yoko") ){
+		mode = "yoko";
+	} else {
+		mode = "tate";
+	}
 
 	// カレントの.novelを覚えておく
 	let curchapslot = chapterNumber + slotOffset;
@@ -74,7 +79,6 @@ console.log("cookie: scroll is " + jQuery.cookie("scroll") );
 	// 各種ボタン ========================================================
 	// ページ送り処理
 	jQuery(".novel").click(function(e){
-console.log("ACTION: ページ送り処理");
 		let ww, sx, hh, sy, next;
 		if ( mode == "tate" ){
 			ww = jQuery(this).width();
@@ -93,12 +97,11 @@ console.log("ACTION: ページ送り処理");
 			if( e.offsetY + jQuery(this).offset().top - jQuery(this).offset().top < hh/2 ){
 				next = sy - hh * 0.92;
 			}
-			sy = jQuery(this).get(0).scrollHeight;
-			scrollPersent = next / sy;
+			sh = jQuery(this).get(0).scrollHeight;
+			scrollPersent = next / sh ;
 			jQuery(this).animate({scrollTop: next});
 		}
 		jQuery.cookie("scroll", next, { expires: 1000, path: pathname });
-console.log("set cookie: scroll " + jQuery.cookie("scroll"));
 	});
 
 	// 文字変更ボタン

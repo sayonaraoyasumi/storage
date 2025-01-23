@@ -4,7 +4,7 @@
 @media (min-width: 681px) and (max-width: 880px) { body { font-size: 13pt; } }
 @media (min-width: 881px) and (max-width: 1023px) { body { font-size: 14pt; } }
 @media (min-width: 1024px) { body { font-size: 16pt; } }
-.outerbox, div h3{
+.outerbox, div h3, .novel .tablet{
   pointer-events: none;
 }
 body{
@@ -107,7 +107,6 @@ body .desktop #aboard #bboard .exitButton{
 	bottom: 0;
 	height: 100%;
 	width: 100%;
-	background-image:url(https://sayonaraoyasumi.github.io/storage/cover/cover_younaru.jpg);
 	background-size:cover;
 	background-position:center center;
 	z-index: 200;
