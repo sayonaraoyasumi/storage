@@ -105,8 +105,9 @@ console.log("cookie: scroll is " + jQuery.cookie("scroll") );
 	});
 
 	// 文字変更ボタン
-	jQuery(".fontChange").click(function(){
+	jQuery(".fontChange").click(function( event ){
 		let ff;
+		event.stopPropagation();
 		if( jQuery(this).hasClass("serif") ){
 			ff = "sansserif";
 			jQuery(".novel").removeClass("serif").addClass(ff);
@@ -121,7 +122,8 @@ console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
 
 	// 文字サイズボタン
-	jQuery(".fontSwitch").click(function(){
+	jQuery(".fontSwitch").click(function( event ){
+		event.stopPropagation();
 console.log("ACTION: 文字サイズボタン");
 		// まずは座標をパーセンテージで取得
 		if ( mode == "tate" ){
@@ -193,7 +195,7 @@ console.log("ACTION: 章送り戻しボタン");
 	});
 
 	// 章切り替え
-	jQuery(".chapterJump").click(function(){
+	jQuery(".chapterJump").click(function( event ){
 console.log("ACTION: 章切り替え");
 		event.stopPropagation();
 		chapterNumber = jQuery(this).attr("chapter") * 1;
@@ -206,14 +208,46 @@ console.log("ACTION: 章切り替え");
 	});
 
 	// 目次ボタン
-	jQuery(".topBar").click(function(){
+	jQuery(".topBar").click(function( event ){
 console.log("ACTION: 目次ボタン");
 		event.stopPropagation();
 		jQuery(".chapterBox").slideToggle(200);
 	});
 
+	// ボトムバーでオプションバーを開く
+	jQuery(".bottomBar, .optionBar").click(function(){
+		if( jQuery('.optionBar').hasClass("show") ){
+console.log("ACTION: ボトムバーでオプションバーを閉じる");
+			jQuery('.optionBar').removeClass("show");
+			jQuery('.optionBar').slideUp(200);
+		} else {
+			jQuery(".makelink").removeClass('touch');		
+console.log("ACTION: ボトムバーでオプションバーを開く");
+			jQuery('.optionBar').addClass("show");
+			jQuery('.optionBar').css('display', 'flex').hide().slideDown(200);
+		}
+	});
+
+	// リンク作成ボタン
+	jQuery(".makelink").click(function( event ){
+		event.stopPropagation();
+console.log("ACTION: リンク作成ボタン");
+		jQuery('#anouncebox').css('display', 'flex').hide().fadeIn(200);
+		jQuery(this).addClass('touch');
+	});
+
+	// アナウンス
+	jQuery("#anouncebox").click(function( event ){
+		event.stopPropagation();
+console.log("ACTION: アナウンスを消す");
+		jQuery( this ).fadeOut(200);
+		jQuery(".makelink").removeClass('touch');
+		jQuery('.optionBar').removeClass("show");
+		jQuery('.optionBar').slideUp(200);
+	});
+
 	// 縦横ボタン
-	jQuery(".tateyoko").click(function(){
+	jQuery(".tateyoko").click(function( event ){
 console.log("ACTION: 縦横ボタン");
 		event.stopPropagation();
 
@@ -351,27 +385,31 @@ console.log("ACTION: スクロール実行");
 	}
 
 	// 表紙を消す
-	jQuery('.coverimage').on('click', function() {
+	jQuery('.coverimage').on('click', function( event ) {
+		event.stopPropagation();
 		jQuery('#overlay').removeClass().addClass("bright"); //
 		jQuery(this).fadeOut(500);
 console.log("表紙消す");
 	});
 
 	// BGセレクターを消す
-	jQuery('.bgselector').on('click', function() {
+	jQuery('.bgselector').on('click', function( event ) {
+		event.stopPropagation();
 		jQuery(this).fadeOut(500);
 console.log("BGセレクターを消す");
 	});
 
 	// BGセレクターを表示
-	jQuery('.configButton').on('click', function() {
+	jQuery('.configButton').on('click', function( event ) {
+		event.stopPropagation();
 		jQuery('#overlay').removeClass().addClass("dark"); //
 		jQuery('.bgselector').css('display', 'flex').hide().fadeIn(500);
 console.log("BGセレクターを表示");
 	});
 
 	// BGを変更する
-	jQuery('.picturebutton').on('click', function() {
+	jQuery('.picturebutton').on('click', function( event ) {
+		event.stopPropagation();
 		let newbg = jQuery(this).attr('changebgto');
 		// クッキー食わせる
 		jQuery.cookie("background", newbg, { expires: 1000, path: pathname });

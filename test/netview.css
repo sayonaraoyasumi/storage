@@ -8,6 +8,7 @@
   pointer-events: none;
 }
 body{
+	background-color: white;
 	background-image:url(../html/background/BG12.jpg);
 	background-position: center center;
 	background-size: cover;
@@ -34,44 +35,6 @@ body .desktop{
 	border-style: none;
 	margin: auto;
 }
-body .desktop #aboard{
-	background-color: transparent;
-	border: none;
-	max-height: 99vh;
-	max-width: 98vw;
-	height: 2560px;
-	margin: 0.7% auto;
-	aspect-ratio: 5/8;
-	box-shadow:2px 2px 12px 2px rgba(0,0,0,0.3);
-}
-body .desktop #bboard{
-	background-color: rgba(255,255,255,0.6);
-}
-body .desktop #aboard #bboard .topBar, body .desktop #aboard #bboard .bottomBar{
-	background-color: rgba(0,0,0,0.5);
-}
-body .desktop #aboard #bboard .forward, body .desktop #aboard #bboard .back{
-	background-color: rgba(255,255,255,0.5);
-	box-shadow: 0 3px 8px 2px rgba(0,0,0,0.3);
-	border-radius: 6px;
-}
-body .desktop #aboard #bboard .novel{
-	background-color: transparent;
-	scrollbar-color: #ccc rgba(0,0,0,0);
-	scrollbar-width: thin;
-	padding: 5em 0 4em 0;
-	text-shadow: 0 0 3px white,0 0 3px white,0 0 3px white,0 0 3px white;
-}
-body .desktop #aboard #bboard .novel.sansserif{
-	font-family: sans-serif;
-}
-body .desktop #aboard #bboard .novel.serif{
-	font-family: serif;
-}
-body .desktop #aboard .novel .back::after{  font-size:80%;color:#aaa;content:"▶";}
-body .desktop #aboard .novel .forward::after{  font-size:80%;color:#aaa;content:"◀";}
-body .desktop #aboard .yoko .novel .back::after{  font-size:80%;content:"🔼";}
-body .desktop #aboard .yoko .novel .forward::after{  font-size:80%;content:"🔽";}
 
 body .desktop #aboard #bboard .fontSwitch,
 body .desktop #aboard #bboard .fontChange,
@@ -151,25 +114,39 @@ body .desktop #aboard #bboard .exitButton{
 	writing-mode: vertical-rl;
 	font-family: serif;
 	line-height: 1.8em;
-	padding: 48px 1em 0.5em 1em;
+	padding: 5em 0 4em 0;
 	width: 100%;
 	font-size:115%;
 	overflow-y: hidden;
 	overflow-x: auto;
-	background-color: rgba(255,255,255,0.95);
+	background-color: transparent;
 	cursor: pointer;
-/*  max-height: 1200px;*/
-	height: calc(100% - 44px);
+	height: 100%;
 	white-space: break-spaces;
 	box-sizing:border-box;
+	scrollbar-color: #ccc rgba(0,0,0,0);
+	scrollbar-width: thin;
+	text-shadow: 0 0 3px white,0 0 3px white,0 0 3px white,0 0 3px white;
 }
+#aboard .novel.sansserif{
+	font-family: sans-serif;
+}
+#aboard .novel.serif{
+	font-family: serif;
+}
+.novel .back::after{  font-size:80%;color:#aaa;content:"▶";}
+.novel .forward::after{  font-size:80%;color:#aaa;content:"◀";}
+.novel .back::after{  font-size:80%;content:"🔼";}
+.novel .forward::after{  font-size:80%;content:"🔽";}
+
+
 @media only screen and (max-width: 430px) {
   /* スタイルを適用したい要素のCSSスタイルを記述する */
   #aboard .novel {
-    padding: 48px 0.5em 0.5em 0.5em;
+	padding: 48px 0.5em 0.5em 0.5em;
   }
   #aboard .yoko .novel {
-    padding: 48px 0.5em 0.5em 0.5em;
+	padding: 48px 0.5em 0.5em 0.5em;
   }
 }
 #aboard .novel .tcy {
@@ -211,8 +188,10 @@ body .desktop #aboard #bboard .exitButton{
   margin: calc(50% - 50px) 15px;
   width:30px;
   height:100px;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 0 3px 8px 2px rgba(0,0,0,0.3);
+	border-radius: 6px;
   border: solid 1px #eee;
-  background-color: #fff;
 }
 #aboard .yoko .novel .back{
   width:100px;
@@ -224,11 +203,6 @@ body .desktop #aboard #bboard .exitButton{
   height:30px;
   margin: 30px calc(50% - 50px);
 }
-#aboard .novel .back::after{  content:"👉";}
-#aboard .novel .forward::after{  content:"👈";}
-#aboard .yoko .novel .back::after{  content:"👆";}
-#aboard .yoko .novel .forward::after{  content:"👇";}
-
 /*  Kindle へのリンク */
 #aboard .footAd{
   padding:30px;
@@ -295,17 +269,21 @@ body .desktop #aboard #bboard .exitButton{
 }
 #aboard{
   position:relative;
-  background-color: #ccccdd;
-  border: solid 2px #ccccee; 
+	background-color: transparent;
+	border: none;
+	max-height: 99vh;
+	max-width: 98vw;
+	height: 2560px;
   width: 100%;
   box-sizing: border-box;
-  height: 800px;
-  margin-top: 1em;
+	margin: 0.7% auto;
   overflow: clip;
+	aspect-ratio: 5/8;
+	box-shadow:2px 2px 12px 2px rgba(0,0,0,0.3);
 }
 #bboard{
   position:absolute;
-  background-color: #ffffff;
+	background-color: rgba(255,255,255,0.82);
   width: 100%;
   height: 100%;
   overflow: clip;
@@ -313,7 +291,7 @@ body .desktop #aboard #bboard .exitButton{
 }
 #aboard .topBar{
   position: absolute;
-  background-color: rgb(180,180,200);
+	background-color: rgba(0,0,0,0.7);
   height:36px;
   width:100%;
   top: 0;
@@ -332,7 +310,7 @@ body .desktop #aboard #bboard .exitButton{
 }
 #aboard .bottomBar{
   position: absolute;
-  background-color: rgb(180,180,200);
+	background-color: rgba(0,0,0,0.7);
   height:44px;
   width: 100%;
   bottom: 0px;
@@ -340,6 +318,30 @@ body .desktop #aboard #bboard .exitButton{
   justify-content: center;
   align-items: center;
   z-index: 100;
+}
+#aboard .optionBar{
+  position: absolute;
+	display: none;
+	background-color: rgba(0,0,0,0.7);
+  width: 100%;
+  bottom: 44px;
+	padding: 0.6em;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+  z-index: 100;
+}
+#aboard .makelink{
+	width: 26em;
+	font-size: 80%;
+	border: solid 1px gray;
+	text-align: center;
+  background-color: rgba(255,255,255,0.9);
+	padding: 0.4em;
+	margin: 0.4em;
+}
+#aboard .makelink.touch{
+  background-color: rgb(240, 240,130);
 }
 #aboard h2{
   font-size: 120%;
@@ -438,4 +440,28 @@ body .desktop #aboard #bboard .exitButton{
 .outerbox div{
 	margin: 0.5em;
 	white-space: normal;
+}
+.anounce{
+	position: absolute;
+	bottom: 0;
+	display: none;
+	justify-content: center; /* 水平方向の中央 */
+	align-items: center;	/* 垂直方向の中央 */
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 2000;
+}
+.voice {
+	width: 26em;
+	font-size: 80%;
+	height: 100px;
+	border: solid 1px gray;
+  background-color: rgba(255,255,255,0.9);
+	box-shadow: 0 4px 8px 2px rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.4em;
+	margin: 0.4em;
 }
