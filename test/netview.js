@@ -57,7 +57,7 @@ console.log("cookie: writhing-mode is " + mode );
 	// background
 	if (jQuery.cookie("background")){
 		let bgfromcookie = jQuery.cookie("background");
-		jQuery('body').removeClass().addClass( bgfromcookie );
+		jQuery('body').removeClass().addClass( bgfromcookie ); //
 console.log("cookie: background is " + bgfromcookie );
 	}
 
@@ -377,6 +377,8 @@ console.log("set cookie: background " + jQuery.cookie("background") );
 		jQuery('#overlay').removeClass().addClass("bright"); //
 		jQuery('.bgselector').fadeOut(500);
 		changeBG( newbg );
-console.log("BG変更する（フェードイン付き）");
+console.log("BG変更する");
 	});
+
+});
 
