@@ -57,12 +57,16 @@ body .desktop #aboard #bboard .forward, body .desktop #aboard #bboard .back{
 }
 body .desktop #aboard #bboard .novel{
 	background-color: transparent;
-	font-family: sans-serif;
-	font-family: serif;
 	scrollbar-color: #ccc rgba(0,0,0,0);
 	scrollbar-width: thin;
 	padding: 5em 0 4em 0;
 	text-shadow: 0 0 3px white,0 0 3px white,0 0 3px white,0 0 3px white;
+}
+body .desktop #aboard #bboard .novel.sansserif{
+	font-family: sans-serif;
+}
+body .desktop #aboard #bboard .novel.serif{
+	font-family: serif;
 }
 body .desktop #aboard .novel .back::after{  font-size:80%;color:#aaa;content:"▶";}
 body .desktop #aboard .novel .forward::after{  font-size:80%;color:#aaa;content:"◀";}
@@ -70,6 +74,7 @@ body .desktop #aboard .yoko .novel .back::after{  font-size:80%;content:"🔼";}
 body .desktop #aboard .yoko .novel .forward::after{  font-size:80%;content:"🔽";}
 
 body .desktop #aboard #bboard .fontSwitch,
+body .desktop #aboard #bboard .fontChange,
 body .desktop #aboard #bboard .configButton,
 body .desktop #aboard #bboard .exitButton
 {
@@ -355,7 +360,7 @@ body .desktop #aboard #bboard .exitButton{
 #aboard .yoko h2, #aboard .yoko h3, #aboard .yoko h4, #aboard .yoko h5{
   padding: 0 0 0 0.5em;
 }
-.fontSwitch{
+.fontSwitch, .fontChange{
   width: 40px;
   padding: 5px;
   margin: 12px 2px 12px 2px;
@@ -368,26 +373,7 @@ body .desktop #aboard #bboard .exitButton{
   color: #aaa;
   cursor: pointer;
 }
-.fontSwitch.biggerfont{
-	font-size: 140%;
-}
-.fontSwitch.bigfont{
-	font-size: 120%;
-}
-.fontSwitch.midfont{
-	font-size: 110%;
-}
-.fontSwitch.minifont{
-	font-size: 100%;
-}
-.fontSwitch.minimumfont{
-	font-size: 90%;
-}
-.fontSwitch.pick{
-	background-color:#FFb;
-  font-weight: bolder;
-	color: #668;
-}
+
 #aboard .myIndex, #aboard .tateyoko, #aboard .zoomButton{
 	width: 55px;
 	padding: 5px;

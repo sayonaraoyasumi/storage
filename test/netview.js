@@ -40,6 +40,13 @@ console.log("cookie: chapter is " + chapterNumber );
 console.log("cookie: font is " + jQuery.cookie("font") );
 	}
 
+	// fontfamily
+	if (jQuery.cookie("fontfamily")){
+			jQuery(".novel").removeClass("serif sansserif");
+			jQuery(".novel").addClass(jQuery.cookie("fontfamily"));
+console.log("cookie: fontfamily is " + jQuery.cookie("fontfamily") );
+	}
+
 	// writhing-mode
 	if (jQuery.cookie("tateyoko")){
 		mode = jQuery.cookie("tateyoko");
@@ -92,6 +99,20 @@ console.log("ACTION: ページ送り処理");
 		}
 		jQuery.cookie("scroll", next, { expires: 1000, path: pathname });
 console.log("set cookie: scroll " + jQuery.cookie("scroll"));
+	});
+
+	// 文字変更ボタン
+	jQuery(".fontChange").click(function(){
+		let ff;
+		if( jQuery(this).hasClass("serif")){
+			jQuery(".novel").removeCrass("serif").addClass("sansserif");
+			ff = "sansserif";
+		} else {
+			jQuery(".novel").removeCrass("sansserif").addClass("serif");
+			ff = "serif";
+		}
+		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
+console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
 
 	// 文字サイズボタン
