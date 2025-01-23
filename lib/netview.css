@@ -4,7 +4,7 @@
 @media (min-width: 681px) and (max-width: 880px) { body { font-size: 13pt; } }
 @media (min-width: 881px) and (max-width: 1023px) { body { font-size: 14pt; } }
 @media (min-width: 1024px) { body { font-size: 16pt; } }
-.outerbox, div h3, .novel .tablet{
+.outerbox, div h3, .novel div, .novel p{
 	pointer-events: none;
 }
 body{
