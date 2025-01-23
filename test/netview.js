@@ -104,12 +104,14 @@ console.log("set cookie: scroll " + jQuery.cookie("scroll"));
 	// 文字変更ボタン
 	jQuery(".fontChange").click(function(){
 		let ff;
-		if( jQuery(this).hasClass("serif")){
-			jQuery(".novel").removeClass("serif").addClass("sansserif");
+		if( jQuery(this).hasClass("serif") ){
 			ff = "sansserif";
+			jQuery(".novel").removeClass("serif").addClass(ff);
+			jQuery(this).removeClass("serif").addClass(ff);
 		} else {
-			jQuery(".novel").removeClass("sansserif").addClass("serif");
 			ff = "serif";
+			jQuery(".novel").removeClass("sansserif").addClass(ff);
+			jQuery(this).removeClass("sansserif").addClass(ff);
 		}
 		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
 console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
