@@ -105,10 +105,10 @@ console.log("set cookie: scroll " + jQuery.cookie("scroll"));
 	jQuery(".fontChange").click(function(){
 		let ff;
 		if( jQuery(this).hasClass("serif")){
-			jQuery(".novel").removeCrass("serif").addClass("sansserif");
+			jQuery(".novel").removeClass("serif").addClass("sansserif");
 			ff = "sansserif";
 		} else {
-			jQuery(".novel").removeCrass("sansserif").addClass("serif");
+			jQuery(".novel").removeClass("sansserif").addClass("serif");
 			ff = "serif";
 		}
 		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
