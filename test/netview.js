@@ -42,8 +42,8 @@ console.log("cookie: font is " + jQuery.cookie("font") );
 
 	// fontfamily
 	if (jQuery.cookie("fontfamily")){
-			jQuery(".novel").removeClass("serif sansserif");
-			jQuery(".novel").addClass(jQuery.cookie("fontfamily"));
+			jQuery(".novel, .fontChange").removeClass("serif sansserif");
+			jQuery(".novel, .fontChange").addClass(jQuery.cookie("fontfamily"));
 console.log("cookie: fontfamily is " + jQuery.cookie("fontfamily") );
 	}
 
