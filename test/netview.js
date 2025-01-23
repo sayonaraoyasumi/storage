@@ -394,6 +394,10 @@ jQuery(function(){
 	// 表紙を消す
 	jQuery('.coverimage').on('click', function( event ) {
 		event.stopPropagation();
+
+		jQuery(".novel:nth-child("+ chapterNumber + slotOffset +")").removeClass("hide");
+
+
 		jQuery('#overlay').removeClass().addClass("bright"); //
 		jQuery(this).fadeOut(500);
 		console.log("表紙消す");
@@ -426,6 +430,11 @@ jQuery(function(){
 		jQuery('.bgselector').fadeOut(500);
 		changeBG( newbg );
 		console.log("BG変更する");
+	});
+
+	// リンクのプロパゲーションを止める
+	jQuery('.exitButton').on('click', function( event ) {
+		event.stopPropagation();
 	});
 });
 
