@@ -57,7 +57,7 @@ console.log("cookie: writhing-mode is " + mode );
 	// background
 	if (jQuery.cookie("background")){
 		let bgfromcookie = jQuery.cookie("background");
-		changeBG( bgfromcookie );
+		jQuery('body').removeClass().addClass( bgfromcookie );
 console.log("cookie: background is " + bgfromcookie );
 	}
 
@@ -373,15 +373,10 @@ console.log("BGセレクターを表示");
 		// クッキー食わせる
 		jQuery.cookie("background", newbg, { expires: 1000, path: pathname });
 console.log("set cookie: background " + jQuery.cookie("background") );
-		changeBG( newbg );
-	});
-
-	function changeBG( bgis ){
-		jQuery('body').removeClass().addClass(bgis); //
+		jQuery('body').removeClass().addClass( newbg ); //
 		jQuery('#overlay').removeClass().addClass("bright"); //
 		jQuery('.bgselector').fadeOut(500);
-console.log("BG変更する");
-	}
-
-});
+		changeBG( newbg );
+console.log("BG変更する（フェードイン付き）");
+	});
 
