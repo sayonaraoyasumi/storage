@@ -206,6 +206,8 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	list-style: none;
 	cursor: pointer;
 	box-sizing:border-box;
+	scrollbar-color: #ccc rgba(0,0,0,0);
+	scrollbar-width: thin;
 	padding: 10px 1em;
 	color: #fff;
 }
