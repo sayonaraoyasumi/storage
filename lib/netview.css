@@ -339,6 +339,7 @@ body .desktop #aboard #bboard .exitButton{
 	background-color: rgba(255,255,255,0.9);
 	padding: 0.4em;
 	margin: 0.4em;
+	cursor: pointer;
 }
 #aboard .makelink.touch{
 	background-color: rgb(240, 240,130);
@@ -464,4 +465,5 @@ body .desktop #aboard #bboard .exitButton{
 	align-items: center;
 	padding: 0.4em;
 	margin: 0.4em;
+	cursor: pointer;
 }
