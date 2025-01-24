@@ -129,10 +129,7 @@ body.columnbody{
 	font-weight: bold;
 	size: 0.9em;
 }
-.kindlelink{
-	width: 100%;
-	text-align: center;
-}
+
 .kindlebook{
 	max-width: 50%;
 }
@@ -244,7 +241,7 @@ a:link, a:visited, a:hover, a:active{
 	margin-bottom: 0;
 }
 .subcontent{
-	padding: 2%;
+	padding: 1em 2%;
 }
 .caution{
 	width: 100%;
@@ -293,14 +290,45 @@ a:link, a:visited, a:hover, a:active{
 	padding: 0;
 	margin: 1em 0;
 }
-.buykindle{
+.linkbox{
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
 	width: 100%;
-	padding: 2em;
-	text-align: center;
 }
-.buykindle .kindlebook{
-	max-width: 300px;
-	box-shadow: 0px 20px 20px rgba(0,0,0,0.5);
+.linkbox .linkcard{
+	width: 300px;
+	display: flex;
+	margin: 0.5em;
+	flex-grow: 1;
+	border: solid 1px #888;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+	border-radius:6px;
+	background-image: url(https://sayonaraoyasumi.github.io/storage/image/iwashican.png);
+	background-attachment: fixed;
+	background-repeat:repeat;
+	cursor: pointer;
+}
+.linkcard .iconwrap{
+	background-color:rgba(240,220,140,0.7);
+	width: 25%;
+}
+.linkcard .iconwrap .linkicon{
+	display: block;
+	margin: 5%;
+	width: 90%;
+}
+.linkbox .linkline{
+	background-color:rgba(240,220,140,0.7);
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	text-align: center;
+	width: 70%;
+	padding: 5%;
+	text-decoration: none;
+	font-weight: bolder;
+	color:#202020;
 }
 .notebox{
 	width: 100%;
