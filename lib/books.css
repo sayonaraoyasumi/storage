@@ -297,9 +297,9 @@ a:link, a:visited, a:hover, a:active{
 	width: 100%;
 }
 .linkbox .linkcard{
-	width: 300px;
+	width: 280px;
 	display: flex;
-	margin: 0.5em;
+	margin: 0.5em 1%;
 	flex-grow: 1;
 	border: solid 1px #888;
 	box-shadow: 0 3px 8px rgba(0,0,0,0.3);
@@ -311,13 +311,18 @@ a:link, a:visited, a:hover, a:active{
 	max-height: 100px;
 }
 .linkcard .iconwrap{
+	display: flex;
+	align-items: center;
 	background-color:rgba(240,220,140,0.7);
-	width: 25%;
+	padding: 0 2%;
+	max-width: 25%;
+	z-index: 2;
 }
 .linkcard .iconwrap .linkicon{
-	display: block;
-	margin: 5%;
-	max-height: 80%;
+	display: flex;
+	align-items: center;
+	margin: 4%;
+	max-height: 75%;
 	aspect-ratio: 1;
 }
 .linkbox .linkline{
@@ -326,11 +331,12 @@ a:link, a:visited, a:hover, a:active{
 	flex-grow: 1;
 	align-items: center;
 	text-align: center;
-	width: 70%;
+	width: 50%;
 	padding: 5%;
 	text-decoration: none;
 	font-weight: bolder;
 	color:#202020;
+	z-index: 1;
 }
 .notebox{
 	width: 100%;
