@@ -187,6 +187,7 @@ a:link, a:visited, a:hover, a:active{
 .wrapForCatballoon {
 	margin: 2em 0 1em 0;
 	display: flex;
+	min-width: 80%;
 }
 .wrapForCat{
 	display: flex;
