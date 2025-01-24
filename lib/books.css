@@ -310,10 +310,11 @@ a:link, a:visited, a:hover, a:active{
 	cursor: pointer;
 	max-height: 100px;
 }
-.linkcard .iconwrap{
+.iconwrap{
 	display: flex;
 	align-items: center;
 	background-color:rgba(240,220,140,0.7);
+	transition: background-color 1s ease; /* 背景色を1秒かけて変える */
 	padding: 0 2%;
 	max-width: 25%;
 	z-index: 2;
@@ -325,8 +326,9 @@ a:link, a:visited, a:hover, a:active{
 	max-height: 75%;
 	aspect-ratio: 1;
 }
-.linkbox .linkline{
+.linkcard .linkline{
 	background-color:rgba(240,220,140,0.7);
+	transition: background-color 1s ease; /* 背景色を1秒かけて変える */
 	display: flex;
 	flex-grow: 1;
 	align-items: center;
@@ -337,6 +339,19 @@ a:link, a:visited, a:hover, a:active{
 	font-weight: bolder;
 	color:#202020;
 	z-index: 1;
+}
+.linkcard .copypannel.highlight {
+	background-color: white; /* ハイライト時の色 */
+	transition: background-color 0.1s ease; /* 背景色を1秒かけて変える */
+}
+#copyanounce{
+	display: none;
+	padding: 1em;
+	margin-bottom: 1em;
+	border: solid 1px #ccc;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+	word-break: break-all; /* 必要ならどこでも改行可能 */
+	max-width: 90%;
 }
 .notebox{
 	width: 100%;
