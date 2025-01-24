@@ -27,7 +27,9 @@
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
 		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_270.png" />
-		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.014' type='text/css' media='all' />
+		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.015' type='text/css' media='all' />
+		<script type="text/javascript" id='sayonaraoyasumi_books-js' src="https://sayonaraoyasumi.github.io/storage/lib/books.js?ver=1.015"></script>
 	</head>
 	<body class="luciole display_1">
 	<div class="wrap">
@@ -70,27 +72,15 @@
 						<div class="iconwrap"><img src="https://sayonaraoyasumi.github.io/storage/image/download.png" class="linkicon"></div>
 					</div>
 					<div class="linkcard">
-						<div class="iconwrap"><img src="https://sayonaraoyasumi.github.io/storage/image/clipboard.png" class="linkicon"></div>
-						<a class="linkline">このページへのリンクをクリップボードにコピーする（未実装）</a>
+						<div class="iconwrap copypannel"><img src="https://sayonaraoyasumi.github.io/storage/image/clipboard.png" class="linkicon"></div>
+						<a id="copybutton" class="linkline copypannel">このページへのリンクをクリップボードにコピーする</a>
 					</div>
 				</div>
+				<div id="copyanounce"></div>
 				<div class="sepalator"><a href="../index.html"><img src="../image/novels_logo_black.png" class="titleline" /></a></div>
 			</div>
 			<div id="menubox">
 				<iframe src="https://sayonaraoyasumi.github.io/storage/catalog/menucolumn.html?ver=1.09" class="menucolumn" id="autoResizeIframe"></iframe>
-<script>
-	// Iframeの高さを内容に合わせる
-	function resizeIframe() {
-		const iframe = document.getElementById('autoResizeIframe');
-		if (iframe && iframe.contentWindow && iframe.contentDocument) {
-			iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
-		}
-	}
-	// Iframe の読み込みが完了した後にリサイズを実行
-	const iframe = document.getElementById('autoResizeIframe');
-	iframe.addEventListener('load', resizeIframe);
-	window.addEventListener('resize', resizeIframe);
-</script>
 			</div>
 		</div>
 		<div class="footer">
