@@ -308,6 +308,7 @@ a:link, a:visited, a:hover, a:active{
 	background-attachment: fixed;
 	background-repeat:repeat;
 	cursor: pointer;
+	max-height: 100px;
 }
 .linkcard .iconwrap{
 	background-color:rgba(240,220,140,0.7);
@@ -316,7 +317,8 @@ a:link, a:visited, a:hover, a:active{
 .linkcard .iconwrap .linkicon{
 	display: block;
 	margin: 5%;
-	width: 90%;
+	max-height: 80%;
+	aspect-ratio: 1;
 }
 .linkbox .linkline{
 	background-color:rgba(240,220,140,0.7);
