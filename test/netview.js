@@ -95,14 +95,18 @@ jQuery(function(){
 						}
 					}
 				}
+console.log("ver 1.062");
 				// まだここは抜粋処理の中
 				let me = document.getElementById( 'startHilight' );
 				// 親
 				let jiji = jQuery( me ).parent().parent();
 				let oya = jQuery( me ).parent();
 				let myleft = me.offsetLeft;
+console.log("myleft " + myleft);
 				let oyaleft = oya.offsetLeft;
+console.log("oyaleft " + oyaleft);
 				let scrolltarget = myleft + oyaleft;
+console.log("scrolltarget " + scrolltarget);
 
 //				let oyawidth = jQuery(oya).innerWidth( );
 //				let oyaheight = jQuery(oya).innerHeight();
@@ -118,8 +122,6 @@ jQuery(function(){
 
 				if ( mode == "tate" ){
 					jQuery( oya ).scrollLeft( scrolltarget );
-console.log("ver 1.061");
-console.log("scrolltarget " + scrolltarget);
 
 
 					let pagewidth = jQuery('#chapter-' + queryChapter ).width();
