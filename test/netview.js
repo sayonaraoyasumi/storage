@@ -130,7 +130,7 @@ jQuery(function(){
 				if ( mode == "tate" ){
 					let scrolltarget = myleft * 1.25 - oyawidth * 0.8;
 					jQuery( oya ).scrollLeft( scrolltarget );
-console.log("ver 1.052");
+console.log("ver 1.053");
 console.log("myleft " + myleft);
 console.log("oyawidth " + oyawidth);
 console.log("scrolltarget " + scrolltarget);
@@ -387,7 +387,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 
 
 			let url = location.origin + location.pathname + "?c=" + queryChapter;
-//			location.href = url;
+			location.href = url;
 		}
 
 		if( jQuery('.optionBar').hasClass("show") ){
