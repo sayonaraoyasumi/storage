@@ -27,14 +27,14 @@
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
 		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_270.png" />
-		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.009' type='text/css' media='all' />
+		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.040' type='text/css' media='all' />
 <!-- ここからVIEWER用の追加項目 -->
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.cookie.js?ver=1.1.5" id="jquery_cookie_script-js"></script>
-		<link rel='stylesheet' id='nyadio_commentary_netview_style-css' href='https://sayonaraoyasumi.github.io/storage/lib/netview.css?ver=1.036' type='text/css' media='all' />
-		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/netview.js?ver=1.036" id="nyadio_commentary_netview_script-js"></script>
+		<link rel='stylesheet' id='nyadio_commentary_netview_style-css' href='https://sayonaraoyasumi.github.io/storage/lib/netview.css?ver=1.046' type='text/css' media='all' />
+		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/netview.js?ver=1.046" id="nyadio_commentary_netview_script-js"></script>
 <!-- 　　　　ここまで　　　　　 -->
 <!-- チャットストーリーズ用css　-->
 <style>
@@ -152,7 +152,9 @@ h1,h2,h3{
 <div id="aboard">
 	<div id="bboard" class="yoko">
 		<div class="topBar">
+			<div id="gotostart" class="squarebutton leftside"><img src="https://sayonaraoyasumi.github.io/storage/icon/square_chatstories.jpg" class="bottombutton"></div>
 			<div class="myTitle"><img src="https://sonovels.com/wp-content/uploads/2022/06/now-loading.gif" width="20" height="20"></div>
+			<div id="showhelp" class="squarebutton rightside"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_help.png" class="bottombutton"></div>
 		</div>
 		<ul class="chapterBox">
 <li class="chapterJump" chapter="1">　1. 運転手さんと客の会話</li>
@@ -12901,18 +12903,16 @@ h1,h2,h3{
 			　僕はいま、中学の三年のときに読んだ山椒魚の、続きを生きてるんです。
 			<p class="center notebox"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/okuduke.jpg" alt="さよならおやすみ チャット・ストーリーず"></p>
 		</div>
-		<div id="anouncebox" class="anounce">
-			<div class="voice">
-			クリップボードにリンクをコピーしました
-			</div>
+		<div id="anouncebox" class="coverboard">
+			<div class="voice"></div>
 		</div>
 		<div class="optionBar">
-			<div class="makelink thisbook">この本のリンクをクリップボードにコピーする</div>
-			<div class="makelink thischapter">この章のリンクをクリップボードにコピーする</div>
+			<button class="makelink thisbook">この本のリンクをクリップボードにコピーする</button>
+			<button class="makelink thischapter">この章のリンクをクリップボードにコピーする</button>
 		</div>
-		<div class="bottomBar">
-			<div class="exitButton">
-				<a href="../catalog/chatstories.html"><img src="../html/sozai/button_exit.png" class="bottombutton"></a>
+		<button class="bottomBar">
+			<div class="exitButton leftside squarebutton">
+				<a href="https://sayonaraoyasumi.github.io/storage/catalog/chatstories.html"><img src="../html/sozai/button_exit.png" class="bottombutton"></a>
 			</div>
 			<div class="fontSwitch minimumfont"><img src="../html/sozai/button_font1.png" class="bottombutton"></div>
 			<div class="fontSwitch minifont"><img src="../html/sozai/button_font2.png" class="bottombutton"></div>
@@ -12921,8 +12921,9 @@ h1,h2,h3{
 			<div class="fontSwitch biggerfont"><img src="../html/sozai/button_font5.png" class="bottombutton"></div>
 			<div class="fontChange serif"><img src="../html/sozai/button_fontchange.png" class="bottombutton"></div>
 			<div class="configButton"><img src="../html/sozai/button_config.png" class="bottombutton"></div>
-		</div>
-		<div class="coverimage" style="background-image:url(https://sayonaraoyasumi.github.io/storage/cover/cover_chatstories.jpg);"></div>
+		</button>
+		<div id="helpbox" class="coverboard"><img src="../html/sozai/viewerhelp.png"></div>
+		<div class="coverimage" class="coverboard" style="background-image:url(https://sayonaraoyasumi.github.io/storage/cover/cover_chatstories.jpg);"></div>
 		<div class="bgselector">
 			<img src="../html/background/BG01mini.jpg" class="picturebutton" changebgto="bg-01">
 			<img src="../html/background/BG02mini.jpg" class="picturebutton" changebgto="bg-02">
