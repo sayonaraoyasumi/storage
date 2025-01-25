@@ -289,13 +289,18 @@ jQuery(function(){
 		}
 		// 実行
 		chapterChange( chapterNumber + slotOffset );
-		// ハイライトモードの解除
-		jQuery("#aboard").removeClass("hilightmode");
-		console.log( "抜粋モードを解除" );
-		// ハイライトモードで表示しているタグを外す。
-		hilightTurnOff();
 		// スクロールのセット
 		doScroll(scrollPersent);
+		// ハイライトモードの解除
+		// jQuery("#aboard").removeClass("hilightmode");
+		// console.log( "抜粋モードを解除" );
+		// ハイライトモードで表示しているタグを外す。
+		// hilightTurnOff();
+		if( jQuery("#aboard").hasClass("hilightmode") ){
+			let url = location.origin + location.pathname;
+			location.href = url;
+		}
+
 	});
 
 	// 章切り替え
@@ -305,13 +310,17 @@ jQuery(function(){
 		chapterNumber = jQuery(this).attr("chapter") * 1;
 		// 実行
 		chapterChange( chapterNumber + slotOffset );
-		// ハイライトモードの解除
-		jQuery("#aboard").removeClass("hilightmode");
-		console.log( "抜粋モードを解除" );
-		// ハイライトモードで表示しているタグを外す。
-		hilightTurnOff();
 		// ウインドウ閉じる
 		jQuery(".chapterBox").slideUp(200);
+		// ハイライトモードの解除
+		// jQuery("#aboard").removeClass("hilightmode");
+		// console.log( "抜粋モードを解除" );
+		// ハイライトモードで表示しているタグを外す。
+		// hilightTurnOff();
+		if( jQuery("#aboard").hasClass("hilightmode") ){
+			let url = location.origin + location.pathname;
+			location.href = url;
+		}
 	});
 
 	// 目次ボタン
@@ -323,6 +332,17 @@ jQuery(function(){
 
 	// ボトムバーのクリック
 	jQuery(".bottomBar").click(function(){
+
+		// 抜粋モードを解除
+		// jQuery("#aboard").removeClass("hilightmode");
+		// console.log( "抜粋モードを解除" );
+		// ハイライトモードで表示しているタグを外す。
+		// hilightTurnOff();
+		if( jQuery("#aboard").hasClass("hilightmode") ){
+			let url = location.origin + location.pathname;
+			location.href = url;
+		}
+
 		if( jQuery('.optionBar').hasClass("show") ){
 			//	オプションバー表示されてたら閉じる
 			console.log("ACTION: オプションバーを閉じる");
@@ -331,13 +351,6 @@ jQuery(function(){
 		} else {
 			console.log("ACTION: ボトムバーのクリックでオプションバーを開く");
 			jQuery(".makelink").removeClass('touch');
-			// 抜粋モードを解除
-			jQuery("#aboard").removeClass("hilightmode");
-			console.log( "抜粋モードを解除" );
-			// ハイライトモードで表示しているタグを外す。
-			hilightTurnOff();
-			// 文字が選択されているかどうかで、ボタンのオンオフをする。
-			// 考える
 
 			const selection = window.getSelection();
 			if (selection.rangeCount > 0 && selection.toString()) {
@@ -353,14 +366,16 @@ jQuery(function(){
 			jQuery('.optionBar').css('display', 'flex').hide().slideDown(200);
 		}
 	});
-
+/*
 	function hilightTurnOff(){
+
 		jQuery('.textHilightEdge').replaceWith(function() {
 			return jQuery(this).text(); // タグ自身を外し、テキストだけを残す
 		});
 		jQuery('span').removeClass('textHilight')
-	}
 
+	}
+*/
 	// オプションバーのマウスアウトでオプションバーを閉じる
 	jQuery(".optionBar").mouseout(function( event ){
 		console.log("ACTION: オプションバーを閉じる");
@@ -652,17 +667,21 @@ console.log( "選択した文字列: " + selectedText );
 	// 最初に戻る
 	jQuery('#gotostart').on('click', function( event ) {
 		event.stopPropagation();
-		// ハイライトモードの解除
-		jQuery("#aboard").removeClass("hilightmode");
-		console.log( "抜粋モードを解除" );
-		// ハイライトモードで表示しているタグを外す。
-		hilightTurnOff();
 		chapterNumber = 1;
 		scrollPersent = 0;
 		jQuery('#overlay').removeClass().addClass("dark"); //
 		jQuery('#coverimage').fadeIn(500);
 		chapterChange( chapterNumber + slotOffset );
 		console.log("最初に戻る");
+		// ハイライトモードの解除
+		// jQuery("#aboard").removeClass("hilightmode");
+		// console.log( "抜粋モードを解除" );
+		// ハイライトモードで表示しているタグを外す。
+		// hilightTurnOff();
+		if( jQuery("#aboard").hasClass("hilightmode") ){
+			let url = location.origin + location.pathname;
+			location.href = url;
+		}
 	});
 
 	// BGセレクターを消す
