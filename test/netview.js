@@ -386,7 +386,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 
 
 			let url = location.origin + location.pathname + "?c=" + queryChapter;
-			location.href = url;
+//			location.href = url;
 		}
 
 		if( jQuery('.optionBar').hasClass("show") ){
