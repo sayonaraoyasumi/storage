@@ -128,7 +128,11 @@ jQuery(function(){
 				// console.log( '自分の上からの位置は？ ' + myTop );
 
 				if ( mode == "tate" ){
-					jQuery( oya ).scrollLeft( myleft - oyawidth * 0.8 );
+					let scrolltarget = myleft * 1.25 - oyawidth * 0.8;
+					jQuery( oya ).scrollLeft( scrolltarget * 0.8 );
+console.log("myleft " + myleft);
+console.log("oyawidth " + oyawidth);
+console.log("scrolltarget " + scrolltarget);
 				}else{
 					jQuery( oya ).scrollTop( myTop + oyaheight * 0.8 );
 				}
@@ -139,7 +143,7 @@ jQuery(function(){
 // 
 // COOKIEの中身消す
 // 
-				jQuery.removeCookie('scroll');
+				jQuery.removeCookie('scroll',{ path: pathname });
 console.log("cookie scroll" + jQuery.cookie("scroll"));
 
 			}
@@ -319,7 +323,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		// ハイライトモードで表示しているタグを外す。
 		// hilightTurnOff();
 		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname;
+			let url = location.origin + location.pathname + "?c=" + chapterNumber;
 			location.href = url;
 		}
 
@@ -340,7 +344,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		// ハイライトモードで表示しているタグを外す。
 		// hilightTurnOff();
 		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname;
+			let url = location.origin + location.pathname + "?c=" + chapterNumber;
 			location.href = url;
 		}
 	});
@@ -361,7 +365,27 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		// ハイライトモードで表示しているタグを外す。
 		// hilightTurnOff();
 		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname;
+
+
+
+
+
+
+			let pagewidth = jQuery('#chapter-' + queryChapter ).width();
+			console.log("pagewidth " + pagewidth);
+			let pageleft = jQuery('#chapter-' + queryChapter ).scrollLeft();
+			console.log("pageleft " + pageleft);
+			let pagepercent = pageleft / pagewidth * 100;
+			console.log("pagepercent " + pagepercent);
+			jQuery.cookie("scroll", pagepercent, { expires: 1000, path: pathname });
+
+
+
+
+
+
+
+			let url = location.origin + location.pathname + "?c=" + queryChapter;
 			location.href = url;
 		}
 
@@ -704,7 +728,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		// ハイライトモードで表示しているタグを外す。
 		// hilightTurnOff();
 		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname;
+			let url = location.origin + location.pathname + "?c=" + chapterNumber;
 			location.href = url;
 		}
 	});
