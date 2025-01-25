@@ -440,15 +440,15 @@ jQuery(function(){
 		} else if ( jQuery(this).hasClass('thischapter') ){
 			// チャプターのURL
 			let mytitle = jQuery(currentChapter).find("h3").html();
-			let url2chapter = title + " より 「" + mytitle + "」 " + url + "?chapter=" + chapterNumber;
+			let url2chapter = title + " より 「" + mytitle + "」 " + url + "?c=" + chapterNumber;
 			navigator.clipboard.writeText(url2chapter);
 			anouncemessage = "クリップボードに<strong>この章</strong>のリンクをコピーしました<hr/>" + url2chapter;
 //			console.log( "COPY to CLIPBOARD: " + url2chapter );
 		} else if ( jQuery(this).hasClass('haveachoice') ){
 			let selection = window.getSelection(); // 選択範囲を取得
-console.log( selection );
+//console.log( selection );
 			let selectedText = selection.toString();
-console.log( "選択した文字列: " + selectedText );
+//console.log( "選択した文字列: " + selectedText );
 			let textLength = selectedText.length; // 文字列の長さを取得
 			let captureerror = 0;
 			if (selection.rangeCount > 0) {

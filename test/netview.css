@@ -127,8 +127,8 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	height: calc( 100% - 44px );
 	white-space: break-spaces;
 	box-sizing: border-box;
-	scrollbar-color: #ccc rgba(0,0,0,0);
-	text-shadow: 0 0 3px white,0 0 3px white,0 0 3px white,0 0 3px white;
+	scrollbar-color: #888 rgba(0,0,0,0);
+/*	text-shadow: 0 0 3px white,0 0 3px white,0 0 3px white,0 0 3px white;*/
 }
 .hilightmode .novel {
 	color: silver;
