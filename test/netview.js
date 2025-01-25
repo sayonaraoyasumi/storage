@@ -128,9 +128,9 @@ jQuery(function(){
 				// console.log( '自分の上からの位置は？ ' + myTop );
 
 				if ( mode == "tate" ){
-					let scrolltarget = myleft * 1.4 - oyawidth * 0.8;
+					let scrolltarget = myleft * 1.5;
 					jQuery( oya ).scrollLeft( scrolltarget );
-console.log("ver 1.056");
+console.log("ver 1.057");
 console.log("myleft " + myleft);
 console.log("oyawidth " + oyawidth);
 console.log("scrolltarget " + scrolltarget);
