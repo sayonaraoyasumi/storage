@@ -98,36 +98,37 @@ jQuery(function(){
 				// まだここは抜粋処理の中
 				let me = document.getElementById( 'startHilight' );
 				// 親
+				let jiji = jQuery( me ).parent().parent();
 				let oya = jQuery( me ).parent();
-				let oyawidth = jQuery(oya).innerWidth( );
-				let oyaheight = jQuery(oya).innerHeight();
-console.log( "oyawidth " + oyawidth );
-console.log( "oyaheight " + oyaheight );
+				let myleft = me.offsetLeft;
+				let oyaleft = oya.offsetLeft;
+				let scrolltarget = myleft + oyaleft;
+
+//				let oyawidth = jQuery(oya).innerWidth( );
+//				let oyaheight = jQuery(oya).innerHeight();
+//console.log( "oyawidth " + oyawidth );
+//console.log( "oyaheight " + oyaheight );
 				// 親を表示する
 				jQuery( oya ).removeClass("hide");
 
 				// 自分
-				let myleft = me.offsetLeft;
-				let myTop = me.offsetTop;
+//				let myTop = me.offsetTop;
 				// console.log( '自分の左からの位置は？ ' + myleft );
 				// console.log( '自分の上からの位置は？ ' + myTop );
 
 				if ( mode == "tate" ){
-					let scrolltarget = myleft;
 					jQuery( oya ).scrollLeft( scrolltarget );
-console.log("ver 1.060");
-console.log("myleft " + myleft);
+console.log("ver 1.061");
 console.log("scrolltarget " + scrolltarget);
 
 
-			let pagewidth = jQuery('#chapter-' + queryChapter ).width();
-			console.log("pagewidth " + pagewidth);
-			let pageleft = jQuery('#chapter-' + queryChapter ).scrollLeft();
-			console.log("pageleft " + pageleft);
-			let pagepercent = pageleft / pagewidth;
-			console.log("pagepercent " + pagepercent);
-			jQuery.cookie("scroll", pagepercent, { expires: 1000, path: pathname });
-
+					let pagewidth = jQuery('#chapter-' + queryChapter ).width();
+					// console.log("pagewidth " + pagewidth);
+					let pageleft = jQuery('#chapter-' + queryChapter ).scrollLeft();
+					// console.log("pageleft " + pageleft);
+					let pagepercent = pageleft / pagewidth;
+					// console.log("pagepercent " + pagepercent);
+					jQuery.cookie("scroll", pagepercent, { expires: 1000, path: pathname });
 
 				}else{
 					jQuery( oya ).scrollTop( myTop + oyaheight * 0.8 );
