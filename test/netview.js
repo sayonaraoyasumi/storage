@@ -23,7 +23,7 @@ jQuery(function(){
 
 	// cookie 処理 ========================================================
 	// chapter
-	console.log("ACTION: 処理スタート");
+//	console.log("ACTION: 処理スタート");
 	// クエリを格納するハッシュ
 	const queryParams = {};
 	const urlObject = new URL(location.href); // URLオブジェクトを作成
@@ -43,44 +43,44 @@ jQuery(function(){
 		if ( queryChapter && queryStart && queryEnd ){
 			// 抜粋の処理を行う
 			chapterNumber = queryChapter * 1;
-			console.log("ACTION: 抜粋処理 - chapter = " + chapterNumber );
+//			console.log("ACTION: 抜粋処理 - chapter = " + chapterNumber );
 
 			// エラーの除去処理
 			let capTextError = 'ない';
 			if( queryStart > queryEnd){
 				capTextError = "範囲指定が間違っているようです";
-				console.log( "開始ノード" + queryStart );
-				console.log( "終了ノード" + queryEnd );
-				console.log( capTextError );
+//				console.log( "開始ノード" + queryStart );
+//				console.log( "終了ノード" + queryEnd );
+//				console.log( capTextError );
 			} else {
 				// まずは抜粋モードを設定
 				jQuery("#aboard").addClass("hilightmode");
-				console.log( "抜粋モードを設定 " );
+//				console.log( "抜粋モードを設定 " );
 				if ( queryStart == queryEnd ){
 					// 開始と終了が同じノードにある場合の処理
-					console.log("開始と終了が同じノードにある場合の処理 ======================");
+//					console.log("開始と終了が同じノードにある場合の処理 ======================");
 					targetText = jQuery("#n-" + queryStart).html();
-					console.log( "キャプチャスタート " + queryStartOffset );
+//					console.log( "キャプチャスタート " + queryStartOffset );
 					beforeText = targetText.slice(0, queryStartOffset);
 					midText = targetText.slice( queryStartOffset, queryEndOffset );
-					console.log( "キャプチャエンド " + queryEndOffset );
+//					console.log( "キャプチャエンド " + queryEndOffset );
 					afterText = targetText.slice( queryEndOffset );
 					jQuery("#n-" + queryStart).html(beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' + midText + '</span>' + afterText);
 
 				} else {
 					// 開始ノードにタグを打ち込む
-					console.log("開始ノードにタグを打ち込む ======================");
+//					console.log("開始ノードにタグを打ち込む ======================");
 					targetText = jQuery("#n-" + queryStart).html();
-					console.log( "キャプチャスタート " + queryStart + "章" + queryStartOffset + "文字" );
+//					console.log( "キャプチャスタート " + queryStart + "章" + queryStartOffset + "文字" );
 					beforeText = targetText.slice(0, queryStartOffset);
 					afterText = targetText.slice(queryStartOffset);
 					// 新しいHTMLを構築
 					jQuery("#n-" + queryStart).html(beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' + afterText + '</span>');
 
 					// 終了ノードにタグを打ち込む
-					console.log("終了ノードにタグを打ち込む ======================");
+//					console.log("終了ノードにタグを打ち込む ======================");
 					targetText = jQuery("#n-" + queryEnd).html();
-					console.log( "キャプチャエンド " + queryEnd + "章" + queryEndOffset + "文字" );
+//					console.log( "キャプチャエンド " + queryEnd + "章" + queryEndOffset + "文字" );
 					beforeText = targetText.slice(0,queryEndOffset);
 					afterText = targetText.slice(queryEndOffset);
 					// 新しいHTMLを構築
@@ -88,9 +88,9 @@ jQuery(function(){
 
 					// 途中のノードにクラスを追加する
 					if( queryStart + 1 < queryEnd ){
-						console.log("途中のノードにクラスを追加する");
+//						console.log("途中のノードにクラスを追加する");
 						for (let i = queryStart + 1; i < queryEnd; i++) {
-							console.log("　追加 #n-" + i );
+//							console.log("　追加 #n-" + i );
 							targetText = jQuery("#n-" + i ).addClass("textHilight");
 						}
 					}
@@ -101,18 +101,25 @@ jQuery(function(){
 				let oya = jQuery( me ).parent().parent();
 				let oyawidth = jQuery(oya).width();
 				let oyaheight = jQuery(oya).height();
-				console.log( "oyawidth " + oyawidth );
-				console.log( "oyaheight " + oyaheight );
+//				console.log( "oyawidth " + oyawidth );
+//				console.log( "oyaheight " + oyaheight );
 				// 親を表示する
 				jQuery( oya ).removeClass("hide");
+
+// テスト実装
+//
+//
+// 試験的に一個外側に配置
+// 
 				// 0.3秒待って
+/*
 				setTimeout(() => {
 					// 暗くしてるの消す
 					jQuery('#overlay').removeClass().addClass("bright"); //
 					// 表紙を消す
 					jQuery('#coverimage').fadeOut(500);
 				}, 300); 
-
+*/
 				// ノードの座標を割り出す
 				// 自分
 				let myleft = me.offsetLeft;
@@ -126,18 +133,43 @@ jQuery(function(){
 					jQuery( oya ).scrollTop( myTop + oyaheight * 0.8 );
 				}
 
-				console.log("ノードまでスクロールさせる");
+//				console.log("ノードまでスクロールさせる");
+
+// TODO
+// 
+// COOKIEの中身消す
+// 
+				jQuery.removeCookie('scroll');
+
+
 			}
+			// ここまでひたすら抜粋の処理
 		} else {
 			// 抜粋処理なしで、チャプター表示
 			chapterNumber = queryChapter * 1;
-			console.log("query: chapter is " + chapterNumber );
+//			console.log("query: chapter is " + chapterNumber );
 		}
+
+// テスト実装
+// 
+// クエリからチャプタ－来てたら、いずれにしても表紙は消す。
+// 
+		// 0.3秒待って
+		setTimeout(() => {
+			// 暗くしてるの消す
+			jQuery('#overlay').removeClass().addClass("bright"); //
+			// 表紙を消す
+			jQuery('#coverimage').fadeOut(500);
+		}, 300); 
+
+
 	} else if (jQuery.cookie("chapter")){
 		// 本文
 		chapterNumber = jQuery.cookie("chapter") * 1;
-		console.log("cookie: chapter is " + chapterNumber );
+//		console.log("cookie: chapter is " + chapterNumber );
 	}
+
+	// 外側
 	chapterChange( chapterNumber + slotOffset );
 
 	// font
@@ -146,28 +178,29 @@ jQuery(function(){
 		jQuery(".fontSwitch").removeClass("pick");
 		jQuery("." + jQuery.cookie("font") + "font").addClass("pick");
 		jQuery(".novel").addClass(jQuery.cookie("font"));
-		console.log("cookie: font is " + jQuery.cookie("font") );
+//		console.log("cookie: font is " + jQuery.cookie("font") );
 	}
 
 	// fontfamily
 	if (jQuery.cookie("fontfamily")){
 		jQuery(".novel, .fontChange").removeClass("serif sansserif");
 		jQuery(".novel, .fontChange").addClass(jQuery.cookie("fontfamily"));
-		console.log("cookie: fontfamily is " + jQuery.cookie("fontfamily") );
+//		console.log("cookie: fontfamily is " + jQuery.cookie("fontfamily") );
 	}
 
+/*
 	// writhing-mode
 	if (jQuery.cookie("tateyoko")){
 		mode = jQuery.cookie("tateyoko");
 		jQuery("#bboard").addClass(mode);
-		console.log("cookie: writhing-mode is " + mode );
+//		console.log("cookie: writhing-mode is " + mode );
 	}
-
+*/
 	// background
 	if (jQuery.cookie("background")){
 		let bgfromcookie = jQuery.cookie("background");
 		jQuery('body').removeClass().addClass( bgfromcookie ); //
-		console.log("cookie: background is " + bgfromcookie );
+//		console.log("cookie: background is " + bgfromcookie );
 	}
 
 	// scroll
@@ -177,11 +210,11 @@ jQuery(function(){
 		}else{
 			jQuery(currentChapter).scrollTop(jQuery.cookie("scroll"));
 		}
-		console.log("cookie: scroll is " + jQuery.cookie("scroll") );
+//		console.log("cookie: scroll is " + jQuery.cookie("scroll") );
 	}
 
 	// 各種ボタン ========================================================
-	// ページ送り処理
+	// ページ送り（スクロール）処理
 	jQuery(".novel").click(function(e){
 		// 範囲が選択されている場合は処理しない
 		const selection = window.getSelection();
@@ -226,13 +259,13 @@ jQuery(function(){
 			jQuery(this).removeClass("sansserif").addClass(ff);
 		}
 		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
-		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
+//		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
 
 	// 文字サイズボタン
 	jQuery(".fontSwitch").click(function( event ){
 		event.stopPropagation();
-		console.log("ACTION: 文字サイズボタン");
+//		console.log("ACTION: 文字サイズボタン");
 		// まずは座標をパーセンテージで取得
 		if ( mode == "tate" ){
 			sw = jQuery(currentChapter).get(0).scrollWidth;
@@ -243,27 +276,16 @@ jQuery(function(){
 		}
 		// 押されたボタンを識別
 		let size;
-		if(jQuery(this).hasClass("biggerfont")){
-			size = "bigger";
-		}
-		if(jQuery(this).hasClass("bigfont")){
-			size = "big";
-		}
-		if(jQuery(this).hasClass("midfont")){
-			size = "mid";
-		}
-		if(jQuery(this).hasClass("minifont")){
-			size = "mini";
-		}
-		if(jQuery(this).hasClass("minimumfont")){
-			size = "minimum";
-		}
+		if(jQuery(this).hasClass("biggerfont")) { size = "bigger"; }
+		if(jQuery(this).hasClass("bigfont"))    { size = "big";    }
+		if(jQuery(this).hasClass("midfont"))    { size = "mid";    }
+		if(jQuery(this).hasClass("minifont"))   { size = "mini";   }
+		if(jQuery(this).hasClass("minimumfont")){ size = "minimum";}
 		// クラスを剥がして再付与
-		jQuery(".novel").removeClass("minimum mini mid big bigger");
-		jQuery(".novel").addClass(size);
+		jQuery(".novel").removeClass("minimum mini mid big bigger").addClass(size);
 		// クッキー食わせる
 		jQuery.cookie("font", size, { expires: 1000, path: pathname });
-		console.log("set cookie: font " + jQuery.cookie("font") );
+//		console.log("set cookie: font " + jQuery.cookie("font") );
 		// ボタンのハイライト
 		jQuery(".fontSwitch").removeClass("pick");
 		jQuery(this).addClass("pick");
@@ -273,7 +295,7 @@ jQuery(function(){
 
 	// 章送り戻しボタン
 	jQuery(".novel .back,.novel .forward").click(function(){
-		console.log("ACTION: 章送り戻しボタン");
+//		console.log("ACTION: 章送り戻しボタン");
 		// 次へ
 		if(jQuery(this).hasClass("forward")){
 			chapterNumber++;
@@ -305,7 +327,7 @@ jQuery(function(){
 
 	// 章切り替え
 	jQuery(".chapterJump").click(function( event ){
-		console.log("ACTION: 章切り替え");
+//		console.log("ACTION: 章切り替え");
 		event.stopPropagation();
 		chapterNumber = jQuery(this).attr("chapter") * 1;
 		// 実行
@@ -325,7 +347,7 @@ jQuery(function(){
 
 	// 目次ボタン
 	jQuery(".topBar").click(function( event ){
-		console.log("ACTION: 目次ボタン");
+//		console.log("ACTION: 目次ボタン");
 		event.stopPropagation();
 		jQuery(".chapterBox").slideToggle(200);
 	});
@@ -345,19 +367,19 @@ jQuery(function(){
 
 		if( jQuery('.optionBar').hasClass("show") ){
 			//	オプションバー表示されてたら閉じる
-			console.log("ACTION: オプションバーを閉じる");
+//			console.log("ACTION: オプションバーを閉じる");
 			jQuery('.optionBar').removeClass("show");
 			jQuery('.optionBar').slideUp(200);
 		} else {
-			console.log("ACTION: ボトムバーのクリックでオプションバーを開く");
+//			console.log("ACTION: ボトムバーのクリックでオプションバーを開く");
 			jQuery(".makelink").removeClass('touch');
 
 			const selection = window.getSelection();
 			if (selection.rangeCount > 0 && selection.toString()) {
-				console.log("Selected Text:", selection.toString());
+//				console.log("Selected Text:", selection.toString());
 				jQuery('.thistext').addClass("haveachoice");
 			} else {
-				console.log("No text is selected.");
+//				console.log("No text is selected.");
 				jQuery('.thistext').removeClass("haveachoice");
 			}
 
@@ -378,7 +400,7 @@ jQuery(function(){
 */
 	// オプションバーのマウスアウトでオプションバーを閉じる
 	jQuery(".optionBar").mouseout(function( event ){
-		console.log("ACTION: オプションバーを閉じる");
+//		console.log("ACTION: オプションバーを閉じる");
 		// relatedTargetで移動先の要素を取得
 		const relatedTarget = event.relatedTarget;
 
@@ -392,7 +414,7 @@ jQuery(function(){
 
 	// オプションバーでオプションバーを閉じる
 	jQuery(".optionBar").click(function(){
-			console.log("ACTION: オプションバーを閉じる");
+//			console.log("ACTION: オプションバーを閉じる");
 			jQuery('.optionBar').removeClass("show");
 			jQuery('.optionBar').slideUp(200);
 	});
@@ -400,7 +422,7 @@ jQuery(function(){
 	// リンク作成ボタン
 	jQuery(".makelink").click(function( event ){
 		event.stopPropagation();
-		console.log("ACTION: リンク作成ボタン");
+//		console.log("ACTION: リンク作成ボタン");
 		let url = location.origin + location.pathname;
 		let title = document.title;
 		let anouncemessage;
@@ -414,14 +436,14 @@ jQuery(function(){
 			let url2book = content + " / " + title + " " + url;
 			navigator.clipboard.writeText(url2book);
 			anouncemessage = "クリップボードに<strong>この本</strong>のリンクをコピーしました<hr/>" + url2book;
-			console.log( "COPY to CLIPBOARD: " + url2book );
+//			console.log( "COPY to CLIPBOARD: " + url2book );
 		} else if ( jQuery(this).hasClass('thischapter') ){
 			// チャプターのURL
 			let mytitle = jQuery(currentChapter).find("h3").html();
 			let url2chapter = title + " より 「" + mytitle + "」 " + url + "?chapter=" + chapterNumber;
 			navigator.clipboard.writeText(url2chapter);
 			anouncemessage = "クリップボードに<strong>この章</strong>のリンクをコピーしました<hr/>" + url2chapter;
-			console.log( "COPY to CLIPBOARD: " + url2chapter );
+//			console.log( "COPY to CLIPBOARD: " + url2chapter );
 		} else if ( jQuery(this).hasClass('haveachoice') ){
 			let selection = window.getSelection(); // 選択範囲を取得
 console.log( selection );
@@ -439,7 +461,7 @@ console.log( "選択した文字列: " + selectedText );
 				let endNodeId = endNode.id || captureerror++;
 				if( captureerror ){
 					anouncemessage = "選択範囲が、ルビや縦中横から始まる（終わる）場合、この機能は使用できません";
-					console.log( "COPY to CLIPBOARD: " + anouncemessage );
+//					console.log( "COPY to CLIPBOARD: " + anouncemessage );
 				} else {
 					// 選択した部分のテキストから改行を抜く
 					let trimedtext = selectedText.replace(/[\n\r]/g, "");
@@ -468,27 +490,27 @@ console.log( "選択した文字列: " + selectedText );
 						+ "&so=" + range.startOffset 
 						+ "&e=" + endpos
 						+ "&eo=" + range.endOffset;
-	console.log('開始位置: node-' +  startpos + " " + range.startOffset + "文字目" );
-	console.log('終了位置: node-' +  endpos + " " + range.endOffset + "文字目" );
-	console.log('URL: ', url2text);
+//	console.log('開始位置: node-' +  startpos + " " + range.startOffset + "文字目" );
+//	console.log('終了位置: node-' +  endpos + " " + range.endOffset + "文字目" );
+//	console.log('URL: ', url2text);
 					navigator.clipboard.writeText(url2text);
-					console.log( "スタート: " + url2text );
+//					console.log( "スタート: " + url2text );
 					anouncemessage = "クリップボードに<strong>選択した文章</strong>へのリンクをコピーしました<hr/>" + url2text;
 				}
 			} else {
 				anouncemessage = "クリップボードにコピーできませんでした";
 			}
 		} else {
-	console.log('thisbook でも thischapter でも haveachoice でもない ' );
+//	console.log('thisbook でも thischapter でも haveachoice でもない ' );
 			// thisbook でも thischapter でも haveachoice でもない
 			anouncemessage = "クリップボードにコピーできませんでした";
 		}
-	console.log('アナウンスフェイズ ' );
+//	console.log('アナウンスフェイズ ' );
 		// アナウンスする
 		jQuery('#anouncebox .voice').html(anouncemessage.replace(/　/g, ""));
 		jQuery('#anouncebox').css('display', 'flex').hide().fadeIn(500);
 		// ボタンの色変える
-	console.log('ボタンの色変える ' );
+//	console.log('ボタンの色変える ' );
 		jQuery(this).addClass('touch');
 		// オプションバー閉じる
 		jQuery('.optionBar').removeClass("show");
@@ -498,17 +520,18 @@ console.log( "選択した文字列: " + selectedText );
 	// アナウンス
 	jQuery("#anouncebox").click(function( event ){
 		event.stopPropagation();
-		console.log("ACTION: アナウンスを消す");
+//		console.log("ACTION: アナウンスを消す");
 		jQuery( this ).fadeOut(200);
 		jQuery(".makelink").removeClass('touch');
 		jQuery('.optionBar').removeClass("show");
 		jQuery('.optionBar').slideUp(200);
 	});
 
+/*
 	// 縦横ボタン
 	// 最新バージョンでは未使用のため、動作チェックなし
 	jQuery(".tateyoko").click(function( event ){
-		console.log("ACTION: 縦横ボタン");
+//		console.log("ACTION: 縦横ボタン");
 		event.stopPropagation();
 		// まずは座標をパーセンテージで取得
 		if ( mode == "tate" ){
@@ -530,11 +553,12 @@ console.log( "選択した文字列: " + selectedText );
 		}
 		// クッキー
 		jQuery.cookie("tateyoko", mode, { expires: 1000, path: pathname });
-		console.log("set cookie: tateyoko " + jQuery.cookie("tateyoko"));
+//		console.log("set cookie: tateyoko " + jQuery.cookie("tateyoko"));
 		// スクロール再セット
 		scrollPersent *= -1;
 		doScroll(scrollPersent);
 	});
+*/
 
 	jQuery(".novel").scroll(function(){
 //		console.log("ACTION: スクロール");
@@ -548,11 +572,11 @@ console.log( "選択した文字列: " + selectedText );
 			jQuery.cookie("scroll", jQuery(currentChapter).scrollTop(), { expires: 1000, path: pathname });
 		}
 	});
-
+/*
 	// ボードの拡大
 	// 最新バージョンでは未使用のため、動作チェックなし
 	jQuery('.zoomButton').click(function(){
-		console.log("ACTION: ボードの拡大");
+//		console.log("ACTION: ボードの拡大");
 		var frame = jQuery('#aboard');
 		var target = jQuery('#bboard');
 		if(jQuery(target).css('position') == "absolute"){
@@ -587,9 +611,10 @@ console.log( "選択した文字列: " + selectedText );
 				300);
 		}
 	});
+*/
 
 	jQuery(window).resize(function() {
-		console.log("ACTION: リサイズ処理");
+//		console.log("ACTION: リサイズ処理");
 		//リサイズされたときの処理
 		var target = jQuery('#bboard');
 		if(jQuery(target).css('position') == "fixed"){
@@ -602,21 +627,21 @@ console.log( "選択した文字列: " + selectedText );
 
 	// 章切り替えの中身
 	function chapterChange( slot ){
-		console.log("ACTION: 章切り替え実行 " + slot );
+//		console.log("ACTION: 章切り替え実行 " + slot );
 		jQuery(".novel").addClass("hide");
 		jQuery.cookie("chapter", chapterNumber, { expires: 1000, path: pathname });
-		console.log("set cookie: chapter " + jQuery.cookie("chapter"));
+//		console.log("set cookie: chapter " + jQuery.cookie("chapter"));
 		jQuery(".novel:nth-child("+slot+")").removeClass("hide");
 		currentChapter = jQuery(".novel:nth-child("+slot+")");
 		// 章タイトル更新
 		let mytitle = jQuery(currentChapter).find("h3").html();
-		console.log("currentChapter = " + mytitle);
+//		console.log("currentChapter = " + mytitle);
 		jQuery(".myTitle").html(mytitle);
 	}
 
 	// スクロール
 	function doScroll( percent ){
-		console.log("ACTION: スクロール実行");
+//		console.log("ACTION: スクロール実行");
 		if ( mode == "tate" ){
 			jQuery(".novel").scrollTop( 0 );
 			sw = jQuery(currentChapter).get(0).scrollWidth;
@@ -629,7 +654,7 @@ console.log( "選択した文字列: " + selectedText );
 			jQuery(currentChapter).scrollTop( sh * percent );
 		}
 	}
-
+/*
 	// ボードの拡大用関数
 	// ズームボタンからのみ呼ばれる
 	function reSizeMe(target,t,l,w,h){
@@ -638,14 +663,14 @@ console.log( "選択した文字列: " + selectedText );
 		jQuery(target).animate({width: w},{queue: false}, 300);
 		jQuery(target).animate({height: h},{queue: false}, 300);
 	}
-
+*/
 	// 表紙を消す
 	jQuery('#coverimage').on('click', function( event ) {
 		event.stopPropagation();
 		jQuery(".novel:nth-child("+ chapterNumber + slotOffset +")").removeClass("hide");
 		jQuery('#overlay').removeClass().addClass("bright"); //
 		jQuery(this).fadeOut(500);
-		console.log("表紙消す");
+//		console.log("表紙消す");
 	});
 
 	// ヘルプを表示
@@ -653,7 +678,7 @@ console.log( "選択した文字列: " + selectedText );
 		event.stopPropagation();
 		jQuery('#overlay').removeClass().addClass("dark"); //
 		jQuery('#helpbox').css('display', 'flex').hide().fadeIn(500);
-		console.log("ヘルプを表示");
+//		console.log("ヘルプを表示");
 	});
 
 	// ヘルプを消す
@@ -661,7 +686,7 @@ console.log( "選択した文字列: " + selectedText );
 		event.stopPropagation();
 		jQuery('#overlay').removeClass().addClass("bright"); //
 		jQuery(this).fadeOut(500);
-		console.log("ヘルプを消す");
+//		console.log("ヘルプを消す");
 	});
 
 	// 最初に戻る
@@ -672,7 +697,7 @@ console.log( "選択した文字列: " + selectedText );
 		jQuery('#overlay').removeClass().addClass("dark"); //
 		jQuery('#coverimage').fadeIn(500);
 		chapterChange( chapterNumber + slotOffset );
-		console.log("最初に戻る");
+//		console.log("最初に戻る");
 		// ハイライトモードの解除
 		// jQuery("#aboard").removeClass("hilightmode");
 		// console.log( "抜粋モードを解除" );
@@ -688,7 +713,7 @@ console.log( "選択した文字列: " + selectedText );
 	jQuery('.bgselector').on('click', function( event ) {
 		event.stopPropagation();
 		jQuery(this).fadeOut(500);
-		console.log("BGセレクターを消す");
+//		console.log("BGセレクターを消す");
 	});
 
 	// BGセレクターを表示
@@ -696,7 +721,7 @@ console.log( "選択した文字列: " + selectedText );
 		event.stopPropagation();
 		jQuery('#overlay').removeClass().addClass("dark"); //
 		jQuery('.bgselector').css('display', 'flex').hide().fadeIn(500);
-		console.log("BGセレクターを表示");
+//		console.log("BGセレクターを表示");
 	});
 
 	// BGを変更する
@@ -705,11 +730,11 @@ console.log( "選択した文字列: " + selectedText );
 		let newbg = jQuery(this).attr('changebgto');
 		// クッキー食わせる
 		jQuery.cookie("background", newbg, { expires: 1000, path: pathname });
-		console.log("set cookie: background " + jQuery.cookie("background") );
+//		console.log("set cookie: background " + jQuery.cookie("background") );
 		jQuery('body').removeClass().addClass( newbg ); //
 		jQuery('#overlay').removeClass().addClass("bright"); //
 		jQuery('.bgselector').fadeOut(500);
-		console.log("BG変更する");
+//		console.log("BG変更する");
 	});
 
 	// リンクのプロパゲーションを止める
