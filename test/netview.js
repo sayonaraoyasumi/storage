@@ -99,8 +99,8 @@ jQuery(function(){
 				let me = document.getElementById( 'startHilight' );
 				// 親
 				let oya = jQuery( me ).parent().parent();
-				let oyawidth = jQuery(oya).width();
-				let oyaheight = jQuery(oya).height();
+				let oyawidth = jQuery(oya).innerWidth( );
+				let oyaheight = jQuery(oya).innerHeight();
 //				console.log( "oyawidth " + oyawidth );
 //				console.log( "oyaheight " + oyaheight );
 				// 親を表示する
@@ -130,7 +130,7 @@ jQuery(function(){
 				if ( mode == "tate" ){
 					let scrolltarget = myleft;
 					jQuery( oya ).scrollLeft( scrolltarget );
-console.log("ver 1.058");
+console.log("ver 1.059");
 console.log("myleft " + myleft);
 console.log("oyawidth " + oyawidth);
 console.log("scrolltarget " + scrolltarget);
