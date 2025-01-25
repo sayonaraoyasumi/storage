@@ -130,10 +130,21 @@ jQuery(function(){
 				if ( mode == "tate" ){
 					let scrolltarget = myleft * 1.25 - oyawidth * 0.8;
 					jQuery( oya ).scrollLeft( scrolltarget );
-console.log("ver 1.053");
+console.log("ver 1.054");
 console.log("myleft " + myleft);
 console.log("oyawidth " + oyawidth);
 console.log("scrolltarget " + scrolltarget);
+
+
+			let pagewidth = jQuery('#chapter-' + queryChapter ).width();
+			console.log("pagewidth " + pagewidth);
+			let pageleft = jQuery('#chapter-' + queryChapter ).scrollLeft();
+			console.log("pageleft " + pageleft);
+			let pagepercent = pageleft / pagewidth;
+			console.log("pagepercent " + pagepercent);
+			jQuery.cookie("scroll", pagepercent, { expires: 1000, path: pathname });
+
+
 				}else{
 					jQuery( oya ).scrollTop( myTop + oyaheight * 0.8 );
 				}
@@ -372,13 +383,6 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 
 
 
-			let pagewidth = jQuery('#chapter-' + queryChapter ).width();
-			console.log("pagewidth " + pagewidth);
-			let pageleft = jQuery('#chapter-' + queryChapter ).scrollLeft();
-			console.log("pageleft " + pageleft);
-			let pagepercent = pageleft / pagewidth * 100;
-			console.log("pagepercent " + pagepercent);
-			jQuery.cookie("scroll", pagepercent, { expires: 1000, path: pathname });
 
 
 
