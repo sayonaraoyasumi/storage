@@ -129,8 +129,8 @@ jQuery(function(){
 
 				if ( mode == "tate" ){
 					let scrolltarget = myleft - oyawidth * 0.8;
-					jQuery( oya ).scrollLeft( scrolltarget * 0.8 );
-console.log("ver 1.050");
+					jQuery( oya ).scrollLeft( scrolltarget );
+console.log("ver 1.051");
 console.log("myleft " + myleft);
 console.log("oyawidth " + oyawidth);
 console.log("scrolltarget " + scrolltarget);
