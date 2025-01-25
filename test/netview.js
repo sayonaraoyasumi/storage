@@ -95,15 +95,13 @@ jQuery(function(){
 						}
 					}
 				}
-console.log("ver 1.062");
+console.log("ver 1.063");
 				// まだここは抜粋処理の中
-				let me = document.getElementById( 'startHilight' );
+				// let me = document.getElementById( 'startHilight' );
 				// 親
-				let jiji = jQuery( me ).parent().parent();
-				let oya = jQuery( me ).parent();
-				let myleft = me.offsetLeft;
+				let myleft = jQuery( '#startHilight' ).offsetLeft;
 console.log("myleft " + myleft);
-				let oyaleft = oya.offsetLeft;
+				let oyaleft = jQuery( '#startHilight' ).parent().offsetLeft;
 console.log("oyaleft " + oyaleft);
 				let scrolltarget = myleft + oyaleft;
 console.log("scrolltarget " + scrolltarget);
