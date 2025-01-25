@@ -98,29 +98,14 @@ jQuery(function(){
 				// まだここは抜粋処理の中
 				let me = document.getElementById( 'startHilight' );
 				// 親
-				let oya = jQuery( me ).parent().parent();
+				let oya = jQuery( me ).parent();
 				let oyawidth = jQuery(oya).innerWidth( );
 				let oyaheight = jQuery(oya).innerHeight();
-//				console.log( "oyawidth " + oyawidth );
-//				console.log( "oyaheight " + oyaheight );
+console.log( "oyawidth " + oyawidth );
+console.log( "oyaheight " + oyaheight );
 				// 親を表示する
 				jQuery( oya ).removeClass("hide");
 
-// テスト実装
-//
-//
-// 試験的に一個外側に配置
-// 
-				// 0.3秒待って
-/*
-				setTimeout(() => {
-					// 暗くしてるの消す
-					jQuery('#overlay').removeClass().addClass("bright"); //
-					// 表紙を消す
-					jQuery('#coverimage').fadeOut(500);
-				}, 300); 
-*/
-				// ノードの座標を割り出す
 				// 自分
 				let myleft = me.offsetLeft;
 				let myTop = me.offsetTop;
@@ -130,9 +115,8 @@ jQuery(function(){
 				if ( mode == "tate" ){
 					let scrolltarget = myleft;
 					jQuery( oya ).scrollLeft( scrolltarget );
-console.log("ver 1.059");
+console.log("ver 1.060");
 console.log("myleft " + myleft);
-console.log("oyawidth " + oyawidth);
 console.log("scrolltarget " + scrolltarget);
 
 
