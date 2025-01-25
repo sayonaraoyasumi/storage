@@ -140,7 +140,7 @@ jQuery(function(){
 // COOKIEの中身消す
 // 
 				jQuery.removeCookie('scroll');
-
+console.log("cookie scroll" + jQuery.cookie("scroll"));
 
 			}
 			// ここまでひたすら抜粋の処理
