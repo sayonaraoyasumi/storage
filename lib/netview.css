@@ -1,9 +1,9 @@
-@media (max-width: 380px) { body { font-size: 11pt; } }
-@media (min-width: 381px) and (max-width: 500px) { body { font-size: 12pt; } }
-@media (min-width: 501px) and (max-width: 640px) { body { font-size: 13pt; } }
-@media (min-width: 641px) and (max-width: 820px) { body { font-size: 14pt; } }
-@media (min-width: 821px) and (max-width: 1023px) { body { font-size: 15pt; } }
-@media (min-width: 1024px) { body { font-size: 16pt; } }
+@media (max-width: 380px) { body { font-size: 12pt; } }
+@media (min-width: 381px) and (max-width: 500px) { body { font-size: 13pt; } }
+@media (min-width: 501px) and (max-width: 640px) { body { font-size: 14pt; } }
+@media (min-width: 641px) and (max-width: 820px) { body { font-size: 15pt; } }
+@media (min-width: 821px) and (max-width: 1023px) { body { font-size: 16pt; } }
+@media (min-width: 1024px) { body { font-size: 17pt; } }
 .outerbox, div h3, .novel div:not(.forward,.back), .novel p ,.novel span{
 	pointer-events: none;
 }
@@ -190,11 +190,11 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	color: #222;
 	text-shadow: none;
 }
-.novel.bigger, .novel.bigger td{	font-size:140%; }
-.novel.big, .novel.big td{			font-size:120%; }
-.novel.mid, .novel.mid td{			font-size:110%; }
-.novel.mini, .novel.mini td{		font-size:100%; }
-.novel.minimum, .novel.minimum td{	font-size:90%; }
+.novel.bigger, .novel.bigger td{	font-size:130%; }
+.novel.big, .novel.big td{			font-size:114%; }
+.novel.mid, .novel.mid td{			font-size:100%; }
+.novel.mini, .novel.mini td{		font-size:88%; }
+.novel.minimum, .novel.minimum td{	font-size:78%; }
 
 /*  ヘッドの章タイトル部分 */
 .myTitle{
