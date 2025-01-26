@@ -117,7 +117,7 @@ jQuery(function(){
 					let midText = targetText.slice( queryStartOffset, queryEndOffset );
 					let afterText = targetText.slice( queryEndOffset );
 					// 真ん中のテキストをタグで囲む
-					let finalText = beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' 
+					let finalText = beforeText + '<span class="textHilightEdge textHilight endHilight" id="startHilight">' 
 									+ midText + '</span>'
 									+ afterText;
 					// 書き戻す
@@ -148,7 +148,7 @@ jQuery(function(){
 					beforeText = targetText.slice(0,queryEndOffset);
 					afterText = targetText.slice(queryEndOffset);
 					// 後ろのテキストをタグで囲む
-					finalText = '<span class="textHilightEdge textHilight">' + beforeText + '</span>' + afterText;
+					finalText = '<span class="textHilightEdge textHilight endHilight">' + beforeText + '</span>' + afterText;
 					// 書き戻す
 					jQuery("#n-" + queryEnd).html(finalText);
 
@@ -182,8 +182,12 @@ jQuery(function(){
 				console.log(`top = ${myposition.top}, left = ${myposition.left}`);
 
 				console.log("ーーーーーー★自分の幅と高さ:");
-				let myWidth = jQuery(me).width();
-				let myHeight = jQuery(me).height();
+				let myend = jQuery( '.endtHilight' );
+				const myendposition = me.offset();
+				let myEndWidth = jQuery(myend).width();
+				let myEndHeight = jQuery(myend).height();
+				let myHeight = myposition.top - myendposition.top + myEndHeight ;
+				let myWidth = myposition.left - myendposition.left + myEndWidth ;
 				console.log(`top = ${myHeight}, left = ${myWidth}`);
 
 				console.log("ーーーーーー★ールートの座標:");
