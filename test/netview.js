@@ -128,8 +128,8 @@ if( myHeight > routeHeight ){
 	console.log(`                                         = ${scrollHeight}`);
 }else{
 	console.log("　　　　　　自分の高さが低い");
-	scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.5 + myHeight * 0.5;
-	console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.5 + ${myHeight} * 0.5`);
+	scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.5 - myHeight * 0.5;
+	console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.5 - ${myHeight} * 0.5`);
 	console.log(`                                         = ${scrollHeight}`);
 }
 if( myWidth > routeWidth ){
@@ -139,8 +139,8 @@ if( myWidth > routeWidth ){
 	console.log(`                                         = ${scrollWidth}`);
 }else{
 	console.log("　　　　　　自分の幅が狭い");
-	scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.5 + myWidth * 0.5;
-	console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 0.5 + ${myWidth} * 0.5`);
+	scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.5 - myWidth * 0.5;
+	console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 0.5 - ${myWidth} * 0.5`);
 	console.log(`                                         = ${scrollWidth}`);
 }
 
