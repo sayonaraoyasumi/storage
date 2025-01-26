@@ -95,43 +95,71 @@ jQuery(function(){
 						}
 					}
 				}
-console.log("ver 1.063");
+				let jiji = jQuery( '#startHilight' ).parent().parent();
+				jQuery( jiji ).removeClass("hide");
+
+console.log("ver 1.070");
 				// まだここは抜粋処理の中
 				// let me = document.getElementById( 'startHilight' );
 				// 親
-				let myleft = jQuery( '#startHilight' ).offsetLeft;
-console.log("myleft " + myleft);
-				let oyaleft = jQuery( '#startHilight' ).parent().offsetLeft;
-console.log("oyaleft " + oyaleft);
-				let scrolltarget = myleft + oyaleft;
-console.log("scrolltarget " + scrolltarget);
+console.log("ーーーーーー★自分の座標:");
+let me = jQuery( '#startHilight' );
+const myposition = me.offset();
+console.log(`top = ${myposition.top}, left = ${myposition.left}`);
+console.log("ーーーーーー★自分の幅と高さ:");
+let myWidth = jQuery(me).width();
+let myHeight = jQuery(me).height();
+console.log(`top = ${myHeight}, left = ${myWidth}`);
+console.log("ーーーーーー★ールートの座標:");
+const oyaposition = jiji.offset();
+console.log(`top = ${oyaposition.top}, left = ${oyaposition.left}`);
+console.log("ーーーーーー★ールートの幅と高さ:");
+let routeWidth = jQuery(jiji).width();
+let routeHeight = jQuery(jiji).height();
+console.log(`top = ${routeHeight}, left = ${routeWidth}`);
+console.log("ーーーー合計★スクロールさせる長さ:");
 
-//				let oyawidth = jQuery(oya).innerWidth( );
-//				let oyaheight = jQuery(oya).innerHeight();
-//console.log( "oyawidth " + oyawidth );
-//console.log( "oyaheight " + oyaheight );
-				// 親を表示する
-				jQuery( oya ).removeClass("hide");
+let scrollHeight;
+let scrollWidth;
+if( myHeight > routeHeight ){
+	console.log("　　　　　　自分の高さが高い");
+	scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.95 + myHeight;
+	console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.95 + ${myHeight}`);
+	console.log(`                                         = ${scrollHeight}`);
+}else{
+	console.log("　　　　　　自分の高さが低い");
+	scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.5 + myHeight * 0.5;
+	console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.5 + ${myHeight} * 0.5`);
+	console.log(`                                         = ${scrollHeight}`);
+}
+if( myWidth > routeWidth ){
+	console.log("　　　　　　自分の幅が広い");
+	scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.95 + myWidth;
+	console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 095 + ${myWidth} `);
+	console.log(`                                         = ${scrollWidth}`);
+}else{
+	console.log("　　　　　　自分の幅が狭い");
+	scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.5 + myWidth * 0.5;
+	console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 0.5 + ${myWidth} * 0.5`);
+	console.log(`                                         = ${scrollWidth}`);
+}
 
-				// 自分
-//				let myTop = me.offsetTop;
-				// console.log( '自分の左からの位置は？ ' + myleft );
-				// console.log( '自分の上からの位置は？ ' + myTop );
-
+console.log("ーーーーーー★ールートの表示サイズ:");
+let pageleft = jQuery('#chapter-' + queryChapter ).width();
+let pageTop = jQuery('#chapter-' + queryChapter ).height();
+console.log(`top = ${pageTop}, left = ${pageleft}`);
+console.log("ーーーーーー★％サイズ:");
+let pageperHrizontal = pageleft / routeWidth;
+let pageperVirtical = pageleft / routeHeight;
+console.log(`top = ${pageperVirtical}, left = ${pageperHrizontal}`);
 				if ( mode == "tate" ){
-					jQuery( oya ).scrollLeft( scrolltarget );
-
-
-					let pagewidth = jQuery('#chapter-' + queryChapter ).width();
-					// console.log("pagewidth " + pagewidth);
-					let pageleft = jQuery('#chapter-' + queryChapter ).scrollLeft();
-					// console.log("pageleft " + pageleft);
-					let pagepercent = pageleft / pagewidth;
-					// console.log("pagepercent " + pagepercent);
-					jQuery.cookie("scroll", pagepercent, { expires: 1000, path: pathname });
-
+					console.log("左へ " + scrollWidth + "スクロール");
+					jQuery( jiji ).scrollLeft( scrollWidth );
+					jQuery.cookie("scroll", pageperHrizontal, { expires: 1000, path: pathname });
 				}else{
-					jQuery( oya ).scrollTop( myTop + oyaheight * 0.8 );
+					console.log("下へ " + scrollHeight + "スクロール");
+					jQuery( jiji ).scrollTop( scrollHeight );
+					jQuery.cookie("scroll", pageperVirtical, { expires: 1000, path: pathname });
 				}
 
 //				console.log("ノードまでスクロールさせる");
