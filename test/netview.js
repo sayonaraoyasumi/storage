@@ -32,7 +32,25 @@ jQuery(function(){
 	let sw = jQuery(currentChapter).get(0).scrollWidth;
 	let sh = jQuery(currentChapter).get(0).scrollHeight;
 
-	// cookie 処理 ========================================================
+
+	// =========================================================================================
+	// 
+	// クッキーの読み込み処理（スクロール幅計算の関係でfontだけ先に処理）
+	// 
+
+	// font
+	if (jQuery.cookie("font")){
+		jQuery(".novel").removeClass("minimum mini mid big bigger");
+		jQuery(".fontSwitch").removeClass("pick");
+		jQuery("." + jQuery.cookie("font") + "font").addClass("pick");
+		jQuery(".novel").addClass(jQuery.cookie("font"));
+		console.log("cookie: font is " + jQuery.cookie("font") );
+	}
+
+	// 
+	// =========================================================================================
+	// 
+
 	// chapter
 	console.log("――　 処理スタート");
 
@@ -287,17 +305,8 @@ jQuery(function(){
 
 	// =========================================================================================
 	// 
-	// クッキーの読み込み処理
+	// クッキーの読み込み処理、続き
 	// 
-
-	// font
-	if (jQuery.cookie("font")){
-		jQuery(".novel").removeClass("minimum mini mid big bigger");
-		jQuery(".fontSwitch").removeClass("pick");
-		jQuery("." + jQuery.cookie("font") + "font").addClass("pick");
-		jQuery(".novel").addClass(jQuery.cookie("font"));
-		console.log("cookie: font is " + jQuery.cookie("font") );
-	}
 
 	// fontfamily
 	if (jQuery.cookie("fontfamily")){

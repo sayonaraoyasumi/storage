@@ -4,49 +4,42 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name='robots' content='max-image-preview:large' />
-		<meta name="description" content="WEB版『チャットストーリーズ』">
+		<meta name="description" content="顔アイコンつきの会話劇によるセリフ中心の掌編集！">
 		<meta name="keywords" content="小説, novel, kindle">
 		<meta name="author" content="井上信行">
-		<title>WEB版『チャットストーリーズ』</title>
+		<title>『チャットストーリーズ』（WEB版）</title>
 <!-- ogp -->
 		<meta property="og:locale" content="ja_JP">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="https://sayonaraoyasumi.github.io/storage/icon/square_chatstories.jpg">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="630">
-		<meta property="og:title" content="WEB版『チャットストーリーズ』">
-		<meta property="og:description" content="『チャットストーリーズ』は、顔アイコンつきのセリフ中心の会話劇による掌編集です" />
-		<meta property="og:url" content="https://sayonaraoyasumi.github.io/storage/catalog/chatstories.html">
-		<meta property="og:site_name" content="WEB版『チャットストーリーズ』">
+		<meta property="og:title" content="『チャットストーリーズ』（WEB版）">
+		<meta property="og:description" content="顔アイコンつきの会話劇によるセリフ中心の掌編集！" />
+		<meta property="og:url" content="https://sayonaraoyasumi.github.io/storage/html/chatstories_epub.html">
+		<meta property="og:site_name" content="『チャットストーリーズ』（WEB版）">
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="WEB版『チャットストーリーズ』">
-		<meta name="twitter:description" content="『チャットストーリーズ』は、顔アイコンつきのセリフ中心の会話劇による掌編集です">
+		<meta name="twitter:title" content="『チャットストーリーズ』（WEB版）">
+		<meta name="twitter:description" content="顔アイコンつきの会話劇によるセリフ中心の掌編集！">
 		<meta name="twitter:image" content="https://sayonaraoyasumi.github.io/storage/icon/square_chatstories.jpg">
 <!-- /ogp -->
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_32.png" sizes="32x32" />
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
 		<meta name="msapplication-TileImage" content="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_270.png" />
-		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.009' type='text/css' media='all' />
+		<link rel='stylesheet' id='sayonaraoyasumi_books-css' href='https://sayonaraoyasumi.github.io/storage/lib/books.css?ver=1.040' type='text/css' media='all' />
 <!-- ここからVIEWER用の追加項目 -->
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
 		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/jquery.cookie.js?ver=1.1.5" id="jquery_cookie_script-js"></script>
-		<link rel='stylesheet' id='nyadio_commentary_netview_style-css' href='https://sayonaraoyasumi.github.io/storage/lib/netview.css?ver=1.009' type='text/css' media='all' />
-		<script type="text/javascript" src="https://sayonaraoyasumi.github.io/storage/lib/netview.js?ver=1.009" id="nyadio_commentary_netview_script-js"></script>
+		<link rel='stylesheet' id='nyadio_commentary_netview_style-css' href='../lib/netview.css?ver=1.048' type='text/css' media='all' />
+		<script type="text/javascript" src="../lib/netview.js?ver=1.048" id="nyadio_commentary_netview_script-js"></script>
 <!-- 　　　　ここまで　　　　　 -->
 <!-- チャットストーリーズ用css　-->
 <style>
 #aboard #bboard .chatstories{
 	white-space: unset;
-}
-#aboard {
-	height: 1200px;
-	max-height: 95vh;
-	max-width: 800px;
-	margin: auto;
-	margin-top: 1em;
 }
 .tablet{
 	max-width: 800px;
@@ -152,19 +145,16 @@ h1,h2,h3{
 <!-- 　　　　ここまで　　　　　 -->
 	</head>
 	<body class="home">
-	<div class="wrap">
-		<div class="titlepannel">
-			<a href="../index.html"><img src="../image/novels_logo_black.png" class="titleline" /></a>
-			<div class="bookbox"><a href="../catalog/chatstories.html"><img src="../cover/cover_chatstories.jpg" class="bookcover"></a></div>
-		</div>
-		<div id="mainbox" class="content viewerbox">
-			<div id="contentbox">
+	<body>
+		<div id="overlay" class="dark"></div>
+		<div class="desktop">
 <!--　ここからが電子書籍の内容　-->
-
 <div id="aboard">
 	<div id="bboard" class="yoko">
 		<div class="topBar">
+			<div id="gotostart" class="squarebutton leftside"><img src="https://sayonaraoyasumi.github.io/storage/icon/square_chatstories.jpg" class="bottombutton"></div>
 			<div class="myTitle"><img src="https://sonovels.com/wp-content/uploads/2022/06/now-loading.gif" width="20" height="20"></div>
+			<div id="showhelp" class="squarebutton rightside"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_help.png" class="bottombutton"></div>
 		</div>
 		<ul class="chapterBox">
 <li class="chapterJump" chapter="1">　1. 運転手さんと客の会話</li>
@@ -222,7 +212,7 @@ h1,h2,h3{
 <li class="chapterJump" chapter="53">　40. 公園通り・刑事物語</li>
 <li class="chapterJump" chapter="54">あとがき</li>
 		</ul>
-		<div class="chatstories novel" chapter="1">
+		<div class="chatstories novel hide" chapter="1">
 			<h3>1. 運転手さんと客の会話</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/june.png"></div>
@@ -425,7 +415,7 @@ h1,h2,h3{
 			スリーアウトチェンジです。今度はお客様が運転席へどうぞ
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="2"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="2"><div class="back"></div>
 			<h3>ようこそ、チャットストーリーの世界へ</h3>
 			<div class="linner">
 			　みなさん、チャットストーリーはお好きですか？<br>
@@ -447,7 +437,7 @@ h1,h2,h3{
 			　それではここで、この本のパーソナリティ、モナカにバトンを渡したいと思います。
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="3"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="3"><div class="back"></div>
 			<h3>ごあいさつ</h3>
 			<div class="tablet">
 				<div class="mycat"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/monaca.png"></div>
@@ -477,7 +467,7 @@ h1,h2,h3{
 			それ、上司の親戚はバナナどうしてるの？
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="4"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="4"><div class="back"></div>
 			<h3>第１部 ちょっとつまみぐい</h3>
 			<div class="tablet">
 				<div class="mycatch"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/sakura.png"></div>
@@ -486,7 +476,7 @@ h1,h2,h3{
 				</div>
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="5"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="5"><div class="back"></div>
 			<h3>2. あんちゃんブログ はじまり</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/iona.png"></div>
@@ -704,7 +694,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="6"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="6"><div class="back"></div>
 			<h3>3. シメジの恋の物語</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/elle.png"></div>
@@ -1062,7 +1052,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="7"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="7"><div class="back"></div>
 			<h3>4. 詩作講座 傷ついたオレ、ラブ</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/kate.png"></div>
@@ -1367,7 +1357,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="8"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="8"><div class="back"></div>
 			<h3>5. なにげにいい感じのふたり</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/neco.png"></div>
@@ -1477,7 +1467,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="9"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="9"><div class="back"></div>
 			<h3>6. 霊界通信 ニュータイプになりてぇ</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/june.png"></div>
@@ -1913,7 +1903,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel skit" chapter="10"><div class="back"></div>
+		<div class="chatstories novel skit hide" chapter="10"><div class="back"></div>
 			<h3>会話劇講座(1) キャラ構成</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/hal.png"></div>
@@ -2141,7 +2131,7 @@ h1,h2,h3{
 			おしごと募集中でーす！
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="11"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="11"><div class="back"></div>
 			<h3>第２部 ちょっとエロ</h3>
 			<div class="tablet">
 				<div class="mycatch"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/suzu.png"></div>
@@ -2150,7 +2140,7 @@ h1,h2,h3{
 				</div>
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="12"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="12"><div class="back"></div>
 			<h3>7. 国生み神話</h3>
 			<div class="togaki">
 			ある日、イザナギとイザナミの二人の神様が、ぼんやりと下界をながめているときでした。上司の偉い神様が来て言いました。</div>
@@ -2513,7 +2503,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="13"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="13"><div class="back"></div>
 			<h3>8. マンガ喫茶にて</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/neco.png"></div>
@@ -2858,7 +2848,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="14"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="14"><div class="back"></div>
 			<h3>9. みくだしてる</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/clea.png"></div>
@@ -3034,7 +3024,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="15"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="15"><div class="back"></div>
 			<h3>10. 帰りの会</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/fye.png"></div>
@@ -3165,7 +3155,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel skit" chapter="16"><div class="back"></div>
+		<div class="chatstories novel skit hide" chapter="16"><div class="back"></div>
 			<h3>会話劇講座(2) カッパの使い方</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/hal.png"></div>
@@ -3402,7 +3392,7 @@ h1,h2,h3{
 			先生！　ずるいです！
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="17"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="17"><div class="back"></div>
 			<h3>第３部 ちょっとリアルに</h3>
 			<div class="tablet">
 				<div class="mycatch"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/monaca.png"></div>
@@ -3411,7 +3401,7 @@ h1,h2,h3{
 				</div>
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="18"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="18"><div class="back"></div>
 			<h3>11. ＯＬくの一忍法帖</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/ann.png"></div>
@@ -3890,7 +3880,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="19"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="19"><div class="back"></div>
 			<h3>12. ネットワーク上の妖精</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/gran.png"></div>
@@ -4017,7 +4007,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="20"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="20"><div class="back"></div>
 			<h3>13. セールス電話</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/ann.png"></div>
@@ -4531,7 +4521,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="21"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="21"><div class="back"></div>
 			<h3>14. まさこしゃんへ</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/pec.png"></div>
@@ -4586,7 +4576,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="22"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="22"><div class="back"></div>
 			<h3>15. 定時５分前の妄想</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/elle.png"></div>
@@ -5295,7 +5285,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="23"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="23"><div class="back"></div>
 			<h3>16. タナカくんこんにちは</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/ann.png"></div>
@@ -5368,7 +5358,7 @@ h1,h2,h3{
 			タナカくんのお母さんより
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel skit" chapter="24"><div class="back"></div>
+		<div class="chatstories novel skit hide" chapter="24"><div class="back"></div>
 			<h3>会話劇講座(3) ぜんぶ喋らせる</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/rett.png"></div>
@@ -5553,7 +5543,7 @@ h1,h2,h3{
 			抜けすぎてオシッコ漏れそうです
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="25"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="25"><div class="back"></div>
 			<h3>第４部 ちょっとファンタジー</h3>
 			<div class="tablet">
 				<div class="mycatch"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/ziggy.png"></div>
@@ -5562,7 +5552,7 @@ h1,h2,h3{
 				</div>
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="26"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="26"><div class="back"></div>
 			<h3>17. セミの兄弟</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onet.png"></div>
@@ -5869,7 +5859,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="27"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="27"><div class="back"></div>
 			<h3>18. なぜ天照大神は女神なのか</h3>
 			<div class="togaki">
 			天照大神が女性の神だってのは、子供の頃から日本神話に親しんできた身だとそんなに違和感はないんだけど、実は世界的にはちょっと珍しいって話を小耳にはさんで、ちょっとビックリな感じのボクなんですけど、みんなはどうかな？<br>
@@ -6069,7 +6059,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="28"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="28"><div class="back"></div>
 			<h3>19. あの幼虫からの卒業</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/quin.png"></div>
@@ -6443,7 +6433,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="29"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="29"><div class="back"></div>
 			<h3>20. カンダタ日記</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/fye.png"></div>
@@ -6611,7 +6601,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel skit" chapter="30"><div class="back"></div>
+		<div class="chatstories novel skit hide" chapter="30"><div class="back"></div>
 			<h3>会話劇講座(4) 困ったときの桃太郎</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/hal.png"></div>
@@ -6859,7 +6849,7 @@ h1,h2,h3{
 			先生！　しっかりしてください、先生！
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="31"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="31"><div class="back"></div>
 			<h3>第５部 もっと！</h3>
 			<div class="tablet">
 				<div class="mycatch"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/sakura.png"></div>
@@ -6868,9 +6858,8 @@ h1,h2,h3{
 				</div>
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="32"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="32"><div class="back"></div>
 			<h3>21. あんちゃんブログ　世界の陰謀</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/clea.png"></div>
 				<div class="moji"><div class="bubble">
@@ -7108,9 +7097,8 @@ h1,h2,h3{
 			今日中に読んどくよ
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="33"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="33"><div class="back"></div>
 			<h3>22. あんちゃんブログ　皇紀</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/iona.png"></div>
 				<div class="moji"><div class="bubble">
@@ -7230,9 +7218,8 @@ h1,h2,h3{
 			あん？
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="34"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="34"><div class="back"></div>
 			<h3>23. あんちゃんブログ　電話</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/iona.png"></div>
 				<div class="moji"><div class="bubble">
@@ -7378,9 +7365,8 @@ h1,h2,h3{
 			あんちゃーん！
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="35"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="35"><div class="back"></div>
 			<h3>24. あんちゃんブログ　偽装</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/iona.png"></div>
 				<div class="moji"><div class="bubble">
@@ -7614,9 +7600,8 @@ h1,h2,h3{
 			うん
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="36"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="36"><div class="back"></div>
 			<h3>25. 課金のすばらしさが分かるRPG</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/iona.png"></div>
 				<div class="moji"><div class="bubble">
@@ -7880,9 +7865,8 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="37"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="37"><div class="back"></div>
 			<h3>26. シメジはオオカミ</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/elle.png"></div>
 				<div class="moji"><div class="bubble">
@@ -8108,9 +8092,8 @@ h1,h2,h3{
 			※ウソです
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="38"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="38"><div class="back"></div>
 			<h3>27. シメジにも愛をください</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/fye.png"></div>
 				<div class="moji"><div class="bubble">
@@ -8377,9 +8360,8 @@ h1,h2,h3{
 			シメジが去ったあと、シメジが残したピヨピヨを、一人泣きながら抱きしめる姉であった……。
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="39"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="39"><div class="back"></div>
 			<h3>28. シメジと犬ちゃん</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/elle.png"></div>
 				<div class="moji"><div class="bubble">
@@ -8478,9 +8460,8 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="40"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="40"><div class="back"></div>
 			<h3>29. 詩作講座　夜のハイウェイ</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/kate.png"></div>
 				<div class="moji"><div class="bubble5">
@@ -8856,9 +8837,8 @@ h1,h2,h3{
 			「って、あぶねーだろ」
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="41"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="41"><div class="back"></div>
 			<h3>30. うらうらほろほろ詩作合宿</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/kate.png"></div>
 				<div class="moji"><div class="bubble">
@@ -9176,9 +9156,8 @@ h1,h2,h3{
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/linnR.png"></div>
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="42"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="42"><div class="back"></div>
 			<h3>31. 出撃！ ポエム隊！</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/ann.png"></div>
 				<div class="moji"><div class="bubble">
@@ -9541,9 +9520,8 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="43"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="43"><div class="back"></div>
 			<h3>32. なんかめんどくさいふたり</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onet.png"></div>
 				<div class="moji"><div class="bubble">
@@ -9761,9 +9739,8 @@ h1,h2,h3{
 			こいつには水で
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="44"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="44"><div class="back"></div>
 			<h3>33. ケルト人</h3>
-			<div class="underbar"></div>
 			<h5>１日目</h5>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/neco.png"></div>
@@ -9809,9 +9786,8 @@ h1,h2,h3{
 			畜生！
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="45"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="45"><div class="back"></div>
 			<h3>34. 巨大なオカモチ</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onet.png"></div>
 				<div class="moji"><div class="bubble">
@@ -10561,9 +10537,8 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="46"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="46"><div class="back"></div>
 			<h3>35. 霊界通信 ○□◇△</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/june.png"></div>
 				<div class="moji"><div class="bubble">
@@ -11051,9 +11026,8 @@ h1,h2,h3{
 			霊界～　死んで逢いましょ～
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="47"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="47"><div class="back"></div>
 			<h3>36. 霊界通信 最強の神様</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/june.png"></div>
 				<div class="moji"><div class="bubble">
@@ -11407,9 +11381,8 @@ h1,h2,h3{
 			霊界～　死んで逢いましょ～
 			</div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="48"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="48"><div class="back"></div>
 			<h3>37. 霊界通信 チャネルとの出会い</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/june.png"></div>
 				<div class="moji"><div class="bubble">
@@ -11885,9 +11858,8 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="49"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="49"><div class="back"></div>
 			<h3>38. イイダくんとマスター 耳タブ</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/dish.png"></div>
 				<div class="moji"><div class="bubble">
@@ -12167,9 +12139,8 @@ h1,h2,h3{
 			ゾワゾワ～ッ
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="50"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="50"><div class="back"></div>
 			<h3>39. イイダくんとチョコレートパフェ</h3>
-			<div class="underbar"></div>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/dish.png"></div>
 				<div class="moji"><div class="bubble">
@@ -12304,7 +12275,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel skit" chapter="51"><div class="back"></div>
+		<div class="chatstories novel skit hide" chapter="51"><div class="back"></div>
 			<h3>会話劇講座(5) マンネリの美学</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/hal.png"></div>
@@ -12667,7 +12638,7 @@ h1,h2,h3{
 			おまえも困ってんのかよ！
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="52"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="52"><div class="back"></div>
 			<h3>第６部 最後にちょっと</h3>
 			<div class="tablet">
 				<div class="mycatch"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/monaca.png"></div>
@@ -12724,7 +12695,7 @@ h1,h2,h3{
 			</div></div></div>
 			<p class="separator"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/onigiri.png"></p>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="53"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="53"><div class="back"></div>
 			<h3>40. 公園通り・刑事物語</h3>
 			<div class="tablet">
 				<div class="face"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/deka8.png"></div>
@@ -12916,7 +12887,7 @@ h1,h2,h3{
 			また次の機会に！
 			</div></div></div>
 		<div class="forward"></div></div>
-		<div class="chatstories novel" chapter="54"><div class="back"></div>
+		<div class="chatstories novel hide" chapter="54"><div class="back"></div>
 			<h3>あとがき</h3>
 			　最初は、短編集を作ろうと思ったんです。<br>
 			　書き溜めたライブラリのなかに、８００文字程度の、いわゆる掌編なんですけど、お気に入りの一本があって、それを本の形に仕上げたくて、カップリングできる短編はないかとライブラリを漁ったんですが、漁れども漁れどもチャットストーリーしか出てこない。<br>
@@ -12932,47 +12903,50 @@ h1,h2,h3{
 			　僕はいま、中学の三年のときに読んだ山椒魚の、続きを生きてるんです。
 			<p class="center notebox"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/chatstories/okuduke.jpg" alt="さよならおやすみ チャット・ストーリーず"></p>
 		</div>
-		<div class="bottomBar">
-			<div class="fontSwitch minimumfont">🐞</div>
-			<div class="fontSwitch minifont">🐹</div>
-			<div class="fontSwitch midfont pick">🐱</div>
-			<div class="fontSwitch bigfont">🐻</div>
-			<div class="fontSwitch biggerfont">🦕</div>
-			<div class="zoomButton">🔍️</div>
+		<div id="anouncebox" class="coverboard">
+			<div class="voice"></div>
+		</div>
+		<div class="optionBar">
+			<button class="makelink thisbook">この本のリンクをクリップボードにコピーする</button>
+			<button class="makelink thischapter">この章のリンクをクリップボードにコピーする</button>
+		</div>
+		<button class="bottomBar">
+			<div class="exitButton leftside squarebutton">
+				<a href="https://sayonaraoyasumi.github.io/storage/catalog/chatstories.html"><img src="../html/sozai/button_exit.png" class="bottombutton"></a>
+			</div>
+			<div class="fontSwitch squarebutton minimumfont"><img src="../html/sozai/button_font1.png" class="bottombutton"></div>
+			<div class="fontSwitch squarebutton minifont"><img src="../html/sozai/button_font2.png" class="bottombutton"></div>
+			<div class="fontSwitch squarebutton midfont pick"><img src="../html/sozai/button_font3.png" class="bottombutton"></div>
+			<div class="fontSwitch squarebutton bigfont"><img src="../html/sozai/button_font4.png" class="bottombutton"></div>
+			<div class="fontSwitch squarebutton biggerfont"><img src="../html/sozai/button_font5.png" class="bottombutton"></div>
+			<div class="fontChange squarebutton serif"><img src="../html/sozai/button_fontchange.png" class="bottombutton"></div>
+			<div class="configButton squarebutton rightside"><img src="../html/sozai/button_config.png" class="bottombutton"></div>
+		</button>
+		<div id="helpbox" class="coverboard"><img src="../html/sozai/viewerhelp.png"></div>
+		<div id="coverimage" class="coverboard" style="background-image:url(https://sayonaraoyasumi.github.io/storage/cover/cover_chatstories.jpg);"></div>
+		<div class="bgselector">
+			<img src="../html/background/BG01mini.jpg" class="picturebutton" changebgto="bg-01">
+			<img src="../html/background/BG02mini.jpg" class="picturebutton" changebgto="bg-02">
+			<img src="../html/background/BG03mini.jpg" class="picturebutton" changebgto="bg-03">
+			<img src="../html/background/BG04mini.jpg" class="picturebutton" changebgto="bg-04">
+			<img src="../html/background/BG05mini.jpg" class="picturebutton" changebgto="bg-05">
+			<img src="../html/background/BG06mini.jpg" class="picturebutton" changebgto="bg-06">
+			<img src="../html/background/BG07mini.jpg" class="picturebutton" changebgto="bg-07">
+			<img src="../html/background/BG08mini.jpg" class="picturebutton" changebgto="bg-08">
+			<img src="../html/background/BG09mini.jpg" class="picturebutton" changebgto="bg-09">
+			<img src="../html/background/BG10mini.jpg" class="picturebutton" changebgto="bg-10">
+			<img src="../html/background/BG11mini.jpg" class="picturebutton" changebgto="bg-11">
+			<img src="../html/background/BG12mini.jpg" class="picturebutton" changebgto="bg-12">
+			<img src="../html/background/BG13mini.jpg" class="picturebutton" changebgto="bg-13">
+			<img src="../html/background/BG14mini.jpg" class="picturebutton" changebgto="bg-14">
+			<img src="../html/background/BG15mini.jpg" class="picturebutton" changebgto="bg-15">
+			<img src="../html/background/BG16mini.jpg" class="picturebutton" changebgto="bg-16">
+			<img src="../html/background/BG17mini.jpg" class="picturebutton" changebgto="bg-17">
+			<img src="../html/background/BG18mini.jpg" class="picturebutton" changebgto="bg-18">
 		</div>
 	</div>
 </div>
 <!-- 　　　　ここまで　　　　　 -->
-			<div class="buykindle">
-				<h3>ご購入はこちらで！</h3>
-				<a href="https://www.amazon.co.jp/dp/B09BL5J7KS" class="kindlelink">
-					<img src="https://sayonaraoyasumi.github.io/storage/icon/square_chatstories.jpg" class="kindlebook"><br/>Kindleのページへ
-				</a>
-			</div>
-			</div>
-			<div id="menubox">
-				<iframe src="https://sayonaraoyasumi.github.io/storage/catalog/menucolumn.html?ver=1.09" class="menucolumn" id="autoResizeIframe"></iframe>
-<script>
-	// Iframeの高さを内容に合わせる
-	function resizeIframe() {
-		const iframe = document.getElementById('autoResizeIframe');
-		if (iframe && iframe.contentWindow && iframe.contentDocument) {
-			iframe.style.height = iframe.contentDocument.body.scrollHeight + "px";
-		}
-	}
-	// Iframe の読み込みが完了した後にリサイズを実行
-	const iframe = document.getElementById('autoResizeIframe');
-	iframe.addEventListener('load', resizeIframe);
-	window.addEventListener('resize', resizeIframe);
-</script>
-			</div>
 		</div>
-		<div class="footer">
-			<a href="about.html" class="locallink">このページについて</a>
-			<div class="credit">
-				© 2012 さよならおやすみ株式会社/井上信行
-			</div>
-		</div>
-	</div>
 	</body>
 </html>
