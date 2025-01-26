@@ -175,17 +175,18 @@ jQuery(function(){
 			// 
 				// 抜粋の場所までスクロールする処理
 				// 
-				console.log("ver 1.072");
+				console.log("ver 1.076");
 				console.log("ーーーーーー★自分の座標:");
 				let me = jQuery( '#startHilight' );
 				const myposition = me.offset();
 				console.log(`top = ${myposition.top}, left = ${myposition.left}`);
 
 				console.log("ーーーーーー★自分の幅と高さ:");
-				let myend = jQuery( '.endtHilight' );
+				let myend = jQuery( '.endHilight' );
 				const myendposition = me.offset();
 				let myEndWidth = jQuery(myend).width();
 				let myEndHeight = jQuery(myend).height();
+				console.log(`ハイライト域のラスト要素　top = ${myEndHeight}, left = ${myEndWidth}`);
 				let myHeight = myposition.top - myendposition.top + myEndHeight ;
 				let myWidth = myposition.left - myendposition.left + myEndWidth ;
 				console.log(`top = ${myHeight}, left = ${myWidth}`);
