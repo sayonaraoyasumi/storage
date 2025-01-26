@@ -175,7 +175,7 @@ jQuery(function(){
 			// 
 				// 抜粋の場所までスクロールする処理
 				// 
-				console.log("ver 1.077");
+				console.log("ver 1.078");
 				console.log("ーーーーーー★自分の座標:");
 				let me = jQuery( '#startHilight' );
 				const myposition = me.offset();
@@ -183,12 +183,14 @@ jQuery(function(){
 
 				console.log("ーーーーーー★自分の幅と高さ:");
 				let myend = jQuery( '.endHilight' );
-				const myendposition = me.offset();
-				let myEndWidth = jQuery(myend).width();
-				let myEndHeight = jQuery(myend).height();
-				console.log(`ハイライト域のラスト要素　top = ${myEndHeight}, left = ${myEndWidth}`);
-				let myHeight = myposition.top - myendposition.top + myEndHeight ;
-				let myWidth = myposition.left - myendposition.left + myEndWidth ;
+				const myendposition = myend.offset();
+				let myStartWidth = jQuery(me).width();
+				let myStartHeight = jQuery(me).height();
+				console.log(`ハイライト域の最初の要素　top = ${myStartHeight}, left = ${myStartWidth}`);
+				let myHeight = myposition.top - myendposition.top + myStartHeight ;
+				let myWidth = myposition.left - myendposition.left + myStartWidth ;
+				console.log("自分の横幅 = 最初の座標 - 最後の座標 + 最初の幅");
+				console.log(`${myWidth} = ${myposition.left} - ${myendposition.left} + ${myStartWidth}`);
 				console.log(`top = ${myHeight}, left = ${myWidth}`);
 
 				console.log("ーーーーーー★ールートの座標:");
@@ -205,28 +207,28 @@ jQuery(function(){
 				let scrollWidth;
 				if( myHeight > routeHeight ){
 					console.log("　　　　　　自分の高さが高い");
-					scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.98 + myHeight;
+					scrollHeight = myendposition.top - oyaposition.top - routeHeight * 0.98 + myHeight;
 					console.log("自分の座標 - 親の座標 - 親の高さの98% + 自分の高さ ");
-					console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.98 + ${myHeight}`);
+					console.log(`縦: ${myendposition.top} - ${oyaposition.top} - ${routeHeight} * 0.98 + ${myHeight}`);
 					console.log(`                                         = ${scrollHeight}`);
 				}else{
 					console.log("　　　　　　自分の高さが低い");
-					scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.5 + myHeight * 0.5;
+					scrollHeight = myendposition.top - oyaposition.top - routeHeight * 0.5 + myHeight * 0.5;
 					console.log("自分の座標 - 親の座標 - 親の高さの半分 + 自分の高さの半分 ");
-					console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.5 + ${myHeight} * 0.5`);
+					console.log(`縦: ${myendposition.top} - ${oyaposition.top} - ${routeHeight} * 0.5 + ${myHeight} * 0.5`);
 					console.log(`                                         = ${scrollHeight}`);
 				}
 				if( myWidth > routeWidth ){
 					console.log("　　　　　　自分の幅が広い");
-					scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.98 + myWidth;
+					scrollWidth = myendposition.left - oyaposition.left - routeWidth * 0.98 + myWidth;
 					console.log("自分の座標 - 親の座標 - 親の広さの98% + 自分の広さ ");
-					console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 098 + ${myWidth} `);
+					console.log(`横: ${myendposition.left} - ${oyaposition.left} - ${routeWidth} * 098 + ${myWidth} `);
 					console.log(`                                         = ${scrollWidth}`);
 				}else{
 					console.log("　　　　　　自分の幅が狭い");
-					scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.5 + myWidth * 0.5;
+					scrollWidth = myendposition.left - oyaposition.left - routeWidth * 0.5 + myWidth * 0.5;
 					console.log("自分の座標 - 親の座標 - 親の広さの半分 + 自分の広さの半分 ");
-					console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 0.5 + ${myWidth} * 0.5`);
+					console.log(`横: ${myendposition.left} - ${oyaposition.left} - ${routeWidth} * 0.5 + ${myWidth} * 0.5`);
 					console.log(`                                         = ${scrollWidth}`);
 				}
 
