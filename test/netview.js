@@ -1,11 +1,20 @@
 jQuery(function(){
 
+	// chapterナンバーを得る際に必要なオフセット
+	// .novelにはIDもあるが、レガシー対応で.novel:nth-childで判定している
+	// .topBar と .chapterBox が兄要素になる
 	const slotOffset = 2;
+
+	// クエリを省いたURL
 	const pathname = location.pathname;
 
+	// chapterナンバーとスクロール値のデフォルト
+	// スクロール値は１が100%
 	let chapterNumber = 1;
 	let scrollPersent = 0;
 
+	// 縦書きか横書きかは #bboard のクラスで判定
+	// デフォルト（設定がない場合）は縦
 	let mode;
 	if ( jQuery("#bboard").hasClass("yoko") ){
 		mode = "yoko";
@@ -13,193 +22,273 @@ jQuery(function(){
 		mode = "tate";
 	}
 
-	// カレントの.novelを覚えておく
+	// カレントの.novelのスロット番号を覚えておくためのバッファ
 	let curchapslot = chapterNumber + slotOffset;
+
+	// カレントのchapterのオブジェクト。
 	let currentChapter = jQuery(".novel:nth-child(" + curchapslot + ")");
 
-	// カレントの.novelの全幅を覚えておく
+	// カレントの.novelの全幅・全高を覚えておく
 	let sw = jQuery(currentChapter).get(0).scrollWidth;
 	let sh = jQuery(currentChapter).get(0).scrollHeight;
 
 	// cookie 処理 ========================================================
 	// chapter
-//	console.log("ACTION: 処理スタート");
+	console.log("――　 処理スタート");
+
 	// クエリを格納するハッシュ
 	const queryParams = {};
-	const urlObject = new URL(location.href); // URLオブジェクトを作成
+	const urlObject = new URL(location.href);    // URLオブジェクトを作成
 	const searchParams = urlObject.searchParams; // searchParamsオブジェクトを取得
+
 	// searchParamsをループしてハッシュに格納
 	for (const [key, value] of searchParams.entries()) {
 		queryParams[key] = value;
 	}
+
+	// ハッシュを分解
 	const queryChapter = queryParams.c * 1;
 	const queryStart = queryParams.s * 1;
 	const queryStartOffset = queryParams.so * 1;
 	const queryEnd = queryParams.e * 1;
 	const queryEndOffset = queryParams.eo * 1;
-	let targetText, beforeText, midText, afterText;
+
+	// クエリが存在してる場合以下のケースが考えられる
+	//  ・引用へのリンク
+	//  ・章へのリンク
 	if ( queryChapter ){
-		// クエリからチャプターが来てる場合
-		if ( queryChapter && queryStart && queryEnd ){
-			// 抜粋の処理を行う
+		// 
+		// クエリからチャプターが来てる
+		// 
+		if ( queryStart && queryEnd ){
+			// 
+			// queryStart と queryEnd があった場合、抜粋の処理を行う
+			// 
+			// chapterNumber をクエリで上書き
 			chapterNumber = queryChapter * 1;
-//			console.log("ACTION: 抜粋処理 - chapter = " + chapterNumber );
 
+			// 
 			// エラーの除去処理
-			let capTextError = 'ない';
+			// 
 			if( queryStart > queryEnd){
-				capTextError = "範囲指定が間違っているようです";
-//				console.log( "開始ノード" + queryStart );
-//				console.log( "終了ノード" + queryEnd );
-//				console.log( capTextError );
+
+				let capTextError = "範囲指定が間違っているようです";
+				console.log( "開始ノード" + queryStart );
+				console.log( "終了ノード" + queryEnd );
+				console.log( capTextError );
+
+			// =========================================================================================
+			// 
+			// 抜粋モードの処理
+			// 
 			} else {
-				// まずは抜粋モードを設定
+				// NOW 抜粋モード処理
+				// まずは抜粋クラスを設定
+				console.log( "抜粋クラスを設定 " );
 				jQuery("#aboard").addClass("hilightmode");
-//				console.log( "抜粋モードを設定 " );
+
+				// 
+				// 開始と終了が同じノードにある場合の処理
+				// 
 				if ( queryStart == queryEnd ){
-					// 開始と終了が同じノードにある場合の処理
-//					console.log("開始と終了が同じノードにある場合の処理 ======================");
+					console.log("開始と終了が同じノードにある場合の処理 ======================");
+					// 対象のテキストを得る
 					targetText = jQuery("#n-" + queryStart).html();
-//					console.log( "キャプチャスタート " + queryStartOffset );
-					beforeText = targetText.slice(0, queryStartOffset);
-					midText = targetText.slice( queryStartOffset, queryEndOffset );
-//					console.log( "キャプチャエンド " + queryEndOffset );
-					afterText = targetText.slice( queryEndOffset );
-					jQuery("#n-" + queryStart).html(beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' + midText + '</span>' + afterText);
+					// テキストを三分割する
+					let beforeText = targetText.slice(0, queryStartOffset);
+					let midText = targetText.slice( queryStartOffset, queryEndOffset );
+					let afterText = targetText.slice( queryEndOffset );
+					// 真ん中のテキストをタグで囲む
+					let finalText = beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' 
+									+ midText + '</span>'
+									+ afterText;
+					// 書き戻す
+					jQuery("#n-" + queryStart).html(finalText);
 
+			// 
+			// NOW 抜粋モード処理
+			// 
+				// 
+				// 開始と終了が複数ノードにまたがっている場合の処理
+				// 
 				} else {
-					// 開始ノードにタグを打ち込む
-//					console.log("開始ノードにタグを打ち込む ======================");
-					targetText = jQuery("#n-" + queryStart).html();
-//					console.log( "キャプチャスタート " + queryStart + "章" + queryStartOffset + "文字" );
-					beforeText = targetText.slice(0, queryStartOffset);
-					afterText = targetText.slice(queryStartOffset);
-					// 新しいHTMLを構築
-					jQuery("#n-" + queryStart).html(beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' + afterText + '</span>');
 
-					// 終了ノードにタグを打ち込む
-//					console.log("終了ノードにタグを打ち込む ======================");
+					console.log("開始と終了が複数ノードにまたがっている場合の処理 ======================");
+					// 開始ノードのテキストを得る
+					targetText = jQuery("#n-" + queryStart).html();
+					// テキストを二分割する
+					let beforeText = targetText.slice(0, queryStartOffset);
+					let afterText = targetText.slice(queryStartOffset);
+					// 後ろのテキストをタグで囲む
+					let finalText = beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' + afterText + '</span>';
+					// 書き戻す
+					jQuery("#n-" + queryStart).html(finalText);
+
+					// 終了ノードのテキストを得る
 					targetText = jQuery("#n-" + queryEnd).html();
-//					console.log( "キャプチャエンド " + queryEnd + "章" + queryEndOffset + "文字" );
+					// テキストを二分割する
 					beforeText = targetText.slice(0,queryEndOffset);
 					afterText = targetText.slice(queryEndOffset);
-					// 新しいHTMLを構築
-					jQuery("#n-" + queryEnd).html('<span class="textHilightEdge textHilight">' + beforeText + '</span>' + afterText);
+					// 後ろのテキストをタグで囲む
+					finalText = '<span class="textHilightEdge textHilight">' + beforeText + '</span>' + afterText;
+					// 書き戻す
+					jQuery("#n-" + queryEnd).html(finalText);
 
 					// 途中のノードにクラスを追加する
 					if( queryStart + 1 < queryEnd ){
-//						console.log("途中のノードにクラスを追加する");
+						// 開始ノードの次のノードから、終了の前のノードまでループ
 						for (let i = queryStart + 1; i < queryEnd; i++) {
-//							console.log("　追加 #n-" + i );
+							// textHilight クラスを追加
 							targetText = jQuery("#n-" + i ).addClass("textHilight");
 						}
 					}
 				}
+			// 
+			// NOW 抜粋モード処理
+			// 
+
+				// 抜粋開始クラス（startHilight）を含む .novel クラスを得る
+				// 
 				let jiji = jQuery( '#startHilight' ).parent().parent();
 				jQuery( jiji ).removeClass("hide");
 
-console.log("ver 1.070");
-				// まだここは抜粋処理の中
-				// let me = document.getElementById( 'startHilight' );
-				// 親
-console.log("ーーーーーー★自分の座標:");
-let me = jQuery( '#startHilight' );
-const myposition = me.offset();
-console.log(`top = ${myposition.top}, left = ${myposition.left}`);
-console.log("ーーーーーー★自分の幅と高さ:");
-let myWidth = jQuery(me).width();
-let myHeight = jQuery(me).height();
-console.log(`top = ${myHeight}, left = ${myWidth}`);
-console.log("ーーーーーー★ールートの座標:");
-const oyaposition = jiji.offset();
-console.log(`top = ${oyaposition.top}, left = ${oyaposition.left}`);
-console.log("ーーーーーー★ールートの幅と高さ:");
-let routeWidth = jQuery(jiji).width();
-let routeHeight = jQuery(jiji).height();
-console.log(`top = ${routeHeight}, left = ${routeWidth}`);
-console.log("ーーーー合計★スクロールさせる長さ:");
+			// 
+			// NOW 抜粋モード処理
+			// 
+				// 抜粋の場所までスクロールする処理
+				// 
+				console.log("ver 1.072");
+				console.log("ーーーーーー★自分の座標:");
+				let me = jQuery( '#startHilight' );
+				const myposition = me.offset();
+				console.log(`top = ${myposition.top}, left = ${myposition.left}`);
 
-let scrollHeight;
-let scrollWidth;
-if( myHeight > routeHeight ){
-	console.log("　　　　　　自分の高さが高い");
-	scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.95 + myHeight;
-	console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.95 + ${myHeight}`);
-	console.log(`                                         = ${scrollHeight}`);
-}else{
-	console.log("　　　　　　自分の高さが低い");
-	scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.5 - myHeight * 0.5;
-	console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.5 - ${myHeight} * 0.5`);
-	console.log(`                                         = ${scrollHeight}`);
-}
-if( myWidth > routeWidth ){
-	console.log("　　　　　　自分の幅が広い");
-	scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.95 + myWidth;
-	console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 095 + ${myWidth} `);
-	console.log(`                                         = ${scrollWidth}`);
-}else{
-	console.log("　　　　　　自分の幅が狭い");
-	scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.5 - myWidth * 0.5;
-	console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 0.5 - ${myWidth} * 0.5`);
-	console.log(`                                         = ${scrollWidth}`);
-}
+				console.log("ーーーーーー★自分の幅と高さ:");
+				let myWidth = jQuery(me).width();
+				let myHeight = jQuery(me).height();
+				console.log(`top = ${myHeight}, left = ${myWidth}`);
 
-console.log("ーーーーーー★ールートの表示サイズ:");
-let pageleft = jQuery('#chapter-' + queryChapter ).width();
-let pageTop = jQuery('#chapter-' + queryChapter ).height();
-console.log(`top = ${pageTop}, left = ${pageleft}`);
-console.log("ーーーーーー★％サイズ:");
-let pageperHrizontal = pageleft / routeWidth;
-let pageperVirtical = pageleft / routeHeight;
-console.log(`top = ${pageperVirtical}, left = ${pageperHrizontal}`);
+				console.log("ーーーーーー★ールートの座標:");
+				const oyaposition = jiji.offset();
+				console.log(`top = ${oyaposition.top}, left = ${oyaposition.left}`);
+
+				console.log("ーーーーーー★ールートの幅と高さ:");
+				let routeWidth = jQuery(jiji).width();
+				let routeHeight = jQuery(jiji).height();
+				console.log(`top = ${routeHeight}, left = ${routeWidth}`);
+
+				console.log("ーーーー合計★スクロールさせる量:");
+				let scrollHeight;
+				let scrollWidth;
+				if( myHeight > routeHeight ){
+					console.log("　　　　　　自分の高さが高い");
+					scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.98 + myHeight;
+					console.log("自分の座標 - 親の座標 - 親の高さの98% + 自分の高さ ");
+					console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.98 + ${myHeight}`);
+					console.log(`                                         = ${scrollHeight}`);
+				}else{
+					console.log("　　　　　　自分の高さが低い");
+					scrollHeight = myposition.top - oyaposition.top - routeHeight * 0.5 + myHeight * 0.5;
+					console.log("自分の座標 - 親の座標 - 親の高さの半分 + 自分の高さの半分 ");
+					console.log(`縦: ${myposition.top} - ${oyaposition.top} - ${routeHeight} * 0.5 + ${myHeight} * 0.5`);
+					console.log(`                                         = ${scrollHeight}`);
+				}
+				if( myWidth > routeWidth ){
+					console.log("　　　　　　自分の幅が広い");
+					scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.98 + myWidth;
+					console.log("自分の座標 - 親の座標 - 親の広さの98% + 自分の広さ ");
+					console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 098 + ${myWidth} `);
+					console.log(`                                         = ${scrollWidth}`);
+				}else{
+					console.log("　　　　　　自分の幅が狭い");
+					scrollWidth = myposition.left - oyaposition.left - routeWidth * 0.5 + myWidth * 0.5;
+					console.log("自分の座標 - 親の座標 - 親の広さの半分 + 自分の広さの半分 ");
+					console.log(`横: ${myposition.left} - ${oyaposition.left} - ${routeWidth} * 0.5 + ${myWidth} * 0.5`);
+					console.log(`                                         = ${scrollWidth}`);
+				}
+
+				// 
+				// cookie に設定しているスクロール量が％であるため、その値を計算（？）
+				// 
+				// console.log("ーーーーーー★ールートの表示サイズ:");
+				// let pageleft = jQuery('#chapter-' + queryChapter ).width();
+				// let pageTop = jQuery('#chapter-' + queryChapter ).height();
+				// console.log(`top = ${pageTop}, left = ${pageleft}`);
+				// console.log("ーーーーーー★％サイズ:");
+				// let pageperHrizontal = pageleft / routeWidth;
+				// let pageperVirtical = pageleft / routeHeight;
+				// console.log(`top = ${pageperVirtical}, left = ${pageperHrizontal}`);
+
+				// 
+				// スクロールの実行
+				// 
 				if ( mode == "tate" ){
 					console.log("左へ " + scrollWidth + "スクロール");
 					jQuery( jiji ).scrollLeft( scrollWidth );
-					jQuery.cookie("scroll", pageperHrizontal, { expires: 1000, path: pathname });
+				//	jQuery.cookie("scroll", pageperHrizontal, { expires: 1000, path: pathname });
 				}else{
 					console.log("下へ " + scrollHeight + "スクロール");
 					jQuery( jiji ).scrollTop( scrollHeight );
-					jQuery.cookie("scroll", pageperVirtical, { expires: 1000, path: pathname });
+				//	jQuery.cookie("scroll", pageperVirtical, { expires: 1000, path: pathname });
 				}
-
-//				console.log("ノードまでスクロールさせる");
-
-// TODO
-// 
-// COOKIEの中身消す
-// 
+			// 
+			// NOW 抜粋モード処理
+			// 
+				// 
+				// COOKIEの中のスクロール値を消す
+				// 
+				// 処理の都合上、このあとでクッキーからscrollを読み込む
+				// そこで読み込まないように、ここで消しておく
+				// 抜粋モードから抜けるルートは、【章チェンジ】【表紙に戻る】【その場でリロード】
+				// なので、scrollクッキーはその際に設定（あるいは初期化）される
+				// 
 				jQuery.removeCookie('scroll',{ path: pathname });
-console.log("cookie scroll" + jQuery.cookie("scroll"));
+				console.log("cookie scroll" + jQuery.cookie("scroll"));
 
 			}
-			// ここまでひたすら抜粋の処理
+			// 
+			// 抜粋モード処理 ここまで
+			// 
+			// 
+			// =========================================================================================
 		} else {
 			// 抜粋処理なしで、チャプター表示
 			chapterNumber = queryChapter * 1;
-//			console.log("query: chapter is " + chapterNumber );
 		}
 
-// テスト実装
-// 
-// クエリからチャプタ－来てたら、いずれにしても表紙は消す。
-// 
-		// 0.3秒待って
+		// 
+		// クエリからチャプタ－来てたら、いずれにしても表紙は消す。
+		// 
+		// 0.3秒待って下記を実行
 		setTimeout(() => {
-			// 暗くしてるの消す
+			// フェード用の暗幕を消す
 			jQuery('#overlay').removeClass().addClass("bright"); //
 			// 表紙を消す
 			jQuery('#coverimage').fadeOut(500);
 		}, 300); 
 
-
+	// 
+	// chapter が cookieにある場合の処理
+	// 
 	} else if (jQuery.cookie("chapter")){
-		// 本文
 		chapterNumber = jQuery.cookie("chapter") * 1;
-//		console.log("cookie: chapter is " + chapterNumber );
 	}
 
-	// 外側
+	// 
+	// ここはすべての条件判定の外側
+	// 必ず通る
+	// 
+
+	// 
+	// チャプター変更処理
+	// chapterNumber はクッキー、もしくはクエリから来ている。あるいはデフォルト。
+	// 
 	chapterChange( chapterNumber + slotOffset );
+
+	// =========================================================================================
+	// 
+	// クッキーの読み込み処理
+	// 
 
 	// font
 	if (jQuery.cookie("font")){
@@ -207,29 +296,31 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		jQuery(".fontSwitch").removeClass("pick");
 		jQuery("." + jQuery.cookie("font") + "font").addClass("pick");
 		jQuery(".novel").addClass(jQuery.cookie("font"));
-//		console.log("cookie: font is " + jQuery.cookie("font") );
+		console.log("cookie: font is " + jQuery.cookie("font") );
 	}
 
 	// fontfamily
 	if (jQuery.cookie("fontfamily")){
 		jQuery(".novel, .fontChange").removeClass("serif sansserif");
 		jQuery(".novel, .fontChange").addClass(jQuery.cookie("fontfamily"));
-//		console.log("cookie: fontfamily is " + jQuery.cookie("fontfamily") );
+		console.log("cookie: fontfamily is " + jQuery.cookie("fontfamily") );
 	}
-
 /*
+	//
+	// 縦横モード切り替えはあなくしたので、クッキーも無視
+	//
 	// writhing-mode
 	if (jQuery.cookie("tateyoko")){
 		mode = jQuery.cookie("tateyoko");
 		jQuery("#bboard").addClass(mode);
-//		console.log("cookie: writhing-mode is " + mode );
+		console.log("cookie: writhing-mode is " + mode );
 	}
 */
 	// background
 	if (jQuery.cookie("background")){
 		let bgfromcookie = jQuery.cookie("background");
 		jQuery('body').removeClass().addClass( bgfromcookie ); //
-//		console.log("cookie: background is " + bgfromcookie );
+		console.log("cookie: background is " + bgfromcookie );
 	}
 
 	// scroll
@@ -239,16 +330,30 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		}else{
 			jQuery(currentChapter).scrollTop(jQuery.cookie("scroll"));
 		}
-//		console.log("cookie: scroll is " + jQuery.cookie("scroll") );
+		console.log("cookie: scroll is " + jQuery.cookie("scroll") );
 	}
 
-	// 各種ボタン ========================================================
+	//
+	//
+	// =========================================================================================
+	// 　各種イベント処理
+	// =========================================================================================
+	//
+	//
+
+	// 
 	// ページ送り（スクロール）処理
+	// 
 	jQuery(".novel").click(function(e){
+		// 
 		// 範囲が選択されている場合は処理しない
+		// 
 		const selection = window.getSelection();
 		if( selection.toString().length ){ return; }
+
+		// 
 		// ここから処理
+		// 
 		let ww, sx, hh, sy, next;
 		if ( mode == "tate" ){
 			ww = jQuery(this).width();
@@ -274,7 +379,9 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		jQuery.cookie("scroll", next, { expires: 1000, path: pathname });
 	});
 
+	// 
 	// 文字変更ボタン
+	// 
 	jQuery(".fontChange").click(function( event ){
 		let ff;
 		event.stopPropagation();
@@ -288,14 +395,18 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 			jQuery(this).removeClass("sansserif").addClass(ff);
 		}
 		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
-//		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
+		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
 
+	// 
 	// 文字サイズボタン
+	// 
 	jQuery(".fontSwitch").click(function( event ){
 		event.stopPropagation();
-//		console.log("ACTION: 文字サイズボタン");
-		// まずは座標をパーセンテージで取得
+		console.log("――　 文字サイズボタン");
+		// 
+		// スクロール値の調整のため、まずは座標をパーセンテージで取得
+		// 
 		if ( mode == "tate" ){
 			sw = jQuery(currentChapter).get(0).scrollWidth;
 			scrollPersent = jQuery(currentChapter).scrollLeft() / sw;
@@ -303,6 +414,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 			sh = jQuery(currentChapter).get(0).scrollHeight;
 			scrollPersent = jQuery(currentChapter).scrollTop() / sh;
 		}
+
 		// 押されたボタンを識別
 		let size;
 		if(jQuery(this).hasClass("biggerfont")) { size = "bigger"; }
@@ -310,21 +422,27 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		if(jQuery(this).hasClass("midfont"))    { size = "mid";    }
 		if(jQuery(this).hasClass("minifont"))   { size = "mini";   }
 		if(jQuery(this).hasClass("minimumfont")){ size = "minimum";}
+
 		// クラスを剥がして再付与
 		jQuery(".novel").removeClass("minimum mini mid big bigger").addClass(size);
+
 		// クッキー食わせる
 		jQuery.cookie("font", size, { expires: 1000, path: pathname });
-//		console.log("set cookie: font " + jQuery.cookie("font") );
-		// ボタンのハイライト
+		console.log("set cookie: font " + jQuery.cookie("font") );
+
+		// ボタンのハイライト（永続）
 		jQuery(".fontSwitch").removeClass("pick");
 		jQuery(this).addClass("pick");
+
 		// スクロール位置を再セットする
 		doScroll( scrollPersent );
 	});
 
+	// 
 	// 章送り戻しボタン
+	// 
 	jQuery(".novel .back,.novel .forward").click(function(){
-//		console.log("ACTION: 章送り戻しボタン");
+		console.log("――　 章送り戻しボタン");
 		// 次へ
 		if(jQuery(this).hasClass("forward")){
 			chapterNumber++;
@@ -338,15 +456,15 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 				scrollPersent = 1;
 			}
 		}
+
 		// 実行
 		chapterChange( chapterNumber + slotOffset );
+
 		// スクロールのセット
 		doScroll(scrollPersent);
-		// ハイライトモードの解除
-		// jQuery("#aboard").removeClass("hilightmode");
-		// console.log( "抜粋モードを解除" );
-		// ハイライトモードで表示しているタグを外す。
-		// hilightTurnOff();
+
+		// 抜粋モード時は、抜粋モードを解除してリロード
+		// 飛び先の　chapter はこの関数内で設定されたもの
 		if( jQuery("#aboard").hasClass("hilightmode") ){
 			let url = location.origin + location.pathname + "?c=" + chapterNumber;
 			location.href = url;
@@ -354,74 +472,68 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 
 	});
 
+	// 
 	// 章切り替え
+	// 
 	jQuery(".chapterJump").click(function( event ){
-//		console.log("ACTION: 章切り替え");
+		console.log("――　 章切り替え");
 		event.stopPropagation();
 		chapterNumber = jQuery(this).attr("chapter") * 1;
+
 		// 実行
 		chapterChange( chapterNumber + slotOffset );
+
 		// ウインドウ閉じる
 		jQuery(".chapterBox").slideUp(200);
-		// ハイライトモードの解除
-		// jQuery("#aboard").removeClass("hilightmode");
-		// console.log( "抜粋モードを解除" );
-		// ハイライトモードで表示しているタグを外す。
-		// hilightTurnOff();
+
+		// 抜粋モード時は、抜粋モードを解除してリロード
+		// 飛び先の　chapter はこの関数内で設定されたもの
 		if( jQuery("#aboard").hasClass("hilightmode") ){
 			let url = location.origin + location.pathname + "?c=" + chapterNumber;
 			location.href = url;
 		}
 	});
 
+	// 
 	// 目次ボタン
+	// 
 	jQuery(".topBar").click(function( event ){
-//		console.log("ACTION: 目次ボタン");
+		console.log("――　 目次ボタン");
 		event.stopPropagation();
 		jQuery(".chapterBox").slideToggle(200);
 	});
 
-	// ボトムバーのクリック
+	// 
+	// ボトムバーのクリック（オプションバーを開く）
+	// 
 	jQuery(".bottomBar").click(function(){
 
-		// 抜粋モードを解除
-		// jQuery("#aboard").removeClass("hilightmode");
-		// console.log( "抜粋モードを解除" );
-		// ハイライトモードで表示しているタグを外す。
-		// hilightTurnOff();
+		// 抜粋モード時は、抜粋モードを解除してリロード
+		// 飛び先の　chapter はクエリで得たもの
 		if( jQuery("#aboard").hasClass("hilightmode") ){
-
-
-
-
-
-
-
-
-
-
-
-
-
 			let url = location.origin + location.pathname + "?c=" + queryChapter;
 			location.href = url;
 		}
 
+		//	オプションバー表示されてたら閉じる
 		if( jQuery('.optionBar').hasClass("show") ){
-			//	オプションバー表示されてたら閉じる
-//			console.log("ACTION: オプションバーを閉じる");
+			console.log("――　 オプションバーを閉じる");
 			jQuery('.optionBar').removeClass("show");
 			jQuery('.optionBar').slideUp(200);
+
+		//	オプションバー非表示だった場合
 		} else {
-//			console.log("ACTION: ボトムバーのクリックでオプションバーを開く");
+			console.log("――　 ボトムバーのクリックでオプションバーを開く");
 			jQuery(".makelink").removeClass('touch');
 
+			// オプションバーを開く際に、文字列を選択していたら、
+			// 【選択範囲へのリンクをクリップボードにコピーする】が有効になる
 			const selection = window.getSelection();
 			if (selection.rangeCount > 0 && selection.toString()) {
-//				console.log("Selected Text:", selection.toString());
+				console.log("Selected Text:", selection.toString());
 				jQuery('.thistext').addClass("haveachoice");
 			} else {
-//				console.log("No text is selected.");
+				console.log("No text is selected.");
 				jQuery('.thistext').removeClass("haveachoice");
 			}
 
@@ -430,44 +542,47 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 			jQuery('.optionBar').css('display', 'flex').hide().slideDown(200);
 		}
 	});
-/*
-	function hilightTurnOff(){
 
-		jQuery('.textHilightEdge').replaceWith(function() {
-			return jQuery(this).text(); // タグ自身を外し、テキストだけを残す
-		});
-		jQuery('span').removeClass('textHilight')
-
-	}
-*/
-	// オプションバーのマウスアウトでオプションバーを閉じる
+	// 
+	// オプションバーのマウスアウト（オプションバーを閉じる）
+	// 
 	jQuery(".optionBar").mouseout(function( event ){
-//		console.log("ACTION: オプションバーを閉じる");
+		console.log("――　 オプションバーを閉じる");
+
+		// 移動先が自分の子要素だった場合、消さない
 		// relatedTargetで移動先の要素を取得
 		const relatedTarget = event.relatedTarget;
-
 		// 自分自身または子要素なら処理をスキップ
 		if (jQuery(this).has(relatedTarget).length > 0 || this === relatedTarget) {
 			return;
 		}
+		// バーを閉じる
 		jQuery('.optionBar').removeClass("show");
 		jQuery('.optionBar').slideUp(200);
 	});
 
-	// オプションバーでオプションバーを閉じる
+	// 
+	// オプションバーのクリック（オプションバーを閉じる）
+	// 
 	jQuery(".optionBar").click(function(){
-//			console.log("ACTION: オプションバーを閉じる");
-			jQuery('.optionBar').removeClass("show");
-			jQuery('.optionBar').slideUp(200);
+		console.log("――　 オプションバーを閉じる");
+		jQuery('.optionBar').removeClass("show");
+		jQuery('.optionBar').slideUp(200);
 	});
 
+	// 
 	// リンク作成ボタン
+	// 
 	jQuery(".makelink").click(function( event ){
 		event.stopPropagation();
-//		console.log("ACTION: リンク作成ボタン");
+		console.log("――　 リンク作成ボタン");
+
 		let url = location.origin + location.pathname;
 		let title = document.title;
 		let anouncemessage;
+
+		// この本のリンクをクリップボードにコピーする
+		//
 		if ( jQuery(this).hasClass('thisbook') ){
 			// 本のURL
 			const metaDescription = document.querySelector('meta[name="description"]');
@@ -478,38 +593,54 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 			let url2book = content + " / " + title + " " + url;
 			navigator.clipboard.writeText(url2book);
 			anouncemessage = "クリップボードに<strong>この本</strong>のリンクをコピーしました<hr/>" + url2book;
-//			console.log( "COPY to CLIPBOARD: " + url2book );
+
+		// この章のリンクをクリップボードにコピーする
+		//
 		} else if ( jQuery(this).hasClass('thischapter') ){
 			// チャプターのURL
 			let mytitle = jQuery(currentChapter).find("h3").html();
 			let url2chapter = title + " より 「" + mytitle + "」 " + url + "?c=" + chapterNumber;
 			navigator.clipboard.writeText(url2chapter);
 			anouncemessage = "クリップボードに<strong>この章</strong>のリンクをコピーしました<hr/>" + url2chapter;
-//			console.log( "COPY to CLIPBOARD: " + url2chapter );
+
+		// 選択範囲へのリンクをクリップボードにコピーする
+		//
 		} else if ( jQuery(this).hasClass('haveachoice') ){
-			let selection = window.getSelection(); // 選択範囲を取得
-//console.log( selection );
+
+			// 選択範囲を取得
+			let selection = window.getSelection(); 
 			let selectedText = selection.toString();
-//console.log( "選択した文字列: " + selectedText );
-			let textLength = selectedText.length; // 文字列の長さを取得
+			console.log( "選択した文字列: " + selectedText );
+	
+			// 文字列の長さを取得
+			let textLength = selectedText.length; 
 			let captureerror = 0;
+
+			// 選択した文字列があったら処理
 			if (selection.rangeCount > 0) {
-				let range = selection.getRangeAt(0); // 最初の選択範囲を取得
+
+				// 最初の選択範囲を取得
+				let range = selection.getRangeAt(0); 
+
 				// 開始ノードと終了ノードを取得
 				let startNode = range.startContainer.parentNode;
 				let endNode = range.endContainer.parentNode;
-				// IDを取得（IDがない場合は "ごめんなさい" 表示）
+
+				// IDを取得（IDがない場合はエラー積み上げ）
 				let startNodeId = startNode.id || captureerror++;
 				let endNodeId = endNode.id || captureerror++;
+
+				// エラーあったらエラー出力のみ
 				if( captureerror ){
 					anouncemessage = "選択範囲が、ルビや縦中横から始まる（終わる）場合、この機能は使用できません";
-//					console.log( "COPY to CLIPBOARD: " + anouncemessage );
+
+				// エラーがなかったら本処理
 				} else {
 					// 選択した部分のテキストから改行を抜く
 					let trimedtext = selectedText.replace(/[\n\r]/g, "");
 					// 表示する抜粋の長さ
 					let caplength = 120;
-					// 選択した文字列が長い場合、
+					// 選択した文字列が長い場合、詰める
 					if( caplength < textLength ) {
 						trimedtext = trimedtext.slice(0,caplength) + "……";
 					}
@@ -519,50 +650,48 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 					let startpos = startNodeId.replace(/\D/g, "");
 					let endpos = endNodeId.replace(/\D/g, "");
 					let pretext = trimedtext.replace(/　/g, "") + " / " + title + " より抜粋 ";
-// デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　
-// デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　
-// デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！
-//					pretext = "";
-// デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　
-// デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　
-// デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　デバッグ用！　
 					let url2text = pretext + url 
 						+ "?c=" + chapterNumber 
 						+ "&s=" + startpos
 						+ "&so=" + range.startOffset 
 						+ "&e=" + endpos
 						+ "&eo=" + range.endOffset;
-//	console.log('開始位置: node-' +  startpos + " " + range.startOffset + "文字目" );
-//	console.log('終了位置: node-' +  endpos + " " + range.endOffset + "文字目" );
-//	console.log('URL: ', url2text);
 					navigator.clipboard.writeText(url2text);
-//					console.log( "スタート: " + url2text );
 					anouncemessage = "クリップボードに<strong>選択した文章</strong>へのリンクをコピーしました<hr/>" + url2text;
 				}
+			//
+			// 選択した文字列がない
+			//
 			} else {
-				anouncemessage = "クリップボードにコピーできませんでした";
+				anouncemessage = "選択範囲へのリンクをクリップボードにコピーできませんでした";
 			}
+		//
+		// 押されたボタンがthisbook でも thischapter でも haveachoice でもない（？）
+		//
 		} else {
-//	console.log('thisbook でも thischapter でも haveachoice でもない ' );
-			// thisbook でも thischapter でも haveachoice でもない
-			anouncemessage = "クリップボードにコピーできませんでした";
+			anouncemessage = "リンクをクリップボードにコピーできませんでした";
 		}
-//	console.log('アナウンスフェイズ ' );
-		// アナウンスする
+		//
+		// 結果のアナウンス
+		//
 		jQuery('#anouncebox .voice').html(anouncemessage.replace(/　/g, ""));
 		jQuery('#anouncebox').css('display', 'flex').hide().fadeIn(500);
-		// ボタンの色変える
-//	console.log('ボタンの色変える ' );
+
+		// ボタンをフラッシュさせる
+		// 設定したtouchクラスは、アナウンスを消す際に除去される
 		jQuery(this).addClass('touch');
+
 		// オプションバー閉じる
 		jQuery('.optionBar').removeClass("show");
 		jQuery('.optionBar').slideUp(500);
 	});
 
-	// アナウンス
+	// 
+	// アナウンスをクリック（消す）
+	// 
 	jQuery("#anouncebox").click(function( event ){
 		event.stopPropagation();
-//		console.log("ACTION: アナウンスを消す");
+		console.log("――　 アナウンスを消す");
 		jQuery( this ).fadeOut(200);
 		jQuery(".makelink").removeClass('touch');
 		jQuery('.optionBar').removeClass("show");
@@ -573,7 +702,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 	// 縦横ボタン
 	// 最新バージョンでは未使用のため、動作チェックなし
 	jQuery(".tateyoko").click(function( event ){
-//		console.log("ACTION: 縦横ボタン");
+		console.log("――　 縦横ボタン");
 		event.stopPropagation();
 		// まずは座標をパーセンテージで取得
 		if ( mode == "tate" ){
@@ -595,15 +724,17 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		}
 		// クッキー
 		jQuery.cookie("tateyoko", mode, { expires: 1000, path: pathname });
-//		console.log("set cookie: tateyoko " + jQuery.cookie("tateyoko"));
+		console.log("set cookie: tateyoko " + jQuery.cookie("tateyoko"));
 		// スクロール再セット
 		scrollPersent *= -1;
 		doScroll(scrollPersent);
 	});
 */
-
+	// 
+	// 文字表示面のクリック（スクロール処理）
+	// 
 	jQuery(".novel").scroll(function(){
-//		console.log("ACTION: スクロール");
+		console.log("――　 スクロール");
 		if ( mode == "tate" ){
 			sw = jQuery(currentChapter).get(0).scrollWidth;
 			scrollPersent = jQuery(currentChapter).scrollLeft() / sw;
@@ -618,7 +749,7 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 	// ボードの拡大
 	// 最新バージョンでは未使用のため、動作チェックなし
 	jQuery('.zoomButton').click(function(){
-//		console.log("ACTION: ボードの拡大");
+		console.log("――　 ボードの拡大");
 		var frame = jQuery('#aboard');
 		var target = jQuery('#bboard');
 		if(jQuery(target).css('position') == "absolute"){
@@ -654,10 +785,11 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		}
 	});
 */
-
+	// 
+	// ウインドウがリサイズされたときの処理
+	// 
 	jQuery(window).resize(function() {
-//		console.log("ACTION: リサイズ処理");
-		//リサイズされたときの処理
+		console.log("――　 リサイズ処理");
 		var target = jQuery('#bboard');
 		if(jQuery(target).css('position') == "fixed"){
 			jQuery(target).css({top: 0});
@@ -667,23 +799,124 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		}
 	});
 
+	// 
+	// 表紙を消す
+	// 
+	jQuery('#coverimage').on('click', function( event ) {
+		event.stopPropagation();
+		jQuery(".novel:nth-child("+ chapterNumber + slotOffset +")").removeClass("hide");
+		jQuery('#overlay').removeClass().addClass("bright"); //
+		jQuery(this).fadeOut(500);
+		console.log("表紙消す");
+	});
+
+	// 
+	// ヘルプを表示
+	// 
+	jQuery('#showhelp').on('click', function( event ) {
+		event.stopPropagation();
+		jQuery('#overlay').removeClass().addClass("dark"); //
+		jQuery('#helpbox').css('display', 'flex').hide().fadeIn(500);
+		console.log("ヘルプを表示");
+	});
+
+	// 
+	// ヘルプを消す
+	// 
+	jQuery('#helpbox').on('click', function( event ) {
+		event.stopPropagation();
+		jQuery('#overlay').removeClass().addClass("bright"); //
+		jQuery(this).fadeOut(500);
+		console.log("ヘルプを消す");
+	});
+
+	// 
+	// 最初に戻る
+	// 
+	jQuery('#gotostart').on('click', function( event ) {
+		event.stopPropagation();
+		chapterNumber = 1;
+		scrollPersent = 0;
+		jQuery('#overlay').removeClass().addClass("dark"); //
+		jQuery('#coverimage').fadeIn(500);
+		chapterChange( chapterNumber + slotOffset );
+		console.log("最初に戻る");
+
+		// 抜粋モード時は、抜粋モードを解除してリロード
+		// 飛び先の　chapter はこの関数内で設定されたもの（１）
+		if( jQuery("#aboard").hasClass("hilightmode") ){
+			let url = location.origin + location.pathname + "?c=" + chapterNumber;
+			location.href = url;
+		}
+	});
+
+	// 
+	// BGセレクターを消す
+	// 
+	jQuery('.bgselector').on('click', function( event ) {
+		event.stopPropagation();
+		jQuery(this).fadeOut(500);
+		console.log("BGセレクターを消す");
+	});
+
+	// BGセレクターを表示
+	jQuery('.configButton').on('click', function( event ) {
+		event.stopPropagation();
+		jQuery('#overlay').removeClass().addClass("dark"); //
+		jQuery('.bgselector').css('display', 'flex').hide().fadeIn(500);
+		console.log("BGセレクターを表示");
+	});
+
+	// 
+	// BGを変更する
+	// 
+	jQuery('.picturebutton').on('click', function( event ) {
+		event.stopPropagation();
+		let newbg = jQuery(this).attr('changebgto');
+		// クッキー食わせる
+		jQuery.cookie("background", newbg, { expires: 1000, path: pathname });
+		console.log("set cookie: background " + jQuery.cookie("background") );
+		jQuery('body').removeClass().addClass( newbg ); //
+		jQuery('#overlay').removeClass().addClass("bright"); //
+		jQuery('.bgselector').fadeOut(500);
+		console.log("BG変更する");
+	});
+
+	// リンクのプロパゲーションを止める
+	jQuery('.exitButton').on('click', function( event ) {
+		event.stopPropagation();
+	});
+
+	//
+	//
+	// =========================================================================================
+	// 　各種関数
+	// =========================================================================================
+	//
+	//
+
 	// 章切り替えの中身
 	function chapterChange( slot ){
-//		console.log("ACTION: 章切り替え実行 " + slot );
+		console.log("――　 章切り替え実行 " + slot );
 		jQuery(".novel").addClass("hide");
+
+		// cookie
 		jQuery.cookie("chapter", chapterNumber, { expires: 1000, path: pathname });
-//		console.log("set cookie: chapter " + jQuery.cookie("chapter"));
+		console.log("set cookie: chapter " + jQuery.cookie("chapter"));
+
 		jQuery(".novel:nth-child("+slot+")").removeClass("hide");
 		currentChapter = jQuery(".novel:nth-child("+slot+")");
+
 		// 章タイトル更新
 		let mytitle = jQuery(currentChapter).find("h3").html();
-//		console.log("currentChapter = " + mytitle);
+		// topBar に章タイトルを表示
 		jQuery(".myTitle").html(mytitle);
+		console.log("currentChapter = " + mytitle);
 	}
 
 	// スクロール
 	function doScroll( percent ){
-//		console.log("ACTION: スクロール実行");
+		console.log("――　 スクロール実行");
 		if ( mode == "tate" ){
 			jQuery(".novel").scrollTop( 0 );
 			sw = jQuery(currentChapter).get(0).scrollWidth;
@@ -706,83 +939,6 @@ console.log("cookie scroll" + jQuery.cookie("scroll"));
 		jQuery(target).animate({height: h},{queue: false}, 300);
 	}
 */
-	// 表紙を消す
-	jQuery('#coverimage').on('click', function( event ) {
-		event.stopPropagation();
-		jQuery(".novel:nth-child("+ chapterNumber + slotOffset +")").removeClass("hide");
-		jQuery('#overlay').removeClass().addClass("bright"); //
-		jQuery(this).fadeOut(500);
-//		console.log("表紙消す");
-	});
-
-	// ヘルプを表示
-	jQuery('#showhelp').on('click', function( event ) {
-		event.stopPropagation();
-		jQuery('#overlay').removeClass().addClass("dark"); //
-		jQuery('#helpbox').css('display', 'flex').hide().fadeIn(500);
-//		console.log("ヘルプを表示");
-	});
-
-	// ヘルプを消す
-	jQuery('#helpbox').on('click', function( event ) {
-		event.stopPropagation();
-		jQuery('#overlay').removeClass().addClass("bright"); //
-		jQuery(this).fadeOut(500);
-//		console.log("ヘルプを消す");
-	});
-
-	// 最初に戻る
-	jQuery('#gotostart').on('click', function( event ) {
-		event.stopPropagation();
-		chapterNumber = 1;
-		scrollPersent = 0;
-		jQuery('#overlay').removeClass().addClass("dark"); //
-		jQuery('#coverimage').fadeIn(500);
-		chapterChange( chapterNumber + slotOffset );
-//		console.log("最初に戻る");
-		// ハイライトモードの解除
-		// jQuery("#aboard").removeClass("hilightmode");
-		// console.log( "抜粋モードを解除" );
-		// ハイライトモードで表示しているタグを外す。
-		// hilightTurnOff();
-		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname + "?c=" + chapterNumber;
-			location.href = url;
-		}
-	});
-
-	// BGセレクターを消す
-	jQuery('.bgselector').on('click', function( event ) {
-		event.stopPropagation();
-		jQuery(this).fadeOut(500);
-//		console.log("BGセレクターを消す");
-	});
-
-	// BGセレクターを表示
-	jQuery('.configButton').on('click', function( event ) {
-		event.stopPropagation();
-		jQuery('#overlay').removeClass().addClass("dark"); //
-		jQuery('.bgselector').css('display', 'flex').hide().fadeIn(500);
-//		console.log("BGセレクターを表示");
-	});
-
-	// BGを変更する
-	jQuery('.picturebutton').on('click', function( event ) {
-		event.stopPropagation();
-		let newbg = jQuery(this).attr('changebgto');
-		// クッキー食わせる
-		jQuery.cookie("background", newbg, { expires: 1000, path: pathname });
-//		console.log("set cookie: background " + jQuery.cookie("background") );
-		jQuery('body').removeClass().addClass( newbg ); //
-		jQuery('#overlay').removeClass().addClass("bright"); //
-		jQuery('.bgselector').fadeOut(500);
-//		console.log("BG変更する");
-	});
-
-	// リンクのプロパゲーションを止める
-	jQuery('.exitButton').on('click', function( event ) {
-		event.stopPropagation();
-	});
 
 });
 
