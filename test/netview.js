@@ -175,7 +175,7 @@ jQuery(function(){
 			// 
 				// 抜粋の場所までスクロールする処理
 				// 
-				console.log("ver 1.076");
+				console.log("ver 1.077");
 				console.log("ーーーーーー★自分の座標:");
 				let me = jQuery( '#startHilight' );
 				const myposition = me.offset();
