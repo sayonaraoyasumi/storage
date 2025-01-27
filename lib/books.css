@@ -73,7 +73,6 @@ body.columnbody{
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 1em;
 	max-width: 1400px;
 	margin: auto;
 	width: 100%;
@@ -106,7 +105,7 @@ body.columnbody{
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 2%;
+	padding: 1%;
 }
 #menubox {
 	display: flex;
