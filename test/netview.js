@@ -168,6 +168,9 @@ jQuery(function(){
 				// 抜粋開始クラス（startHilight）を含む .novel クラスを得る
 				// 
 				let jiji = jQuery( '#startHilight' ).parent().parent();
+				if ( !jQuery( jiji ).hasClass("novel") ){
+					jiji = jQuery( '#startHilight' ).parent().parent().parent();
+				}
 				jQuery( jiji ).removeClass("hide");
 
 			// 
@@ -175,7 +178,7 @@ jQuery(function(){
 			// 
 				// 抜粋の場所までスクロールする処理
 				// 
-				console.log("ver 1.078");
+				console.log("ver 1.080");
 				console.log("ーーーーーー★自分の座標:");
 				let me = jQuery( '#startHilight' );
 				const myposition = me.offset();
@@ -366,6 +369,14 @@ jQuery(function(){
 		// 
 		const selection = window.getSelection();
 		if( selection.toString().length ){ return; }
+		// 
+		//	オプションバー表示されてたら閉じる
+		// 
+		if( jQuery('.optionBar').hasClass("show") ){
+			console.log("――　 オプションバーを閉じる");
+			jQuery('.optionBar').removeClass("show");
+			jQuery('.optionBar').slideUp(200);
+		}
 
 		// 
 		// ここから処理
@@ -393,6 +404,40 @@ jQuery(function(){
 			jQuery(this).animate({scrollTop: next});
 		}
 		jQuery.cookie("scroll", next, { expires: 1000, path: pathname });
+	});
+
+	// 
+	// 文字を選択したらオプションウインドウを開く
+	// 
+	jQuery(".novel").mouseup(function(){
+
+		// マウスボタンを離した際に文字列を選択していたら、オプションバーを開く
+		const selection = window.getSelection();
+		if (selection.rangeCount > 0 && selection.toString()) {
+			console.log("Selected Text:", selection.toString());
+			jQuery('.thistext').addClass("haveachoice");
+
+			// 抜粋モード時は、抜粋モードを解除してリロード
+			// 飛び先の　chapter はクエリで得たもの
+			if( jQuery("#aboard").hasClass("hilightmode") ){
+				let url = location.origin + location.pathname + "?c=" + queryChapter;
+				location.href = url;
+			}
+
+			//	オプションバー表示されてたら何もしない（多分そのケースはない）
+			if( jQuery('.optionBar').hasClass("show") ){
+				console.log("――　 オプションバーは開かれている");
+
+			//	オプションバー非表示だった場合
+			} else {
+				console.log("――　 文字の選択でオプションバーを開く");
+				jQuery(".makelink").removeClass('touch');
+
+				// バーの表示
+				jQuery('.optionBar').addClass("show");
+				jQuery('.optionBar').css('display', 'flex').hide().slideDown(200);
+			}
+		}
 	});
 
 	// 
@@ -563,18 +608,16 @@ jQuery(function(){
 	// オプションバーのマウスアウト（オプションバーを閉じる）
 	// 
 	jQuery(".optionBar").mouseout(function( event ){
-		console.log("――　 オプションバーを閉じる");
-
-		// 移動先が自分の子要素だった場合、消さない
-		// relatedTargetで移動先の要素を取得
+		// 
+		// 移動先が novel だった場合のみ処理
+		// 
 		const relatedTarget = event.relatedTarget;
-		// 自分自身または子要素なら処理をスキップ
-		if (jQuery(this).has(relatedTarget).length > 0 || this === relatedTarget) {
-			return;
+		if( jQuery(relatedTarget).hasClass("novel") ){
+			console.log("――　 オプションバーを閉じる");
+			// バーを閉じる
+			jQuery('.optionBar').removeClass("show");
+			jQuery('.optionBar').slideUp(200);
 		}
-		// バーを閉じる
-		jQuery('.optionBar').removeClass("show");
-		jQuery('.optionBar').slideUp(200);
 	});
 
 	// 
@@ -608,6 +651,7 @@ jQuery(function(){
 			}
 			let url2book = content + " / " + title + " " + url;
 			navigator.clipboard.writeText(url2book);
+			url2book = content + " / " + title + " <a href='" + url + "'>" + url + "</a>";
 			anouncemessage = "クリップボードに<strong>この本</strong>のリンクをコピーしました<hr/>" + url2book;
 
 		// この章のリンクをクリップボードにコピーする
@@ -615,23 +659,34 @@ jQuery(function(){
 		} else if ( jQuery(this).hasClass('thischapter') ){
 			// チャプターのURL
 			let mytitle = jQuery(currentChapter).find("h3").html();
-			let url2chapter = title + " より 「" + mytitle + "」 " + url + "?c=" + chapterNumber;
+			let url2chapter = "『" + title + "』 より 「" + mytitle + "」 " + url + "?c=" + chapterNumber;
 			navigator.clipboard.writeText(url2chapter);
+			url2chapter = "『" + title + "』 より 「" + mytitle + "」 <a href='" + url  + "?c=" + chapterNumber + "'>" + url + "?c=" + chapterNumber + "</a>";
 			anouncemessage = "クリップボードに<strong>この章</strong>のリンクをコピーしました<hr/>" + url2chapter;
 
 		// 選択範囲へのリンクをクリップボードにコピーする
 		//
 		} else if ( jQuery(this).hasClass('haveachoice') ){
 
-			// 選択範囲を取得
-			let selection = window.getSelection(); 
-			let selectedText = selection.toString();
+			// 選択範囲を得る
+			let selection = window.getSelection();
+			let range = selection.getRangeAt(0);
+			// ここからルビを抜く処理
+			// 一時的にHTML化
+			let container = document.createElement("div");
+			container.appendChild(range.cloneContents());
+			// タグ付きテキストを返す
+			let selectedText = container.innerHTML;
+			// ルビ（テキスト込み）を削除
+			selectedText = selectedText.replace(/<rt[^\/]+\/rt>/gi, "");
+			// 他のタグを削除
+			selectedText = selectedText.replace(/<[^>]+>/gi, "");
+			// ここまでルビ抜き処理
+			// デバッグ用
 			console.log( "選択した文字列: " + selectedText );
-	
 			// 文字列の長さを取得
 			let textLength = selectedText.length; 
 			let captureerror = 0;
-
 			// 選択した文字列があったら処理
 			if (selection.rangeCount > 0) {
 
@@ -648,7 +703,7 @@ jQuery(function(){
 
 				// エラーあったらエラー出力のみ
 				if( captureerror ){
-					anouncemessage = "選択範囲が、ルビや縦中横から始まる（終わる）場合、この機能は使用できません";
+					anouncemessage = "選択範囲が、ルビや縦中横、記号などから始まる（終わる）場合、この機能は使用できません";
 
 				// エラーがなかったら本処理
 				} else {
@@ -665,15 +720,17 @@ jQuery(function(){
 					let url = location.origin + location.pathname;
 					let startpos = startNodeId.replace(/\D/g, "");
 					let endpos = endNodeId.replace(/\D/g, "");
-					let pretext = trimedtext.replace(/　/g, "") + " / " + title + " より抜粋 ";
-					let url2text = pretext + url 
+					let pretext = "『" + title + "』より / " + trimedtext.replace(/　/g, "") + " / ";
+					let urlfull =  url 
 						+ "?c=" + chapterNumber 
 						+ "&s=" + startpos
 						+ "&so=" + range.startOffset 
 						+ "&e=" + endpos
 						+ "&eo=" + range.endOffset;
+					let url2text = pretext + urlfull + " ――抜粋へのリンク ";
 					navigator.clipboard.writeText(url2text);
-					anouncemessage = "クリップボードに<strong>選択した文章</strong>へのリンクをコピーしました<hr/>" + url2text;
+					url2text = pretext + "<a href='" + urlfull + "'>" + urlfull + "</a>" + " ――抜粋へのリンク ";
+					anouncemessage = "クリップボードに<strong>選択した文章</strong>へのリンクをコピーしました<hr/>" + url2text ;
 				}
 			//
 			// 選択した文字列がない
