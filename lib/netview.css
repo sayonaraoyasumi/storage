@@ -418,3 +418,12 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	margin: 0.4em;
 	cursor: pointer;
 }
+.stopHilight{
+	font-size: 140%;
+	color: white;
+	font-weight: bolder;
+}
+.away{
+	display: none;
+}
+
