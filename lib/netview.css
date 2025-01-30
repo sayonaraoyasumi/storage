@@ -367,7 +367,8 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	vertical-align:top;
 	height: 20%;
 	text-align:right;
-	padding-bottom:0.5em;
+	padding:0 0.3em 0.4em;
+	border-bottom: solid 1px gray;
 }
 #aboard .yoko .th{
 	width: 33%;
@@ -376,12 +377,14 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 /*  vertical-align:middle;
 	height: 84%;*/
 	margin: 0 !important;
+	padding: 1em 0.3em 0;
 }
 #aboard .na{
 	padding-top: 1em;
 }
 #aboard .novel img{
 	max-height: 80%;
+	max-width: 95%;
 }
 .outerbox{
 	white-space: normal;
