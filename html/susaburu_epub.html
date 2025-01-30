@@ -79,6 +79,7 @@ h3{
 	// 抜粋をクリップする際のコールバック
 	// textlineに選択肢の文字列がタグ付きで送られてくるので、タグの処理をする
 	function anounceMessageProcessingCallback( textline ){
+
 		// まずは話者名を６文字に揃える
 		let regex = /<div class="sth"><span id="n-\d+">([^>]+)<\/span><\/div>/g;
 		let result = textline.replace(regex, (match, p1) => {
@@ -87,7 +88,7 @@ h3{
 		// セリフ末の、と。は消しちゃう
 		result = result.replace(/[、。]<\/span>/gi, "<\/span>");
 		// 会話文に22文字ごとに改行と６文字のスペース挿れる
-		regex = /<div class="std"><span id="n-\d+">([^>]+)<\/span><\/div>/g;
+		regex = /<div class="std"><span id="n-\d+">([^v]+)<\/span><\/div>/g;
 		result = result.replace(regex, (match, p1) => {
 			return p1.match(/.{1,22}/g).join("\n　　　　　　");
 		});
