@@ -4,7 +4,7 @@
 @media (min-width: 641px) and (max-width: 820px) { body { font-size: 15pt; } }
 @media (min-width: 821px) and (max-width: 1023px) { body { font-size: 16pt; } }
 @media (min-width: 1024px) { body { font-size: 17pt; } }
-.outerbox, div h3, .novel div:not(.forward,.back), .novel p ,.novel span ,.novel ruby{
+.outerbox, div h3, div h4, .novel div:not(.forward,.back), .novel p ,.novel span ,.novel ruby{
 	pointer-events: none;
 }
 body{
@@ -334,17 +334,17 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 #aboard h2{
 	font-size: 120%;
 	font-weight: bolder;
-	padding: 1em 0 0 0.5em;
+	padding: 1em 0 0 0em;
 }
 #aboard h3{
 	font-size: 110%;
 	font-weight: bolder;
-	padding: 1em 0 0 0.5em;
+	padding: 1em 0 0 0em;
 }
 #aboard h4, #aboard h5 {
 	font-size: 105%;
 	font-weight: bolder;
-	padding: 1em 0 0 0.5em;
+	padding: 1em 0 0 0em;
 }
 #aboard .yoko h2, #aboard .yoko h3, #aboard .yoko h4, #aboard .yoko h5{
 	padding: 0 0 0 0.5em;
