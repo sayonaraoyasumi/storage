@@ -118,7 +118,7 @@ body.columnbody{
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 2%;
+	padding: 1%;
 }
 .columnbody #menubox{
 	padding: 0;
@@ -318,6 +318,9 @@ a:link, a:visited, a:hover, a:active{
 	max-width: 25%;
 	z-index: 2;
 }
+.kindle .iconwrap{
+	background-color:rgba(255, 184, 216, 0.789);
+}
 .linkcard .iconwrap .linkicon{
 	display: flex;
 	align-items: center;
@@ -326,7 +329,7 @@ a:link, a:visited, a:hover, a:active{
 	aspect-ratio: 1;
 }
 .linkcard .linkline{
-	background-color:rgba(240,220,140,0.7);
+	background-color:rgba(240,220,140,0.7); 
 	transition: background-color 1s ease; /* 背景色を1秒かけて変える */
 	display: flex;
 	flex-grow: 1;
@@ -338,6 +341,9 @@ a:link, a:visited, a:hover, a:active{
 	font-weight: bolder;
 	color:#202020;
 	z-index: 1;
+}
+.kindle.linkcard .linkline{
+	background-color:rgba(255, 184, 216, 0.789);
 }
 .linkcard .copypannel.highlight {
 	background-color: white; /* ハイライト時の色 */
