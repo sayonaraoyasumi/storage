@@ -88,7 +88,7 @@ h3{
 		// セリフ末の、と。は消しちゃう
 		result = result.replace(/[、。]<\/span>/gi, "<\/span>");
 		// 会話文に22文字ごとに改行と６文字のスペース挿れる
-		regex = /<div class="std"><span id="n-\d+">([^v]+)<\/span><\/div>/g;
+		regex = /<div class="std"><span id="n-\d+">(.+?)<\/span><\/div>/g;
 		result = result.replace(regex, (match, p1) => {
 			return p1.match(/.{1,22}/g).join("\n　　　　　　");
 		});
@@ -2395,7 +2395,7 @@ h3{
 <div class="section" id="n-4698">　　　　　　👑</div>
 <div class="sth"><span id="n-4699">王子</span></div><div class="std"><span id="n-4700">そうか、ここはキリストが死んで千２百年後の世界か……</span></div>
 <div class="sth"><span id="n-4701">姫騎士</span></div><div class="std"><span id="n-4702">それで、時を旅しているという王子、そなたはいつの時代の生まれなのだ？</span></div>
-<div class="sth"><span id="n-4703">王子</span></div><div class="std"><span id="n-4704">西暦２〇〇２年……いまからおよそ８百年後に生まれることになる。</span></div>
+<div class="sth"><span id="n-4703">王子</span></div><div class="std"><span id="n-4704">西暦２００２年……いまからおよそ８百年後に生まれることになる。</span></div>
 <div class="sth"><span id="n-4705">カニ</span></div><div class="std"><span id="n-4706">み、未来人……はじめて見るカニ……</span></div>
 <div class="sth"><span id="n-4707">王子</span></div><div class="std"><span id="n-4708">ところで、この船はどこに向かっているんだ？</span></div>
 <div class="sth"><span id="n-4709">姫騎士</span></div><div class="std"><span id="n-4710">この船は、世界の果てを目指している。</span></div>
@@ -2767,7 +2767,7 @@ h3{
 <div class="sth"><span id="n-5457">王子</span></div><div class="std"><span id="n-5458">そうか……ほかにもいたんだ。</span></div>
 <div class="sth"><span id="n-5459">姫</span></div><div class="std"><span id="n-5460">でも、ここからはかなり遠いとこ。電波も弱くて、通信は途切れちゃった。</span></div>
 <div class="sth"><span id="n-5461">王子</span></div><div class="std"><span id="n-5462">ここは地球からどのくらいの距離なんだろう……</span></div>
-<div class="sth"><span id="n-5463">姫</span></div><div class="std"><span id="n-5464">およそ４光年。地球を出てもう２〇〇年経つんだって。</span></div>
+<div class="sth"><span id="n-5463">姫</span></div><div class="std"><span id="n-5464">およそ４光年。地球を出てもう２００年経つんだって。</span></div>
 <div class="sth"><span id="n-5465">王子</span></div><div class="std"><span id="n-5466">そんなに……新しい故郷は見つかるんだろうか。</span></div>
 <div class="sth"><span id="n-5467">姫</span></div><div class="std"><span id="n-5468">待って！　通信が入った！　他の宇宙船！　この近くみたい！</span></div>
 <div class="sth"><span id="n-5469">王子</span></div><div class="std"><span id="n-5470">近く？</span></div>
