@@ -254,7 +254,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	position:relative;
 	background-color: transparent;
 	border: none;
-	max-height: 99vh;
+	max-height: 99dvh;
 	max-width: 98vw;
 	height: 2560px;
 	width: 100%;
