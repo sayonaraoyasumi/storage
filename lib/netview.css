@@ -3,7 +3,9 @@
 	pointer-events: none;
 }
 html {
-	font-size:clamp( 12px, 3vw, 18px );
+	font-size:clamp( 13px, 4vw, 20px ); 
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 body{
 	background-color: white;
@@ -169,8 +171,8 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 .back::after{  font-size: 0.8rem;color:#aaa;content:"▶";}
 .forward::after{  font-size: 0.8rem;color:#aaa;content:"◀";}
-.yoko .back::after{  font-size: 0.8rem;content:"▲";}
-.yoko .forward::after{  font-size: 0.8rem;content:"▼";}
+.yoko .back::after{  font-size: 0.8rem;color:#aaa;content:"▲";}
+.yoko .forward::after{  font-size: 0.8rem;color:#aaa;content:"▼";}
 .novel .tcy {
 	-webkit-text-combine: horizontal;
 	-ms-text-combine-horizontal: all;
@@ -188,11 +190,11 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	color: #222;
 	text-shadow: none;
 }
-.novel.bigger, .novel.bigger td{	font-size:1.25rem; }
-.novel.big, .novel.big td{			font-size:1.12rem; }
-.novel.mid, .novel.mid td{			font-size:1rem; }
-.novel.mini, .novel.mini td{		font-size:0.9rem; }
-.novel.minimum, .novel.minimum td{	font-size:0.81rem; }
+.novel.bigger, .novel.bigger td{	font-size:1.25em; }
+.novel.big, .novel.big td{			font-size:1.12em; }
+.novel.mid, .novel.mid td{			font-size:1em; }
+.novel.mini, .novel.mini td{		font-size:0.9em; }
+.novel.minimum, .novel.minimum td{	font-size:0.81em; }
 
 /*  ヘッドの章タイトル部分 */
 .myTitle{
