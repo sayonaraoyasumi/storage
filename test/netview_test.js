@@ -37,15 +37,13 @@ jQuery(function(){
 	// 
 	// クッキーの読み込み処理（スクロール幅計算の関係でfontだけ先に処理）
 	// 
-		console.log("ここ通ってる？？？？？？ " );
-
 	// font
 	if (jQuery.cookie("font")){
-		jQuery(".novel").removeClass("minimum mini mid big bigger");
-		jQuery(".fontSwitch").removeClass("pick");
-		jQuery("." + jQuery.cookie("font") + "font").addClass("pick");
-		jQuery(".novel").addClass(jQuery.cookie("font"));
-		console.log("cookie: font is " + jQuery.cookie("font") );
+//		jQuery(".novel").removeClass("minimum mini mid big bigger");
+//		jQuery(".fontSwitch").removeClass("pick");
+//		jQuery("." + jQuery.cookie("font") + "font").addClass("pick");
+//		jQuery(".novel").addClass(jQuery.cookie("font"));
+//		console.log("cookie: font is " + jQuery.cookie("font") );
 	}
 
 	// 
