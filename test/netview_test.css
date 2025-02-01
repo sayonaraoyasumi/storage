@@ -188,12 +188,13 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	color: #222;
 	text-shadow: none;
 }
+/*
 .novel.bigger, .novel.bigger td{	font-size:1.25em; }
 .novel.big, .novel.big td{			font-size:1.12em; }
 .novel.mid, .novel.mid td{			font-size:1em; }
 .novel.mini, .novel.mini td{		font-size:0.9em; }
 .novel.minimum, .novel.minimum td{	font-size:0.81em; }
-
+*/
 /*  ヘッドの章タイトル部分 */
 .myTitle{
 	border: solid 0px rgb(147, 207, 145);
