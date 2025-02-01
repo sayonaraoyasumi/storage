@@ -330,22 +330,22 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 
 #aboard h2{
-	font-size: 1.2em;
+	font-size: 120%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
 #aboard h3{
-	font-size: 1.14em;
+	font-size: 114%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
 #aboard h4 {
-	font-size: 1.08em;
+	font-size: 108%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
 #aboard h5 {
-	font-size: 1.04em;
+	font-size: 104%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
