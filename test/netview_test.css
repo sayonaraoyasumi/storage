@@ -3,13 +3,14 @@
 	pointer-events: none;
 }
 html {
-	font-size:clamp( 12px, 3.3vw, 17px );
+/*	font-size:clamp( 12px, 3.8vw, 18px ); */
 }
 body{
 	background-color: white;
 	background-image:url(../html/background/BG12.jpg);
 	background-position: center center;
 	background-size: cover;
+	font-size: 18px;
 }
 body.bg-01{ background-image:url(../html/background/BG01.jpg); }
 body.bg-02{ background-image:url(../html/background/BG02.jpg); }
@@ -188,13 +189,13 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	color: #222;
 	text-shadow: none;
 }
-/*
+
 .novel.bigger, .novel.bigger td{	font-size:1.25em; }
 .novel.big, .novel.big td{			font-size:1.12em; }
 .novel.mid, .novel.mid td{			font-size:1em; }
 .novel.mini, .novel.mini td{		font-size:0.9em; }
 .novel.minimum, .novel.minimum td{	font-size:0.81em; }
-*/
+
 /*  ヘッドの章タイトル部分 */
 .myTitle{
 	border: solid 0px rgb(147, 207, 145);
