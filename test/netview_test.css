@@ -4,6 +4,8 @@
 }
 html {
 /*	font-size:clamp( 12px, 3.8vw, 18px ); */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body{
 	background-color: white;
