@@ -3,16 +3,15 @@
 	pointer-events: none;
 }
 html {
-/*	font-size:clamp( 12px, 3.8vw, 18px ); */
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+	font-size:clamp( 12px, 3.8vw, 18px ); 
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 }
 body{
 	background-color: white;
 	background-image:url(../html/background/BG12.jpg);
 	background-position: center center;
 	background-size: cover;
-/*	font-size: 18px; */
 }
 body.bg-01{ background-image:url(../html/background/BG01.jpg); }
 body.bg-02{ background-image:url(../html/background/BG02.jpg); }
@@ -170,24 +169,19 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	height:30px;
 	margin: 30px calc(50% - 50px);
 }
-.back::after{  color:#aaa;content:"▶";}
-.forward::after{  color:#aaa;content:"◀";}
-.yoko .back::after{  color:#aaa;content:"▲";}
-.yoko .forward::after{  color:#aaa;content:"▼";}
 
-/*
 .back::after{  font-size: 0.8rem;color:#aaa;content:"▶";}
 .forward::after{  font-size: 0.8rem;color:#aaa;content:"◀";}
-.yoko .back::after{  font-size: 0.8rem;content:"▲";}
-.yoko .forward::after{  font-size: 0.8rem;content:"▼";}
-*/
+.yoko .back::after{  font-size: 0.8rem;color:#aaa;content:"▲";}
+.yoko .forward::after{  font-size: 0.8rem;color:#aaa;content:"▼";}
+
 .novel .tcy {
 	-webkit-text-combine: horizontal;
 	-ms-text-combine-horizontal: all;
 	text-combine-upright: all;
 }
 .novel rt{
-/*	font-size: 0.6em;*/
+	font-size: 0.6em;
 }
 .novel.hide{
 	display:none;
@@ -198,13 +192,13 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	color: #222;
 	text-shadow: none;
 }
-/*
+
 .novel.bigger, .novel.bigger td{	font-size:1.25em; }
 .novel.big, .novel.big td{			font-size:1.12em; }
 .novel.mid, .novel.mid td{			font-size:1em; }
 .novel.mini, .novel.mini td{		font-size:0.9em; }
 .novel.minimum, .novel.minimum td{	font-size:0.81em; }
-*/
+
 /*  ヘッドの章タイトル部分 */
 .myTitle{
 	border: solid 0px rgb(147, 207, 145);
@@ -325,7 +319,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 #aboard .makelink{
 	width: 26em;
-/*	font-size: 0.8rem; */
+	font-size: 0.8rem; 
 	border: solid 1px gray;
 	text-align: center;
 	background-color: rgba(255,255,255,0.9);
@@ -341,22 +335,22 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 
 #aboard h2{
-/*	font-size: 120%;*/
+	font-size: 120%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
 #aboard h3{
-/*	font-size: 114%;*/
+	font-size: 114%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
 #aboard h4 {
-/*	font-size: 108%;*/
+	font-size: 108%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
 #aboard h5 {
-/*	font-size: 104%;*/
+	font-size: 104%;
 	font-weight: bolder;
 	padding: 1em 0 0 0em;
 }
@@ -405,7 +399,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 .outerbox table{
 	margin: 0.5em;
-/*	font-size: 0.9em;*/
+	font-size: 0.9em;
 }
 .outerbox div{
 	margin: 0.5em;
@@ -426,7 +420,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	max-width: 80%;
 	display: block;
 /*	width: 26em;*/
-/*	font-size: 0.8em;*/
+	font-size: 0.8em;
 	border: solid 1px gray;
 	background-color: rgba(255,255,255,0.9);
 	box-shadow: 0 4px 8px 2px rgba(0,0,0,0.5);
@@ -436,7 +430,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	cursor: pointer;
 }
 .stopHilight{
-/*	font-size: 1.4em;*/
+	font-size: 1.4em;
 	color: white;
 	font-weight: bolder;
 }
