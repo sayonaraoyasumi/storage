@@ -46,8 +46,6 @@ jQuery(function(){
 		jQuery("." + jQuery.cookie("font") + "font").addClass("pick");
 		jQuery(".novel").addClass(jQuery.cookie("font"));
 		console.log("cookie: font is " + jQuery.cookie("font") );
-jQuery(".bottomBar").html(jQuery.cookie("font"));
-		console.log("どうなってんだ？？？？？ " + jQuery(".bottomBar").html() );
 	}
 
 	// 
