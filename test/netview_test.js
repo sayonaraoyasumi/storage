@@ -37,6 +37,7 @@ jQuery(function(){
 	// 
 	// クッキーの読み込み処理（スクロール幅計算の関係でfontだけ先に処理）
 	// 
+
 	// font
 	if (jQuery.cookie("font")){
 		jQuery(".novel").removeClass("minimum mini mid big bigger");
@@ -102,8 +103,14 @@ jQuery(function(){
 				// NOW 抜粋モード処理
 				// まずは抜粋クラスを設定
 				console.log( "抜粋クラスを設定 " );
-				jQuery("#aboard").addClass("hilightmode");
-
+				// 
+				// テキストの一時保管用
+				// 
+				let targetText;
+				let _beforeText;
+				let _midText;
+				let _afterText;
+				let _finalText;
 				// 
 				// 開始と終了が同じノードにある場合の処理
 				// 
@@ -112,44 +119,47 @@ jQuery(function(){
 					// 対象のテキストを得る
 					targetText = jQuery("#n-" + queryStart).html();
 					// テキストを三分割する
-					let beforeText = targetText.slice(0, queryStartOffset);
-					let midText = targetText.slice( queryStartOffset, queryEndOffset );
-					let afterText = targetText.slice( queryEndOffset );
+					_beforeText = targetText.slice(0, queryStartOffset);
+					_midText = targetText.slice( queryStartOffset, queryEndOffset );
+					_afterText = targetText.slice( queryEndOffset );
 					// 真ん中のテキストをタグで囲む
-					let finalText = beforeText + '<span class="textHilightEdge textHilight endHilight" id="startHilight">' 
-									+ midText + '</span>'
-									+ afterText;
+					_beforeText = '<span class="alttext" id="preHilight" altoff="0">' +  _beforeText + '</span>';
+					_midText = '<span class="textHilightEdge textHilight endHilight alttext" id="startHilight" altoff="' + queryStartOffset + '">' +  _midText + '</span>';
+					_afterText = '<span class="alttext" id="postHilight" altoff="' + queryEndOffset + '">' +  _afterText + '</span>';
+					_finalText = _beforeText + _midText + _afterText;
 					// 書き戻す
-					jQuery("#n-" + queryStart).html(finalText);
+					jQuery("#n-" + queryStart).html(_finalText);
 
-			// 
-			// NOW 抜粋モード処理
-			// 
 				// 
 				// 開始と終了が複数ノードにまたがっている場合の処理
 				// 
 				} else {
 
 					console.log("開始と終了が複数ノードにまたがっている場合の処理 ======================");
+
 					// 開始ノードのテキストを得る
 					targetText = jQuery("#n-" + queryStart).html();
 					// テキストを二分割する
-					let beforeText = targetText.slice(0, queryStartOffset);
-					let afterText = targetText.slice(queryStartOffset);
-					// 後ろのテキストをタグで囲む
-					let finalText = beforeText + '<span class="textHilightEdge textHilight" id="startHilight">' + afterText + '</span>';
+					_beforeText = targetText.slice(0, queryStartOffset);
+					_afterText = targetText.slice(queryStartOffset);
+					// テキストをタグで囲む
+					_beforeText = '<span class="alttext" id="preHilight" altoff="0">' +  _beforeText + '</span>';
+					_afterText = '<span class="textHilightEdge textHilight alttext" id="startHilight" altoff="' + queryStartOffset + '">' +  _afterText + '</span>';
+					_finalText = _beforeText + _afterText;
 					// 書き戻す
-					jQuery("#n-" + queryStart).html(finalText);
+					jQuery("#n-" + queryStart).html(_finalText);
 
 					// 終了ノードのテキストを得る
 					targetText = jQuery("#n-" + queryEnd).html();
 					// テキストを二分割する
-					beforeText = targetText.slice(0,queryEndOffset);
-					afterText = targetText.slice(queryEndOffset);
-					// 後ろのテキストをタグで囲む
-					finalText = '<span class="textHilightEdge textHilight endHilight">' + beforeText + '</span>' + afterText;
+					_beforeText = targetText.slice(0,queryEndOffset);
+					_afterText = targetText.slice(queryEndOffset);
+					// テキストをタグで囲む
+					_beforeText = '<span class="textHilightEdge textHilight alttext endHilight" id="endHilight" altoff="0">' +  _beforeText + '</span>';
+					_afterText = '<span class="alttext" id="postHilight" altoff="' + queryEndOffset + '">' +  _afterText + '</span>';
+					_finalText = _beforeText + _afterText;
 					// 書き戻す
-					jQuery("#n-" + queryEnd).html(finalText);
+					jQuery("#n-" + queryEnd).html(_finalText);
 
 					// 途中のノードにクラスを追加する
 					if( queryStart + 1 < queryEnd ){
@@ -160,30 +170,21 @@ jQuery(function(){
 						}
 					}
 				}
-			// 
-			// NOW 抜粋モード処理
-			// 
 
 				// 抜粋開始クラス（startHilight）を含む .novel クラスを得る
 				// 
-				let jiji = jQuery( '#startHilight' ).parent().parent();
-				if ( !jQuery( jiji ).hasClass("novel") ){
-					jiji = jQuery( '#startHilight' ).parent().parent().parent();
-				}
+				let me   = jQuery( '#startHilight' );
+				let jiji = jQuery( '#startHilight' ).closest(".novel");
 				jQuery( jiji ).removeClass("hide");
 
-			// 
-			// NOW 抜粋モード処理
-			// 
 				// 抜粋の場所までスクロールする処理
 				// 
 				console.log("ver 1.080");
-				console.log("ーーーーーー★自分の座標:");
-				let me = jQuery( '#startHilight' );
+				console.log("ーーーーーー★自分（ハイライト域）の座標:");
 				const myposition = me.offset();
 				console.log(`top = ${myposition.top}, left = ${myposition.left}`);
 
-				console.log("ーーーーーー★自分の幅と高さ:");
+				console.log("ーーーーーー★自分（ハイライト域）の幅と高さ:");
 				let myend = jQuery( '.endHilight' );
 				const myendposition = myend.offset();
 				let myStartWidth = jQuery(me).width();
@@ -239,23 +240,19 @@ jQuery(function(){
 				if ( mode == "tate" ){
 					console.log("左へ " + scrollWidth + "スクロール");
 					jQuery( jiji ).scrollLeft( scrollWidth );
-				//	抜粋モードでは、scroll値を記憶しない
-				//	jQuery.cookie("scroll", pageperHrizontal, { expires: 1000, path: pathname });
+				//	抜粋モードでは、cookie に scroll値を記憶しない
 				}else{
 					console.log("下へ " + scrollHeight + "スクロール");
 					jQuery( jiji ).scrollTop( scrollHeight );
-				//	抜粋モードでは、scroll値を記憶しない
-				//	jQuery.cookie("scroll", pageperVirtical, { expires: 1000, path: pathname });
+				//	抜粋モードでは、cookie に scroll値を記憶しない
 				}
 				// 
-				// ハイライトを解除するボタンの表示
+				// ハイライトを解除するボタンの表示（削除）
 				// 
+/*
 				jQuery(".bottomBar .fontSwitch, .bottomBar .fontChange").addClass("away");
 				jQuery(".bottomBar .stopHilight").removeClass("away");
-
-			// 
-			// NOW 抜粋モード処理
-			// 
+*/
 				// 
 				// COOKIEの中のスクロール値を消す
 				// 
@@ -320,7 +317,7 @@ jQuery(function(){
 	}
 /*
 	//
-	// 縦横モード切り替えはあなくしたので、クッキーも無視
+	// 縦横モード切り替えはなくしたので、クッキーも無視
 	//
 	// writhing-mode
 	if (jQuery.cookie("tateyoko")){
@@ -412,13 +409,6 @@ jQuery(function(){
 			console.log("Selected Text:", selection.toString());
 			jQuery('.thistext').addClass("haveachoice");
 
-			// 抜粋モード時は、抜粋モードを解除してリロード
-			// 飛び先の　chapter はクエリで得たもの
-			if( jQuery("#aboard").hasClass("hilightmode") ){
-				let url = location.origin + location.pathname + "?c=" + queryChapter;
-				location.href = url;
-			}
-
 			//	オプションバー表示されてたら何もしない（多分そのケースはない）
 			if( jQuery('.optionBar').hasClass("show") ){
 				console.log("――　 オプションバーは開かれている");
@@ -436,7 +426,7 @@ jQuery(function(){
 	});
 
 	// 
-	// ハイライト解除
+	// ハイライト解除（　このボタンは非表示　）
 	// 
 	jQuery(".stopHilight").click(function( event ){
 		event.stopPropagation();
@@ -447,10 +437,6 @@ jQuery(function(){
 		doScroll( scrollPersent );
 		chapterChange( chapterNumber + slotOffset );
 		console.log("最初に戻る");
-		// 抜粋モードを解除してリロード
-		// 飛び先は表紙
-		let url = location.origin + location.pathname;
-		location.href = url;
 	});
 
 	// 
@@ -538,13 +524,6 @@ jQuery(function(){
 		// スクロールのセット
 		doScroll(scrollPersent);
 
-		// 抜粋モード時は、抜粋モードを解除してリロード
-		// 飛び先の　chapter はこの関数内で設定されたもの
-		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname + "?c=" + chapterNumber;
-			location.href = url;
-		}
-
 	});
 
 	// 
@@ -561,12 +540,6 @@ jQuery(function(){
 		// ウインドウ閉じる
 		jQuery(".chapterBox").slideUp(200);
 
-		// 抜粋モード時は、抜粋モードを解除してリロード
-		// 飛び先の　chapter はこの関数内で設定されたもの
-		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname + "?c=" + chapterNumber;
-			location.href = url;
-		}
 	});
 
 	// 
@@ -582,13 +555,6 @@ jQuery(function(){
 	// ボトムバーのクリック（オプションバーを開く）
 	// 
 	jQuery(".bottomBar").click(function(){
-
-		// 抜粋モード時は、抜粋モードを解除してリロード
-		// 飛び先の　chapter はクエリで得たもの
-		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname + "?c=" + queryChapter;
-			location.href = url;
-		}
 
 		//	オプションバー表示されてたら閉じる
 		if( jQuery('.optionBar').hasClass("show") ){
@@ -698,9 +664,9 @@ jQuery(function(){
 			let trimedtext;
 			try {
 				trimedtext = anounceMessageProcessingCallback( selectedText );
-			// コールバック関数がない場合、すべてのタグを除去
+			// コールバック関数がない場合、すべてのタグとタブを除去
 			} catch ( error ) {
-				trimedtext = selectedText.replace(/<[^>]+>/gi, "");
+				trimedtext = selectedText.replace(/<[^>]+>/gi, "").replace(/\t/gi, "");
 			}
 
 			// ここまでルビ抜き処理
@@ -723,10 +689,25 @@ jQuery(function(){
 				let startNodeId = startNode.id || captureerror++;
 				let endNodeId = endNode.id || captureerror++;
 
+				// ハイライト部分を選択したら特殊処理
+				let rangeStart = range.startOffset;
+				let rangeEnd = range.endOffset;
+				if(jQuery("#" + startNodeId ).hasClass("alttext")){
+					rangeStart += jQuery("#" + startNodeId ).attr("altoff") * 1;
+					startNodeId = jQuery("#" + startNodeId ).parent().attr("id");
+				}
+				if(jQuery("#" + endNodeId ).hasClass("alttext")){
+					rangeEnd += jQuery("#" + endNodeId ).attr("altoff") * 1;
+					endNodeId = jQuery("#" + endNodeId ).parent().attr("id");
+				}
+				// ハイライトの特殊処理　ここまで
+
+				//
 				// エラーあったらエラー出力のみ
 				if( captureerror ){
-					anouncemessage = "選択範囲が、ルビや縦中横、記号などから始まる（終わる）場合、この機能は使用できません";
+					anouncemessage = "選択範囲が、ルビや縦中横、改行文字などから始まる（終わる）場合、この機能は使用できません";
 
+				//
 				// エラーがなかったら本処理
 				} else {
 					// 表示する抜粋の長さ
@@ -745,9 +726,9 @@ jQuery(function(){
 					let urlfull =  url 
 						+ "?c=" + chapterNumber 
 						+ "&s=" + startpos
-						+ "&so=" + range.startOffset 
+						+ "&so=" + rangeStart
 						+ "&e=" + endpos
-						+ "&eo=" + range.endOffset;
+						+ "&eo=" + rangeEnd;
 					let url2text = pretext + urlfull;
 					navigator.clipboard.writeText(url2text);
 
@@ -940,11 +921,6 @@ jQuery(function(){
 		chapterChange( chapterNumber + slotOffset );
 		console.log("最初に戻る");
 
-		// 抜粋モード時は、抜粋モードを解除してリロード
-		if( jQuery("#aboard").hasClass("hilightmode") ){
-			let url = location.origin + location.pathname;
-			location.href = url;
-		}
 	});
 
 	// 

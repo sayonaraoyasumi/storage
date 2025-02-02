@@ -169,12 +169,10 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	height:30px;
 	margin: 30px calc(50% - 50px);
 }
-
 .back::after{  font-size: 0.8rem;color:#aaa;content:"▶";}
 .forward::after{  font-size: 0.8rem;color:#aaa;content:"◀";}
 .yoko .back::after{  font-size: 0.8rem;color:#aaa;content:"▲";}
 .yoko .forward::after{  font-size: 0.8rem;color:#aaa;content:"▼";}
-
 .novel .tcy {
 	-webkit-text-combine: horizontal;
 	-ms-text-combine-horizontal: all;
@@ -192,7 +190,6 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	color: #222;
 	text-shadow: none;
 }
-
 .novel.bigger, .novel.bigger td{	font-size:1.25em; }
 .novel.big, .novel.big td{			font-size:1.12em; }
 .novel.mid, .novel.mid td{			font-size:1em; }
@@ -319,7 +316,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 #aboard .makelink{
 	width: 26em;
-	font-size: 0.8rem; 
+	font-size: 0.8rem;
 	border: solid 1px gray;
 	text-align: center;
 	background-color: rgba(255,255,255,0.9);
