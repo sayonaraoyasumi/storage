@@ -130,9 +130,6 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	scrollbar-color: #888 rgba(0,0,0,0);
 /*	text-shadow: 0 0 3px white,0 0 3px white,0 0 3px white,0 0 3px white;*/
 }
-.hilightmode .novel {
-	color: silver;
-}
 .yoko .novel{
 	padding: 1.5em 0.5em 2em 0.5em;
 	writing-mode: horizontal-tb;
@@ -186,7 +183,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 .textHilight, .textHilight *, .textHilight * *,
 .textHilightEdge, .textHilightEdge *, .textHilightEdge * *{
-	background:rgb(240,240,130);
+	background:rgb(240,240,140);
 	color: #222;
 	text-shadow: none;
 }
