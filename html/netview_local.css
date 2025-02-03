@@ -1,0 +1,474 @@
+html {
+	font-size:clamp( 13px, 4vw, 20px ); 
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+body{
+	background-color: white;
+	background-image:url(../html/background/BG12.jpg);
+	background-position: center center;
+	background-size: cover;
+}
+body.bg-01{ background-image:url(../html/background/BG01.jpg); }
+body.bg-02{ background-image:url(../html/background/BG02.jpg); }
+body.bg-03{ background-image:url(../html/background/BG03.jpg); }
+body.bg-04{ background-image:url(../html/background/BG04.jpg); }
+body.bg-05{ background-image:url(../html/background/BG05.jpg); }
+body.bg-06{ background-image:url(../html/background/BG06.jpg); }
+body.bg-07{ background-image:url(../html/background/BG07.jpg); }
+body.bg-08{ background-image:url(../html/background/BG08.jpg); }
+body.bg-09{ background-image:url(../html/background/BG09.jpg); }
+body.bg-10{ background-image:url(../html/background/BG10.jpg); }
+body.bg-11{ background-image:url(../html/background/BG11.jpg); }
+body.bg-12{ background-image:url(../html/background/BG12.jpg); }
+body.bg-13{ background-image:url(../html/background/BG13.jpg); }
+body.bg-14{ background-image:url(../html/background/BG14.jpg); }
+body.bg-15{ background-image:url(../html/background/BG15.jpg); }
+body.bg-16{ background-image:url(../html/background/BG16.jpg); }
+body.bg-17{ background-image:url(../html/background/BG17.jpg); }
+body.bg-18{ background-image:url(../html/background/BG18.jpg); }
+.desktop{
+	border-style: none;
+	margin: auto;
+}
+
+.squarebutton{
+	width: 40px;
+	padding: 5px;
+	margin: 0;
+}
+.fontChange{
+	margin-left: 0.5em;
+}
+.fontSwitch.pick .bottombutton{
+	box-shadow:0 0 6px 2px #fff;
+}
+.rightside{
+	position:absolute;
+	right:6px;
+}
+.leftside{
+	position:absolute;
+	left:6px;
+}
+.bottombutton{
+	display: block;
+	width: 100%;
+}
+#coverimage{
+	position: absolute;
+	cursor: pointer;
+	display: block;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	background-size:cover;
+	background-position:center center;
+	z-index: 200;
+}
+#helpbox{
+	display: none;
+	align-content: center;
+	align-items: center;
+}
+#helpbox img{
+	width: 100%;
+}
+.bgselector{
+	display: none;
+	background-color: rgba(0,0,0,0.7);
+	position: absolute;
+	gap: 2%;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 150;
+}
+.picturebutton{
+	cursor: pointer;
+	width: 250px;
+	max-width: 30%;
+	max-height: 15%;
+}
+#overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black; /* 黒の半透明 */
+}
+.dark{
+	opacity: 0.95; /* 初期状態は不透明 */
+	transition: opacity 0.5s ease; /* 透明度を0.5秒で変化 */
+}
+.bright{
+	opacity: 0; /* 初期状態は不透明 */
+	transition: opacity 0.5s ease; /* 透明度を0.5秒で変化 */
+}
+.novel{
+	writing-mode: vertical-rl;
+	font-family: serif;
+	line-height: 1.8em;
+	padding: 4em 0.5em 3em 0.5em;
+	width: 100%;
+	overflow-y: hidden;
+	overflow-x: auto;
+	background-color: transparent;
+	cursor: pointer;
+	height: calc( 100% - 44px );
+	white-space: break-spaces;
+	box-sizing: border-box;
+	scrollbar-color: #888 rgba(0,0,0,0);
+/*	text-shadow: 0 0 3px white,0 0 3px white,0 0 3px white,0 0 3px white;*/
+}
+.hilightmode .novel {
+	color: silver;
+}
+.yoko .novel{
+	padding: 1.5em 0.5em 2em 0.5em;
+	writing-mode: horizontal-tb;
+	overflow-y: auto;
+	overflow-x: hidden;
+	scrollbar-width: thin;
+	height: 100%;
+}
+.novel.sansserif{
+	font-family: sans-serif;
+}
+.novel.serif{
+	font-family: serif;
+}
+.novel .back, .novel .forward{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin: calc(50% - 50px) 15px;
+	width:30px;
+	height:100px;
+	background-color: rgba(255,255,255,0.5);
+	box-shadow: 0 3px 8px 2px rgba(0,0,0,0.3);
+	border-radius: 6px;
+	border: solid 1px #eee;
+}
+.yoko .novel .back{
+	width:100px;
+	height:30px;
+	margin: 30px calc(50% - 50px) 0;
+}
+.yoko .novel .forward{
+	width:100px;
+	height:30px;
+	margin: 30px calc(50% - 50px);
+}
+.back::after{  font-size: 0.8rem;color:#aaa;content:"▶";}
+.forward::after{  font-size: 0.8rem;color:#aaa;content:"◀";}
+.yoko .back::after{  font-size: 0.8rem;color:#aaa;content:"▲";}
+.yoko .forward::after{  font-size: 0.8rem;color:#aaa;content:"▼";}
+.novel .tcy {
+	-webkit-text-combine: horizontal;
+	-ms-text-combine-horizontal: all;
+	text-combine-upright: all;
+}
+.novel rt{
+	font-size: 0.6em;
+}
+.novel.hide{
+	display:none;
+}
+.textHilight, .textHilight *, .textHilight * *,
+.textHilightEdge, .textHilightEdge *, .textHilightEdge * *{
+	background:rgb(240,240,130);
+	color: #222;
+	text-shadow: none;
+}
+.novel.bigger, .novel.bigger td{	font-size:1.25em; }
+.novel.big, .novel.big td{			font-size:1.12em; }
+.novel.mid, .novel.mid td{			font-size:1em; }
+.novel.mini, .novel.mini td{		font-size:0.9em; }
+.novel.minimum, .novel.minimum td{	font-size:0.81em; }
+
+/*  ヘッドの章タイトル部分 */
+.myTitle{
+	border: solid 0px rgb(147, 207, 145);
+	margin: 4px 4px;
+	padding: 5px;
+	line-height: 18px;
+	box-sizing:border-box;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+.chapterBox{
+	display:none;
+	position:absolute;
+	margin: 36px 0 0 0;
+	padding: 0;
+	width: 100%;
+	max-height: calc(100% - 80px);
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+.chapterJump{
+	margin: 0;
+	border: solid 1px gray;
+	border-top: none 1px gray;
+	background-color: rgb(160,160,180);
+	list-style: none;
+	cursor: pointer;
+	box-sizing:border-box;
+	scrollbar-color: #ccc rgba(0,0,0,0);
+	scrollbar-width: thin;
+	padding: 10px 1em;
+	color: #fff;
+}
+.chapterJump:hover{
+	background-color: rgb(200,200,220);
+}
+.partTitle{
+	border: solid 1px gray;
+	border-top: none 1px gray;
+	background-color: rgb(140,140,150);
+	list-style: none;
+	box-sizing: border-box;
+	padding: 10px 1em;
+	color: #fff;
+}
+
+.section, .lyrics{
+	margin: 6em 1em 1em 1em !important;
+}
+.yoko .section, .yoko .lyrics{
+	margin: 1em 1em 1em 6em !important;
+}
+
+#aboard{
+	position:relative;
+	background-color: transparent;
+	border: none;
+	max-height: 99dvh;
+	max-width: 98vw;
+	height: 2560px;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0.7% auto;
+	overflow: clip;
+	aspect-ratio: 5/8;
+	box-shadow:2px 2px 12px 2px rgba(0,0,0,0.3);
+}
+#bboard{
+	position:absolute;
+	background-color: rgba(255,255,255,0.82);
+	width: 100%;
+	height: 100%;
+	overflow: clip;
+	z-index: 1000;
+}
+#aboard .topBar{
+	position: absolute;
+	background-color: rgba(0,0,0,0.7);
+	height:36px;
+	width:100%;
+	top: 0;
+	font-weight: 700;
+	color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 100;
+}
+#aboard .centerBox{
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+}
+#aboard .bottomBar{
+	position: absolute;
+	background-color: rgba(0,0,0,0.7);
+	height:44px;
+	width: 100%;
+	bottom: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+	border: none;
+}
+#aboard .optionBar{
+	position: absolute;
+	display: none;
+	background-color: rgba(0,0,0,0.7);
+	width: 100%;
+	bottom: 44px;
+	padding: 0.6em;
+	justify-content: center;
+	flex-direction: column-reverse;
+	align-items: center;
+	z-index: 100;
+}
+#aboard .makelink{
+	width: 26em;
+	font-size: 0.8rem;
+	border: solid 1px gray;
+	text-align: center;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 8px;
+	padding: 0.4em;
+	margin: 0.4em;
+	cursor: pointer;
+}
+#aboard .makelink.thistext.haveachoice  {  background-color: rgba(255,255,255,0.9); }
+#aboard .makelink.thistext              {  background-color: rgba(100,100,100,0.9); }
+#aboard #bboard .optionBar .makelink.touch{
+	background-color: rgb(240, 240,130);
+}
+
+#aboard h2{
+	font-size: 120%;
+	font-weight: bolder;
+	padding: 1em 0 0 0em;
+}
+#aboard h3{
+	font-size: 114%;
+	font-weight: bolder;
+	padding: 1em 0 0 0em;
+}
+#aboard h4 {
+	font-size: 108%;
+	font-weight: bolder;
+	padding: 1em 0 0 0em;
+}
+#aboard h5 {
+	font-size: 104%;
+	font-weight: bolder;
+	padding: 1em 0 0 0em;
+}
+#aboard .yoko h2, #aboard .yoko h3, #aboard .yoko h4, #aboard .yoko h5{
+	padding: 0 0 0 0.5em;
+}
+#aboard table{
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-right: 0;
+	margin-left: 0;
+	padding: 0 !important;
+	width:auto;
+	height: 100%;
+	pointer-events: none;
+}
+#aboard tr{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+#aboard .th{
+	vertical-align:top;
+	height: 20%;
+	text-align:right;
+	padding:0 0.3em 0.4em;
+	border-bottom: solid 1px gray;
+}
+#aboard .yoko .th{
+	width: 33%;
+}
+#aboard td{
+/*  vertical-align:middle;
+	height: 84%;*/
+	margin: 0 !important;
+	padding: 1em 0.3em 0;
+}
+#aboard .na{
+	padding-top: 1em;
+}
+#aboard .novel img{
+	max-height: 80%;
+	max-width: 95%;
+}
+.outerbox{
+	white-space: normal;
+}
+.outerbox table{
+	margin: 0.5em;
+	font-size: 0.9em;
+}
+.outerbox div{
+	margin: 0.5em;
+	white-space: normal;
+}
+.coverboard{
+	position: absolute;
+	bottom: 0;
+	display: none;
+	justify-content: center; /* 水平方向の中央 */
+	align-items: center;	/* 垂直方向の中央 */
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 2000;
+}
+.voice {
+	max-width: 80%;
+	display: block;
+/*	width: 26em;*/
+	font-size: 0.8em;
+	border: solid 1px gray;
+	background-color: rgba(255,255,255,0.9);
+	box-shadow: 0 4px 8px 2px rgba(0,0,0,0.5);
+	word-break: break-all; /* 必要ならどこでも改行可能 */
+	padding: 1.5em;
+	margin: 0.4em;
+	cursor: pointer;
+}
+.stopHilight{
+	font-size: 1.4em;
+	color: white;
+	font-weight: bolder;
+}
+
+.novel .trto{
+	background-color: unset;
+	transition: background-color 1s ease;
+}
+.excitation .novel .trto{
+	background-color: rgba(230,230,230);
+	transition: background-color 1s ease;
+}
+.novel .trto.textHilight, .novel .trto.textHilightEdge{
+	background:rgb(240,240,130);
+	transition: background-color 1s ease;
+}
+.excitation .novel .trto.textHilight, .excitation .novel .trto.textHilightEdge,
+.excitation .novel .trto .textHilight, .excitation .novel .trto .textHilightEdge{
+	background-color: rgba(230,230,180);
+	transition: background-color 1s ease;
+}
+.translatebox{
+	pointer-events: none;
+	padding: 0.2em 1em;
+	position: absolute;
+	background-color: rgba(20,20,20,0.95);
+	color: white;
+	min-height:44px;
+	width: 100%;
+	bottom: 0px;
+	font-size: 0.9rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+.translatebox.comeback{
+	opacity: 1;
+	transition: opacity 0.2s ease;
+}
+.translatebox.away{
+	opacity: 0;
+	transition: opacity 2s ease 0.5s;
+}
+.trtext{
+	display: none;
+}
