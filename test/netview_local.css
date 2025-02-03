@@ -433,7 +433,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	background-color: unset;
 	transition: background-color 1s ease;
 }
-.novel:hover .trto{
+.excitation .novel .trto{
 	background-color: rgba(230,230,230);
 	transition: background-color 1s ease;
 }
@@ -441,8 +441,9 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	background:rgb(240,240,130);
 	transition: background-color 1s ease;
 }
-.novel:hover .trto.textHilight, .novel:hover .trto.textHilightEdge{
-	background-color: rgba(230,230,200);
+.excitation .novel .trto.textHilight, .excitation .novel .trto.textHilightEdge,
+.excitation .novel .trto .textHilight, .excitation .novel .trto .textHilightEdge{
+	background-color: rgba(230,230,180);
 	transition: background-color 1s ease;
 }
 .translatebox{
@@ -454,7 +455,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	min-height:44px;
 	width: 100%;
 	bottom: 0px;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;

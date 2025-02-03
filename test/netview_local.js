@@ -388,6 +388,9 @@ jQuery(function(){
 				next = sx - ww * 0.92;
 			} else if( offsetX + jQuery(this).offset().left - jQuery(this).offset().left > ww * 0.8 ){
 				next = sx + ww * 0.92;
+			} else {
+				// .excitation のトグル。onになっていると、翻訳テキストのあるものが浮かび上がる。
+				jQuery("body").toggleClass("excitation");
 			}
 			let sw = jQuery(this).get(0).scrollWidth;
 			scrollPersent = next / sw;
@@ -397,12 +400,24 @@ jQuery(function(){
 				next = sy - hh * 0.92;
 			} else if( offsetY + jQuery(this).offset().top - jQuery(this).offset().top > hh * 0.8 ){
 				next = sy + hh * 0.92;
+			} else {
+				// .excitation のトグル。onになっていると、翻訳テキストのあるものが浮かび上がる。
+				jQuery("body").toggleClass("excitation");
 			}
 			let sh = jQuery(this).get(0).scrollHeight;
 			scrollPersent = next / sh ;
 			jQuery(this).animate({scrollTop: next});
 		}
 		jQuery.cookie("scroll", next, { expires: 1000, path: pathname });
+	});
+	// 
+	// おまけ。外からマウスが乗ったら、強制的に.excitationをon。気が付かせるために。
+	// 
+	jQuery(".novel").mouseenter(function(){
+		jQuery("body").addClass("excitation");
+	});
+	jQuery(".novel").mouseleave(function(){
+		jQuery("body").removeClass("excitation");
 	});
 
 	// 
@@ -431,17 +446,7 @@ jQuery(function(){
 			}
 		}
 	});
-/*
-	// 
-	// .novelの上にカーソルがあるときだけ、親にexcitationクラスを追加
-	// 
-	jQuery(".novel").mouseover(function(){
-		jQuery("#aboard").addClass("excitation");
-	});
-	jQuery(".novel").mouseout(function(){
-		jQuery("#aboard").removeClass("excitation");
-	});
-*/
+
 	// 
 	// ハイライト解除（　このボタンは非表示　）
 	// 
@@ -977,14 +982,12 @@ jQuery(function(){
 
 
 	jQuery(".trto").mouseover(function() {
-		console.log("乗った！");
 		jQuery(".translatebox").removeClass("away").addClass("comeback");
 		const trcontenerID = jQuery(this).attr("trtext");
 		const transText = jQuery( "#" + trcontenerID ).html();
 		jQuery(".translatebox").html(transText);
 	});
 	jQuery(".trto").mouseout(function() {
-		console.log("はずれた……");
 		jQuery(".translatebox").removeClass("comeback").addClass("away");
 	});
 
