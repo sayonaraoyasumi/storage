@@ -980,8 +980,9 @@ jQuery(function(){
 		console.log("BG変更する");
 	});
 
-
-	jQuery(".trto").mouseover(function() {
+	// トランスレート用
+	jQuery(".trto").mouseover(function( event ) {
+		event.stopPropagation();
 		jQuery(".translatebox").removeClass("away").addClass("comeback");
 		const trcontenerID = jQuery(this).attr("trtext");
 		const transText = jQuery( "#" + trcontenerID ).html();
