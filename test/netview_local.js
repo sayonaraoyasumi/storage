@@ -384,18 +384,18 @@ jQuery(function(){
 		const sy = jQuery(this).scrollTop();
 
 		if ( mode == "tate" ){
-			if( offsetX + jQuery(this).offset().left - jQuery(this).offset().left < ww/2 ){
+			if( offsetX + jQuery(this).offset().left - jQuery(this).offset().left < ww * 0.2 ){
 				next = sx - ww * 0.92;
-			} else {
+			} else if( offsetX + jQuery(this).offset().left - jQuery(this).offset().left > ww * 0.8 ){
 				next = sx + ww * 0.92;
 			}
 			let sw = jQuery(this).get(0).scrollWidth;
 			scrollPersent = next / sw;
 			jQuery(this).animate({scrollLeft: next});
 		}else{
-			if( offsetY + jQuery(this).offset().top - jQuery(this).offset().top < hh/2 ){
+			if( offsetY + jQuery(this).offset().top - jQuery(this).offset().top < hh * 0.2 ){
 				next = sy - hh * 0.92;
-			} else {
+			} else if( offsetY + jQuery(this).offset().top - jQuery(this).offset().top > hh * 0.8 ){
 				next = sy + hh * 0.92;
 			}
 			let sh = jQuery(this).get(0).scrollHeight;
