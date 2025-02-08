@@ -450,11 +450,11 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	pointer-events: none;
 	padding: 0.2em 1em;
 	position: absolute;
-	background-color: rgba(20,20,20,0.95);
+	background-color: rgba(60,60,60,0.9);
 	color: white;
 	min-height:44px;
 	width: 100%;
-	bottom: 0px;
+	bottom: 44px;
 	font-size: 0.9rem;
 	display: flex;
 	justify-content: center;
