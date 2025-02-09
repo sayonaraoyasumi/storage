@@ -267,6 +267,10 @@ jQuery( function(){
 				// バーの表示
 				jQuery( '.optionBar' ).addClass( "show" );
 				jQuery( '.optionBar' ).css( 'display', 'flex' ).hide().slideDown( 200 );
+
+				// 	翻訳ウインドウ閉じて、ハイライト戻す
+				jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+				jQuery( ".trto" ).removeClass( "pick" );
 			}
 		}
 	} );
@@ -400,6 +404,11 @@ jQuery( function(){
 			// バーの表示
 			jQuery( '.optionBar' ).addClass( "show" );
 			jQuery( '.optionBar' ).css( 'display', 'flex' ).hide().slideDown( 200 );
+
+			// 	翻訳ウインドウ閉じて、ハイライト戻す
+			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+			jQuery( ".trto" ).removeClass( "pick" );
+
 		}
 	} );
 
