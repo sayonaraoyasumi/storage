@@ -24,6 +24,11 @@ jQuery( function(){
 		}
 	})();
 
+	// クリック時にページが移動する距離
+	const PageMoveRate = 0.92;
+	// クリック時にページ移動として感知する範囲
+	const FlipRange    = 0.2;
+
 	// ================================================================================================= //
 	// 
 	// クッキーの読み込み処理（スクロール幅計算の関係でfontだけ先に処理）
@@ -147,7 +152,6 @@ jQuery( function(){
 	// 　ページ送り（スクロール）処理
 	// -------------------------------------- // 
 	jQuery( ".novel" ).click( function( e ){
-
 		// 範囲が選択されている場合は処理しない
 		const selection = window.getSelection();
 		if( selection.toString().length ){ return; }
@@ -162,16 +166,11 @@ jQuery( function(){
 		if ( jQuery( ".translatebox" ).hasClass( "comeback" ) ){
 			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
 			jQuery( ".trto" ).removeClass( "pick" );
-			return;
 		}
 
 		// 
 		// セットアップ ---------------------
 		// 
-		// クリック時にページが移動する距離
-		const PageMoveRate = 0.92;
-		// クリック時にページ移動として感知する範囲
-		const FlipRange    = 0.2;
 		// スクロール先
 		let next;
 		// 親要素基準のX座標
@@ -182,6 +181,7 @@ jQuery( function(){
 		const scrollposx   = jQuery( this ).scrollLeft();
 		const windowheight = jQuery( this ).height();
 		const scrollposy   = jQuery( this ).scrollTop();
+
 		// 
 		// スクロール値計算 -----------------
 		// 
@@ -210,6 +210,11 @@ jQuery( function(){
 		if( jQuery( '.optionBar' ).hasClass( "show" ) ){
 			jQuery( '.optionBar' ).removeClass( "show" );
 			jQuery( '.optionBar' ).slideUp( 200 );
+		}
+		// 	翻訳ウインドウ閉じて、ハイライト戻す
+		if ( jQuery( ".translatebox" ).hasClass( "comeback" ) ){
+			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+			jQuery( ".trto" ).removeClass( "pick" );
 		}
 		// 
 		// セットアップ ---------------------
@@ -326,6 +331,12 @@ jQuery( function(){
 		event.stopPropagation();
 		let scrollPersent;
 
+		// 	翻訳ウインドウ閉じて、ハイライト戻す
+		if ( jQuery( ".translatebox" ).hasClass( "comeback" ) ){
+			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+			jQuery( ".trto" ).removeClass( "pick" );
+		}
+
 		// 次へ
 		if( jQuery( this ).hasClass( "forward" )){
 			chapterNumber++;
@@ -364,6 +375,11 @@ jQuery( function(){
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
 	jQuery( ".topBar" ).click( function( event ){
 		event.stopPropagation();
+		// 	翻訳ウインドウ閉じて、ハイライト戻す
+		if ( jQuery( ".translatebox" ).hasClass( "comeback" ) ){
+			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+			jQuery( ".trto" ).removeClass( "pick" );
+		}
 		jQuery( ".chapterBox" ).slideToggle( 200 );
 	} );
 
@@ -665,6 +681,7 @@ jQuery( function(){
 		} else {
 
 			jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
+			jQuery( ".trto" ).removeClass( "pick" );
 
 			const pickID = jQuery( this ).attr("trtext");
 			jQuery(".trto[trtext='" + pickID + "']").addClass("pick");
@@ -867,6 +884,7 @@ jQuery( function(){
 
 	function setScrollPosWithAnimation( page, distance ){
 		if ( MODE == "tate" ){
+console.log( distance );
 			jQuery( page ).animate( { scrollLeft: distance } );
 		}else{
 			jQuery( page ).animate( { scrollTop: distance } );
