@@ -235,20 +235,6 @@ jQuery( function(){
 		setScrollPosWithAnimation( currentChapter, next );
 	} );
 
-	// -------------------------------------- // 
-	// 　mouseenter と mouseleave。
-	// -------------------------------------- // 
-	// 
-	// 外からマウスが乗ったら、強制的に.excitationをon。
-	//
-/*
-	jQuery( ".novel" ).mouseenter( function(){
-		jQuery( "body" ).addClass( "excitation" );
-	} );
-	jQuery( ".novel" ).mouseleave( function(){
-		jQuery( "body" ).removeClass( "excitation" );
-	} );
-*/
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
 	// 　文字を選択したらオプションウインドウを開く
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
@@ -430,7 +416,8 @@ jQuery( function(){
 	// -------------------------------------- // 
 	// 　clickで閉じる。
 	// -------------------------------------- // 
-	jQuery( ".optionBar" ).click( function(){
+	jQuery( ".optionBar" ).click( function( event ){
+		event.stopPropagation();
 		jQuery( '.optionBar' ).removeClass( "show" );
 		jQuery( '.optionBar' ).slideUp( 200 );
 	} );
@@ -652,8 +639,8 @@ jQuery( function(){
 		let newbg = jQuery( this ).attr( 'changebgto' );
 		// クッキー食わせる
 		jQuery.cookie( "background", newbg, { expires: 1000, path: PathName } );
-		jQuery( 'body' ).removeClass().addClass( newbg ); //
-		jQuery( '#overlay' ).removeClass().addClass( "bright" ); //
+		jQuery( 'body' ).removeClass().addClass( newbg );
+		jQuery( '#overlay' ).removeClass().addClass( "bright" );
 		jQuery( '.bgselector' ).fadeOut( 500 );
 	} );
 
@@ -667,6 +654,7 @@ jQuery( function(){
 		if( jQuery( this ).hasClass( "pick" ) ){
 
 			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+			jQuery( ".trto" ).removeClass( "pick" );
 
 		} else {
 

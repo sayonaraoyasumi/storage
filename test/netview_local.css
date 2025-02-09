@@ -465,7 +465,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 100;
+	z-index: 3000;
 }
 .translatebox.comeback{
 	opacity: 1;
