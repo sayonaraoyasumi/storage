@@ -432,6 +432,7 @@ jQuery( function(){
 	// リンク作成ボタン
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
 	jQuery( ".makelink" ).click( function( event ){
+		event.preventDefault(); 
 		event.stopPropagation();
 
 		let url   = location.origin + location.pathname;
