@@ -158,6 +158,10 @@ jQuery( function(){
 			jQuery( '.optionBar' ).slideUp( 200 );
 		}
 
+		// 	翻訳ウインドウ閉じて、ハイライト戻す
+		jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+		jQuery( ".trto" ).removeClass( "pick" );
+
 		// 
 		// セットアップ ---------------------
 		// 
@@ -183,18 +187,12 @@ jQuery( function(){
 				next = scrollposx - windowwidth * PageMoveRate;
 			} else if( offsetX + jQuery( this ).offset().left - jQuery( this ).offset().left > windowwidth * ( 1 - FlipRange ) ){
 				next = scrollposx + windowwidth * PageMoveRate;
-			} else {
-				// .excitation のトグル。onになっていると、翻訳テキストのあるものが浮かび上がる。
-//TEST				jQuery( "body" ).toggleClass( "excitation" );
 			}
 		}else{
 			if( offsetY + jQuery( this ).offset().top - jQuery( this ).offset().top < windowheight * FlipRange ){
 				next = scrollposy - windowheight * PageMoveRate;
 			} else if( offsetY + jQuery( this ).offset().top - jQuery( this ).offset().top > windowheight * ( 1 - FlipRange ) ){
 				next = scrollposy + windowheight * PageMoveRate;
-			} else {
-				// .excitation のトグル。onになっていると、翻訳テキストのあるものが浮かび上がる。
-//TEST				jQuery( "body" ).toggleClass( "excitation" );
 			}
 		}
 		setScrollPosWithAnimation( currentChapter, next );
@@ -653,25 +651,27 @@ jQuery( function(){
  	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
 	// 　トランスレート用
  	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
-	// -------------------------------------- // 
-	// 　mouseover
-	// -------------------------------------- // 
-	jQuery( ".trto" ).on('pointerover', function( event ) {
+	jQuery( ".trto" ).click( function( event ) {
 		event.stopPropagation();
-		jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
-		jQuery( this ).addClass( "pick" );
-		const trcontenerID = jQuery( this ).attr( "trtext" );
-		const transText = jQuery( "#" + trcontenerID ).html();
-		jQuery( ".translatebox" ).html( transText );
-		// 翻訳表示モードにする
-//TEST		jQuery( "body" ).addClass( "excitation" );
-	} );
-	// -------------------------------------- // 
-	// 　mouseout
-	// -------------------------------------- // 
-	jQuery( ".trto" ).on('pointerout', function() {
-		jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
-		jQuery( this ).removeClass( "pick" );
+		jQuery( ".trto" ).removeClass( "pick" );
+
+		if( jQuery( this ).hasClass( "pick" ) ){
+
+			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+
+		} else {
+
+			jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
+
+			const pickID = jQuery( this ).attr("trtext");
+			console.log("ID = " + pickID );
+			jQuery(".trto[trtext='" + pickID + "']").addClass("pick");
+
+			const trcontenerID = jQuery( this ).attr( "trtext" );
+			const transText = jQuery( "#" + trcontenerID ).html();
+			jQuery( ".translatebox" ).html( transText );
+
+		}
 	} );
 
  	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 

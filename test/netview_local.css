@@ -432,24 +432,24 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 
 .novel .trto{
 	background-color: rgba(240,240,240);
-/*	transition: background-color 1s ease;*/
+	transition: background-color ease 0.4s;
 }
 .novel .trto.pick{
 	background-color: rgb(180, 210, 250);
-/*	transition: background-color 1s ease;*/
+	transition: background-color 0.2s ease;
 }
 .excitation .novel .trto{
 	background-color: rgba(240,240,240);
-/*	transition: background-color 1s ease;*/
+	transition: background-color ease 0.4s;
 }
 .novel .trto.textHilight, .novel .trto.textHilightEdge{
 	background:rgb(240,240,130);
-	transition: background-color 1s ease;
+	transition: background-color 0.4s ease;
 }
 .excitation .novel .trto.textHilight, .excitation .novel .trto.textHilightEdge,
 .excitation .novel .trto .textHilight, .excitation .novel .trto .textHilightEdge{
 	background-color: rgba(230,230,180);
-	transition: background-color 1s ease;
+	transition: background-color 0.4s ease;
 }
 .translatebox{
 	pointer-events: none;
@@ -472,7 +472,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 .translatebox.away{
 	opacity: 0;
-	transition: opacity 1s ease 0.5s;
+	transition: opacity ease 0.4s;
 }
 .trtext{
 	display: none;
