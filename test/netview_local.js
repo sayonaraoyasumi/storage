@@ -185,7 +185,7 @@ jQuery( function(){
 				next = scrollposx + windowwidth * PageMoveRate;
 			} else {
 				// .excitation のトグル。onになっていると、翻訳テキストのあるものが浮かび上がる。
-				jQuery( "body" ).toggleClass( "excitation" );
+//TEST				jQuery( "body" ).toggleClass( "excitation" );
 			}
 		}else{
 			if( offsetY + jQuery( this ).offset().top - jQuery( this ).offset().top < windowheight * FlipRange ){
@@ -194,7 +194,7 @@ jQuery( function(){
 				next = scrollposy + windowheight * PageMoveRate;
 			} else {
 				// .excitation のトグル。onになっていると、翻訳テキストのあるものが浮かび上がる。
-				jQuery( "body" ).toggleClass( "excitation" );
+//TEST				jQuery( "body" ).toggleClass( "excitation" );
 			}
 		}
 		setScrollPosWithAnimation( currentChapter, next );
@@ -661,7 +661,7 @@ jQuery( function(){
 		const transText = jQuery( "#" + trcontenerID ).html();
 		jQuery( ".translatebox" ).html( transText );
 		// 翻訳表示モードにする
-		jQuery( "body" ).addClass( "excitation" );
+//TEST		jQuery( "body" ).addClass( "excitation" );
 	} );
 	// -------------------------------------- // 
 	// 　mouseout

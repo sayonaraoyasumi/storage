@@ -312,6 +312,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	z-index: 100;
 }
 #aboard .makelink{
+	user-select: none; 
 	width: 26em;
 	font-size: 0.8rem;
 	border: solid 1px gray;
@@ -430,12 +431,12 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 
 .novel .trto{
-	background-color: unset;
-	transition: background-color 1s ease;
+	background-color: rgba(240,240,240);
+/*	transition: background-color 1s ease;*/
 }
 .excitation .novel .trto{
-	background-color: rgba(230,230,230);
-	transition: background-color 1s ease;
+	background-color: rgba(240,240,240);
+/*	transition: background-color 1s ease;*/
 }
 .novel .trto.textHilight, .novel .trto.textHilightEdge{
 	background:rgb(240,240,130);
@@ -467,7 +468,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 }
 .translatebox.away{
 	opacity: 0;
-	transition: opacity 2s ease 0.5s;
+	transition: opacity 1s ease 0.5s;
 }
 .trtext{
 	display: none;
