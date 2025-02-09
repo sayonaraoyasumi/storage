@@ -656,7 +656,7 @@ jQuery( function(){
 	// -------------------------------------- // 
 	// 　mouseover
 	// -------------------------------------- // 
-	jQuery( ".trto" ).mouseover( function( event ) {
+	jQuery( ".trto" ).on('pointerover', function( event ) {
 		event.stopPropagation();
 		jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
 		jQuery( this ).addClass( "pick" );
@@ -669,7 +669,7 @@ jQuery( function(){
 	// -------------------------------------- // 
 	// 　mouseout
 	// -------------------------------------- // 
-	jQuery( ".trto" ).mouseout( function() {
+	jQuery( ".trto" ).on('pointerout', function() {
 		jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
 		jQuery( this ).removeClass( "pick" );
 	} );
