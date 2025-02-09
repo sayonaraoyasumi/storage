@@ -647,9 +647,11 @@ jQuery( function(){
  	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
 	// 　トランスレート用
  	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
+	// -------------------------------------- // 
+	// 　テキストのクリック
+	// -------------------------------------- // 
 	jQuery( ".trto" ).click( function( event ) {
 		event.stopPropagation();
-		jQuery( ".trto" ).removeClass( "pick" );
 
 		if( jQuery( this ).hasClass( "pick" ) ){
 
@@ -669,6 +671,14 @@ jQuery( function(){
 			jQuery( ".translatebox" ).html( transText );
 
 		}
+	} );
+	// -------------------------------------- // 
+	// 　翻訳文表示箱のクリック
+	// -------------------------------------- // 
+	jQuery( ".translatebox" ).click( function( event ) {
+		event.stopPropagation();
+		jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
+		jQuery( ".trto" ).removeClass( "pick" );
 	} );
 
  	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
