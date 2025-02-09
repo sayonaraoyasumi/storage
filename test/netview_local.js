@@ -431,7 +431,7 @@ jQuery( function(){
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
 	// リンク作成ボタン
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
-	jQuery( ".makelink" ).click( function( event ){
+	jQuery( ".makelink" ).on('pointerdown', function( event ){
 		event.preventDefault(); 
 		event.stopPropagation();
 
