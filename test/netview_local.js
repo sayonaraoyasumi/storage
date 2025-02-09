@@ -656,8 +656,10 @@ jQuery( function(){
 	// -------------------------------------- // 
 	// 　mouseover
 	// -------------------------------------- // 
-	jQuery( ".trto" ).mouseover( function() {
+	jQuery( ".trto" ).mouseover( function( event ) {
+		event.stopPropagation();
 		jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
+		jQuery( this ).addClass( "pick" );
 		const trcontenerID = jQuery( this ).attr( "trtext" );
 		const transText = jQuery( "#" + trcontenerID ).html();
 		jQuery( ".translatebox" ).html( transText );
@@ -669,6 +671,7 @@ jQuery( function(){
 	// -------------------------------------- // 
 	jQuery( ".trto" ).mouseout( function() {
 		jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+		jQuery( this ).removeClass( "pick" );
 	} );
 
  	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 

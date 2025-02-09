@@ -434,6 +434,10 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	background-color: rgba(240,240,240);
 /*	transition: background-color 1s ease;*/
 }
+.novel .trto.pick{
+	background-color: rgb(180, 210, 250);
+/*	transition: background-color 1s ease;*/
+}
 .excitation .novel .trto{
 	background-color: rgba(240,240,240);
 /*	transition: background-color 1s ease;*/
