@@ -321,6 +321,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	border-radius: 8px;
 	padding: 0.4em;
 	margin: 0.4em;
+	z-index: 100;
 	cursor: pointer;
 }
 #aboard .makelink.thistext.haveachoice  {  background-color: rgba(255,255,255,0.9); }
@@ -453,6 +454,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	transition: background-color 0.4s ease;
 }
 .translatebox{
+	pointer-events: none;
 	padding: 0.2em 1em;
 	position: absolute;
 	background-color: rgba(60,60,60,0.9);
@@ -464,7 +466,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 3000;
+	z-index: 10;
 }
 .translatebox.comeback{
 	opacity: 1;

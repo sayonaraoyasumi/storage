@@ -157,14 +157,14 @@ jQuery( function(){
 			jQuery( '.optionBar' ).removeClass( "show" );
 			jQuery( '.optionBar' ).slideUp( 200 );
 		}
-/*
+
 		// 	翻訳ウインドウ閉じて、ハイライト戻す
 		if ( jQuery( ".translatebox" ).hasClass( "comeback" ) ){
 			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
 			jQuery( ".trto" ).removeClass( "pick" );
 			return;
 		}
-	*/
+
 		// 
 		// セットアップ ---------------------
 		// 
@@ -419,12 +419,13 @@ jQuery( function(){
 	// -------------------------------------- // 
 	// 　clickで閉じる。
 	// -------------------------------------- // 
+/*
 	jQuery( ".optionBar" ).click( function( event ){
 		event.stopPropagation();
 		jQuery( '.optionBar' ).removeClass( "show" );
 		jQuery( '.optionBar' ).slideUp( 200 );
 	} );
-
+*/
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
 	// リンク作成ボタン
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  // 
@@ -464,7 +465,6 @@ jQuery( function(){
 			// 選択範囲を得る
 			const selection     = window.getSelection();
 			const range         = selection.getRangeAt( 0 );
-alert("きてる→" + selection + "←これ");
 			// ここからルビを抜く処理
 			// 一時的にHTML化
 			let container       = document.createElement( "div" );
@@ -667,7 +667,6 @@ alert("きてる→" + selection + "←これ");
 			jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
 
 			const pickID = jQuery( this ).attr("trtext");
-			console.log("ID = " + pickID );
 			jQuery(".trto[trtext='" + pickID + "']").addClass("pick");
 
 			const trcontenerID = jQuery( this ).attr( "trtext" );
