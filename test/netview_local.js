@@ -157,11 +157,14 @@ jQuery( function(){
 			jQuery( '.optionBar' ).removeClass( "show" );
 			jQuery( '.optionBar' ).slideUp( 200 );
 		}
-
+/*
 		// 	翻訳ウインドウ閉じて、ハイライト戻す
-		jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
-		jQuery( ".trto" ).removeClass( "pick" );
-
+		if ( jQuery( ".translatebox" ).hasClass( "comeback" ) ){
+			jQuery( ".translatebox" ).removeClass( "comeback" ).addClass( "away" );
+			jQuery( ".trto" ).removeClass( "pick" );
+			return;
+		}
+	*/
 		// 
 		// セットアップ ---------------------
 		// 
@@ -677,7 +680,7 @@ jQuery( function(){
 	// -------------------------------------- // 
 	jQuery( ".translatebox" ).click( function( event ) {
 		event.stopPropagation();
-		jQuery( ".translatebox" ).removeClass( "away" ).addClass( "comeback" );
+		jQuery( this ).removeClass( "comeback" ).addClass( "away" );
 		jQuery( ".trto" ).removeClass( "pick" );
 	} );
 
