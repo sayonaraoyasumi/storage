@@ -464,6 +464,7 @@ jQuery( function(){
 			// 選択範囲を得る
 			const selection     = window.getSelection();
 			const range         = selection.getRangeAt( 0 );
+alert("きてる→" + selection + "←これ");
 			// ここからルビを抜く処理
 			// 一時的にHTML化
 			let container       = document.createElement( "div" );
