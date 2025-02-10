@@ -369,3 +369,37 @@ a:link, a:visited, a:hover, a:active{
 .linktohome{
 	width: 50%;
 }
+.thumbnail {
+	width: 100px;
+	position: fixed;
+	cursor: pointer;
+	bottom: 20px;
+	right: 20px;
+	transition: 0.3s;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	z-index: 1000;
+}
+
+.thumbnail:hover {
+	opacity: 0.7;
+}
+
+#lightbox {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+#lightbox img {
+	max-width: 90%;
+	max-height: 90%;
+	border-radius: 8px;
+}
