@@ -430,7 +430,7 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	color: white;
 	font-weight: bolder;
 }
-
+/*
 .novel .trto{
 	background-color: rgba(240,240,240);
 	transition: background-color ease 0.4s;
@@ -479,3 +479,4 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 .trtext{
 	display: none;
 }
+*/
