@@ -10,11 +10,13 @@
 	}
 
 	try {
+	alert("フォントの設定……");
 			console.log("フォントの設定……");
 			const parentContent = window.parent.document.getElementById('content');
 			const parentClasses = parentContent ? parentContent.className : '';
 			const myTarget = document.getElementById('main');
 			if (myTarget && parentClasses) {
+	alert("クラス発見……" + parentClasses);
 			console.log("クラス発見……" + parentClasses);
 				myTarget.classList.remove("serif");
 				myTarget.classList.remove("sansserif");
