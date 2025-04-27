@@ -36,6 +36,23 @@
 	width: 100%;
 	height: 100%;
 }
+.Jumpto{
+	margin: 0;
+	border: solid 1px gray;
+	border-top: none 1px gray;
+	background-color: rgb(160,160,180);
+	list-style: none;
+	cursor: pointer;
+	box-sizing:border-box;
+	scrollbar-color: #ccc rgba(0,0,0,0);
+	scrollbar-width: thin;
+	padding: 10px 1em;
+	color: #fff;
+}
+.Jumpto:hover{
+	background-color: rgb(200,200,220);
+}
+
 </style>
 
 <script>
@@ -45,6 +62,9 @@ jQuery( function(){
 		let target = jQuery('#mainframe').contents().find('body');
 		jQuery( target ).removeClass("minimum mini mid big bigger");
 		jQuery( target ).addClass(jQuery.cookie("font"));
+		console.log("クッキー得た " + jQuery.cookie("font") );
+	} else {
+		console.log("クッキー文字サイズなし");
 	}
 
 	// クッキー処理２　フォント
@@ -52,15 +72,20 @@ jQuery( function(){
 		let target = jQuery('#mainframe').contents().find('body');
 		jQuery( target ).removeClass("serif sansserif");
 		jQuery( target ).addClass( jQuery.cookie("fontfamily") );
+		console.log("フォント得た " + jQuery.cookie("fontfamily") );
+	} else {
+		console.log("クッキーフォント指定なし");
 	}
 
 	// 
 	// チャプタージャンプ
 	// 
 	let BASEURL = "https://sayonaraoyasumi.github.io/storage/test/sinistri/OEBPS/Text/";
-	jQuery(".chapterJump").click(function( event ){
+	jQuery(".Jumpto").click(function( event ){
 		let linkto = BASEURL + jQuery(this).attr("linkto");
 		jQuery('#mainframe')[0].contentDocument.location.replace( linkto );
+		// ウインドウ閉じる
+		jQuery(".chapterBox").slideUp(200);
 	});
 
 	// 
@@ -77,6 +102,7 @@ jQuery( function(){
 		if(jQuery(this).hasClass("minimumfont")){ size = "minimum";}
 		// クラスを剥がして再付与
 		jQuery( target ).removeClass("minimum mini mid big bigger").addClass(size);
+		jQuery.cookie("font", size, { expires: 1000, path: pathname });
 	});
 
 	// 
@@ -92,6 +118,7 @@ jQuery( function(){
 			ff = "serif";
 			jQuery(this).removeClass("sansserif").addClass(ff);
 		}
+		console.log("cookie: fontfamily is " + fontfamilyfromcookie );
 	});
 });
 
@@ -109,15 +136,15 @@ jQuery( function(){
 			<div class="myTitle">第６天 SINISTRI</div>
 		</div>
 		<ul class="chapterBox">
-			<li class="chapterJump" linkto="chap_1.xhtml">第１天　１ミリのメカにも0.5ミリの魂</li>
-			<li class="chapterJump" linkto="box_01.xhtml#BOX_01">目指せ！　レギュラー入り！</li>
-			<li class="chapterJump" linkto="box_02.xhtml#BOX_02">ハートのレゾナンス</li>
-			<li class="chapterJump" linkto="box_03.xhtml#BOX_03">邪馬台国で復活せん！</li>
-			<li class="chapterJump" linkto="chap_2.xhtml">第２天　メック界の三種の神器</li>
-			<li class="chapterJump" linkto="box_04.xhtml#BOX_04">マリンメック・エクスポ</li>
-			<li class="chapterJump" linkto="box_05.xhtml#BOX_05">新開の森に散る鳥</li>
-			<li class="chapterJump" linkto="glossary_1.xhtml#headlines">高校メック選手名簿</li>
-			<li class="chapterJump" linkto="glossary_2.xhtml#headlines">高校メック参加校便覧</li>
+			<li class="Jumpto" linkto="chap_1.xhtml">第１天　１ミリのメカにも0.5ミリの魂</li>
+			<li class="Jumpto" linkto="box_01.xhtml#BOX_01">目指せ！　レギュラー入り！</li>
+			<li class="Jumpto" linkto="box_02.xhtml#BOX_02">ハートのレゾナンス</li>
+			<li class="Jumpto" linkto="box_03.xhtml#BOX_03">邪馬台国で復活せん！</li>
+			<li class="Jumpto" linkto="chap_2.xhtml">第２天　メック界の三種の神器</li>
+			<li class="Jumpto" linkto="box_04.xhtml#BOX_04">マリンメック・エクスポ</li>
+			<li class="Jumpto" linkto="box_05.xhtml#BOX_05">新開の森に散る鳥</li>
+			<li class="Jumpto" linkto="glossary_1.xhtml#headlines">高校メック選手名簿</li>
+			<li class="Jumpto" linkto="glossary_2.xhtml#headlines">高校メック参加校便覧</li>
 		</ul>
 <!--　 本文　ここから　　-->
 <div class="novel">
