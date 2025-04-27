@@ -57,27 +57,7 @@
 
 <script>
 jQuery( function(){
-/*
-	// クッキー処理１　文字サイズ
-	if (jQuery.cookie("font")){
-		let target = jQuery('#mainframe').contents().find('body');
-		jQuery( target ).removeClass("minimum mini mid big bigger");
-		jQuery( target ).addClass(jQuery.cookie("font"));
-		console.log("クッキー得た " + jQuery.cookie("font") );
-	} else {
-		console.log("クッキー文字サイズなし");
-	}
 
-	// クッキー処理２　フォント
-	if (jQuery.cookie("fontfamily")){
-		let target = jQuery('#mainframe').contents().find('body');
-		jQuery( target ).removeClass("serif sansserif");
-		jQuery( target ).addClass( jQuery.cookie("fontfamily") );
-		console.log("フォント得た " + jQuery.cookie("fontfamily") );
-	} else {
-		console.log("クッキーフォント指定なし");
-	}
-*/
 	const pathname = location.pathname;
 
 	// 
@@ -114,7 +94,7 @@ jQuery( function(){
 		let ff, rmv;
 		let target = jQuery('#mainframe').contents().find('body');
 		event.stopPropagation();
-		if( jQuery(this).hasClass("sansserif") ){
+		if( jQuery(".novel").hasClass("sansserif") ){
 			ff = "serif";
 			rmv = "sansserif";
 		} else {
