@@ -78,6 +78,8 @@ jQuery( function(){
 		console.log("クッキーフォント指定なし");
 	}
 */
+	const pathname = location.pathname;
+
 	// 
 	// チャプタージャンプ
 	// 
@@ -109,20 +111,19 @@ jQuery( function(){
 	// 文字変更ボタン
 	// 
 	jQuery(".fontChange_frame").click(function( event ){
-		let ff;
+		let ff, rmv;
 		let target = jQuery('#mainframe').contents().find('body');
 		event.stopPropagation();
-		if( jQuery(this).hasClass("serif") ){
-			ff = "sansserif";
-			jQuery(".novel").removeClass("serif").addClass(ff);
-			jQuery( target ).removeClass("serif").addClass(ff);
-			jQuery(this).removeClass("serif").addClass(ff);
-		} else {
+		if( jQuery(this).hasClass("sansserif") ){
 			ff = "serif";
-			jQuery(".novel").removeClass("sansserif").addClass(ff);
-			jQuery( target ).removeClass("sansserif").addClass(ff);
-			jQuery(this).removeClass("sansserif").addClass(ff);
+			rmv = "sansserif";
+		} else {
+			ff = "sansserif";
+			rmv = "serif";
 		}
+		jQuery(".novel").removeClass(rmv).addClass(ff);
+		jQuery( target ).removeClass(rmv).addClass(ff);
+		jQuery(this).removeClass(rmv).addClass(ff);
 		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
 		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
