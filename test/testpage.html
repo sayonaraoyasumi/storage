@@ -102,7 +102,6 @@ jQuery( function(){
 		if(jQuery(this).hasClass("minimumfont")){ size = "minimum";}
 		// クラスを剥がして再付与
 		jQuery( target ).removeClass("minimum mini mid big bigger").addClass(size);
-		jQuery.cookie("font", size, { expires: 1000, path: pathname });
 	});
 
 	// 
@@ -118,7 +117,6 @@ jQuery( function(){
 			ff = "serif";
 			jQuery(this).removeClass("sansserif").addClass(ff);
 		}
-		console.log("cookie: fontfamily is " + fontfamilyfromcookie );
 	});
 });
 
