@@ -10,12 +10,11 @@
 	}
 
 	try {
-console.log("フォントの設定……");
 			const parentContent = window.parent.document.getElementById('content');
 			const parentClasses = parentContent ? parentContent.className : '';
-console.log("クラス……" + parentClasses);
 			const myTarget = document.getElementById('main');
 			if (myTarget && parentClasses) {
+				myTarget.classList.remove("novel");
 				myTarget.classList.remove("serif");
 				myTarget.classList.remove("sansserif");
 				myTarget.classList.remove("bigger");
