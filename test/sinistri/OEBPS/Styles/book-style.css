@@ -1,0 +1,494 @@
+@charset "UTF-8";
+
+.serif{
+	font-family:serif-ja, serif, sans-serif;
+}
+.sansserif{
+	font-family:sans-serif, serif-ja, serif;
+}
+
+h1 { font-size: 220%; }
+h2 { font-size: 180%; }
+h3 { font-size: 150%; }
+h4 { font-size: 120%; }
+h5 { font-size: 100%; }
+h6 { font-size: 90%;  }
+b{
+	font-family: "lanobe", monospace;
+	font-weight: bolder;
+}
+
+.bigger  { font-size:125%; }
+.big     { font-size:112%; }
+.mid     { font-size:100%; }
+.mini    { font-size: 90%; }
+.minimum { font-size: 81%; }
+
+/* フォント
+---------------------------------------------------------------- */
+
+@font-face {
+  font-family: "lanobe";
+  src: url(../Fonts/LightNovelPOPv2.otf);
+}
+
+.scream{
+	text-align: center;
+	color: red;
+	margin:0.5em;
+	font-family: "lanobe", sans-serif, serif;
+}
+strong, .loud{
+	font-size: 110%;
+	color: red;
+	font-family: "lanobe", sans-serif, serif;
+}
+
+.lanobe{
+  font-family: "lanobe";
+}
+.innerbox h2, .innerbox h3{
+	font-family: "lanobe", sans-serif, serif;
+}
+.SE{
+	font-size: 110%;
+	font-family: "lanobe", sans-serif, serif;
+	margin:0.5em;
+	text-align: center;
+}
+
+/* リンク指定
+---------------------------------------------------------------- */
+.hltr a {
+	color: unset;
+	text-decoration: none;
+}
+.vrtl a {
+	color: unset;
+	text-decoration: none;
+}
+a:link    { color: #27336f; }
+a:visited { color: #53275a; }	
+a:hover   { color: #1625c5; }
+a:focus   { color: #b2058e; }
+a:active  { color: #b27f05; }
+
+a img{
+  text-decoration: none;
+}
+/* 
+---------------------------------------------------------------- */
+
+html {
+	writing-mode: horizontal-tb;
+	-epub-writing-mode: horizontal-tb;
+}
+
+body {
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+p    { margin: 0; }
+div  { margin: 0; }
+pre  { white-space: pre-wrap; }
+
+img {
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: bottom;
+}
+
+.center{
+	text-align: center;
+}
+h1.eyecatch{
+	font-family: "lanobe", sans-serif, serif;
+	margin: 2em auto 1em;
+	text-align: center;
+}
+.spacer{
+	margin:2em;
+}
+article, section{
+	max-width: 28em;
+	page-break-after: always;
+	margin: 0 auto 8em auto;
+}
+hr{
+	border: none;
+	margin: 1em;
+}
+
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+
+.episode_date{
+	margin: 1em;
+	font-style: italic;
+	font-family: serif-ja, serif;
+	font-size: 180%;
+}
+
+.belt{
+	border: 1px rgb(220,220,220) solid;
+	background-color: rgb(255,255,255);
+	padding: 0.5em;
+	margin: 0 0 1em 0 ;
+	text-align: center;
+}
+
+.belt img{
+	width: 8em;
+	height: 8em;
+}
+
+.students{
+	border: 1px rgb(200,200,200) solid;
+	background-color: rgb(240,240,240);
+	padding: 0.5em;
+	margin: 2em 0 ;
+	text-align: center;
+}
+
+.profcard{
+	width: 7em;
+	display: inline-block;
+	vertical-align: top;
+	padding: 0.5em;
+	font-size: 80%;
+}
+
+.profcard img{
+	width: 5em;
+	height: 5em;
+	margin-bottom: 0.5em;
+}
+
+.titlename{
+	font-size: 90%;
+	text-align: center;
+}
+.students .titlename{
+	font-size: 70%;
+}
+
+.entryname{
+	font-weight: bold;
+}
+
+.innerbox div.tips{
+	text-align: left;
+	margin: 2em auto;
+	padding: 1em;
+	width: 80%;
+	border: solid 1px gray;
+}
+
+/* センタリング用
+　　----------------------------------------------------- */
+
+.outerbox{
+	border: 1px rgba(255,255,255,0.01) solid;
+	width: 100%;
+	height: 100%;
+	writing-mode: vertical-rl;
+	-epub-writing-mode: vertical-rl;
+	text-align: center;
+}
+
+.outerbox.logobox{
+	border: 1px rgb(200,200,200) solid;
+}
+
+.innerbox{
+	border: 1px rgba(255,255,255,0.01) solid;
+	width: 100%;
+	margin: auto;
+	writing-mode: horizontal-tb;
+	-epub-writing-mode: horizontal-tb;
+	text-align: center;
+}
+
+.outerbox.logobox .innerbox div{
+	border: 1px rgba(255,255,255,0.01) solid;
+	text-align: left;
+	width: 80%;
+	margin: auto;
+	text-align: left;
+}
+
+.innerbox .logo{
+	 width: 6em;
+	 height: 6em;
+	margin: 2em;
+}
+
+/* 目次用
+　　----------------------------------------------------- */
+
+div.menu{
+	margin: 0.2em 0 0.2em 1em;
+}
+
+div.submenu{
+	margin: 0.2em 1em;
+}
+
+/* アイコントーク用
+　　----------------------------------------------------- */
+.chat{
+	box-sizing: border-box;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0.1em 0;
+/*	border: 1px red solid;*/
+}
+
+.chat p{
+	box-sizing: border-box;
+	width: 80%;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px #999 solid;
+	border-radius: 1em;
+	padding: 0.4em 1em;
+	margin: 0;
+	text-align: left;
+}
+
+.chat .who{
+	width: 2.2em;
+	height: 2.2em;
+	border: 0;
+/*	border: 1px blue solid;*/
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0;
+}
+
+.chat .who img{
+/*	border: 1px green solid;*/
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+}
+
+.skit{
+	margin:0.55em 0em;
+/*	margin-left: 5em;*/
+}
+.skit p{
+	text-indent: -3.5em;
+	margin-left: 4em;
+}
+.talk-continue{
+	margin-left: 4em;
+}
+
+.remi{
+	border: 4px #999 dotted;
+	padding: 0.5em;
+	margin: 1em 0.5em;
+}
+
+/* 疑似絵文字
+　　----------------------------------------------------- */
+
+img.ico{
+	width: 1.2em;
+	height: 1.2em;
+	margin: 0 0.1em 0.2em;
+	vertical-align: middle;
+}
+img.emo{
+	width: 2em;
+	height: 2em;
+	vertical-align: middle;
+}
+img.yell{
+	width: 3em;
+	height: 3em;
+	vertical-align: middle;
+}
+img.nc{
+	width: 1.33em;
+	height: 1em;
+	margin: 0 0.1em 0.2em;
+	vertical-align: middle;
+}
+img.tm{
+	width: 1.63em;
+	height: 1em;
+	margin: 0 0.1em 0.2em;
+	vertical-align: middle;
+}
+img.tml{
+	width: 3.26em;
+	height: 2em;
+	vertical-align: middle;
+}
+
+.anounce{
+	font-size: 80%;
+	color: #999;
+}
+/* コラム用
+　　----------------------------------------------------- */
+
+.column{
+	box-sizing: border-box;
+	page-break-after: always;
+	clear: both;
+	padding: 0.5em;
+	border: 1px rgb(200,200,200) solid;
+	border-radius: 1em;
+}
+
+.column h4{
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.column .titlename{
+}
+
+.information{
+	text-align: center;
+	padding: 1em;
+}
+
+h4.tagline{
+	font-family: "lanobe", sans-serif, serif;
+	border-bottom: 1px #888888 solid;
+	font-size: 1.4em;
+	margin-bottom: 1rem;
+}
+/* ページバナー
+　　----------------------------------------------------- */
+
+h4.scene{
+	font-family: "lanobe", sans-serif, serif;
+	border-bottom: 1px #ee3333 solid;
+	font-size: 1.4em;
+	margin-bottom: 1rem;
+}
+
+.banner{
+	display: block;
+	margin:2em 0 1em 0;
+	width: 100%;
+}
+.maximg{
+	display: block;
+	margin: 0.5em auto;
+	width: 98%;
+}
+
+
+/* リンク
+　　----------------------------------------------------- */
+
+.link{
+	display: block;
+	background-color: rgb(230,233,245);
+	border: rgb(200,200,220) 1px solid;
+	width: 85%;
+	margin: 0.5em auto;
+	padding: 0.35em 4%;
+	border-radius: 1em;
+}
+
+.link.mini{
+	width: 12em;
+	text-align: center;
+	margin: 1em auto 0.5em;
+}
+
+.link.sample{
+	width: 12em;
+	text-align: center;
+	margin: 1.5em auto;
+}
+.linkbox{
+	background-color: rgb(250,251,254);
+	border: 4px dashed #eee;
+	margin: 1.5em 0 0.5em;
+	padding: 0.5em 0;
+}
+.linkbox.slim{
+	margin: 0;
+}
+span.link{
+	text-align: center;
+	background-color: rgb(240,240,240);
+
+}
+
+/* 各キャラクターページ用
+　　----------------------------------------------------- */
+
+
+.link.crystal{
+	background-color: rgb(230,250,230);
+}
+
+.fortune{
+	background-color: rgb(240,250,240);
+}
+
+.blog, .analyze0{
+	background-color: rgb(235,240,245);
+}
+.analyze{
+	background-color: rgb(235,248,255);
+}
+.lesson{
+	background-color: rgb(240,235,250);
+}
+
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
+
+.sideways {
+	text-orientation: sideways;
+	-epub-text-orientation: sideways;
+}
+
+.upright {
+	/* -epub-text-orientation: upright; */
+	-epub-text-combine: horizontal;
+}
+
+.pagenum {
+	color: gray;
+	font-size: 0.8em;
+}
+
+.footnotes hr {
+	margin-top: 1.25em;
+	margin-bottom: 1.25em;
+}
+.footnotes ol {
+	margin-left: 2em;
+}
+.footnotes li {
+	font-size: 0.875em;
+}
+
+@media print {
+	h1 {
+	  page-break-before: always;
+	}
+
+/*	h1, h2, */
+	h3, h4, h5, h6 {
+	  page-break-after: avoid;
+	}
+
+	ul, ol, dl {
+	  page-break-before: avoid;
+	}
+}
