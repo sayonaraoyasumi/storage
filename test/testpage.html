@@ -56,35 +56,15 @@
 }
 </style>
 
-<!-- 
-	やること
-		チャプタージャンプ
-			jQuery('#mainframe')[0].contentDocument.location.replace('hogehoge');
-
-
-
-const btn = document.getElementById('trigger');
-const elem = document.getElementById('elem');
-const target = elem.contentWindow.document.querySelector('#mainframe');
-
-// iframeのDOMを取得
-console.log(elem.contentWindow.document);
-
-// iframe内のDOMを操作
-btn.addEventListener('click', function(){
- target.innerHTML = 'iframeの外のボタンが<br>クリックされました！！';
- target.style.background="red";
-});
-
-
-
--->
 <script>
 jQuery( function(){
+	// クッキー処理１　文字サイズ
+	// クッキー処理２　フォント
+	// チャプタージャンプ
+	//	jQuery('#mainframe')[0].contentDocument.location.replace('hogehoge');
+	// body にクラス操作
 	jQuery(".fontSwitch").click(function(){
-		console.log("機能！");
-		let myele = jQuery('#mainframe').contents().find('.subtitle').text();
-		console.log(myele);
+		jQuery('#mainframe').contents().find('body').addClass("bigger");
 	});
 });
 
