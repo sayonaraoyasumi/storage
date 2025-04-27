@@ -4,25 +4,11 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name='robots' content='max-image-preview:large' />
-		<meta name="description" content="カフェでいとうせいこう似のひとを見かけた話を軸に、アニメーター時代から、漫画の投稿時代、ゲーム制作と、過去を振り返っています。私人は仮名で、雑誌等で名の知られたひとは本名で登場。「愛について」「しあわせについて」と、哲学も語っています">
+		<meta name="description" content="ゲームブックのテスト用ページ">
 		<meta name="keywords" content="小説, novel, kindle">
 		<meta name="author" content="井上信行">
-		<title>絲失せ行こう弐のひとを探しに</title>
-<!-- ogp -->
-		<meta property="og:locale" content="ja_JP">
-		<meta property="og:type" content="website">
-		<meta property="og:image" content="https://sayonaraoyasumi.github.io/storage/card/card_ninohito.jpg">
-		<meta property="og:image:width" content="1200">
-		<meta property="og:image:height" content="630">
-		<meta property="og:title" content="絲失せ行こう弐のひとを探しに">
-		<meta property="og:description" content="カフェでいとうせいこう似のひとを見かけた話を軸に、アニメーター時代から、漫画の投稿時代、ゲーム制作と、過去を振り返っています。私人は仮名で、雑誌等で名の知られたひとは本名で登場。「愛について」「しあわせについて」と、哲学も語っています" />
-		<meta property="og:url" content="https://sayonaraoyasumi.github.io/storage/html/ninohito_epub.html">
-		<meta property="og:site_name" content="絲失せ行こう弐のひとを探しに">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="絲失せ行こう弐のひとを探しに">
-		<meta name="twitter:description" content="カフェでいとうせいこう似のひとを見かけた話を軸に、アニメーター時代から、漫画の投稿時代、ゲーム制作と、過去を振り返っています。私人は仮名で、雑誌等で名の知られたひとは本名で登場。「愛について」「しあわせについて」と、哲学も語っています">
-		<meta name="twitter:image" content="https://sayonaraoyasumi.github.io/storage/card/card_ninohito.jpg">
-<!-- /ogp -->
+		<meta name="robots" content="noindex,nofollow,noarchive" />
+		<title>第６天 SINISTRI</title>
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_32.png" sizes="32x32" />
 		<link rel="icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_192.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://sayonaraoyasumi.github.io/storage/image/sakuranbo_180.png" />
@@ -40,14 +26,10 @@
 <style>
 /* メインの箱の基本設定 */
 #bboard.yoko .novel {
-	padding: 2em 5%;
-	writing-mode: horizontal-tb;
 	overflow-y: auto;
 	overflow-x: hidden;
 	scrollbar-width: none;
 	padding:2em 0;
-	white-space: normal;
-/*	display: flex;*/
 }
 #mainframe{
 	border: none;
@@ -59,12 +41,57 @@
 <script>
 jQuery( function(){
 	// クッキー処理１　文字サイズ
+	if (jQuery.cookie("font")){
+		let target = jQuery('#mainframe').contents().find('body');
+		jQuery( target ).removeClass("minimum mini mid big bigger");
+		jQuery( target ).addClass(jQuery.cookie("font"));
+	}
+
 	// クッキー処理２　フォント
+	if (jQuery.cookie("fontfamily")){
+		let target = jQuery('#mainframe').contents().find('body');
+		jQuery( target ).removeClass("serif sansserif");
+		jQuery( target ).addClass( jQuery.cookie("fontfamily") );
+	}
+
+	// 
 	// チャプタージャンプ
-	//	jQuery('#mainframe')[0].contentDocument.location.replace('hogehoge');
-	// body にクラス操作
-	jQuery(".fontSwitch").click(function(){
-		jQuery('#mainframe').contents().find('body').addClass("bigger");
+	// 
+	let BASEURL = "https://sayonaraoyasumi.github.io/storage/test/sinistri/OEBPS/Text/";
+	jQuery(".chapterJump").click(function( event ){
+		let linkto = BASEURL + jQuery(this).attr("linkto");
+		jQuery('#mainframe')[0].contentDocument.location.replace( linkto );
+	});
+
+	// 
+	// 文字サイズボタン
+	// 
+	jQuery(".fontSwitch").click(function( event ){
+		let target = jQuery('#mainframe').contents().find('body');
+		// 押されたボタンを識別
+		let size;
+		if(jQuery(this).hasClass("biggerfont")) { size = "bigger"; }
+		if(jQuery(this).hasClass("bigfont"))    { size = "big";    }
+		if(jQuery(this).hasClass("midfont"))    { size = "mid";    }
+		if(jQuery(this).hasClass("minifont"))   { size = "mini";   }
+		if(jQuery(this).hasClass("minimumfont")){ size = "minimum";}
+		// クラスを剥がして再付与
+		jQuery( target ).removeClass("minimum mini mid big bigger").addClass(size);
+	});
+
+	// 
+	// 文字変更ボタン
+	// 
+	jQuery(".fontChange").click(function( event ){
+		let ff;
+		let target = jQuery('#mainframe').contents().find('body');
+		if( jQuery( target ).hasClass("serif") ){
+			ff = "sansserif";
+			jQuery(this).removeClass("serif").addClass(ff);
+		} else {
+			ff = "serif";
+			jQuery(this).removeClass("sansserif").addClass(ff);
+		}
 	});
 });
 
@@ -79,20 +106,22 @@ jQuery( function(){
 	<div id="bboard" class="yoko">
 		<div class="topBar">
 			<div id="gotostart" class="squarebutton leftside"><img src="https://sayonaraoyasumi.github.io/storage/icon/square_ninohito.jpg" class="bottombutton"></div>
-			<div class="myTitle">固定タイトル</div>
+			<div class="myTitle">第６天 SINISTRI</div>
 		</div>
 		<ul class="chapterBox">
-			<li class="chapterJump" chapter="1">１．いくつかの扉</li>
-			<li class="chapterJump" chapter="2">２．弐のひとを探しに</li>
-			<li class="chapterJump" chapter="3">３．クリスタルの牢獄</li>
-			<li class="chapterJump" chapter="4">４．愛について</li>
-			<li class="chapterJump" chapter="5">５．しあわせについて</li>
-			<li class="chapterJump" chapter="6">おまけ．Chat GPTに聞いてみた</li>
-			<li class="chapterJump" chapter="7">あとがき</li>
+			<li class="chapterJump" linkto="chap_1.xhtml">第１天　１ミリのメカにも0.5ミリの魂</li>
+			<li class="chapterJump" linkto="box_01.xhtml#BOX_01">目指せ！　レギュラー入り！</li>
+			<li class="chapterJump" linkto="box_02.xhtml#BOX_02">ハートのレゾナンス</li>
+			<li class="chapterJump" linkto="box_03.xhtml#BOX_03">邪馬台国で復活せん！</li>
+			<li class="chapterJump" linkto="chap_2.xhtml">第２天　メック界の三種の神器</li>
+			<li class="chapterJump" linkto="box_04.xhtml#BOX_04">マリンメック・エクスポ</li>
+			<li class="chapterJump" linkto="box_05.xhtml#BOX_05">新開の森に散る鳥</li>
+			<li class="chapterJump" linkto="glossary_1.xhtml#headlines">高校メック選手名簿</li>
+			<li class="chapterJump" linkto="glossary_2.xhtml#headlines">高校メック参加校便覧</li>
 		</ul>
 <!--　 本文　ここから　　-->
 <div class="novel">
-<iframe src="testcontent.html" id="mainframe"></iframe>
+<iframe src="https://sayonaraoyasumi.github.io/storage/test/sinistri/OEBPS/Text/p-header.xhtml" id="mainframe"></iframe>
 </div>
 <!--　 本文　ここまで　　-->
 <!--　bottomBarの前まで　-->
