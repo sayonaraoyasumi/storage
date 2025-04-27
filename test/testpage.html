@@ -58,8 +58,6 @@
 <script>
 jQuery( function(){
 
-	const pathname = location.pathname;
-
 	console.log( "読み出したURL = " + jQuery.cookie("sinistri_redord"));
 
 	// 
@@ -106,12 +104,12 @@ jQuery( function(){
 		jQuery(".novel").removeClass(rmv).addClass(ff);
 		jQuery( target ).removeClass(rmv).addClass(ff);
 		jQuery(this).removeClass(rmv).addClass(ff);
-		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
+		jQuery.cookie("fontfamily", ff, { expires: 1000, path: location.pathname });
 		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
 });
 window.saveIframeUrl = function(url) {
-	jQuery.cookie("sinistri_redord", url, { expires: 1000, path: pathname });
+	jQuery.cookie("sinistri_redord", url, { expires: 1000, path: location.pathname });
 	console.log( "記録したURL = " + url);
 };
 
