@@ -1,15 +1,14 @@
 	function showTargetSection() {
 		const hash = window.location.hash;
-		document.querySelectorAll('section').forEach(el => { el.style.display = 'none';
-		});
+		document.querySelectorAll('section').forEach(el => { el.style.display = 'none';});
 		if (hash) {
-		const target = document.querySelector(hash);
-		if (target) {
-			target.style.display = 'block';
+			const target = document.querySelector(hash);
+			if (target) {
+				target.style.display = 'block';
+			}
 		}
-	}
-
-	try {
+		window.parent.saveIframeUrl(window.location.href);
+		try {
 			const parentContent = window.parent.document.getElementById('content');
 			const parentClasses = parentContent ? parentContent.className : '';
 			const myTarget = document.getElementById('main');
