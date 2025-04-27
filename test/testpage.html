@@ -60,6 +60,8 @@ jQuery( function(){
 
 	const pathname = location.pathname;
 
+	console.log( "記録したURL = " + jQuery.cookie("sinistri_redord"));
+
 	// 
 	// チャプタージャンプ
 	// 
@@ -108,6 +110,9 @@ jQuery( function(){
 		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
 });
+window.saveIframeUrl = function(url) {
+  document.cookie = "sinistri_redord=" + encodeURIComponent(url) + "; path=/";
+};
 
 </script>
 <!-- 　　　　ここまで　　　　　 -->
