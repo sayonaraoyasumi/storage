@@ -60,7 +60,7 @@ jQuery( function(){
 
 	const pathname = location.pathname;
 
-	console.log( "記録したURL = " + jQuery.cookie("sinistri_redord"));
+	console.log( "読み出したURL = " + jQuery.cookie("sinistri_redord"));
 
 	// 
 	// チャプタージャンプ
@@ -111,7 +111,8 @@ jQuery( function(){
 	});
 });
 window.saveIframeUrl = function(url) {
-  document.cookie = "sinistri_redord=" + encodeURIComponent(url) + "; path=/";
+	jQuery.cookie("sinistri_redord", url, { expires: 1000, path: pathname });
+	console.log( "記録したURL = " + url);
 };
 
 </script>
