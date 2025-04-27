@@ -108,7 +108,6 @@ jQuery( function(){
 	jQuery('#coverimage').on('click', function() {
 		let leapto = jQuery.cookie("sinistri_redord");
 		if ( leapto ){
-			console.log( "読み出したURL = " + leapto);
 			jQuery('#mainframe')[0].contentDocument.location.replace( leapto );
 		}
 	});
@@ -117,7 +116,6 @@ jQuery( function(){
 });
 window.saveIframeUrl = function(url) {
 	jQuery.cookie("sinistri_redord", url, { expires: 1000, path: location.pathname });
-	console.log( "記録したURL = " + url);
 };
 
 </script>
