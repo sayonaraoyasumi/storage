@@ -57,6 +57,7 @@
 
 <script>
 jQuery( function(){
+/*
 	// クッキー処理１　文字サイズ
 	if (jQuery.cookie("font")){
 		let target = jQuery('#mainframe').contents().find('body');
@@ -76,7 +77,7 @@ jQuery( function(){
 	} else {
 		console.log("クッキーフォント指定なし");
 	}
-
+*/
 	// 
 	// チャプタージャンプ
 	// 
@@ -107,16 +108,23 @@ jQuery( function(){
 	// 
 	// 文字変更ボタン
 	// 
-	jQuery(".fontChange").click(function( event ){
+	jQuery(".fontChange_frame").click(function( event ){
 		let ff;
 		let target = jQuery('#mainframe').contents().find('body');
-		if( jQuery( target ).hasClass("serif") ){
+		event.stopPropagation();
+		if( jQuery(this).hasClass("serif") ){
 			ff = "sansserif";
+			jQuery(".novel").removeClass("serif").addClass(ff);
+			jQuery( target ).removeClass("serif").addClass(ff);
 			jQuery(this).removeClass("serif").addClass(ff);
 		} else {
 			ff = "serif";
+			jQuery(".novel").removeClass("sansserif").addClass(ff);
+			jQuery( target ).removeClass("sansserif").addClass(ff);
 			jQuery(this).removeClass("sansserif").addClass(ff);
 		}
+		jQuery.cookie("fontfamily", ff, { expires: 1000, path: pathname });
+		console.log("set cookie: fontfamily " + jQuery.cookie("fontfamily"));
 	});
 });
 
@@ -145,7 +153,7 @@ jQuery( function(){
 			<li class="Jumpto" linkto="glossary_2.xhtml#headlines">高校メック参加校便覧</li>
 		</ul>
 <!--　 本文　ここから　　-->
-<div class="novel" id="content">
+<div class="novel">
 <iframe src="https://sayonaraoyasumi.github.io/storage/test/sinistri/OEBPS/Text/p-header.xhtml" id="mainframe"></iframe>
 </div>
 <!--　 本文　ここまで　　-->
@@ -165,7 +173,7 @@ jQuery( function(){
 			<div class="fontSwitch squarebutton midfont pick"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_font3.png" class="bottombutton"></div>
 			<div class="fontSwitch squarebutton bigfont"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_font4.png" class="bottombutton"></div>
 			<div class="fontSwitch squarebutton biggerfont"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_font5.png" class="bottombutton"></div>
-			<div class="fontChange squarebutton serif"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_fontchange.png" class="bottombutton"></div>
+			<div class="fontChange_frame squarebutton serif"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_fontchange.png" class="bottombutton"></div>
 			<div class="configButton squarebutton rightside"><img src="https://sayonaraoyasumi.github.io/storage/html/sozai/button_config.png" class="bottombutton"></div>
 			<div class="translatebox away"></div>
 		</button>
