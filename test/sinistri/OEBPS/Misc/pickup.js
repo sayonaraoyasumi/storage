@@ -1,6 +1,6 @@
 	function showTargetSection() {
 		const hash = window.location.hash;
-		document.querySelectorAll('section').forEach(el => { el.style.display = 'none';});
+		document.querySelectorAll('.pagination').forEach(el => { el.style.display = 'none';});
 		if (hash) {
 			const target = document.querySelector(hash);
 			if (target) {
