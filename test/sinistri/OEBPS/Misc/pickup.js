@@ -5,6 +5,7 @@
 			const target = document.querySelector(hash);
 			if (target) {
 				target.style.display = 'block';
+				window.scrollTo(0, 0);
 			}
 		}
 		window.parent.saveIframeUrl(window.location.href);
