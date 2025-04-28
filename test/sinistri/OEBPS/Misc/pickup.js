@@ -27,7 +27,12 @@
 		} catch (e) {
 			console.error('親フレームにアクセスできません', e);
 		}
-
+		document.querySelectorAll('span.link').forEach(el => { el.innerText = '戻る';});
+		document.querySelectorAll('span.link').forEach(function(span) {
+			span.addEventListener('click', function() {
+				history.back();
+			});
+		});
 	}
 	window.addEventListener('DOMContentLoaded', showTargetSection);
 	window.addEventListener('hashchange', showTargetSection);
