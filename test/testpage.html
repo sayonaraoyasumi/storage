@@ -111,6 +111,15 @@ jQuery( function(){
 			jQuery('#mainframe')[0].contentDocument.location.replace( leapto );
 		}
 	});
+	// 
+	// 最初に戻る
+	// 
+	jQuery('#scenarioreset').on('click', function( event ) {
+		event.stopPropagation();
+		jQuery('#overlay').removeClass().addClass("dark"); //
+		jQuery('#coverimage').fadeIn(500);
+		jQuery.cookie("sinistri_redord", "", { expires: 1000, path: location.pathname });
+	});
 
 
 });
@@ -128,10 +137,11 @@ window.saveIframeUrl = function(url) {
 <div id="aboard">
 	<div id="bboard" class="yoko">
 		<div class="topBar">
-			<div id="gotostart" class="squarebutton leftside"><img src="https://sayonaraoyasumi.github.io/storage/icon/square_sinistri.jpg" class="bottombutton"></div>
+			<div id="scenarioreset" class="squarebutton leftside"><img src="https://sayonaraoyasumi.github.io/storage/icon/square_sinistri.jpg" class="bottombutton"></div>
 			<div class="myTitle">第６天 SINISTRI</div>
 		</div>
 		<ul class="chapterBox">
+			<li class="Jumpto" linkto="episodelist.xhtml">目次</li>
 			<li class="Jumpto" linkto="chap_1.xhtml">第１天　１ミリのメカにも0.5ミリの魂</li>
 			<li class="Jumpto" linkto="box_01.xhtml#BOX_01">目指せ！　レギュラー入り！</li>
 			<li class="Jumpto" linkto="box_02.xhtml#BOX_02">ハートのレゾナンス</li>
