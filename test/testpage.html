@@ -116,6 +116,8 @@ jQuery( function(){
 	// 
 	jQuery('#scenarioreset').on('click', function( event ) {
 		event.stopPropagation();
+		let linkto = BASEURL + "p-header.xhtml";
+		jQuery('#mainframe')[0].contentDocument.location.replace( linkto );
 		jQuery('#overlay').removeClass().addClass("dark"); //
 		jQuery('#coverimage').fadeIn(500);
 		jQuery.cookie("sinistri_redord", "", { expires: 1000, path: location.pathname });
