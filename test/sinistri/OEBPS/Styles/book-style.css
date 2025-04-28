@@ -399,6 +399,7 @@ h4.scene{
 	margin: 0.5em auto;
 	padding: 0.35em 4%;
 	border-radius: 1em;
+	cursor: pointer;
 }
 
 .link.mini{
