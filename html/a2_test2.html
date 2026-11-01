@@ -92,13 +92,14 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+console.log("ver 2");
   const btn = document.getElementById('copy-btn');
   btn.addEventListener('click', async () => {
     const node = document.getElementById('bboard');
   	jQuery( '.optionBar' ).removeClass( "show" );
 	jQuery( '.optionBar' ).hide( );
 const crChap = jQuery( ".novel" ).not( ".hide" );
-const scleft = distance = jQuery( crChap ).get( 0 ).scrollWidth;
+const scleft = distance = jQuery( crChap ).scrollLeft;
 console.log(scleft);
 //    try {
       // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
