@@ -90,35 +90,6 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 	cursor: pointer;
 }
 </style>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('copy-btn');
-  btn.addEventListener('click', async () => {
-    const node = document.getElementById('bboard');
-  	jQuery( '.optionBar' ).removeClass( "show" );
-	jQuery( '.optionBar' ).hide( );
-const scleft = currentChapter.scrollLeft();
-console.log(scleft);
-//    try {
-      // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
-//jQuery( '.novel' ).css( "overflow-x", "hidden" );
-//      const blob = await htmlToImage.toBlob(node);
-//      if (!blob) {
-//        throw new Error('画像の生成に失敗しました。');
-//      }
-//      // 2. Clipboard APIを使用してクリップボードに書き込む
-//      await navigator.clipboard.write([
-//        new ClipboardItem({ 'image/png': blob })
-//      ]);
-//jQuery( '.novel' ).css( "overflow-x", "auto" );
-//      alert('ブロックの画像をクリップボードにコピーしました！');
-//    } catch (error) {
-//      console.error('コピーに失敗しました:', error);
-//      alert('コピーに失敗しました。コンソールを確認してください。');
-//    }
-});
-});
-</script>
 	</head>
 	<body class="home">
 		<div id="overlay" class="dark"></div>
