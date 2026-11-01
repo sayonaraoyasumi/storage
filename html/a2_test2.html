@@ -92,7 +92,7 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-console.log("ver 3.3");
+console.log("ver 3.4");
   const btn = document.getElementById('copy-btn');
   btn.addEventListener('click', async () => {
     const node = document.getElementById('bboard');
@@ -105,7 +105,7 @@ console.log("ここまではOK");
 
 let debugnum = crChap.css( "left");
 console.log(debugnum);
-crChap.css( "left", scleft * -1 );
+crChap.css( {"position":"relative","left": scleft * -1} );
 debugnum = crChap.css( "left");
 console.log(debugnum);
 
@@ -125,7 +125,7 @@ console.log(debugnum);
       alert('コピーに失敗しました。コンソールを確認してください。');
     }
 
-jQuery( '.novel' ).css( "left", "auto" );
+crChap.css( {"position":"static","left": "auto"} );
 
 });
 });
