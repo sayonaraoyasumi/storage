@@ -92,20 +92,21 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-console.log("ver 3.2");
+console.log("ver 3.3");
   const btn = document.getElementById('copy-btn');
   btn.addEventListener('click', async () => {
     const node = document.getElementById('bboard');
   	jQuery( '.optionBar' ).removeClass( "show" );
 	jQuery( '.optionBar' ).hide( );
 const crChap = jQuery( ".novel" ).not( ".hide" );
-const scleft = distance = jQuery( crChap ).scrollLeft();
+const scleft = crChap.scrollLeft();
 console.log(scleft);
 console.log("ここまではOK");
-let debugnum = jQuery( '.novel' ).css( "left");
+
+let debugnum = crChap.css( "left");
 console.log(debugnum);
-jQuery( '.novel' ).css( "left", scleft * -1 );
-debugnum = jQuery( '.novel' ).css( "left");
+crChap.css( "left", scleft * -1 );
+debugnum = crChap.css( "left");
 console.log(debugnum);
 
     try {
@@ -124,7 +125,7 @@ console.log(debugnum);
       alert('コピーに失敗しました。コンソールを確認してください。');
     }
 
-jQuery( '.novel' ).css( "left", 0 );
+jQuery( '.novel' ).css( "left", "auto" );
 
 });
 });
