@@ -92,7 +92,7 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-console.log("ver 3.1");
+console.log("ver 3.2");
   const btn = document.getElementById('copy-btn');
   btn.addEventListener('click', async () => {
     const node = document.getElementById('bboard');
@@ -105,6 +105,8 @@ console.log("ここまではOK");
 let debugnum = jQuery( '.novel' ).css( "left");
 console.log(debugnum);
 jQuery( '.novel' ).css( "left", scleft * -1 );
+debugnum = jQuery( '.novel' ).css( "left");
+console.log(debugnum);
 
     try {
 //      // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
