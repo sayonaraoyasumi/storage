@@ -97,9 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const node = document.getElementById('bboard');
   	jQuery( '.optionBar' ).removeClass( "show" );
 	jQuery( '.optionBar' ).hide( );
-const scleft = currentChapter.scrollLeft;
+const scleft = currentChapter.scrollLeft();
 console.log(scleft);
-
 //    try {
       // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
 //jQuery( '.novel' ).css( "overflow-x", "hidden" );
@@ -112,13 +111,11 @@ console.log(scleft);
 //        new ClipboardItem({ 'image/png': blob })
 //      ]);
 //jQuery( '.novel' ).css( "overflow-x", "auto" );
-
 //      alert('ブロックの画像をクリップボードにコピーしました！');
 //    } catch (error) {
 //      console.error('コピーに失敗しました:', error);
 //      alert('コピーに失敗しました。コンソールを確認してください。');
 //    }
-//  
 })
 });
 </script>
