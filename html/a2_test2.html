@@ -101,23 +101,28 @@ console.log("ver 2.1");
 const crChap = jQuery( ".novel" ).not( ".hide" );
 const scleft = distance = jQuery( crChap ).scrollLeft();
 console.log(scleft);
-//    try {
-      // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
-//jQuery( '.novel' ).css( "overflow-x", "hidden" );
-//      const blob = await htmlToImage.toBlob(node);
-//      if (!blob) {
-//        throw new Error('画像の生成に失敗しました。');
-//      }
+console.log("ここまではOK");
+jQuery( '.novel' ).css( "left", scleft );
+
+
+    try {
+//      // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
+      const blob = await htmlToImage.toBlob(node);
+      if (!blob) {
+        throw new Error('画像の生成に失敗しました。');
+      }
 //      // 2. Clipboard APIを使用してクリップボードに書き込む
-//      await navigator.clipboard.write([
-//        new ClipboardItem({ 'image/png': blob })
-//      ]);
-//jQuery( '.novel' ).css( "overflow-x", "auto" );
-//      alert('ブロックの画像をクリップボードにコピーしました！');
-//    } catch (error) {
-//      console.error('コピーに失敗しました:', error);
-//      alert('コピーに失敗しました。コンソールを確認してください。');
-//    }
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blob })
+      ]);
+      alert('ブロックの画像をクリップボードにコピーしました！');
+    } catch (error) {
+      console.error('コピーに失敗しました:', error);
+      alert('コピーに失敗しました。コンソールを確認してください。');
+    }
+
+jQuery( '.novel' ).css( "left", 0 );
+
 });
 });
 </script>
