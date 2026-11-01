@@ -90,28 +90,30 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 }
 </style>
 <script>
-document.getElementById('copy-btn').addEventListener('click', async () => {
-  const node = document.getElementById('aboard');
-	jQuery( '.optionBar' ).removeClass( "show" );
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('copy-btn');
+  btn.addEventListener('click', async () => {
+    const node = document.getElementById('aboard');
+  	jQuery( '.optionBar' ).removeClass( "show" );
 	jQuery( '.optionBar' ).hide( );
-  try {
-    // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
-    const blob = await htmlToImage.toBlob(node);
+    try {
+      // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
+      const blob = await htmlToImage.toBlob(node);
 
-    if (!blob) {
-      throw new Error('画像の生成に失敗しました。');
+      if (!blob) {
+        throw new Error('画像の生成に失敗しました。');
+      }
+
+      // 2. Clipboard APIを使用してクリップボードに書き込む
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blob })
+      ]);
+
+      alert('ブロックの画像をクリップボードにコピーしました！');
+    } catch (error) {
+      console.error('コピーに失敗しました:', error);
+      alert('コピーに失敗しました。コンソールを確認してください。');
     }
-
-    // 2. Clipboard APIを使用してクリップボードに書き込む
-    await navigator.clipboard.write([
-      new ClipboardItem({ 'image/png': blob })
-    ]);
-
-    alert('ブロックの画像をクリップボードにコピーしました！');
-  } catch (error) {
-    console.error('コピーに失敗しました:', error);
-    alert('コピーに失敗しました。コンソールを確認してください。');
-  }
 });
 </script>
 	</head>
