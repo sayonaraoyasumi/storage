@@ -94,15 +94,13 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('copy-btn');
   btn.addEventListener('click', async () => {
-    const node = document.getElementById('aboard');
+    const node = document.getElementById('bboard');
   	jQuery( '.optionBar' ).removeClass( "show" );
 	jQuery( '.optionBar' ).hide( );
     try {
       // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
 
-node.style.overflow = 'hidden';
       const blob = await htmlToImage.toBlob(node);
-node.style.overflow = '';
 
       if (!blob) {
         throw new Error('画像の生成に失敗しました。');
