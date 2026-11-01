@@ -75,11 +75,25 @@ strong {
 /* レガシー対応 */
 .novel{	white-space: unset; }
 p{	white-space: break-spaces; margin: 0 1.5em;}
+#aboard .copyonpic{
+	user-select: none; 
+	width: 26em;
+	font-size: 0.8rem;
+	border: solid 1px gray;
+	text-align: center;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 8px;
+	padding: 0.4em;
+	margin: 0.4em;
+	z-index: 100;
+	cursor: pointer;
+}
 </style>
 <script>
 document.getElementById('copy-btn').addEventListener('click', async () => {
-  const node = document.getElementById('capture-area');
-
+  const node = document.getElementById('aboard');
+	jQuery( '.optionBar' ).removeClass( "show" );
+	jQuery( '.optionBar' ).hide( );
   try {
     // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
     const blob = await htmlToImage.toBlob(node);
@@ -5417,7 +5431,7 @@ This work is copyright 2026 Uruba Linn. It may not be modified without permissio
 		<div class="optionBar">
 			<button class="makelink thischapter">🔖この章のリンクをクリップボードにコピーする</button>
 			<button class="makelink thisbook">📕この本のリンクをクリップボードにコピーする</button>
-			<button class="makelink copybutton" id="copy_btn">📃表示部分を画像としてクリップボードにコピーする</button>
+			<button class="copyonpic copybutton" id="copy_btn">📃表示部分を画像としてクリップボードにコピーする</button>
 		</div>
 		<button class="bottomBar">
 			<div class="exitButton leftside squarebutton">
