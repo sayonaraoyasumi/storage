@@ -99,7 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	jQuery( '.optionBar' ).hide( );
     try {
       // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
+
+node.style.overflow = 'hidden';
       const blob = await htmlToImage.toBlob(node);
+node.style.overflow = '';
 
       if (!blob) {
         throw new Error('画像の生成に失敗しました。');
