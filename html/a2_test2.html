@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const node = document.getElementById('bboard');
   	jQuery( '.optionBar' ).removeClass( "show" );
 	jQuery( '.optionBar' ).hide( );
-const chap = jQuery.cookie( "chapter" );
-//const scleft = distance = jQuery( currentChapter ).get( 0 ).scrollWidth;
+const crChap = jQuery( ".novel" ).not( ".hide" );
+const scleft = distance = jQuery( crChap ).get( 0 ).scrollWidth;
 console.log(chap);
 //    try {
       // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
