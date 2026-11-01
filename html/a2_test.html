@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	jQuery( '.optionBar' ).hide( );
     try {
       // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
+  	jQuery( '.novel' ).css( "overflow-x", "hidden" );
 
       const blob = await htmlToImage.toBlob(node);
 
@@ -110,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await navigator.clipboard.write([
         new ClipboardItem({ 'image/png': blob })
       ]);
+  	jQuery( '.novel' ).css( "overflow-x", "auto" );
 
       alert('ブロックの画像をクリップボードにコピーしました！');
     } catch (error) {
