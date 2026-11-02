@@ -92,7 +92,7 @@ p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-console.log("ver 3.5");
+console.log("ver 3.6");
   const btn = document.getElementById('copy-btn');
   btn.addEventListener('click', async () => {
     const node = document.getElementById('bboard');
@@ -106,9 +106,10 @@ console.log("ここまではOK");
 let debugnum = crChap.css( "left");
 console.log(debugnum);
 crChap.children().css( {"position":"relative","left": scleft * -1} );
+crChap.css( "background-color", "white" );
 debugnum = crChap.css( "left");
 console.log(debugnum);
-
+    let anouncemessage = '';
     try {
 //      // 1. 指定したDOM要素をPNGのBlob（バイナリデータ）に変換
       const blob = await htmlToImage.toBlob(node);
@@ -119,13 +120,20 @@ console.log(debugnum);
       await navigator.clipboard.write([
         new ClipboardItem({ 'image/png': blob })
       ]);
-      alert('ブロックの画像をクリップボードにコピーしました！');
+      anouncemessage = 'ブロックの画像をクリップボードにコピーしました！';
     } catch (error) {
-      console.error('コピーに失敗しました:', error);
-      alert('コピーに失敗しました。コンソールを確認してください。');
+      anouncemessage = 'コピーに失敗しました。';
     }
 
+jQuery( '#anouncebox .voice' ).html( anouncemessage );
+jQuery( '#anouncebox' ).css( 'display', 'flex' ).hide().fadeIn( 500 );
+// ボタンをフラッシュさせる
+// 設定したtouchクラスは、アナウンスを消す際に除去される
+jQuery( this ).addClass( 'touch' );
+
+
 crChap.children().css( {"position":"static","left": "auto"} );
+crChap.css( "background-color", "transparent" );
 
 });
 });
