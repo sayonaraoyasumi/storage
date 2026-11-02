@@ -497,4 +497,10 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	z-index: 100;
 	cursor: pointer;
 }
-
+.movable{
+	width: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
