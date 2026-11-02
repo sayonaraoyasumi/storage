@@ -78,7 +78,7 @@ strong {
 p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
-console.log("ver 15");
+console.log("ver 16");
 	document.addEventListener('DOMContentLoaded', () => {
 		const btn = document.getElementById('copy-btn');
 		btn.addEventListener('click', async () => {
@@ -87,6 +87,7 @@ console.log("ver 15");
 			jQuery( '.optionBar' ).hide( );
 			const crChap = jQuery( ".novel" ).not( ".hide" );
 			const scleft = crChap.scrollLeft();
+			const originhtml = crChap.html();
 			crChap.wrapInner('<div class="movable"></div>');
 			jQuery(".movable").css( "left", scleft * -1 );
 			crChap.css( "background-color", "white" );
@@ -107,7 +108,6 @@ console.log("ver 15");
 			jQuery( '#anouncebox' ).css( 'display', 'flex' ).hide().fadeIn( 500 );
 			jQuery( this ).addClass( 'touch' );
 			jQuery(".movable").css( "left", "auto" );
-			const originhtml = jQuery(".movable").html();
 			crChap.html(originhtml);
 			crChap.css( "background-color", "unset" );
 		});
