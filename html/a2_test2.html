@@ -78,7 +78,7 @@ strong {
 p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
-console.log("ver 13");
+console.log("ver 15");
 	document.addEventListener('DOMContentLoaded', () => {
 		const btn = document.getElementById('copy-btn');
 		btn.addEventListener('click', async () => {
@@ -107,7 +107,8 @@ console.log("ver 13");
 			jQuery( '#anouncebox' ).css( 'display', 'flex' ).hide().fadeIn( 500 );
 			jQuery( this ).addClass( 'touch' );
 			jQuery(".movable").css( "left", "auto" );
-			crChap.html() = jQuery(".movable").html();
+			const originhtml = jQuery(".movable").html();
+			crChap.html(originhtml);
 			crChap.css( "background-color", "unset" );
 		});
 	});
