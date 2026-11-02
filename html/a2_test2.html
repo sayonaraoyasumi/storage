@@ -87,9 +87,11 @@ console.log("ver 19");
 			jQuery( '.optionBar' ).hide( );
 			const crChap = jQuery( ".novel" ).not( ".hide" );
 			const scleft = crChap.scrollLeft();
+			const sctop = crChap.scrollTop();
 			const originhtml = crChap.html();
 			crChap.wrapInner('<div class="movable"></div>');
 			jQuery(".movable").css( "left", scleft * -1 );
+			jQuery(".movable").css( "top", top );
 			crChap.css( "background-color", "white" );
 			let anouncemessage = '';
 			try {
@@ -97,9 +99,9 @@ console.log("ver 19");
 				if (!blob) {
 					throw new Error('画像の生成に失敗しました。');
 				}
-					await navigator.clipboard.write([
-						new ClipboardItem({ 'image/png': blob })
-					]);
+				await navigator.clipboard.write([
+					new ClipboardItem({ 'image/png': blob })
+				]);
 				anouncemessage = 'ブロックの画像をクリップボードにコピーしました！';
 			} catch (error) {
 				anouncemessage = 'コピーに失敗しました。';
@@ -108,6 +110,7 @@ console.log("ver 19");
 			jQuery( '#anouncebox' ).css( 'display', 'flex' ).hide().fadeIn( 500 );
 			jQuery( this ).addClass( 'touch' );
 			jQuery(".movable").css( "left", "auto" );
+			jQuery(".movable").css( "top", "auto" );
 			crChap.html(originhtml);
 			crChap.css( "background-color", "unset" );
 		});
