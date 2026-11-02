@@ -78,7 +78,7 @@ strong {
 p{	white-space: break-spaces; margin: 0 1.5em;}
 </style>
 <script>
-console.log("ver 19");
+console.log("ver 20");
 	document.addEventListener('DOMContentLoaded', () => {
 		const btn = document.getElementById('copy-btn-test');
 		btn.addEventListener('click', async () => {
@@ -91,7 +91,7 @@ console.log("ver 19");
 			const originhtml = crChap.html();
 			crChap.wrapInner('<div class="movable"></div>');
 			jQuery(".movable").css( "left", scleft * -1 );
-			jQuery(".movable").css( "top", top );
+			jQuery(".movable").css( "top", sctop );
 			crChap.css( "background-color", "white" );
 			let anouncemessage = '';
 			try {
@@ -145,7 +145,7 @@ console.log("ver 19");
 		<div class="desktop">
 <!--　ここからが電子書籍の内容　-->
 <div id="aboard">
-	<div id="bboard" class="yoko">
+	<div id="bboard">
 		<div class="topBar">
 			<div id="gotostart" class="squarebutton leftside"><img src="https://sayonaraoyasumi.github.io/storage/icon/square_alice2.jpg" class="bottombutton"></div>
 			<div class="myTitle"><img src="https://sayonaraoyasumi.github.io/storage/Images/loading-spinner.svg" width="20" height="20"></div>
