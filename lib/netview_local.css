@@ -477,6 +477,24 @@ body.bg-18{ background-image:url(../html/background/BG18.jpg); }
 	transition: opacity ease 0.4s;
 }
 */
+
 .trtext{
 	display: none;
 }
+
+/* 機能追加ぶん */
+/* ページを画像でキャプチャーするボタン */
+#aboard .copyonpic{
+	user-select: none; 
+	width: 26em;
+	font-size: 0.8rem;
+	border: solid 1px gray;
+	text-align: center;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 8px;
+	padding: 0.4em;
+	margin: 0.4em;
+	z-index: 100;
+	cursor: pointer;
+}
+
