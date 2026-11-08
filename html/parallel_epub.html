@@ -93,19 +93,7 @@ li{
 </style>
 <script>
 jQuery(document).ready(function() {
-  jQuery('.selector').on('click', function(event) {
-	// 本来のページ遷移（ジャンプ）を一時的に止める
-	event.preventDefault();
-	// リンク先のURLを取得しておく
-	const destination = jQuery(this).attr('href');
-	// ジャンプ前に実行
-	const mypath = location.pathname;
-	jQuery.cookie( "scroll", 1, { expires: 1000, path: mypath } );
-alert(mypath);
 
-	// 次のページへジャンプさせる
-	window.location.href = destination;
-  });
 const cn = jQuery.cookie( "chapter" ) * 1;
 console.log("chapterNumber = " + cn);
 const scn = jQuery.cookie( "scroll" ) * 1;
