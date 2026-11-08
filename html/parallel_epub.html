@@ -37,44 +37,63 @@
 		<script type="text/javascript" src="../lib/netview_local.js?ver=1.2" id="nyadio_commentary_netview_script-js"></script>
 <!-- 　　　　ここまで　　　　　 -->
 <style>
-.wrap{
-	width: 100%;
-	height: 100%;
-	writing-mode: horizontal-tb;
-	margin-right: -60px;
+.novel{
+	white-space: unset; 
 }
-.wrap:first-child{
-	margin-right: 0px;
+p{
+	white-space: break-spaces; 
+	margin: 0 1.5em;
 }
-.wrap .title{
-	margin: auto;
-	writing-mode: vertical-rl;
-	padding: 1em;
+.logo{
+  width: 8em;
 }
-.novel .back, .novel .forward {
-	z-index: 10;
-	position: relative;
+.badend, .trueend, .partend{
+  border: solid 2px silver;
+  font-weight: bold;
+  font-size: 100%;
+  margin: 0.9em 1em;
+  padding: 1em;
 }
-p.note{
-	padding: 2em 1em 0 1em;
-	font-size: 0.9em;
+div.outerbox{
+  width: 100%;
+  height: 100%;
+  -epub-writing-mode: vertical-rl;
+  margin: 0 3em;
+  text-align: center;
+	padding: 0;
 }
-p.dilog{
-	text-indent: -1em;
-	padding: 1em 0 0 0;
-	margin: 0;
+.infotable{
+   max-width: 80%;
+   width: 40em;
+  -epub-writing-mode: horizontal-tb;
 }
-strong {
-	font-weight: normal;
-	text-emphasis-style: sesame;
+p, div {
+  text-align: justify;
+  margin: 1em 0.8em 0 0;
 }
-.delete {
-  text-decoration: line-through;
+ul{
+  list-style-position: inside;
+  list-style-type: none;
+  margin: 0.5em 1em;
 }
-.subtitle{	margin: 0 3em;}
-/* レガシー対応 */
-.novel{	white-space: unset; }
-p{	white-space: break-spaces; margin: 0 1.5em;}
+li{
+  padding: 1em 0.2em;
+  margin: 0.4em;
+  border: solid silver 2px;
+}
+.columnbox{
+  padding: 1em;
+  margin: 0.9em 1em;
+  border: solid silver 2px;
+}
+.columnbox div{
+  margin: 0.5em;
+}
+.columnbox h4{
+  font-weight: bolder;
+  padding: 0;
+  margin: 0 0.4em;
+}
 </style>
 	</head>
 	<body class="home">
