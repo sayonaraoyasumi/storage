@@ -106,8 +106,8 @@ jQuery(document).ready(function() {
 	// 次のページへジャンプさせる
 	window.location.href = destination;
   });
-
-console.log("chapterNumber = " + chapterNumber);
+const cn = jQuery.cookie( "chapter" ) * 1;
+console.log("chapterNumber = " + cn);
 
 });
 </script>
