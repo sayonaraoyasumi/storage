@@ -97,7 +97,7 @@ jQuery(document).ready(function() {
 	// 本来のページ遷移（ジャンプ）を一時的に止める
 	event.preventDefault();
 	// リンク先のURLを取得しておく
-	const destination = $(this).attr('href');
+	const destination = jQuery(this).attr('href');
 
 	// ジャンプ前に実行
 	const mypath = location.pathname;
