@@ -72,10 +72,11 @@ ul{
   list-style-type: none;
   margin: 0.5em 1em;
 }
-li{
+li.chapterJump.selector{
   padding: 1em 0.2em;
   margin: 0.4em;
   border: solid silver 2px;
+  background-color: #ccddee;
 }
 .columnbox{
   padding: 1em;
@@ -91,30 +92,6 @@ li{
   margin: 0 0.4em;
 }
 </style>
-<script>
-jQuery(document).ready(function() {
-  jQuery('.selector').on('click', function(event) {
-	// 本来のページ遷移（ジャンプ）を一時的に止める
-	event.preventDefault();
-	// リンク先のURLを取得しておく
-	const destination = jQuery(this).attr('href');
-	// ジャンプ前に実行
-	const mypath = location.pathname;
-	jQuery.cookie( "scroll", 1, { expires: 1000, path: mypath } );
-alert(mypath);
-
-	// 次のページへジャンプさせる
-	window.location.href = destination;
-  });
-const cn = jQuery.cookie( "chapter" ) * 1;
-console.log("chapterNumber = " + cn);
-const scn = jQuery.cookie( "scroll" ) * 1;
-console.log("scrollNumber = " + scn);
-const psn = location.pathname;
-console.log("Path Name = " + psn);
-
-});
-</script>
 	</head>
 	<body class="home">
 		<div id="overlay" class="dark"></div>
@@ -156,7 +133,7 @@ console.log("Path Name = " + psn);
 　――ある男を探し出し、殺すこと。</p>
 
 <ul>
-<li class="chapterJump" chapter="2"><a href="parallel_epub.html?c=2" class="selector"><span class="tcy">02</span>へ</a></li>
+<li class="chapterJump selector" chapter="2"><a href="parallel_epub.html?c=2" class="selector"><span class="tcy">02</span>へ</a></li>
 </ul>
 </section><section class="novel" chapter="2">
 <h3 id="toc_index_2"><span class="tcy">02</span></h3>
